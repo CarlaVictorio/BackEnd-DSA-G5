@@ -1,5 +1,5 @@
 package edu.upc.dsa;
-
+/*
 
 import org.eclipse.persistence.sessions.Session;
 
@@ -36,3 +36,5 @@ public class FactorySession {
         return conn;
     }
 }
+*/
+

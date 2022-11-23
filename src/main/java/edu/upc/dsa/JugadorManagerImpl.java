@@ -19,7 +19,7 @@ public class JugadorManagerImpl implements JugadorManager{
         return instance;
     }
 
-    private JugadorManagerImpl(){this.jugadores=new LinkedList<>();}
+    JugadorManagerImpl(){this.jugadores=new LinkedList<>();}
     @Override
     public List<Jugador> getAllJugadores() {
         return this.jugadores;
@@ -27,10 +27,10 @@ public class JugadorManagerImpl implements JugadorManager{
 
     @Override
     public Jugador getJugador(String id) {
-        logger.info("getTrack("+id+")");
+        logger.info("getJugador("+id+")");
         for (Jugador j: this.jugadores){
             if (j.getId().equals(id)){
-                logger.info("getTrack("+id+"): "+j);
+                logger.info("getJugador("+id+"): "+j);
                 return j;
             }
         }
@@ -41,7 +41,7 @@ public class JugadorManagerImpl implements JugadorManager{
     @Override
     public Jugador addJugador(String nombre, String password) {
         Jugador j = new Jugador(nombre,password);
-        logger.info("new Track " + j);
+        logger.info("new Jugador " + j);
         this.jugadores.add(j);
         logger.info("new Jugdor added");
         return j;

@@ -1,7 +1,7 @@
+/*
 package edu.upc.dsa;
 
 import edu.upc.eetac.dsa.util.ObjectHelper;
-import edu.upc.eetac.dsa.util.QueryHelper;
 import org.eclipse.persistence.sessions.Session;
 
 import java.sql.Connection;
@@ -69,3 +69,4 @@ public class SessionImpl implements Session {
         return null;
     }
 }
+*/
