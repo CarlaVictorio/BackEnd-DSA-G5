@@ -4,7 +4,7 @@ import edu.upc.dsa.models.Jugador;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class JugadorManagerImpl implements JugadorManager{
     private static JugadorManager instance;
@@ -34,22 +34,41 @@ public class JugadorManagerImpl implements JugadorManager{
                 return j;
             }
         }
-        logger.warn("not found"+id);
+        logger.warn("not found "+id);
         return null;
     }
 
     @Override
-    public Jugador addJugador(String nombre, String contraseña) {
-        return null;
+    public Jugador addJugador(String nombre, String password) {
+        Jugador j = new Jugador(nombre,password);
+        logger.info("new Track " + j);
+        this.jugadores.add(j);
+        logger.info("new Jugdor added");
+        return j;
     }
 
     @Override
     public void deleteJugador(String id) {
-        Jugador j = this.
+        Jugador j = this.getJugador(id);
+        if (j==null){
+            logger.warn("not found "+j);
+        } else {
+            logger.info(j+" deleted");
+        }
+        this.jugadores.remove(j);
     }
 
     @Override
     public Jugador putJugador(Jugador jugador) {
-        return null;
+        Jugador j = this.getJugador(jugador.getId());
+        if (j!=null){
+            logger.info(j+" rebut!");
+            j.setNombre(jugador.getNombre());
+            j.setPassword(jugador.getPassword());
+            logger.info(j+" update");
+        } else {
+            logger.warn("not found "+j);
+        }
+        return j;
     }
 }
