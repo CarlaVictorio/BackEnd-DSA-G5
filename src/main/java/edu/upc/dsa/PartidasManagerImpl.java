@@ -4,7 +4,8 @@ import edu.upc.dsa.models.Partida;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
+
 
 public class PartidasManagerImpl implements PartidasManager {
 
@@ -12,7 +13,7 @@ public class PartidasManagerImpl implements PartidasManager {
     protected List<Partida> partidasList;
 
     final static Logger logger = Logger.getLogger(String.valueOf(PartidasManagerImpl.class)); //està bé???
-    private PartidasManagerImpl() {
+    PartidasManagerImpl() {
         this.partidasList = new LinkedList<>();
     }
     public static PartidasManager getInstance(){
@@ -47,7 +48,7 @@ public class PartidasManagerImpl implements PartidasManager {
                 return p;
             }
         }
-        logger.warning("not found " + idPartida);
+        logger.warn("not found " + idPartida);
         return null;
     }
     public Partida addPartida(Partida p){
@@ -63,7 +64,7 @@ public class PartidasManagerImpl implements PartidasManager {
     public void deletePartida(int idPartida){
         Partida p = this.getPartida(idPartida);
         if (p==null){
-            logger.warning("not found " + p);
+            logger.warn("not found " + p);
         }
         else logger.info(p + "deleted");
         this.partidasList.remove(p);
@@ -80,7 +81,7 @@ public class PartidasManagerImpl implements PartidasManager {
             p.setIdJugador(t.getIdJugador());
             logger.info(p + "updated");
         }
-        else logger.warning("not found " +t);
+        else logger.warn("not found " +t);
         return p;
     }
 }
