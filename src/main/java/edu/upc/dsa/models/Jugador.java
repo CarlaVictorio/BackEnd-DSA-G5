@@ -3,25 +3,25 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 public class Jugador {
-    int id;
+    String id;
     String nombre;
-    String contraseña;
+    String password;
     public Jugador() {
         this.id = RandomUtils.getId();
     }
 
 
-    public Jugador (String nombre, String contraseña) {
+    public Jugador (String nombre, String password) {
         this();
-        this.nombre(nombre);
-        this.contraseña(contraseña);
+        this.setNombre(nombre);
+        this.setPassword(password);
     }
 
-    public int getId() {
+    public String  getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -33,11 +33,12 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password
+    ) {
+        this.password = password;
     }
 }
