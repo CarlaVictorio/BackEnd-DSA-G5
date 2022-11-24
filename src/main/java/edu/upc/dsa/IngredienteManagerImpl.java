@@ -26,18 +26,66 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }
 
     @Override
+    public List<Ingrediente> getAllIngredientes() {
+
+        return this.ingredientes;
+    }
+
+    @Override
     public Ingrediente getIngrediente (String idIngrediente){
-        logger.info("getPartida("+idPartida+")");
+        logger.info("getIngrediente("+idIngrediente+")");
 
-        for (Partida p: this.partidasList) {
-            if (p.getIdPartida()==idPartida) {
-                logger.info("getPartida("+idPartida+"): "+p);
+        for (Ingrediente i: this.ingredientes) {
+            if (i.getIdIngrediente()==idIngrediente) {
+                logger.info("getIngrediente("+idIngrediente+"): "+i);
 
-                return p;
+                return i;
             }
         }
-        logger.warn("not found " + idPartida);
+        logger.warn("not found " + idIngrediente);
         return null;
+    }
+
+    @Override
+    public Ingrediente addIngrediente(String idIngrediente, String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
+        Ingrediente i = new Ingrediente(idIngrediente, nombreIngrediente,nivelDesbloqueoIngrediente, precioIngrediente);
+        logger.info("new Ingrediente " + i);
+        this.ingredientes.add(i);
+        logger.info("Se ha añadido un Ingrediente");
+        return i;
+    }
+
+    @Override
+    public void deleteIngrediente(String idIngrediente) {
+        Ingrediente i = this.getIngrediente(idIngrediente);
+        if (i==null){
+            logger.warn("not found "+i);
+        } else {
+            logger.info(i+" deleted");
+        }
+        this.ingredientes.remove(i);
+    }
+
+    public int getNivelDesbloqueoIngrediente(String idIngrediente) {
+        Ingrediente i = this.getIngrediente(idIngrediente);
+        if (i==null) {
+            logger.warn("not found "+i);
+            return-1;
+        }
+        else{
+            return i.getNivelDesbloqueoIngrediente();
+        }
+    }
+
+    public double getPrecioIngrediente(String idIngrediente) {
+        Ingrediente i = this.getIngrediente(idIngrediente);
+        if (i==null) {
+            logger.warn("not found "+i);
+            return-1;
+        }
+        else{
+            return i.getPrecioIngrediente();
+        }
     }
 
 }

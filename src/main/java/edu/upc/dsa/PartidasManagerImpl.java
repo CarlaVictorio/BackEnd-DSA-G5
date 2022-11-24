@@ -38,7 +38,7 @@ public class PartidasManagerImpl implements PartidasManager {
     }
     */
 
-    public Partida getPartida(int idPartida){
+    public Partida getPartida(String idPartida){
         logger.info("getPartida("+idPartida+")");
 
         for (Partida p: this.partidasList) {
@@ -57,7 +57,7 @@ public class PartidasManagerImpl implements PartidasManager {
         logger.info("new Partida added");
         return p;
     }
-    public Partida addPartida (int idPartida, int nivelActual, int puntos, int idMapa, int idJugador){
+    public Partida addPartida (String idPartida, int nivelActual, int puntos, String idMapa, String idJugador){
         return this.addPartida(new Partida(idPartida,nivelActual, puntos,idMapa,idJugador));
     }
     @Override
