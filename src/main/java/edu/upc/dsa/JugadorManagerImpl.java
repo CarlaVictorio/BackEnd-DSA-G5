@@ -44,11 +44,6 @@ public class JugadorManagerImpl implements JugadorManager{
     }
 
     @Override
-    public Jugador jugadorSearch(String nombreJugador, String passwordJugador) {
-        return null;
-    }
-
-    @Override
     public Jugador addJugador(String nombre, String password) {
         Jugador j = new Jugador(nombre,password);
         logger.info("new Jugador " + j);
@@ -80,5 +75,18 @@ public class JugadorManagerImpl implements JugadorManager{
             logger.warn("not found "+j);
         }
         return j;
+    }
+
+    @Override
+    public Jugador searchJugador(String nombreJugador, String passwordJugador) {
+        logger.info("getJugador("+nombreJugador+", "+passwordJugador+")");
+        for (Jugador j: this.jugadores){
+            if (j.getNombre().equals(nombreJugador)){
+                logger.info("getJugador("+nombreJugador+", "+passwordJugador+"): "+j);
+                return j;
+            }
+        }
+        logger.warn("not found "+nombreJugador);
+        return null;
     }
 }
