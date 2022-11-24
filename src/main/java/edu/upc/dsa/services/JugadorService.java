@@ -58,8 +58,8 @@ public class JugadorService {
 
     public Response getJugador(@PathParam("idJugador") String id) {
         Jugador j = this.jm.getJugador(id);
-        if (j == null) return Response.status(404).build(); //si no hi ha track
-        else  return Response.status(201).entity(j).build(); // si hi ha track, empaqueto i envio amb un 201
+        if (j == null) return Response.status(404).build();
+        else  return Response.status(201).entity(j).build();
     }
 
 
@@ -110,5 +110,21 @@ public class JugadorService {
         Jugador j = this.jm.putJugador(jugador);
         if (j == null) return Response.status(404).build();
         else return Response.status(201).build();
+    }
+
+
+    @GET
+    @ApiOperation(value = "search un Jugador", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
+            @ApiResponse(code = 404, message = "Jugador not found")
+    })
+    @Path("/{nombre}/{password}")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response searchJugador(@PathParam("nombre") String nombre, @PathParam("password") String password) {
+        Jugador j = this.jm.searchJugador(nombre, password);
+        if (j == null) return Response.status(404).build();
+        else  return Response.status(201).entity(j).build();
     }
 }
