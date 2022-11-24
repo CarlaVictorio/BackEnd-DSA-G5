@@ -6,9 +6,10 @@ import edu.upc.dsa.models.Mapa;
 import java.util.List;
 
 public interface MapaManager {
-    public List<Ingrediente> getAllIngredientes(int idMapa);
-    public Mapa getMapa(int idMapa);
-    public void postMapa(int idMapa, String nombreMapa, int numNivelesMapa);
-    public void deleteMapa(int idMapa);
-    public void putMapa(int idMapa, String nombreMapa, int numNivelesMapa);
+    public List<Ingrediente> getAllIngredientes(String idMapa);
+    public Mapa getMapa(String idMapa);
+
+    public void postMapa(String idMapa, String nombreMapa, int numNivelesMapa);
+    public void deleteMapa(String idMapa);
+    public void putMapa(String idMapa, String nombreMapa, int numNivelesMapa);
 }
