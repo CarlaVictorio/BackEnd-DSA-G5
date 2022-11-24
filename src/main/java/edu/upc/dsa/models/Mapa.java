@@ -1,5 +1,6 @@
 package edu.upc.dsa.models;
 
+
 public class Mapa {
     String idMapa;
     String nombreMapa;

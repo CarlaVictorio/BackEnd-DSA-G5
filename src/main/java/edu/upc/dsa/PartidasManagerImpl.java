@@ -61,7 +61,7 @@ public class PartidasManagerImpl implements PartidasManager {
        return this.addPartida(new Partida(idPartida,nivelActual, puntos,idMapa,idJugador));
    }
     @Override
-    public void deletePartida(int idPartida){
+    public void deletePartida(String idPartida){
         Partida p = this.getPartida(idPartida);
         if (p==null){
             logger.warn("not found " + p);
