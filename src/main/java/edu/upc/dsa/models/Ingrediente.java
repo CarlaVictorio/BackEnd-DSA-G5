@@ -1,12 +1,12 @@
 package edu.upc.dsa.models;
 
 public class Ingrediente {
-    int idIngrediente;
+    String idIngrediente;
     String nombreIngrediente;
     int nivelDesbloqueoIngrediente;
     double precioIngrediente;
 
-    public Ingrediente(int idIngrediente, String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
+    public Ingrediente(String idIngrediente, String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
         this.idIngrediente = idIngrediente;
         this.nombreIngrediente = nombreIngrediente;
         this.nivelDesbloqueoIngrediente = nivelDesbloqueoIngrediente;
@@ -15,11 +15,11 @@ public class Ingrediente {
 
     public Ingrediente() {
     }
-    public int getIdIngrediente() {
+    public String getIdIngrediente() {
         return idIngrediente;
     }
 
-    public void setIdIngrediente(int idIngrediente) {
+    public void setIdIngrediente(String idIngrediente) {
         this.idIngrediente = idIngrediente;
     }
 
