@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>edu.upc.eetac.dsa</groupId>
+    <groupId>edu.upc.dsa</groupId>
     <artifactId>rest-example2</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
