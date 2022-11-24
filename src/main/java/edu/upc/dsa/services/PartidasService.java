@@ -37,7 +37,7 @@ public class PartidasService {
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getPartidas(){
+    public Response getAllPartida(){
         List<Partida> partidas = this.pm.getAllPartidas();
         GenericEntity<List<Partida>> entity = new GenericEntity<List<Partida>>(partidas) {};
         return Response.status(201).entity(entity).build()  ;
@@ -78,7 +78,7 @@ public class PartidasService {
             @ApiResponse(code = 404, message = "Partida not found")
     })
     @Path("/")
-    public Response updatePartida(Partida partida) {
+    public Response putPartida(Partida partida) {
 
         Partida t = this.pm.updatePartida(partida);
         if (t == null) return Response.status(404).build();
@@ -95,7 +95,7 @@ public class PartidasService {
 
     @Path("/")  //arriba una instancia/objecte buit, es crea automàticamente, no arriba un JSON
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response newPartida(Partida partida) {
+    public Response postPartida(Partida partida) {
 
         //if (partida.getIdPartida()==null)  return Response.status(500).entity(partida).build();
         this.pm.addPartida(partida);
