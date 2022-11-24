@@ -37,7 +37,7 @@ public class PartidasService {
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getAllPartida(){
+    public Response getAllPartidas(){
         List<Partida> partidas = this.pm.getAllPartidas();
         GenericEntity<List<Partida>> entity = new GenericEntity<List<Partida>>(partidas) {};
         return Response.status(201).entity(entity).build()  ;
