@@ -65,7 +65,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         }
         this.ingredientes.remove(i);
     }
-
+    @Override
     public int getNivelDesbloqueoIngrediente(String idIngrediente) {
         Ingrediente i = this.getIngrediente(idIngrediente);
         if (i==null) {
@@ -77,6 +77,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         }
     }
 
+    @Override
     public double getPrecioIngrediente(String idIngrediente) {
         Ingrediente i = this.getIngrediente(idIngrediente);
         if (i==null) {
