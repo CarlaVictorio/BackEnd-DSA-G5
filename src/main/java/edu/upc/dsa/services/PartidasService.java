@@ -23,9 +23,9 @@ public class PartidasService {
     public PartidasService(){
         this.pm = PartidasManagerImpl.getInstance();
         if(pm.size()==0){
-            this.pm.addPartida(0,1,5,0,0);
-            this.pm.addPartida(1,1,50,1,1);
-            this.pm.addPartida(2,2,100,2,2);
+            this.pm.addPartida("0",1,5,"0","0");
+            this.pm.addPartida("1",1,50,"1","1");
+            this.pm.addPartida("2",2,100,"2","2");
         }
     }
 
@@ -51,7 +51,7 @@ public class PartidasService {
     })
     @Path("/{idPartida}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPartida(@PathParam("idPartida") int id) {
+    public Response getPartida(@PathParam("idPartida") String id) {
         Partida t = this.pm.getPartida(id); //PM es un gestor, està a la capa Integration
         if (t == null) return Response.status(404).build(); //si no hi ha track
         else  return Response.status(201).entity(t).build(); // si hi ha track, empaqueto i envio amb un 201
@@ -64,7 +64,7 @@ public class PartidasService {
             @ApiResponse(code = 404, message = "Partida not found")
     })
     @Path("/{idPartida}")
-    public Response deletePartida(@PathParam("idPartida") int id) {
+    public Response deletePartida(@PathParam("idPartida") String id) {
         Partida t = this.pm.getPartida(id);
         if (t == null) return Response.status(404).build();
         else this.pm.deletePartida(id);

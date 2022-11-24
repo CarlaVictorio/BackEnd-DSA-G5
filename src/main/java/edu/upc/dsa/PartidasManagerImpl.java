@@ -51,17 +51,17 @@ public class PartidasManagerImpl implements PartidasManager {
         logger.warn("not found " + idPartida);
         return null;
     }
-    public Partida addPartida(Partida p){
+   public Partida addPartida(Partida p){
         logger.info("new Partida " + p);
         this.partidasList.add(p);
         logger.info("new Partida added");
         return p;
     }
     public Partida addPartida (String idPartida, int nivelActual, int puntos, String idMapa, String idJugador){
-        return this.addPartida(new Partida(idPartida,nivelActual, puntos,idMapa,idJugador));
-    }
+       return this.addPartida(new Partida(idPartida,nivelActual, puntos,idMapa,idJugador));
+   }
     @Override
-    public void deletePartida(int idPartida){
+    public void deletePartida(String idPartida){
         Partida p = this.getPartida(idPartida);
         if (p==null){
             logger.warn("not found " + p);
