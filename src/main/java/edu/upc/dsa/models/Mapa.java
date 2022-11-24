@@ -1,24 +1,24 @@
 package edu.upc.dsa.models;
 
 public class Mapa {
-    int idMapa;
+    String idMapa;
     String nombreMapa;
     int numNivelesMapa;
 
     public Mapa() {
     }
 
-    public Mapa(int id, String nombre, int numNiveles) {
+    public Mapa(String id, String nombre, int numNiveles) {
         this.idMapa = id;
         this.nombreMapa = nombre;
         this.numNivelesMapa = numNiveles;
     }
 
-    public int getId() {
+    public String getId() {
         return idMapa;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.idMapa = id;
     }
 

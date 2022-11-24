@@ -1,7 +1,7 @@
 package edu.upc.dsa.models;
 
 public class Utensilio {
-    int idUtensilio;
+    String idUtensilio;
     String nombreUtensilio;
     int tiempoNivel1;
     int tiempoNivel2;
@@ -10,7 +10,7 @@ public class Utensilio {
     public Utensilio() {
     }
 
-    public Utensilio(int idUtensilio, String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
+    public Utensilio(String idUtensilio, String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
         this.idUtensilio = idUtensilio;
         this.nombreUtensilio = nombreUtensilio;
         this.tiempoNivel1 = tiempoNivel1;
@@ -18,11 +18,11 @@ public class Utensilio {
         this.tiempoNivel3 = tiempoNivel3;
     }
 
-    public int getIdUtensilio() {
+    public String getIdUtensilio() {
         return idUtensilio;
     }
 
-    public void setIdUtensilio(int idUtensilio) {
+    public void setIdUtensilio(String idUtensilio) {
         this.idUtensilio = idUtensilio;
     }
 

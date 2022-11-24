@@ -2,16 +2,16 @@ package edu.upc.dsa.models;
 
 public class Partida {
 
-    int idPartida;
+    String idPartida;
     int nivelActual;
     int puntos;
-    int idMapa;
-    int idJugador;
+    String idMapa;
+    String idJugador;
 
     public Partida(){
 
     }
-    public Partida (int idPartida, int nivelActual, int puntos, int idMapa, int idJugador){
+    public Partida (String idPartida, int nivelActual, int puntos, String idMapa, String idJugador){
         this();
         this.setIdPartida(idPartida);
         this.setNivelActual(nivelActual);
@@ -20,11 +20,11 @@ public class Partida {
         this.setIdJugador(idJugador);
 
     }
-    public int getIdPartida() {
+    public String getIdPartida() {
         return idPartida;
     }
 
-    public void setIdPartida(int idPartida) {
+    public void setIdPartida(String idPartida) {
         this.idPartida = idPartida;
     }
 
@@ -44,19 +44,19 @@ public class Partida {
         this.puntos = puntos;
     }
 
-    public int getIdMapa() {
+    public String getIdMapa() {
         return idMapa;
     }
 
-    public void setIdMapa(int idMapa) {
+    public void setIdMapa(String idMapa) {
         this.idMapa = idMapa;
     }
 
-    public int getIdJugador() {
+    public String getIdJugador() {
         return idJugador;
     }
 
-    public void setIdJugador(int idJugador) {
+    public void setIdJugador(String idJugador) {
         this.idJugador = idJugador;
     }
 }
