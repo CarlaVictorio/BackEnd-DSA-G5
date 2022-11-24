@@ -18,6 +18,11 @@ public class JugadorManagerImpl implements JugadorManager{
         //logger.info(instance);
         return instance;
     }
+    public int size(){
+        int s = this.jugadores.size();
+        logger.info("size " + s);
+        return s;
+    }
 
     JugadorManagerImpl(){this.jugadores=new LinkedList<>();}
     @Override

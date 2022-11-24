@@ -22,13 +22,13 @@ public class TiendaManagerImpl implements TiendaManager{
         }
         return instance;
     }
-
+/*
     @Override
     public List<Tienda> getAllTiendas() {
         return this.tiendas;
     }
 
-    /*@Override
+    @Override
     public List<Jugador> getAllObjetos(String jugador){
 
     }*/

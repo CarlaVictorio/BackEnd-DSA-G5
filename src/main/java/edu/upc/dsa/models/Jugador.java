@@ -1,4 +1,5 @@
 package edu.upc.dsa.models;
+import edu.upc.dsa.util.RandomUtils;
 
 public class Jugador {
     String id;

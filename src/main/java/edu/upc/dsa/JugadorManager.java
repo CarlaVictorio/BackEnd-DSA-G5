@@ -10,5 +10,6 @@ public interface JugadorManager {
     public Jugador addJugador (String nombre, String contraseña);
     public  void deleteJugador(String id);
     public Jugador putJugador(Jugador jugador);
+    public int size();
 
 }
