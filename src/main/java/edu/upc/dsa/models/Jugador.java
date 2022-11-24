@@ -9,7 +9,6 @@ public class Jugador {
         this.id = RandomUtils.getId();
     }
 
-
     public Jugador (String nombre, String password) {
         this();
         this.setNombre(nombre);

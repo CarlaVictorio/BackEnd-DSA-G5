@@ -105,7 +105,7 @@ public class JugadorService {
             @ApiResponse(code = 404, message = "Jugador not found")
     })
     @Path("/")
-    public Response updateJugador(Jugador jugador) {
+    public Response putJugador(Jugador jugador) {
 
         Jugador j = this.jm.putJugador(jugador);
         if (j == null) return Response.status(404).build();
