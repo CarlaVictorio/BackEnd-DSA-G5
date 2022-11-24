@@ -45,12 +45,59 @@ public class RecetaManagerImpl implements RecetaManager{
         return null;
     }
 
-    /*@Override
-    public Receta addReceta(String idUtensilio, String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
-        Utensilio u = new Utensilio(idUtensilio, nombreUtensilio,tiempoNivel1, tiempoNivel2, tiempoNivel3);
-        logger.info("new Utensilio " + u);
-        this.utensilios.add(u);
-        logger.info("Se ha añadido un Utensilio");
-        return u;
-    }*/
+    @Override
+    public Receta addReceta(String idReceta, String nombre, int numPaso, double premioDinero, int premioPuntos) {
+        Receta r = new Receta(idReceta, nombre,numPaso, premioDinero, premioPuntos);
+        logger.info("new Receta " + r);
+        this.recetas.add(r);
+        logger.info("Se ha añadido una Receta");
+        return r;
+    }
+
+    @Override
+    public void deleteReceta(String idReceta) {
+        Receta r = this.getReceta(idReceta);
+        if (r==null){
+            logger.warn("not found "+r);
+        } else {
+            logger.info(r+" deleted");
+        }
+        this.recetas.remove(r);
+    }
+
+    @Override
+    public int getNumPaso(String idReceta) {
+        Receta r = this.getReceta(idReceta);
+        if (r==null) {
+            logger.warn("not found "+r);
+            return-1;
+        }
+        else{
+            return r.getNumPaso();
+        }
+    }
+
+    @Override
+    public double getPremioDinero(String idReceta) {
+        Receta r = this.getReceta(idReceta);
+        if (r==null) {
+            logger.warn("not found "+r);
+            return-1;
+        }
+        else{
+            return r.getPremioDinero();
+        }
+    }
+
+    @Override
+    public int getPremioPuntos(String idReceta) {
+        Receta r = this.getReceta(idReceta);
+        if (r==null) {
+            logger.warn("not found "+r);
+            return-1;
+        }
+        else{
+            return r.getPremioPuntos();
+        }
+    }
 }

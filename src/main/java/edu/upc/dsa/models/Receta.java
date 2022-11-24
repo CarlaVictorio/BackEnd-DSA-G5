@@ -3,22 +3,17 @@ package edu.upc.dsa.models;
 public class Receta {
 
     String idReceta;
-    String nombre;
+    String nombreReceta;
     int numPaso;
-    String herramienta;
-    String ingrediente;
-    String idMapa;
     double premioDinero;
     int premioPuntos;
 
     public Receta(){}
 
-    public Receta(String idReceta, String nombre, String herramienta, String ingrediente, String idMapa, double premioDinero, int premioPuntos){
+    public Receta(String idReceta, String nombreReceta, int numPaso, double premioDinero, int premioPuntos){
         this.idReceta = idReceta;
-        this.nombre = nombre;
-        this.herramienta = herramienta;
-        this.ingrediente = ingrediente;
-        this.idMapa = idMapa;
+        this.nombreReceta = nombreReceta;
+        this.numPaso = numPaso;
         this.premioDinero = premioDinero;
         this.premioPuntos = premioPuntos;
     }
@@ -31,12 +26,12 @@ public class Receta {
         this.idReceta = idReceta;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreReceta() {
+        return nombreReceta;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreReceta(String nombreReceta) {
+        this.nombreReceta = nombreReceta;
     }
 
     public int getNumPaso() {
@@ -45,30 +40,6 @@ public class Receta {
 
     public void setNumPaso(int numPaso) {
         this.numPaso = numPaso;
-    }
-
-    public String getHerramienta() {
-        return herramienta;
-    }
-
-    public void setHerramienta(String herramienta) {
-        this.herramienta = herramienta;
-    }
-
-    public String getIngrediente() {
-        return ingrediente;
-    }
-
-    public void setIngrediente(String ingrediente) {
-        this.ingrediente = ingrediente;
-    }
-
-    public String getIdMapa() {
-        return idMapa;
-    }
-
-    public void setIdMapa(String idMapa) {
-        this.idMapa = idMapa;
     }
 
     public double getPremioDinero() {

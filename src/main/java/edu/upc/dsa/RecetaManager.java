@@ -7,4 +7,9 @@ import java.util.List;
 public interface RecetaManager {
     public List<Receta> getAllRecetas();
     public Receta getReceta (String idReceta);
+    public Receta addReceta(String idReceta, String nombre, int numPaso, double premioDinero, int premioPuntos);
+    public void deleteReceta(String idReceta);
+    public int getNumPaso(String idReceta);
+    public double getPremioDinero(String idReceta);
+    public int getPremioPuntos(String idReceta);
 }
