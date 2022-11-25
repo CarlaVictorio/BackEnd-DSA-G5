@@ -12,12 +12,15 @@
     <script>
        $(document).ready(function(){
           $('#buttonLogIn').click(function() {
-
+            $.get("http://147.83.7.207:8080/dsaApp/jugador/"+userLogIn.value+"/"+passLogIn, function(data){
+                alert(data);
+            })
           });
       });
+
       $(document).ready(function(){
           $('#buttonGuardar').click(function() {
-              $.post("",
+
 
           });
       });
@@ -32,7 +35,7 @@
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
           <p>Nombre de usuario: <input type="text" id="userLogIn"></p>
-          <p>Contrasenya: <input type="text" id="contraLogIn"></p>
+          <p>Contrasenya: <input type="text" id="passLogIn"></p>
           <button id="buttonLogIn" class="btn btn-info" >Log In</button>
           <p>¿No estas registrado? Registrate </p>
           <button type="buttonRegister" class="btn btn-info" data-toggle="modal" data-target="#myModal">Register</button>
