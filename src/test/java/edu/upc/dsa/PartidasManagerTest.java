@@ -15,10 +15,11 @@ public class PartidasManagerTest {
 
     @Before
     public void setUp(){
+
         pm = (PartidasManager) new PartidasManagerImpl();
-        pm.addPartida(0,1,5,0,0);
-        pm.addPartida(1,1,50,1,1);
-        pm.addPartida(2,2,100,2,2);
+        pm.addPartida(1,5,0,0);
+        pm.addPartida(1,50,1,1);
+        pm.addPartida(2,100,2,2);
     }
 
     @After

@@ -78,7 +78,7 @@ public class JugadorManagerImpl implements JugadorManager{
     }
 
     @Override
-    public Jugador searchJugador(String nombreJugador, String passwordJugador) {
+    public Jugador searchJugador(String nombreJugador, String passwordJugador) { //LOGIN
         logger.info("getJugador("+nombreJugador+", "+passwordJugador+")");
         for (Jugador j: this.jugadores){
             if (j.getNombre().equals(nombreJugador)){

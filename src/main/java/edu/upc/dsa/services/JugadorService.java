@@ -113,7 +113,7 @@ public class JugadorService {
     }
 
 
-    @GET
+    @GET // POST aquest ha de ser un login i no t'he sentit que hem retorni entity
     @ApiOperation(value = "search un Jugador", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
