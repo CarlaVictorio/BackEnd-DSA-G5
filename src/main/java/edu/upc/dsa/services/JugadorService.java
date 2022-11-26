@@ -113,18 +113,20 @@ public class JugadorService {
     }
 
 
-    @GET // POST aquest ha de ser un login i no t'he sentit que hem retorni entity
-    @ApiOperation(value = "search un Jugador", notes = "hola")
+    @POST
+    @ApiOperation(value = "logIn Jugador", notes = "hola")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
-            @ApiResponse(code = 404, message = "Jugador not found")
-    })
-    @Path("/{nombre}/{password}")
-    @Produces(MediaType.APPLICATION_JSON)
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Validation Error")
 
-    public Response searchJugador(@PathParam("nombre") String nombre, @PathParam("password") String password) {
-        Jugador j = this.jm.searchJugador(nombre, password);
-        if (j == null) return Response.status(404).build();
-        else  return Response.status(201).entity(j).build();
+    })
+    @Path("/Login")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response Login(String nombre, String password) {
+        if (nombre==null || password==null) {
+            return Response.status(500).build();
+        }
+        this.jm.logInJugador(nombre, password);
+        return Response.status(201).build();
     }
 }

@@ -23,6 +23,17 @@ public class JugadorManagerImpl implements JugadorManager{
         logger.info("size " + s);
         return s;
     }
+    public Jugador searchJugador(String nombre, String password) {
+        logger.info("getJugador("+nombre+", "+password+")");
+        for (Jugador j: this.jugadores){
+            if (j.getNombre().equals(nombre) && j.getPassword().equals(password)){
+                logger.info("getJugador("+nombre+", "+password+"): "+j);
+                return j;
+            }
+        }
+        logger.warn("not found "+nombre);
+        return null;
+    }
 
     JugadorManagerImpl(){this.jugadores=new LinkedList<>();}
     @Override
@@ -78,15 +89,13 @@ public class JugadorManagerImpl implements JugadorManager{
     }
 
     @Override
-    public Jugador searchJugador(String nombreJugador, String passwordJugador) { //LOGIN
-        logger.info("getJugador("+nombreJugador+", "+passwordJugador+")");
-        for (Jugador j: this.jugadores){
-            if (j.getNombre().equals(nombreJugador)){
-                logger.info("getJugador("+nombreJugador+", "+passwordJugador+"): "+j);
-                return j;
-            }
+    public void logInJugador(String nombreJugador, String passwordJugador) { //LOGIN
+        logger.info("logInJugador("+nombreJugador+", "+passwordJugador+")");
+        Jugador jugador = searchJugador(nombreJugador, passwordJugador);
+        if (jugador != null){
+            logger.info(jugador+" rebut!");
+        }else{
+            logger.warn("not found "+jugador);
         }
-        logger.warn("not found "+nombreJugador);
-        return null;
     }
 }

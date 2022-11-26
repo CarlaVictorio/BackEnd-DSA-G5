@@ -7,7 +7,7 @@ import java.util.List;
 public interface JugadorManager {
     public List<Jugador> getAllJugadores ();
     public Jugador getJugador (String id);
-    public Jugador searchJugador (String nombreJugador, String passwordJugador);
+    public void logInJugador (String nombreJugador, String passwordJugador);
     public Jugador addJugador (String nombre, String contraseña);
     public  void deleteJugador(String id);
     public Jugador putJugador(Jugador jugador);
