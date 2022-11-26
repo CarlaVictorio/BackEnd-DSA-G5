@@ -122,7 +122,7 @@ public class JugadorService {
     })
     @Path("/Login")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response Login(String nombre, String password) {
+    public Response Login(@PathParam("nombre")String nombre,@PathParam("password") String password) {
         if (nombre==null || password==null) {
             return Response.status(500).build();
         }
