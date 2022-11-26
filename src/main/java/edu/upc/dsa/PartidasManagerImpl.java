@@ -12,7 +12,7 @@ public class PartidasManagerImpl implements PartidasManager {
     private static PartidasManager instance;
     protected List<Partida> partidasList;
 
-    final static Logger logger = Logger.getLogger(String.valueOf(PartidasManagerImpl.class)); //està bé???
+    final static Logger logger = Logger.getLogger(PartidasManagerImpl.class);
     PartidasManagerImpl() {
         this.partidasList = new LinkedList<>();
     }
