@@ -89,4 +89,19 @@ public class IngredienteManagerImpl implements IngredienteManager {
         }
     }
 
+    public Ingrediente putIngrediente (Ingrediente ingrediente) {
+        Ingrediente i = this.getIngrediente(ingrediente.getIdIngrediente());
+        if (i!=null){
+            logger.info(i+" rebut!");
+            i.setNombreIngrediente(ingrediente.getNombreIngrediente());
+            i.setIdIngrediente(ingrediente.getIdIngrediente());
+            i.setNivelDesbloqueoIngrediente(ingrediente.getNivelDesbloqueoIngrediente());
+            i.setPrecioIngrediente(ingrediente.getPrecioIngrediente());
+            logger.info(i+" update");
+        } else {
+            logger.warn("not found "+i);
+        }
+        return i;
+    }
+
 }

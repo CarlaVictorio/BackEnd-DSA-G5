@@ -11,5 +11,6 @@ public interface IngredienteManager {
     public void deleteIngrediente(String idIngrediente);
     public int getNivelDesbloqueoIngrediente(String idIngrediente);
     public double getPrecioIngrediente(String idIngrediente);
+    public Ingrediente putIngrediente (Ingrediente ingrediente);
 
 }
