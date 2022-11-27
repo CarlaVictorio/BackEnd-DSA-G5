@@ -4,6 +4,8 @@ import edu.upc.dsa.models.Jugador;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import edu.upc.dsa.models.LogIn;
 import org.apache.log4j.Logger;
 
 public class JugadorManagerImpl implements JugadorManager{
@@ -89,13 +91,15 @@ public class JugadorManagerImpl implements JugadorManager{
     }
 
     @Override
-    public void logInJugador(String nombreJugador, String passwordJugador) { //LOGIN
-        logger.info("logInJugador("+nombreJugador+", "+passwordJugador+")");
-        Jugador jugador = searchJugador(nombreJugador, passwordJugador);
+    public Jugador logInJugador(LogIn logInParams) { //LOGIN
+        logger.info("logInJugador("+logInParams.getUsername()+", "+logInParams.getPassword()+")");
+        Jugador jugador = searchJugador(logInParams.getUsername(), logInParams.getPassword());
         if (jugador != null){
             logger.info(jugador+" rebut!");
+            return jugador;
         }else{
             logger.warn("not found "+jugador);
+            return null;
         }
     }
 }

@@ -4,6 +4,7 @@ import edu.upc.dsa.JugadorManager;
 import edu.upc.dsa.JugadorManagerImpl;
 import edu.upc.dsa.PartidasManagerImpl;
 import edu.upc.dsa.models.Jugador;
+import edu.upc.dsa.models.LogIn;
 import edu.upc.dsa.models.Partida;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -117,16 +118,17 @@ public class JugadorService {
     @ApiOperation(value = "logIn Jugador", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
-            @ApiResponse(code = 500, message = "Validation Error")
+            @ApiResponse(code = 404, message = "Jugador not found")
 
     })
     @Path("/Login")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response Login(@PathParam("nombre")String nombre,@PathParam("password") String password) {
-        if (nombre==null || password==null) {
-            return Response.status(500).build();
+    public Response Login(LogIn loginpar) {
+        Jugador j = this.jm.logInJugador(loginpar);
+        if (j==null) {
+            return Response.status(404).build();
+        } else {
+            return Response.status(201).build();
         }
-        this.jm.logInJugador(nombre, password);
-        return Response.status(201).build();
     }
 }
