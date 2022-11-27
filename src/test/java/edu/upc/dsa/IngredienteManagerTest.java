@@ -42,7 +42,7 @@ public class IngredienteManagerTest {
         Assert.assertEquals(0, testIngredientes.get(2).getPrecioIngrediente());
     }
     @Test
-    public void testDeletedIngrediente(){
+    public void testDeleteIngrediente(){
         List<Ingrediente> testIngredientes = im.getAllIngredientes();
         Ingrediente testIngrediente = testIngredientes.get(0);
         im.deleteIngrediente(testIngrediente.getIdIngrediente());

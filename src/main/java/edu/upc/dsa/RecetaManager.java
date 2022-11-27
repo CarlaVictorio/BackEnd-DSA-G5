@@ -12,4 +12,6 @@ public interface RecetaManager {
     public int getNumPaso(String idReceta);
     public double getPremioDinero(String idReceta);
     public int getPremioPuntos(String idReceta);
+
+    public Receta putReceta (Receta receta);
 }

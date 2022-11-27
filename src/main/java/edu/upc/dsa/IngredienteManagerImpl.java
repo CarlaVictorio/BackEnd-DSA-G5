@@ -88,7 +88,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
             return i.getPrecioIngrediente();
         }
     }
-
+    @Override
     public Ingrediente putIngrediente (Ingrediente ingrediente) {
         Ingrediente i = this.getIngrediente(ingrediente.getIdIngrediente());
         if (i!=null){
