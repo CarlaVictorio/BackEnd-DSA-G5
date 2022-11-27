@@ -74,7 +74,7 @@ public class JugadorService {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response Registre(LogIn loginpar) {
-        if (loginpar.getNombre()==null || loginpar.getPassword()==null) {
+        if (loginpar.getNombre()=="" || loginpar.getPassword()=="") {
             return Response.status(500).build();
         }
         Jugador j = this.jm.addJugador(loginpar.getNombre(), loginpar.getPassword());
