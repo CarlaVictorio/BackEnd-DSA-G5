@@ -65,20 +65,23 @@ public class JugadorService {
 
 
     @POST
-    @ApiOperation(value = "create a new Jugador", notes = "hola")
+    @ApiOperation(value = "registrar un nuevo Jugador", notes = "hola")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response=Jugador.class),
-            @ApiResponse(code = 500, message = "Validation Error")
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Validation Error"),
 
     })
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response postJugador(Jugador jugador) {
-        if (jugador.getNombre()==null || jugador.getPassword()==null) {
+    public Response Registre(LogIn loginpar) {
+        if (loginpar.getNombre()==null || loginpar.getPassword()==null) {
             return Response.status(500).build();
         }
-        this.jm.addJugador(jugador.getNombre(), jugador.getPassword());
-        return Response.status(201).entity(jugador).build();
+        Jugador j = this.jm.addJugador(loginpar.getNombre(), loginpar.getPassword());
+        if (j!=null){
+            return Response.status(201).build();
+        }
+        return Response.status(500).build();
     }
 
 

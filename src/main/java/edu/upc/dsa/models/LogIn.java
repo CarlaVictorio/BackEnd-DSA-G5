@@ -1,19 +1,19 @@
 package edu.upc.dsa.models;
 
 public class LogIn {
-    String username;
+    String nombre;
     String password;
 
     public LogIn() {}
     public LogIn(String name, String pass)
     {
-        this.username =name;
+        this.nombre =name;
         this.password =pass;
     }
 
-    public String getUsername()
+    public String getNombre()
     {
-        return username;
+        return nombre;
     }
 
     public String getPassword()
@@ -21,8 +21,8 @@ public class LogIn {
         return password;
     }
 
-    public void setUsername(String username){
-        this.username = username;
+    public void setNombre(String username){
+        this.nombre = username;
     }
 
     public void setPassword(String password)
