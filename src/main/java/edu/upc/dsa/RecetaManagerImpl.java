@@ -100,4 +100,21 @@ public class RecetaManagerImpl implements RecetaManager{
             return r.getPremioPuntos();
         }
     }
+
+    @Override
+    public Receta putReceta (Receta receta) {
+        Receta r = this.getReceta(receta.getIdReceta());
+        if (r!=null){
+            logger.info(r+" rebut!");
+            r.setNombreReceta(receta.getNombreReceta());
+            r.setIdReceta(receta.getIdReceta());
+            r.setNumPaso(receta.getNumPaso());
+            r.setPremioDinero(receta.getPremioDinero());
+            r.setPremioPuntos(receta.getPremioPuntos());
+            logger.info(r+" update");
+        } else {
+            logger.warn("not found "+r);
+        }
+        return r;
+    }
 }

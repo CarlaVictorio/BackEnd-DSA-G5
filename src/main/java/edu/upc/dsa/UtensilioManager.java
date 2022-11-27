@@ -12,4 +12,6 @@ public interface UtensilioManager {
     public int getTiempoNivel1(String idUtensilio);
     public int getTiempoNivel2(String idUtensilio);
     public int getTiempoNivel3(String idUtensilio);
+
+    public Utensilio putUtensilio (Utensilio utensilio);
 }

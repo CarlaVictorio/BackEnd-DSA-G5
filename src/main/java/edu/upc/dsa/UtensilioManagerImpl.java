@@ -100,6 +100,22 @@ public class UtensilioManagerImpl implements UtensilioManager{
             return u.getTiempoNivel3();
         }
     }
+    @Override
+    public Utensilio putUtensilio (Utensilio utensilio) {
+        Utensilio u = this.getUtensilio(utensilio.getIdUtensilio());
+        if (u!=null){
+            logger.info(u+" rebut!");
+            u.setNombreUtensilio(utensilio.getNombreUtensilio());
+            u.setIdUtensilio(utensilio.getIdUtensilio());
+            u.setTiempoNivel1(utensilio.getTiempoNivel1());
+            u.setTiempoNivel2(utensilio.getTiempoNivel2());
+            u.setTiempoNivel3(utensilio.getTiempoNivel3());
+            logger.info(u+" update");
+        } else {
+            logger.warn("not found "+u);
+        }
+        return u;
+    }
 
 
 }
