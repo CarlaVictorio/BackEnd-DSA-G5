@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.upc.dsa.models.LogIn;
+import edu.upc.dsa.models.Registro;
 import org.apache.log4j.Logger;
 
 public class JugadorManagerImpl implements JugadorManager{
@@ -104,6 +105,20 @@ public class JugadorManagerImpl implements JugadorManager{
             return jugador;
         }else{
             logger.warn("not found "+jugador);
+            return null;
+        }
+    }
+
+    @Override
+    public Jugador registroJugador(Registro registro) {
+        Jugador j = searchJugador(registro.getNombre(), registro.getPassword());
+        if (j==null){
+            Jugador jugador = new Jugador(registro.getNombre(), registro.getPassword());
+            logger.info("new Jugador " + jugador.getNombre());
+            this.jugadores.add(jugador);
+            logger.info("new Jugdor added");
+            return jugador;
+        } else {
             return null;
         }
     }
