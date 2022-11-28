@@ -84,7 +84,7 @@ public class MapaService {
     @ApiOperation(value = "delete Mapa", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
-            @ApiResponse(code = 404, message = "Ingrediente not found")
+            @ApiResponse(code = 404, message = "Mapa not found")
     })
     @Path("/deleteMapa")
     public Response deleteMapa(@PathParam("idMapa") String id) {
@@ -101,7 +101,7 @@ public class MapaService {
     @ApiOperation(value = "update Mapa", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
-            @ApiResponse(code = 404, message = "Ingrediente not found")
+            @ApiResponse(code = 404, message = "Mapa not found")
     })
     @Path("/putMapa")
     public Response putMapa(Mapa mapa) {
