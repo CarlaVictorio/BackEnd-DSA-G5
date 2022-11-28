@@ -25,11 +25,11 @@ public class UtensilioService {
 
     public UtensilioService(){
         this.um = UtensilioManagerImpl.getInstance();
-        um.addUtensilio("50","plancha",15,10,5);
-        um.addUtensilio("51","dispensadorCocacola",15,10,5);
-        um.addUtensilio("52","cafetera",15,10,5);
-        um.addUtensilio("53","dispensador",15,10,5);
-        um.addUtensilio("54","horno",15,10,5);
+        um.addUtensilio("50","Plancha",15,10,5);
+        um.addUtensilio("51","DispensadorCocacola",15,10,5);
+        um.addUtensilio("52","Cafetera",15,10,5);
+        um.addUtensilio("53","Dispensador",15,10,5);
+        um.addUtensilio("54","Horno",15,10,5);
     }
 
 

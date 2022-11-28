@@ -5,6 +5,7 @@ public class Jugador {
     String id;
     String nombre;
     String password;
+
     public Jugador() {
         this.id = RandomUtils.getId();
     }

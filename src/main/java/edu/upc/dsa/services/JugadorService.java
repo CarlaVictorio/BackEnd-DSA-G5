@@ -6,6 +6,7 @@ import edu.upc.dsa.PartidasManagerImpl;
 import edu.upc.dsa.models.Jugador;
 import edu.upc.dsa.models.LogIn;
 import edu.upc.dsa.models.Partida;
+import edu.upc.dsa.models.Registro;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -71,13 +72,13 @@ public class JugadorService {
             @ApiResponse(code = 500, message = "Validation Error"),
 
     })
-    @Path("/")
+    @Path("/Register")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response Registre(LogIn loginpar) {
-        if (loginpar.getNombre()=="" || loginpar.getPassword()=="") {
+    public Response Registre(Registro registropar) {
+        if (registropar.getNombre()=="" || registropar.getPassword()=="") {
             return Response.status(500).build();
         }
-        Jugador j = this.jm.addJugador(loginpar.getNombre(), loginpar.getPassword());
+        Jugador j = this.jm.registroJugador(registropar);
         if (j!=null){
             return Response.status(201).build();
         }

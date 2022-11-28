@@ -11,8 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
      $(document).ready(function(){
-        var url = "/dsaApp/Ingredientes/";
-        $.get(url, function (data, status) {
+        var url1 = "/dsaApp/Ingredientes/";
+        $.get(url1, function (data, status) {
                 $.each (data, function(index, element){
                    $("#ingredientesTabla tbody").append(
                         '<tr><td>' + JSON.stringify(element.name)+
@@ -24,8 +24,8 @@
         });
     });
     $(document).ready(function(){
-        var url = "/dsaApp/Utensilios/";
-        $.get(url, function (data, status) {
+        var url2 = "/dsaApp/utensilio/getAllUtensilios/";
+        $.get(url2, function (data, status) {
                 $.each (data, function(index, element){
                    $("#utensiliosTabla tbody").append(
                         '<tr><td>' + JSON.stringify(element.nombreUtensilio)+
