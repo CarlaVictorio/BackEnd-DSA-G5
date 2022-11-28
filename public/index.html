@@ -11,13 +11,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
      $(document).ready(function(){
-        var url1 = "/dsaApp/Ingredientes/";
+        var url1 = "/dsaApp/ingrediente/getAllIngredientes";
         $.get(url1, function (data, status) {
                 $.each (data, function(index, element){
                    $("#ingredientesTabla tbody").append(
-                        '<tr><td>' + JSON.stringify(element.name)+
-                        '</td><td>' + JSON.stringify(element.description)+
-                        '</td><td>' + JSON.stringify(element.language)+
+                        '<tr><td>' + JSON.stringify(element.nombreIngrediente)+
+                        '</td><td>' + JSON.stringify(element.nivelDesbloqueoIngrediente)+
+                        '</td><td>' + JSON.stringify(element.precioIngrediente)+
                         '</td></tr>'
                    );
                 });
@@ -45,31 +45,35 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <h1>Ingredientes</h1>
-        <table class="table" id="ingredientesTabla">
-            <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Nivel de desbloqueo</th>
-                <th>Precio</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <h1>Utensilios</h1>
-        <table class="table" id="utensiliosTabla">
-            <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Tiempo nivel 1</th>
-                <th>Tiempo nivel 1</th>
-                <th>Tiempo nivel 1</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="col-sm-6">
+            <h1>Ingredientes</h1>
+            <table class="table" id="ingredientesTabla">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Nivel de desbloqueo</th>
+                    <th>Precio</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <h1>Utensilios</h1>
+            <table class="table" id="utensiliosTabla">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tiempo nivel 1</th>
+                    <th>Tiempo nivel 1</th>
+                    <th>Tiempo nivel 1</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 </body>
