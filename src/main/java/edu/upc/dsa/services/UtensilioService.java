@@ -36,7 +36,7 @@ public class UtensilioService {
     @GET
     @ApiOperation(value = "get all Utensilios", notes = "hola")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response = Jugador.class, responseContainer="List"),
+            @ApiResponse(code = 201, message = "Successful", response = Utensilio.class, responseContainer="List"),
     })
     @Path("/getAllUtensilios")
     @Produces(MediaType.APPLICATION_JSON)
@@ -51,13 +51,13 @@ public class UtensilioService {
     @GET
     @ApiOperation(value = "get un Utensilio", notes = "hola")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
+            @ApiResponse(code = 201, message = "Successful", response = Utensilio.class),
             @ApiResponse(code = 404, message = "Utensilio not found")
     })
     @Path("/getUtensilio")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getJugador(@PathParam("idUtensilio") String id) {
+    public Response getUtensilio(@PathParam("idUtensilio") String id) {
         Utensilio u = this.um.getUtensilio(id);
         if (u == null) return Response.status(404).build();
         else  return Response.status(201).entity(u).build();
@@ -86,7 +86,7 @@ public class UtensilioService {
 
 
     @DELETE
-    @ApiOperation(value = "delete Jugador", notes = "hola")
+    @ApiOperation(value = "delete Utensilio", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "Utensilio not found")
