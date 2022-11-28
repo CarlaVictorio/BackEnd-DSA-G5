@@ -24,23 +24,23 @@ public class IngrdienteService {
     public IngrdienteService(){
         this.im = IngredienteManagerImpl.getInstance();
         im.addIngrediente("1","MasaPizza",1,0);
-        im.addIngrediente("1","Mozarella",1,0);
-        im.addIngrediente("1","SalsaTomate",1,0);
-        im.addIngrediente("1","Vino",1,0);
-        im.addIngrediente("1","Jamon",2,0);
-        im.addIngrediente("1","Pepperoni",2,0);
-        im.addIngrediente("1","Piña",3,0);
-        im.addIngrediente("1","Champiñones",3,0);
-        im.addIngrediente("1","Rucula",3,0);
-        im.addIngrediente("1","Hamburguesa",1,1);
-        im.addIngrediente("1","Lechuga",1,1);
-        im.addIngrediente("1","Cocacola",1,1);
-        im.addIngrediente("1","PanHamburguesa",1,1);
-        im.addIngrediente("1","Tomate",1,1);
-        im.addIngrediente("1","Bacon",2,1);
-        im.addIngrediente("1","Queso",2,1);
-        im.addIngrediente("1","Frankfurt",3,1);
-        im.addIngrediente("1","PanFrankfurt",3,1);
+        im.addIngrediente("2","Mozarella",1,0);
+        im.addIngrediente("3","SalsaTomate",1,0);
+        im.addIngrediente("4","Vino",1,0);
+        im.addIngrediente("5","Jamon",2,0);
+        im.addIngrediente("6","Pepperoni",2,0);
+        im.addIngrediente("7","Piña",3,0);
+        im.addIngrediente("8","Champiñones",3,0);
+        im.addIngrediente("9","Rucula",3,0);
+        im.addIngrediente("10","Hamburguesa",1,1);
+        im.addIngrediente("11","Lechuga",1,1);
+        im.addIngrediente("12","Cocacola",1,1);
+        im.addIngrediente("13","PanHamburguesa",1,1);
+        im.addIngrediente("14","Tomate",1,1);
+        im.addIngrediente("15","Bacon",2,1);
+        im.addIngrediente("16","Queso",2,1);
+        im.addIngrediente("17","Frankfurt",3,1);
+        im.addIngrediente("18","PanFrankfurt",3,1);
     }
 
 

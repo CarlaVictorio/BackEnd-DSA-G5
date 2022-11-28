@@ -25,6 +25,11 @@ public class RecetaService {
 
     public RecetaService(){
         this.rm = RecetaManagerImpl.getInstance();
+        this.rm.addReceta("0","hamurguesa",1,50,5);
+        this.rm.addReceta("0","hamurguesa",2,100,10);
+        this.rm.addReceta("1","hamburguesa_lechuga",1,50,5);
+        this.rm.addReceta("1","hamburguesa_lechuga",2,100,10);
+        this.rm.addReceta("1","hamburguesa_lechuga",3,150,15);
     }
 
 
@@ -38,7 +43,7 @@ public class RecetaService {
 
     public Response getAllRecetas(){
         List<Receta> listReceta = this.rm.getAllRecetas();
-        GenericEntity<List<Receta>> entity = new GenericEntity<List<Receta>>((List<Receta>) listReceta) {};
+        GenericEntity<List<Receta>> entity = new GenericEntity<List<Receta>>(listReceta) {};
         return Response.status(201).entity(entity).build()  ;
     }
 

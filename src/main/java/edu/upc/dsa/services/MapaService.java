@@ -25,6 +25,10 @@ public class MapaService {
 
     public MapaService(){
         this.mm = MapaManagerImpl.getInstance();
+        this.mm.postMapa("0","Pizzeria",3);
+        this.mm.postMapa("1","Hamburgeseria",3);
+        this.mm.postMapa("2","Pasteleria",3);
+        this.mm.postMapa("3","Calle",3);
     }
 
 
