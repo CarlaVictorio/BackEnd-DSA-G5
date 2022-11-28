@@ -1,10 +1,9 @@
 package edu.upc.dsa;
 
-import edu.upc.dsa.models.Ingrediente;
 import edu.upc.dsa.models.Mapa;
 
 import java.util.HashMap;
-import java.util.List;
+
 import org.apache.log4j.Logger;
 
 public class MapaManagerImpl implements MapaManager{
@@ -48,10 +47,11 @@ public class MapaManagerImpl implements MapaManager{
     }
 
     @Override
-    public void postMapa(String idMapa, String nombreMapa, int numNivelesMapa) {
+    public Mapa postMapa(String idMapa, String nombreMapa, int numNivelesMapa) {
         Mapa mapa=new Mapa(idMapa,nombreMapa,numNivelesMapa);
         listMapas.put(idMapa,mapa);
         logger.info("Mapa añadido: "+mapa);
+        return mapa;
     }
 
     @Override
@@ -66,15 +66,18 @@ public class MapaManagerImpl implements MapaManager{
     }
 
     @Override
-    public void putMapa(String idMapa, String nombreMapa, int numNivelesMapa) {
+    public Mapa putMapa(String idMapa, String nombreMapa, int numNivelesMapa) {
         Mapa mapa=listMapas.get(idMapa);
         mapa.setNombre(nombreMapa);
         mapa.setNumNiveles(numNivelesMapa);
         if(mapa!=null){
             logger.info("Mapa actualizado: "+mapa);
+            return mapa;
         }
         else{
             logger.warn("Mapa no encontrado");
+            return null;
         }
+
     }
 }
