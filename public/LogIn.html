@@ -40,6 +40,8 @@
             {
                 nombre: $("#userRegister").val(),
                 password: $("#passRegister").val(),
+                email: $("#emailRegister").val(),
+                pais: $("#paisRegister").val(),
             }
             var URL = "/dsaApp/jugador/Register";
             $.post(
@@ -88,6 +90,8 @@
                 <div class="modal-body">
                   <p>Nombre de usuario: <input type="text" id="userRegister"></p>
                   <p>Contrasenya: <input type="password" id="passRegister"></p>
+                  <p>Email: <input type="text" id="emailRegister"></p>
+                  <p>País: <input type="text" id="paisRegister"></p>
                   <button id="buttonGuardar" class="btn btn-info" data-dismiss="modal">Guardar</button>
                 </div>
               </div>

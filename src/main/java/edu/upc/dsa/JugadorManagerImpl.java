@@ -58,10 +58,10 @@ public class JugadorManagerImpl implements JugadorManager{
     }
 
     @Override
-    public Jugador addJugador(String nombre, String password) {
+    public Jugador addJugador(String nombre, String password, String email, String pais) {
         Jugador j = searchJugador(nombre, password);
         if (j==null){
-            Jugador jugador = new Jugador(nombre,password);
+            Jugador jugador = new Jugador(nombre,password,email,pais);
             logger.info("new Jugador " + jugador.getNombre());
             this.jugadores.add(jugador);
             logger.info("new Jugdor added");
@@ -113,7 +113,7 @@ public class JugadorManagerImpl implements JugadorManager{
     public Jugador registroJugador(Registro registro) {
         Jugador j = searchJugador(registro.getNombre(), registro.getPassword());
         if (j==null){
-            Jugador jugador = new Jugador(registro.getNombre(), registro.getPassword());
+            Jugador jugador = new Jugador(registro.getNombre(), registro.getPassword(), registro.getEmail(), registro.getPais());
             logger.info("new Jugador " + jugador.getNombre());
             this.jugadores.add(jugador);
             logger.info("new Jugdor added");

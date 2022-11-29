@@ -5,15 +5,35 @@ public class Jugador {
     String id;
     String nombre;
     String password;
+    String email;
+    String pais;
 
     public Jugador() {
         this.id = RandomUtils.getId();
     }
 
-    public Jugador (String nombre, String password) {
+    public Jugador (String nombre, String password, String email, String pais) {
         this();
         this.setNombre(nombre);
         this.setPassword(password);
+        this.setEmail(email);
+        this.setPais(pais);
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     public String  getId() {
