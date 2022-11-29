@@ -47,8 +47,8 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }
 
     @Override
-    public Ingrediente addIngrediente(String idIngrediente, String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
-        Ingrediente i = new Ingrediente(idIngrediente, nombreIngrediente,nivelDesbloqueoIngrediente, precioIngrediente);
+    public Ingrediente addIngrediente(String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
+        Ingrediente i = new Ingrediente(nombreIngrediente,nivelDesbloqueoIngrediente, precioIngrediente);
         logger.info("new Ingrediente " + i);
         this.ingredientes.add(i);
         logger.info("Se ha añadido un Ingrediente");

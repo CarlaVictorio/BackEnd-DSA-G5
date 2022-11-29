@@ -46,8 +46,8 @@ public class RecetaManagerImpl implements RecetaManager{
     }
 
     @Override
-    public Receta addReceta(String idReceta, String nombre, int numPaso, double premioDinero, int premioPuntos) {
-        Receta r = new Receta(idReceta, nombre,numPaso, premioDinero, premioPuntos);
+    public Receta addReceta(String nombre, int numPaso, double premioDinero, int premioPuntos) {
+        Receta r = new Receta(nombre,numPaso, premioDinero, premioPuntos);
         logger.info("new Receta " + r);
         this.recetas.add(r);
         logger.info("Se ha añadido una Receta");

@@ -18,10 +18,9 @@ public class MapaManagerTest {
     @Before
     public void setUp(){
         mm=new MapaManagerImpl();
-        mm.postMapa("1","Hamburgueseria",3);
-        mm.postMapa("2","Pizzeria",4);
-        mm.postMapa("3","Pasteleria",5);
-
+        mm.postMapa("Hamburgueseria",3);
+        mm.postMapa("Pizzeria",4);
+        mm.postMapa("Pasteleria",5);
 
     }
 

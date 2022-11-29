@@ -46,8 +46,8 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public Utensilio addUtensilio(String idUtensilio, String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
-        Utensilio u = new Utensilio(idUtensilio, nombreUtensilio,tiempoNivel1, tiempoNivel2, tiempoNivel3);
+    public Utensilio addUtensilio(String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
+        Utensilio u = new Utensilio(nombreUtensilio,tiempoNivel1, tiempoNivel2, tiempoNivel3);
         logger.info("new Utensilio " + u);
         this.utensilios.add(u);
         logger.info("Se ha añadido un Utensilio");

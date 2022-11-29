@@ -15,9 +15,9 @@ public class IngredienteManagerTest {
     @Before
     public void setUp(){
         im = (IngredienteManager) new JugadorManagerImpl();
-        im.addIngrediente("1","masa pizza",1, 0 );
-        im.addIngrediente("2","mozarella", 1, 0);
-        im.addIngrediente("5","jamon", 2, 0);
+        im.addIngrediente("masa pizza",1, 0 );
+        im.addIngrediente("mozarella", 1, 0);
+        im.addIngrediente("jamon", 2, 0);
     }
 
     @After

@@ -1,21 +1,23 @@
 package edu.upc.dsa.models;
 
+import edu.upc.dsa.util.RandomUtils;
+
 public class Utensilio {
     String idUtensilio;
     String nombreUtensilio;
     int tiempoNivel1;
     int tiempoNivel2;
     int tiempoNivel3;
-
     public Utensilio() {
+        this.idUtensilio = RandomUtils.getId();
     }
 
-    public Utensilio(String idUtensilio, String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
-        this.idUtensilio = idUtensilio;
-        this.nombreUtensilio = nombreUtensilio;
-        this.tiempoNivel1 = tiempoNivel1;
-        this.tiempoNivel2 = tiempoNivel2;
-        this.tiempoNivel3 = tiempoNivel3;
+    public Utensilio (String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
+        this();
+        this.setNombreUtensilio(nombreUtensilio);
+        this.setTiempoNivel1(tiempoNivel1);
+        this.setTiempoNivel2(tiempoNivel2);
+        this.setTiempoNivel3(tiempoNivel3);
     }
 
     public String getIdUtensilio() {

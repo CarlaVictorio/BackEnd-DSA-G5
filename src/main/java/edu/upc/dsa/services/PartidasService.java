@@ -23,9 +23,9 @@ public class PartidasService {
     public PartidasService(){
         this.pm = PartidasManagerImpl.getInstance();
         if(pm.size()==0){
-            this.pm.addPartida("0",1,5,"0","0");
-            this.pm.addPartida("1",1,50,"1","1");
-            this.pm.addPartida("2",2,100,"2","2");
+            this.pm.addPartida(1,5,"0","0");
+            this.pm.addPartida(1,50,"1","1");
+            this.pm.addPartida(2,100,"2","2");
         }
     }
 

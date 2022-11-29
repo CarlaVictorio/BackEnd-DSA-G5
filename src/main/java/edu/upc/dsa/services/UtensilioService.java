@@ -25,11 +25,11 @@ public class UtensilioService {
 
     public UtensilioService(){
         this.um = UtensilioManagerImpl.getInstance();
-        um.addUtensilio("50","Plancha",15,10,5);
-        um.addUtensilio("51","DispensadorCocacola",15,10,5);
-        um.addUtensilio("52","Cafetera",15,10,5);
-        um.addUtensilio("53","Dispensador",15,10,5);
-        um.addUtensilio("54","Horno",15,10,5);
+        um.addUtensilio("Plancha",15,10,5);
+        um.addUtensilio("DispensadorCocacola",15,10,5);
+        um.addUtensilio("Cafetera",15,10,5);
+        um.addUtensilio("Dispensador",15,10,5);
+        um.addUtensilio("Horno",15,10,5);
     }
 
 
@@ -77,7 +77,7 @@ public class UtensilioService {
         if (utensilio.getNombreUtensilio()=="" || utensilio.getTiempoNivel1()==0|| utensilio.getTiempoNivel2()==0||utensilio.getTiempoNivel3()==0) {
             return Response.status(500).build();
         }
-        Utensilio u = this.um.addUtensilio(RandomUtils.getId(),utensilio.getNombreUtensilio(),utensilio.getTiempoNivel1(),utensilio.getTiempoNivel2(),utensilio.getTiempoNivel3());
+        Utensilio u = this.um.addUtensilio(utensilio.getNombreUtensilio(),utensilio.getTiempoNivel1(),utensilio.getTiempoNivel2(),utensilio.getTiempoNivel3());
         if (u!=null){
             return Response.status(201).build();
         }

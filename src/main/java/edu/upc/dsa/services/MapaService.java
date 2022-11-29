@@ -25,10 +25,10 @@ public class MapaService {
 
     public MapaService(){
         this.mm = MapaManagerImpl.getInstance();
-        this.mm.postMapa("0","Pizzeria",3);
-        this.mm.postMapa("1","Hamburgeseria",3);
-        this.mm.postMapa("2","Pasteleria",3);
-        this.mm.postMapa("3","Calle",3);
+        this.mm.postMapa("Pizzeria",3);
+        this.mm.postMapa("Hamburgeseria",3);
+        this.mm.postMapa("Pasteleria",3);
+        this.mm.postMapa("Calle",3);
     }
 
 
@@ -76,7 +76,7 @@ public class MapaService {
         if (mapa.getNombre()=="" || mapa.getNumNiveles()==0) {
             return Response.status(500).build();
         }
-        Mapa m = this.mm.postMapa(RandomUtils.getId(),mapa.getNombre(),mapa.getNumNiveles());
+        Mapa m = this.mm.postMapa(mapa.getNombre(),mapa.getNumNiveles());
         if (m!=null){
             return Response.status(201).build();
         }

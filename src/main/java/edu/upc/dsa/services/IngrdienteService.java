@@ -23,24 +23,24 @@ public class IngrdienteService {
 
     public IngrdienteService(){
         this.im = IngredienteManagerImpl.getInstance();
-        im.addIngrediente("1","MasaPizza",1,0);
-        im.addIngrediente("2","Mozarella",1,0);
-        im.addIngrediente("3","SalsaTomate",1,0);
-        im.addIngrediente("4","Vino",1,0);
-        im.addIngrediente("5","Jamon",2,0);
-        im.addIngrediente("6","Pepperoni",2,0);
-        im.addIngrediente("7","Piña",3,0);
-        im.addIngrediente("8","Champiñones",3,0);
-        im.addIngrediente("9","Rucula",3,0);
-        im.addIngrediente("10","Hamburguesa",1,1);
-        im.addIngrediente("11","Lechuga",1,1);
-        im.addIngrediente("12","Cocacola",1,1);
-        im.addIngrediente("13","PanHamburguesa",1,1);
-        im.addIngrediente("14","Tomate",1,1);
-        im.addIngrediente("15","Bacon",2,1);
-        im.addIngrediente("16","Queso",2,1);
-        im.addIngrediente("17","Frankfurt",3,1);
-        im.addIngrediente("18","PanFrankfurt",3,1);
+        im.addIngrediente("MasaPizza",1,0);
+        im.addIngrediente("Mozarella",1,0);
+        im.addIngrediente("SalsaTomate",1,0);
+        im.addIngrediente("Vino",1,0);
+        im.addIngrediente("Jamon",2,0);
+        im.addIngrediente("Pepperoni",2,0);
+        im.addIngrediente("Piña",3,0);
+        im.addIngrediente("Champiñones",3,0);
+        im.addIngrediente("Rucula",3,0);
+        im.addIngrediente("Hamburguesa",1,1);
+        im.addIngrediente("Lechuga",1,1);
+        im.addIngrediente("Cocacola",1,1);
+        im.addIngrediente("PanHamburguesa",1,1);
+        im.addIngrediente("Tomate",1,1);
+        im.addIngrediente("Bacon",2,1);
+        im.addIngrediente("Queso",2,1);
+        im.addIngrediente("Frankfurt",3,1);
+        im.addIngrediente("PanFrankfurt",3,1);
     }
 
 
@@ -88,7 +88,7 @@ public class IngrdienteService {
         if (ingrediente.getNombreIngrediente()=="" || ingrediente.getNivelDesbloqueoIngrediente()==0) {
             return Response.status(500).build();
         }
-        Ingrediente i = this.im.addIngrediente(RandomUtils.getId(),ingrediente.getNombreIngrediente(),ingrediente.getNivelDesbloqueoIngrediente(),ingrediente.getPrecioIngrediente());
+        Ingrediente i = this.im.addIngrediente(ingrediente.getNombreIngrediente(),ingrediente.getNivelDesbloqueoIngrediente(),ingrediente.getPrecioIngrediente());
         if (i!=null){
             return Response.status(201).build();
         }

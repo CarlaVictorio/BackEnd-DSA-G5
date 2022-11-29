@@ -24,34 +24,34 @@ public class JugadorManagerTest {
     @Test
     public void testAddJugador(){
         List<Jugador> testJugadores = jm.getAllJugadores();
-        Assert.assertEquals("Juan", testJugadores.get(0).getNombre());
-        Assert.assertEquals("1111", testJugadores.get(0).getPassword());
+        Assert.assertEquals("Juan", testJugadores.get(0).getNombreJugador());
+        Assert.assertEquals("1111", testJugadores.get(0).getPasswordJugador());
 
-        Assert.assertEquals("Victoria", testJugadores.get(1).getNombre());
-        Assert.assertEquals("2222", testJugadores.get(1).getPassword());
+        Assert.assertEquals("Victoria", testJugadores.get(1).getNombreJugador());
+        Assert.assertEquals("2222", testJugadores.get(1).getPasswordJugador());
 
-        Assert.assertEquals("Maria", testJugadores.get(2).getNombre());
-        Assert.assertEquals("3333", testJugadores.get(2).getPassword());
+        Assert.assertEquals("Maria", testJugadores.get(2).getNombreJugador());
+        Assert.assertEquals("3333", testJugadores.get(2).getPasswordJugador());
     }
     @Test
     public void testDeletedJugador(){
         List<Jugador> testJugadores = jm.getAllJugadores();
         Jugador testJugador = testJugadores.get(0);
-        jm.deleteJugador(testJugador.getId());
-        Assert.assertEquals("Victoria", testJugadores.get(0).getNombre());
-        Assert.assertEquals("2222", testJugadores.get(0).getPassword());
+        jm.deleteJugador(testJugador.getIdJugador());
+        Assert.assertEquals("Victoria", testJugadores.get(0).getNombreJugador());
+        Assert.assertEquals("2222", testJugadores.get(0).getPasswordJugador());
 
-        Assert.assertEquals("Maria", testJugadores.get(1).getNombre());
-        Assert.assertEquals("3333", testJugadores.get(1).getPassword());
+        Assert.assertEquals("Maria", testJugadores.get(1).getNombreJugador());
+        Assert.assertEquals("3333", testJugadores.get(1).getPasswordJugador());
     }
     @Test
     public void testPutJugador (){
         List<Jugador> testJugadores = jm.getAllJugadores();
         Jugador testJugador = testJugadores.get(1);
-        testJugador.setPassword("1212");
+        testJugador.setPasswordJugador("1212");
         Jugador jugador = jm.putJugador(testJugador);
 
-        Assert.assertEquals(jugador.getNombre(), jm.getAllJugadores().get(1).getNombre());
-        Assert.assertEquals(jugador.getPassword(), jm.getAllJugadores().get(1).getPassword());
+        Assert.assertEquals(jugador.getNombreJugador(), jm.getAllJugadores().get(1).getNombreJugador());
+        Assert.assertEquals(jugador.getPasswordJugador(), jm.getAllJugadores().get(1).getPasswordJugador());
     }
 }

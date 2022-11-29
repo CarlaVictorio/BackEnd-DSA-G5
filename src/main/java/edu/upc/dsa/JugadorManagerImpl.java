@@ -29,7 +29,7 @@ public class JugadorManagerImpl implements JugadorManager{
     public Jugador searchJugador(String nombre, String password) {
         logger.info("getJugador("+nombre+", "+password+")");
         for (Jugador j: this.jugadores){
-            if (j.getNombre().equals(nombre) && j.getPassword().equals(password)){
+            if (j.getNombreJugador().equals(nombre) && j.getPasswordJugador().equals(password)){
                 logger.info("getJugador("+nombre+", "+password+"): "+j);
                 return j;
             }
@@ -48,7 +48,7 @@ public class JugadorManagerImpl implements JugadorManager{
     public Jugador getJugador(String id) {
         logger.info("getJugador("+id+")");
         for (Jugador j: this.jugadores){
-            if (j.getId().equals(id)){
+            if (j.getIdJugador().equals(id)){
                 logger.info("getJugador("+id+"): "+j);
                 return j;
             }
@@ -62,7 +62,7 @@ public class JugadorManagerImpl implements JugadorManager{
         Jugador j = searchJugador(nombre, password);
         if (j==null){
             Jugador jugador = new Jugador(nombre,password,email,pais);
-            logger.info("new Jugador " + jugador.getNombre());
+            logger.info("new Jugador " + jugador.getNombreJugador());
             this.jugadores.add(jugador);
             logger.info("new Jugdor added");
             return jugador;
@@ -84,11 +84,11 @@ public class JugadorManagerImpl implements JugadorManager{
 
     @Override
     public Jugador putJugador(Jugador jugador) {
-        Jugador j = this.getJugador(jugador.getId());
+        Jugador j = this.getJugador(jugador.getIdJugador());
         if (j!=null){
             logger.info(j+" rebut!");
-            j.setNombre(jugador.getNombre());
-            j.setPassword(jugador.getPassword());
+            j.setNombreJugador(jugador.getNombreJugador());
+            j.setPasswordJugador(jugador.getPasswordJugador());
             logger.info(j+" update");
         } else {
             logger.warn("not found "+j);
@@ -114,7 +114,7 @@ public class JugadorManagerImpl implements JugadorManager{
         Jugador j = searchJugador(registro.getNombre(), registro.getPassword());
         if (j==null){
             Jugador jugador = new Jugador(registro.getNombre(), registro.getPassword(), registro.getEmail(), registro.getPais());
-            logger.info("new Jugador " + jugador.getNombre());
+            logger.info("new Jugador " + jugador.getNombreJugador());
             this.jugadores.add(jugador);
             logger.info("new Jugdor added");
             return jugador;

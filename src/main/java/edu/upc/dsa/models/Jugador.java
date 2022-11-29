@@ -2,62 +2,61 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 public class Jugador {
-    String id;
-    String nombre;
-    String password;
-    String email;
-    String pais;
+    String idJugador;
+    String nombreJugador;
+    String passwordJugador;
+    String emailJugador;
+    String paisJugador;
 
     public Jugador() {
-        this.id = RandomUtils.getId();
+        this.idJugador = RandomUtils.getId();
     }
 
     public Jugador (String nombre, String password, String email, String pais) {
         this();
-        this.setNombre(nombre);
-        this.setPassword(password);
-        this.setEmail(email);
-        this.setPais(pais);
+        this.setNombreJugador(nombre);
+        this.setPasswordJugador(password);
+        this.setEmailJugador(email);
+        this.setPaisJugador(pais);
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailJugador() {
+        return emailJugador;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailJugador(String email) {
+        this.emailJugador = email;
     }
 
-    public String getPais() {
-        return pais;
+    public String getPaisJugador() {
+        return paisJugador;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setPaisJugador(String pais) {
+        this.paisJugador = pais;
     }
 
-    public String  getId() {
-        return id;
+    public String  getIdJugador() {
+        return idJugador;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdJugador(String id) {
+        this.idJugador = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreJugador() {
+        return nombreJugador;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreJugador(String nombre) {
+        this.nombreJugador = nombre;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordJugador() {
+        return passwordJugador;
     }
 
-    public void setPassword(String password
-    ) {
-        this.password = password;
+    public void setPasswordJugador(String password){
+        this.passwordJugador = password;
     }
 }

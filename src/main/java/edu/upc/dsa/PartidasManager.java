@@ -11,7 +11,7 @@ public interface PartidasManager {
     public List<Partida> getAllPartidas();
     public Partida getPartida(String idPartida);
     public Partida addPartida(Partida p);
-    public Partida addPartida (String idPartida, int nivelActual, int puntos, String idMapa, String idJugador);
+    public Partida addPartida (int nivelActual, int puntos, String idMapa, String idJugador);
     public void deletePartida(String idPartida);
     public Partida updatePartida(Partida p);
     public int size();

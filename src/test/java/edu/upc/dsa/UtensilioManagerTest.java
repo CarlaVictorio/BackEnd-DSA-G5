@@ -15,9 +15,9 @@ public class UtensilioManagerTest {
     @Before
     public void setUp(){
         um = (UtensilioManager) new UtensilioManagerImpl();
-        um.addUtensilio("50","plancha", 15, 10, 5);
-        um.addUtensilio("51","dispensador cocacola", 15, 10, 5);
-        um.addUtensilio("54","horno", 15, 10, 5);
+        um.addUtensilio("plancha", 15, 10, 5);
+        um.addUtensilio("dispensador cocacola", 15, 10, 5);
+        um.addUtensilio("horno", 15, 10, 5);
     }
 
     @After

@@ -57,8 +57,8 @@ public class PartidasManagerImpl implements PartidasManager {
         logger.info("new Partida added");
         return p;
     }
-    public Partida addPartida (String idPartida, int nivelActual, int puntos, String idMapa, String idJugador){
-       return this.addPartida(new Partida(idPartida,nivelActual, puntos,idMapa,idJugador));
+    public Partida addPartida (int nivelActual, int puntos, String idMapa, String idJugador){
+       return this.addPartida(new Partida(nivelActual, puntos,idMapa,idJugador));
    }
     @Override
     public void deletePartida(String idPartida){

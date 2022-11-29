@@ -25,11 +25,11 @@ public class RecetaService {
 
     public RecetaService(){
         this.rm = RecetaManagerImpl.getInstance();
-        this.rm.addReceta("0","hamurguesa",1,50,5);
-        this.rm.addReceta("0","hamurguesa",2,100,10);
-        this.rm.addReceta("1","hamburguesa_lechuga",1,50,5);
-        this.rm.addReceta("1","hamburguesa_lechuga",2,100,10);
-        this.rm.addReceta("1","hamburguesa_lechuga",3,150,15);
+        this.rm.addReceta("hamurguesa",1,50,5);
+        this.rm.addReceta("hamurguesa",2,100,10);
+        this.rm.addReceta("hamburguesa_lechuga",1,50,5);
+        this.rm.addReceta("hamburguesa_lechuga",2,100,10);
+        this.rm.addReceta("hamburguesa_lechuga",3,150,15);
     }
 
 
@@ -77,7 +77,7 @@ public class RecetaService {
         if (receta.getNombreReceta()=="" || receta.getNumPaso()==0) {
             return Response.status(500).build();
         }
-        Receta r = this.rm.addReceta(RandomUtils.getId(),receta.getNombreReceta(),receta.getNumPaso(),receta.getPremioDinero(),receta.getPremioPuntos());
+        Receta r = this.rm.addReceta(receta.getNombreReceta(),receta.getNumPaso(),receta.getPremioDinero(),receta.getPremioPuntos());
         if (r!=null){
             return Response.status(201).build();
         }

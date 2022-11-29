@@ -1,5 +1,7 @@
 package edu.upc.dsa.models;
 
+import edu.upc.dsa.util.RandomUtils;
+
 public class Partida {
 
     String idPartida;
@@ -7,18 +9,16 @@ public class Partida {
     int puntos;
     String idMapa;
     String idJugador;
-
-    public Partida(){
-
+    public Partida() {
+        this.idPartida = RandomUtils.getId();
     }
-    public Partida (String idPartida, int nivelActual, int puntos, String idMapa, String idJugador){
+
+    public Partida (int nivelActual, int puntos, String idMapa, String idJugador) {
         this();
-        this.setIdPartida(idPartida);
         this.setNivelActual(nivelActual);
         this.setPuntos(puntos);
         this.setIdMapa(idMapa);
         this.setIdJugador(idJugador);
-
     }
     public String getIdPartida() {
         return idPartida;

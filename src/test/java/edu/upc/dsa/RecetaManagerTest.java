@@ -14,9 +14,9 @@ public class RecetaManagerTest {
     @Before
     public void setUp(){
         rm = (RecetaManager) new RecetaManagerImpl();
-        rm.addReceta("0","hamburguesa", 1, 2, 2);
-        rm.addReceta("1","hamburguesa_lechuga", 1, 2, 2);
-        rm.addReceta("2","hamburguesa_lechuga_tomate", 2, 2, 2);
+        rm.addReceta("hamburguesa", 1, 2, 2);
+        rm.addReceta("hamburguesa_lechuga", 1, 2, 2);
+        rm.addReceta("hamburguesa_lechuga_tomate", 2, 2, 2);
     }
 
     @After

@@ -47,9 +47,9 @@ public class MapaManagerImpl implements MapaManager{
     }
 
     @Override
-    public Mapa postMapa(String idMapa, String nombreMapa, int numNivelesMapa) {
-        Mapa mapa=new Mapa(idMapa,nombreMapa,numNivelesMapa);
-        listMapas.put(idMapa,mapa);
+    public Mapa postMapa(String nombreMapa, int numNivelesMapa) {
+        Mapa mapa=new Mapa(nombreMapa,numNivelesMapa);
+        listMapas.put(mapa.getId(),mapa);
         logger.info("Mapa añadido: "+mapa);
         return mapa;
     }

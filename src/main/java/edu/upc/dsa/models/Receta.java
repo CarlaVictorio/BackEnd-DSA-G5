@@ -1,5 +1,7 @@
 package edu.upc.dsa.models;
 
+import edu.upc.dsa.util.RandomUtils;
+
 public class Receta {
 
     String idReceta;
@@ -7,15 +9,16 @@ public class Receta {
     int numPaso;
     double premioDinero;
     int premioPuntos;
+    public Receta() {
+        this.idReceta = RandomUtils.getId();
+    }
 
-    public Receta(){}
-
-    public Receta(String idReceta, String nombreReceta, int numPaso, double premioDinero, int premioPuntos){
-        this.idReceta = idReceta;
-        this.nombreReceta = nombreReceta;
-        this.numPaso = numPaso;
-        this.premioDinero = premioDinero;
-        this.premioPuntos = premioPuntos;
+    public Receta (String nombreReceta, int numPaso, double premioDinero, int premioPuntos) {
+        this();
+        this.setNombreReceta(nombreReceta);
+        this.setNumPaso(numPaso);
+        this.setPremioDinero(premioDinero);
+        this.setPremioPuntos(premioPuntos);
     }
 
     public String getIdReceta() {
