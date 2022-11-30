@@ -1,8 +1,6 @@
-package edu.upc.dsa;
+package edu.upc.dsa.DAO;
 
 import edu.upc.dsa.models.Ingrediente;
-import edu.upc.dsa.models.Jugador;
-import edu.upc.dsa.models.Partida;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedList;

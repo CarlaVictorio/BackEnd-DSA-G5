@@ -1,4 +1,6 @@
 package edu.upc.dsa;
+import edu.upc.dsa.DAO.JugadorManager;
+import edu.upc.dsa.DAO.JugadorManagerImpl;
 import edu.upc.dsa.models.Jugador;
 import org.junit.After;
 import org.junit.Assert;

@@ -1,6 +1,6 @@
 package edu.upc.dsa.services;
-import edu.upc.dsa.PartidasManager;
-import edu.upc.dsa.PartidasManagerImpl;
+import edu.upc.dsa.DAO.PartidasManager;
+import edu.upc.dsa.DAO.PartidasManagerImpl;
 import edu.upc.dsa.models.Partida;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,7 +11,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
 
 @Api(value = "/partidas", description = "Endpoint to Partida Service")

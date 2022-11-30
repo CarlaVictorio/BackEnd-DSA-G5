@@ -1,7 +1,6 @@
-package edu.upc.dsa;
+package edu.upc.dsa.DAO;
 
 import edu.upc.dsa.models.Receta;
-import edu.upc.dsa.models.Utensilio;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedList;

@@ -1,6 +1,6 @@
 package edu.upc.dsa;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import edu.upc.dsa.models.Jugador;
+import edu.upc.dsa.DAO.MapaManager;
+import edu.upc.dsa.DAO.MapaManagerImpl;
 import edu.upc.dsa.models.Mapa;
 import org.junit.After;
 import org.junit.Assert;
@@ -8,8 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 public class MapaManagerTest {

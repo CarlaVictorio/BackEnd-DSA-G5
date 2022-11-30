@@ -1,12 +1,12 @@
 package edu.upc.dsa;
-import edu.upc.dsa.models.Jugador;
+import edu.upc.dsa.DAO.PartidasManager;
+import edu.upc.dsa.DAO.PartidasManagerImpl;
 import edu.upc.dsa.models.Partida;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.List;
-import static org.junit.Assert.*;
 
 
 public class PartidasManagerTest {

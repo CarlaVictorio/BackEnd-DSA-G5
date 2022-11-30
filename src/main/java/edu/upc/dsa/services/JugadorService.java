@@ -1,11 +1,9 @@
 package edu.upc.dsa.services;
 
-import edu.upc.dsa.JugadorManager;
-import edu.upc.dsa.JugadorManagerImpl;
-import edu.upc.dsa.PartidasManagerImpl;
+import edu.upc.dsa.DAO.JugadorManager;
+import edu.upc.dsa.DAO.JugadorManagerImpl;
 import edu.upc.dsa.models.Jugador;
 import edu.upc.dsa.models.LogIn;
-import edu.upc.dsa.models.Partida;
 import edu.upc.dsa.models.Registro;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
