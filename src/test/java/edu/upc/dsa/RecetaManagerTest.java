@@ -1,5 +1,7 @@
 package edu.upc.dsa;
 
+import edu.upc.dsa.DAO.RecetaManager;
+import edu.upc.dsa.DAO.RecetaManagerImpl;
 import edu.upc.dsa.models.Receta;
 import org.junit.After;
 import org.junit.Assert;

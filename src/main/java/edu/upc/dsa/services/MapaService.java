@@ -1,13 +1,12 @@
 package edu.upc.dsa.services;
 
-import edu.upc.dsa.*;
+import edu.upc.dsa.DAO.MapaManager;
+import edu.upc.dsa.DAO.MapaManagerImpl;
 import edu.upc.dsa.models.*;
-import edu.upc.dsa.util.RandomUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import io.swagger.models.auth.In;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
@@ -15,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Api(value = "/mapa", description = "Endpoint to Partida Service")
 @Path("/mapa")

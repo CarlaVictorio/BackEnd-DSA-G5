@@ -1,11 +1,8 @@
 package edu.upc.dsa.services;
 
-import edu.upc.dsa.*;
-import edu.upc.dsa.models.Jugador;
-import edu.upc.dsa.models.LogIn;
-import edu.upc.dsa.models.Partida;
+import edu.upc.dsa.DAO.UtensilioManager;
+import edu.upc.dsa.DAO.UtensilioManagerImpl;
 import edu.upc.dsa.models.Utensilio;
-import edu.upc.dsa.util.RandomUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

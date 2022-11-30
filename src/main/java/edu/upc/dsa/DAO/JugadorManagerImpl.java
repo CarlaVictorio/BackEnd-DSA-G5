@@ -1,4 +1,4 @@
-package edu.upc.dsa;
+package edu.upc.dsa.DAO;
 
 import edu.upc.dsa.models.Jugador;
 

@@ -1,6 +1,8 @@
 package edu.upc.dsa;
 
 
+import edu.upc.dsa.DAO.UtensilioManager;
+import edu.upc.dsa.DAO.UtensilioManagerImpl;
 import edu.upc.dsa.models.Utensilio;
 import org.junit.After;
 import org.junit.Assert;

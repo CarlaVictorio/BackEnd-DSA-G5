@@ -1,5 +1,7 @@
 package edu.upc.dsa;
 
+import edu.upc.dsa.DAO.IngredienteManager;
+import edu.upc.dsa.DAO.JugadorManagerImpl;
 import edu.upc.dsa.models.Ingrediente;
 import org.junit.After;
 import org.junit.Assert;
