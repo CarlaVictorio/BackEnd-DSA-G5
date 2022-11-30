@@ -14,4 +14,6 @@ public interface RecetaManager {
     public int getPremioPuntos(String idReceta);
 
     public Receta putReceta (Receta receta);
+
+    public int size();
 }

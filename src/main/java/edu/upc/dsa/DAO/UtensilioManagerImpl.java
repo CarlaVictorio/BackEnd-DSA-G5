@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 public class UtensilioManagerImpl implements UtensilioManager{
     private static UtensilioManager instance;
@@ -34,7 +35,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
         logger.info("getUtensilio("+idUtensilio+")");
 
         for (Utensilio u: this.utensilios) {
-            if (u.getIdUtensilio()==idUtensilio) {
+            if (Objects.equals(u.getIdUtensilio(), idUtensilio)) {
                 logger.info("getUtensilio("+idUtensilio+"): "+u);
 
                 return u;
@@ -114,6 +115,11 @@ public class UtensilioManagerImpl implements UtensilioManager{
             logger.warn("not found "+u);
         }
         return u;
+    }
+
+    @Override
+    public int size() {
+        return utensilios.size();
     }
 
 

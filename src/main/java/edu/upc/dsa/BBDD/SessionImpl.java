@@ -36,6 +36,8 @@ public class SessionImpl implements Session {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
         }
 
     }

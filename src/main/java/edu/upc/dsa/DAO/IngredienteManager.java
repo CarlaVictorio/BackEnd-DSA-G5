@@ -13,4 +13,5 @@ public interface IngredienteManager {
     public double getPrecioIngrediente(String idIngrediente);
     public Ingrediente putIngrediente (Ingrediente ingrediente);
 
+    public int size();
 }
