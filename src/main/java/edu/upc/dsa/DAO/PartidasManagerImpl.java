@@ -4,6 +4,8 @@ import edu.upc.dsa.models.Partida;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
+
 import org.apache.log4j.Logger;
 
 
@@ -42,7 +44,7 @@ public class PartidasManagerImpl implements PartidasManager {
         logger.info("getPartida("+idPartida+")");
 
         for (Partida p: this.partidasList) {
-            if (p.getIdPartida()==idPartida) {
+            if (Objects.equals(p.getIdPartida(), idPartida)) {
                 logger.info("getPartida("+idPartida+"): "+p);
 
                 return p;

@@ -22,6 +22,9 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
         return instance;
     }
+    public int size(){
+        return ingredientes.size();
+    }
 
     @Override
     public List<Ingrediente> getAllIngredientes() {

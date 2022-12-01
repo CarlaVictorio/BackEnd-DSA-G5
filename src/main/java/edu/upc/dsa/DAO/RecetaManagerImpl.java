@@ -22,6 +22,9 @@ public class RecetaManagerImpl implements RecetaManager{
 
         return instance;
     }
+    public int size(){
+        return recetas.size();
+    }
 
     @Override
     public List<Receta> getAllRecetas() {

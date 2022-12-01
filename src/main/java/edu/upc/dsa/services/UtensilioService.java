@@ -22,11 +22,13 @@ public class UtensilioService {
 
     public UtensilioService(){
         this.um = UtensilioManagerImpl.getInstance();
-        um.addUtensilio("Plancha",15,10,5);
-        um.addUtensilio("DispensadorCocacola",15,10,5);
-        um.addUtensilio("Cafetera",15,10,5);
-        um.addUtensilio("Dispensador",15,10,5);
-        um.addUtensilio("Horno",15,10,5);
+        if(um.size()==0) {
+            um.addUtensilio("Plancha", 15, 10, 5);
+            um.addUtensilio("DispensadorCocacola", 15, 10, 5);
+            um.addUtensilio("Cafetera", 15, 10, 5);
+            um.addUtensilio("Dispensador", 15, 10, 5);
+            um.addUtensilio("Horno", 15, 10, 5);
+        }
     }
 
 
@@ -51,7 +53,7 @@ public class UtensilioService {
             @ApiResponse(code = 201, message = "Successful", response = Utensilio.class),
             @ApiResponse(code = 404, message = "Utensilio not found")
     })
-    @Path("/getUtensilio")
+    @Path("/getUtensilio/{idUtensilio}")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getUtensilio(@PathParam("idUtensilio") String id) {
@@ -88,7 +90,7 @@ public class UtensilioService {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "Utensilio not found")
     })
-    @Path("/deleteUtensilio")
+    @Path("/deleteUtensilio/{idUtensilio}")
     public Response deleteUtensilio(@PathParam("idUtensilio") String id) {
         Utensilio u = this.um.getUtensilio(id);
         if (u == null) return Response.status(404).build();

@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="cambiando html" />
+=======
+    <list default="true" id="38da7590-069d-4974-9b8e-e64bc3c76305" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Mapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngrdienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngrdienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/RecetaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/RecetaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" afterDir="false" />
+    </list>
+>>>>>>> origin/swagger
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
@@ -29,6 +48,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+>>>>>>> origin/swagger
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,14 +64,19 @@
       </MavenGeneralSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2HXHP9FuNqE3WampQHYgAHnjH23" />
+=======
+  <component name="ProjectId" id="2IGg9K15hQQNpreB2HnlnAHZr0z" />
+>>>>>>> origin/swagger
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
@@ -126,16 +155,33 @@
       </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "copyright"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="DAO" />
+>>>>>>> origin/swagger
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+<<<<<<< HEAD
+=======
+      <module name="DAO" />
+>>>>>>> origin/swagger
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -144,10 +190,13 @@
         <item itemvalue="JUnit.JugadorManagerTest.testDeletedJugador" />
       </list>
     </recent_temporary>
+=======
+>>>>>>> origin/swagger
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="" />
       <created>1668424482734</created>
       <option name="number" value="Default" />
@@ -358,6 +407,14 @@
       <updated>1669814105804</updated>
     </task>
     <option name="localTasksCounter" value="30" />
+=======
+      <changelist id="38da7590-069d-4974-9b8e-e64bc3c76305" name="Changes" comment="" />
+      <created>1669813181300</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669813181300</updated>
+    </task>
+>>>>>>> origin/swagger
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,6 +429,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="JugadorServiceTest acabado" />
     <MESSAGE value="JugadorService acabado" />
     <MESSAGE value="retocs de noms" />
@@ -398,5 +456,34 @@
     <MESSAGE value="Id cambiados" />
     <MESSAGE value="cambiando html" />
     <option name="LAST_COMMIT_MESSAGE" value="cambiando html" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/MapaManagerImpl.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/MapaManagerImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> origin/swagger
   </component>
 </project>

@@ -18,6 +18,7 @@ public class Mapa {
         this.setNombre(nombre);
         this.setNumNiveles(numNiveles);
     }
+    
 
     public String getId() {
         return idMapa;

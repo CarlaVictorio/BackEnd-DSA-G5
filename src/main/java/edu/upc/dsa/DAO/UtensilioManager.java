@@ -14,4 +14,6 @@ public interface UtensilioManager {
     public int getTiempoNivel3(String idUtensilio);
 
     public Utensilio putUtensilio (Utensilio utensilio);
+
+    public int size();
 }

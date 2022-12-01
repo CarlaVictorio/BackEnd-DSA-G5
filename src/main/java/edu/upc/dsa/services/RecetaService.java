@@ -22,11 +22,14 @@ public class RecetaService {
 
     public RecetaService(){
         this.rm = RecetaManagerImpl.getInstance();
-        this.rm.addReceta("hamurguesa",1,50,5);
-        this.rm.addReceta("hamurguesa",2,100,10);
-        this.rm.addReceta("hamburguesa_lechuga",1,50,5);
-        this.rm.addReceta("hamburguesa_lechuga",2,100,10);
-        this.rm.addReceta("hamburguesa_lechuga",3,150,15);
+        if(rm.size()==0){
+            this.rm.addReceta("hamurguesa",1,50,5);
+            this.rm.addReceta("hamurguesa",2,100,10);
+            this.rm.addReceta("hamburguesa_lechuga",1,50,5);
+            this.rm.addReceta("hamburguesa_lechuga",2,100,10);
+            this.rm.addReceta("hamburguesa_lechuga",3,150,15);
+        }
+
     }
 
 
@@ -51,7 +54,7 @@ public class RecetaService {
             @ApiResponse(code = 201, message = "Successful", response = Receta.class),
             @ApiResponse(code = 404, message = "Receta not found")
     })
-    @Path("/getReceta")
+    @Path("/getReceta/{idReceta}")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getReceta(@PathParam("idReceta") String id) {
@@ -88,7 +91,7 @@ public class RecetaService {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "Receta not found")
     })
-    @Path("/deleteReceta")
+    @Path("/deleteReceta/{idReceta}")
     public Response deleteReceta(@PathParam("idReceta") String id) {
         Receta r = this.rm.getReceta(id);
         if (r == null) return Response.status(404).build();

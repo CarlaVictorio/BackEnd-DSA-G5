@@ -12,8 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Api(value = "/mapa", description = "Endpoint to Partida Service")
 @Path("/mapa")
@@ -23,10 +22,12 @@ public class MapaService {
 
     public MapaService(){
         this.mm = MapaManagerImpl.getInstance();
-        this.mm.postMapa("Pizzeria",3);
-        this.mm.postMapa("Hamburgeseria",3);
-        this.mm.postMapa("Pasteleria",3);
-        this.mm.postMapa("Calle",3);
+        if(mm.getListMapas().size()==0) {
+            this.mm.postMapa("Pizzeria", 3);
+            this.mm.postMapa("Hamburgeseria", 3);
+            this.mm.postMapa("Pasteleria", 3);
+            this.mm.postMapa("Calle", 3);
+        }
     }
 
 
@@ -40,7 +41,14 @@ public class MapaService {
 
     public Response getAllMapas(){
         HashMap<String,Mapa> listMapas = this.mm.getAllMapas();
-        GenericEntity<List<Mapa>> entity = new GenericEntity<List<Mapa>>((List<Mapa>) listMapas) {};
+
+        // Getting Collection of values from HashMap
+        Collection<Mapa> values = listMapas.values();
+
+        // Creating an ArrayList of values
+        ArrayList<Mapa> listOfValues
+                = new ArrayList<>(values);
+        GenericEntity<List<Mapa>> entity = new GenericEntity<List<Mapa>>(listOfValues) {};
         return Response.status(201).entity(entity).build()  ;
     }
 
@@ -51,7 +59,7 @@ public class MapaService {
             @ApiResponse(code = 201, message = "Successful", response = Mapa.class),
             @ApiResponse(code = 404, message = "Mapa not found")
     })
-    @Path("/getMapa")
+    @Path("/getMapa/{idMapa}")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getMapa(@PathParam("idMapa") String id) {
@@ -88,7 +96,7 @@ public class MapaService {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "Mapa not found")
     })
-    @Path("/deleteMapa")
+    @Path("/deleteMapa/{idMapa}")
     public Response deleteMapa(@PathParam("idMapa") String id) {
         Mapa m = this.mm.getMapa(id);
         if (m == null) return Response.status(404).build();

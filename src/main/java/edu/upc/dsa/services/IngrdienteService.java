@@ -22,24 +22,26 @@ public class IngrdienteService {
 
     public IngrdienteService(){
         this.im = IngredienteManagerImpl.getInstance();
-        im.addIngrediente("MasaPizza",1,0);
-        im.addIngrediente("Mozarella",1,0);
-        im.addIngrediente("SalsaTomate",1,0);
-        im.addIngrediente("Vino",1,0);
-        im.addIngrediente("Jamon",2,0);
-        im.addIngrediente("Pepperoni",2,0);
-        im.addIngrediente("Piña",3,0);
-        im.addIngrediente("Champiñones",3,0);
-        im.addIngrediente("Rucula",3,0);
-        im.addIngrediente("Hamburguesa",1,1);
-        im.addIngrediente("Lechuga",1,1);
-        im.addIngrediente("Cocacola",1,1);
-        im.addIngrediente("PanHamburguesa",1,1);
-        im.addIngrediente("Tomate",1,1);
-        im.addIngrediente("Bacon",2,1);
-        im.addIngrediente("Queso",2,1);
-        im.addIngrediente("Frankfurt",3,1);
-        im.addIngrediente("PanFrankfurt",3,1);
+        if(im.size()==0) {
+            im.addIngrediente("MasaPizza", 1, 0);
+            im.addIngrediente("Mozarella", 1, 0);
+            im.addIngrediente("SalsaTomate", 1, 0);
+            im.addIngrediente("Vino", 1, 0);
+            im.addIngrediente("Jamon", 2, 0);
+            im.addIngrediente("Pepperoni", 2, 0);
+            im.addIngrediente("Piña", 3, 0);
+            im.addIngrediente("Champiñones", 3, 0);
+            im.addIngrediente("Rucula", 3, 0);
+            im.addIngrediente("Hamburguesa", 1, 1);
+            im.addIngrediente("Lechuga", 1, 1);
+            im.addIngrediente("Cocacola", 1, 1);
+            im.addIngrediente("PanHamburguesa", 1, 1);
+            im.addIngrediente("Tomate", 1, 1);
+            im.addIngrediente("Bacon", 2, 1);
+            im.addIngrediente("Queso", 2, 1);
+            im.addIngrediente("Frankfurt", 3, 1);
+            im.addIngrediente("PanFrankfurt", 3, 1);
+        }
     }
 
 
@@ -64,7 +66,7 @@ public class IngrdienteService {
             @ApiResponse(code = 201, message = "Successful", response = Ingrediente.class),
             @ApiResponse(code = 404, message = "Ingrediente not found")
     })
-    @Path("/getIngrediente")
+    @Path("/getIngrediente/{idIngrediente}")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getIngrediente(@PathParam("idIngrediente") String id) {
@@ -101,7 +103,7 @@ public class IngrdienteService {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "Ingrediente not found")
     })
-    @Path("/deleteIngrediente")
+    @Path("/deleteIngrediente/{idIngrediente}")
     public Response deleteIngrediente(@PathParam("idIngrediente") String id) {
         Ingrediente i = this.im.getIngrediente(id);
         if (i == null) return Response.status(404).build();
