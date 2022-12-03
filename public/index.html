@@ -10,7 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-     $(document).ready(function(){
+    $(document).ready(function(){
+        let nombre = localStorage.getItem(Nombre, content)
+        if (nombre == null){
+            location.close();
+        }
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
         $.get(url1, function (data, status) {
                 $.each (data, function(index, element){
@@ -22,8 +26,6 @@
                    );
                 });
         });
-    });
-    $(document).ready(function(){
         var url2 = "/dsaApp/utensilio/getAllUtensilios/";
         $.get(url2, function (data, status) {
                 $.each (data, function(index, element){

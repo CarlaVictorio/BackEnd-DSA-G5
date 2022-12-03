@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LogIn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+       $(document).ready(function(){
+          $('#buttonLogIn').click(function() {
+            var dataBody=
+            {
+                nombre: $("#userLogIn").val(),
+                password: $("#passLogIn").val(),
+            }
+            var URL = "/dsaApp/jugador/Login";
+            $.post(
+            {
+                url: URL,
+                data: JSON.stringify(dataBody),
+                contentType: 'application/json; charset=utf-8'
+            })
+                .done(function(data, status){
+                    var index = "index.html";
+                    $(location).attr('href',index);
+                    localStorage.setItem('Nombre',$("#userLogIn").val())
+                })
+                .fail(function(xhr, err){
+                    alert("Usuario o contraseña incorrectos");
+                    location.reload();
+                })
+          });
+      });
+      $(document).ready(function(){
+          $('#buttonGuardar').click(function() {
+            var dataBody=
+            {
+                nombre: $("#userRegister").val(),
+                password: $("#passRegister").val(),
+                email: $("#emailRegister").val(),
+                pais: $("#paisRegister").val(),
+            }
+            var URL = "/dsaApp/jugador/Register";
+            $.post(
+            {
+                url: URL,
+                data: JSON.stringify(dataBody),
+                contentType: 'application/json; charset=utf-8'
+            })
+                .done(function(data, status){
+                    alert("Usuario registrado");
+                    $("#userRegister").empty();
+                    $("#passRegister").empty();
+                })
+                .fail(function(xhr, err){
+                    alert("Assegurate de introducir todos los campos, si es así usuario o contraseña ya existente");
+                })
+          });
+      });
+
+    </script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <form class="form-signin">
+        <div class="text-center mb-4">
+          <img class="mb-4" src="logo.png" alt="" width="165" height="125">
+          <h1 class="h3 mb-3 font-weight-normal">Cook whit me</h1>
+        </div>
+
+        <div class="form-label-group">
+          <input type="text" id="userLogIn" class="form-control" placeholder="Nombre" >
+          <label for="userLogIn">Nombre de usuario</label>
+        </div>
+
+        <div class="form-label-group">
+          <input type="password" id="passLogIn" class="form-control" placeholder="Password" >
+          <label for="passLogIn">Contraseña</label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="buttonLogIn">Sign in</button>
+
+        <p>    ¿No estas registrado? Registrate </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="buttonRegister">Register</button>
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Register</h4>
+                <button type="cerrar" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="was-validated">
+                  <div class="form-group">
+                    <p>Nombre de usuario: <input type="text" class="form-control" id="userRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">"Rellena nombre de usuario"</div>
+                  </div>
+                  <div class="form-group">
+                    <p>Contraseña: <input type="password" class="form-control" id="passRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">"Rellena nombre de usuario"</div>
+                  </div>
+                  <div class="form-group">
+                    <p>Email: <input type="text" class="form-control" id="emailRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">"Rellena nombre de usuario"</div>
+                  </div>
+                  <div class="form-group">
+                    <p>País: <input type="text" class="form-control" id="paisRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                    <div class="valid-feedback">Valido</div>
+                    <div class="invalid-feedback">"Rellena nombre de usuario"</div>
+                  </div>
+                  <button id="buttonGuardar" class="btn btn-info" data-dismiss="modal">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-5 mb-3 text-muted text-center">&copy; 2022 Grup 5 DSA</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-4"></div>
+</body>
+</html>

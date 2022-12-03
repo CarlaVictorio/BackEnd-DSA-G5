@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         body {
-            background-image: url('fondo.jpg');
+            background-image: url('fondo.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
@@ -35,6 +35,7 @@
                 .done(function(data, status){
                     var index = "index.html";
                     $(location).attr('href',index);
+                    localStorage.setItem('Nombre',$("#userLogIn").val())
                 })
                 .fail(function(xhr, err){
                     alert("Usuario o contraseña incorrectos");
@@ -72,38 +73,57 @@
     </script>
 </head>
 <body>
+
 <div class="col-sm-4"></div>
-        <div class="col-md-4 container p-3 my-3 bg-light text-center">
-            <h1>Cook with me</h1>
-          <div class="row">
-              <p>    Nombre de usuario: <input type="text" id="userLogIn"></p>
-              <p>    Contraseña: <input type="password" id="passLogIn"></p>
-              <button id="buttonLogIn" class="btn btn-info" >Log In</button>
-              <p>    ¿No estas registrado? Registrate </p>
-              <button type="buttonRegister" class="btn btn-info" data-toggle="modal" data-target="#myModal">Register</button>
-              <div class="modal fade" id="myModal">
-                <div class="modal-dialog modal-xl">
-                  <div class="modal-content">
+<div class="col-md-4 container p-3 my-3 bg-light text-center">
+    <h1>Cook with me</h1>
+  <div class="row">
+      <p>    Nombre de usuario: <input type="text" id="userLogIn"></p>
+      <p>    Contraseña: <input type="password" id="passLogIn"></p>
+      <button id="buttonLogIn" class="btn btn-info" >Log In</button>
+      <p>    ¿No estas registrado? Registrate </p>
+      <button type="buttonRegister" class="btn btn-info" data-toggle="modal" data-target="#myModal">Register</button>
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                      <h4 class="modal-title">Register</h4>
-                      <button type="cerrar" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Register</h4>
+              <button type="cerrar" class="close" data-dismiss="modal">&times;</button>
+            </div>
 
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                      <p>Nombre de usuario: <input type="text" id="userRegister"></p>
-                      <p>Contraseña: <input type="password" id="passRegister"></p>
-                      <p>Email: <input type="text" id="emailRegister"></p>
-                      <p>País: <input type="text" id="paisRegister"></p>
-                      <button id="buttonGuardar" class="btn btn-info" data-dismiss="modal">Guardar</button>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="was-validated">
+                    <div class="form-group">
+                        <p>Nombre de usuario: <input type="text" class="form-control" id="userRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                        <div class="valid-feedback">Valido</div>
+                        <div class="invalid-feedback">"Rellena nombre de usuario"</div>
                     </div>
-                  </div>
+                    <div class="form-group">
+                        <p>Contraseña: <input type="password" class="form-control" id="passRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                        <div class="valid-feedback">Valido</div>
+                        <div class="invalid-feedback">"Rellena nombre de usuario"</div>
+                    </div>
+                    <div class="form-group">
+                        <p>Email: <input type="text" class="form-control" id="emailRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                        <div class="valid-feedback">Valido</div>
+                        <div class="invalid-feedback">"Rellena nombre de usuario"</div>
+                    </div>
+                    <div class="form-group">
+                        <p>País: <input type="text" class="form-control" id="paisRegister" placeholder="Enter nombre usuario" name="nombre de usuario" required></p>
+                        <div class="valid-feedback">Valido</div>
+                        <div class="invalid-feedback">"Rellena nombre de usuario"</div>
+                    </div>
+                  <button id="buttonGuardar" class="btn btn-info" data-dismiss="modal">Guardar</button>
                 </div>
-              </div>
+            </div>
           </div>
         </div>
+      </div>
+  </div>
+</div>
 <div class="col-sm-4"></div>
 </body>
 </html>
