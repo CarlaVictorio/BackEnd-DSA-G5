@@ -11,7 +11,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
     protected List<Ingrediente> ingredientes;
     final static Logger logger = Logger.getLogger(IngredienteManagerImpl.class);
 
-    IngredienteManagerImpl(){
+    public IngredienteManagerImpl(){
         this.ingredientes=new LinkedList<>();
     }
 
