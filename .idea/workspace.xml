@@ -4,55 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="cambiando html" />
-=======
-    <list default="true" id="38da7590-069d-4974-9b8e-e64bc3c76305" name="Changes" comment="">
+    <list default="true" id="81df97b8-1220-41a4-a5c5-012fbb24a1d1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ORMTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ObjectHelperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/QueryHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Mapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngrdienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngrdienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/RecetaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/RecetaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/ObjectHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/ObjectHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/IngredienteManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/IngredienteManagerTest.java" afterDir="false" />
     </list>
->>>>>>> origin/swagger
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< HEAD
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-=======
-  <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
->>>>>>> origin/swagger
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -64,357 +45,87 @@
       </MavenGeneralSettings>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
-  </component>
-  <component name="ProjectId" id="2HXHP9FuNqE3WampQHYgAHnjH23" />
-=======
   <component name="ProjectId" id="2IGg9K15hQQNpreB2HnlnAHZr0z" />
->>>>>>> origin/swagger
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="edu.upc.dsa.util" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.Main" />
-      <module name="rest-example2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.upc.dsa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JugadorManagerTest.testAddJugador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rest-example2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.upc.dsa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.upc.dsa" />
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.JugadorManagerTest" />
-      <option name="METHOD_NAME" value="testAddJugador" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JugadorManagerTest.testDeletedJugador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rest-example2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.upc.dsa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.upc.dsa" />
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.JugadorManagerTest" />
-      <option name="METHOD_NAME" value="testDeletedJugador" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JugadorManagerTest.testPutJugador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rest-example2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.upc.dsa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.upc.dsa" />
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.JugadorManagerTest" />
-      <option name="METHOD_NAME" value="testPutJugador" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "copyright"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.upc.dsa" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ObjectHelperTest">
+    <configuration name="ObjectHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-example2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.upc.dsa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.upc.dsa" />
+      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.ObjectHelperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjectHelperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-example2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.upc.dsa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.upc.dsa" />
+      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.ObjectHelperTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="DAO" />
->>>>>>> origin/swagger
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-<<<<<<< HEAD
-=======
       <module name="DAO" />
->>>>>>> origin/swagger
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.JugadorManagerTest.testAddJugador" />
-        <item itemvalue="JUnit.JugadorManagerTest.testPutJugador" />
-        <item itemvalue="JUnit.JugadorManagerTest.testDeletedJugador" />
+        <item itemvalue="JUnit.ObjectHelperTest" />
+        <item itemvalue="JUnit.ObjectHelperTest.test" />
       </list>
     </recent_temporary>
-=======
->>>>>>> origin/swagger
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-      <changelist id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="" />
-      <created>1668424482734</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1668424482734</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Log in iniciado">
-      <created>1668882036826</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1668882036826</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Login_2">
-      <created>1669126047187</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1669126047187</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Jugador empezado">
-      <created>1669144859417</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1669144859417</updated>
-    </task>
-    <task id="LOCAL-00004" summary="JugadorManagerImpl acabado">
-      <created>1669195509688</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1669195509688</updated>
-    </task>
-    <task id="LOCAL-00005" summary="JugadorServiceTest acabado">
-      <created>1669199104416</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669199104416</updated>
-    </task>
-    <task id="LOCAL-00006" summary="JugadorService acabado">
-      <created>1669281582580</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1669281582580</updated>
-    </task>
-    <task id="LOCAL-00007" summary="retocs de noms">
-      <created>1669288878964</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1669288878964</updated>
-    </task>
-    <task id="LOCAL-00008" summary="corregir maven">
-      <created>1669292467972</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1669292467972</updated>
-    </task>
-    <task id="LOCAL-00009" summary="corregir maven 2">
-      <created>1669292653580</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1669292653580</updated>
-    </task>
-    <task id="LOCAL-00010" summary="pom correcto">
-      <created>1669293554803</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1669293554803</updated>
-    </task>
-    <task id="LOCAL-00011" summary="search jugador hecho">
-      <created>1669294493746</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1669294493746</updated>
-    </task>
-    <task id="LOCAL-00012" summary="cambiar url">
-      <created>1669327615263</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1669327615263</updated>
-    </task>
-    <task id="LOCAL-00013" summary="cambiar index.html">
-      <created>1669368116567</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1669368116568</updated>
-    </task>
-    <task id="LOCAL-00014" summary="prova LogIn.html">
-      <created>1669371642711</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1669371642711</updated>
-    </task>
-    <task id="LOCAL-00015" summary="prova1 LogIn.html">
-      <created>1669372041947</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1669372041947</updated>
-    </task>
-    <task id="LOCAL-00016" summary="prova2 LogIn.html">
-      <created>1669373076707</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1669373076707</updated>
-    </task>
-    <task id="LOCAL-00017" summary="consulta Toni LogIn.html">
-      <created>1669394515291</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1669394515291</updated>
-    </task>
-    <task id="LOCAL-00018" summary="cambis LogIn.html">
-      <created>1669485289134</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1669485289135</updated>
-    </task>
-    <task id="LOCAL-00019" summary="classe LogIn">
-      <created>1669544674509</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1669544674509</updated>
-    </task>
-    <task id="LOCAL-00020" summary="logIn y registro OK">
-      <created>1669556476584</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1669556476584</updated>
-    </task>
-    <task id="LOCAL-00021" summary="preparat produccio">
-      <created>1669556614958</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1669556614958</updated>
-    </task>
-    <task id="LOCAL-00022" summary="preparat produccio1">
-      <created>1669557041431</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1669557041431</updated>
-    </task>
-    <task id="LOCAL-00023" summary="fent index.html">
-      <created>1669633462551</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1669633462551</updated>
-    </task>
-    <task id="LOCAL-00024" summary="register">
-      <created>1669635317750</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1669635317750</updated>
-    </task>
-    <task id="LOCAL-00025" summary="index fet">
-      <created>1669636165590</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1669636165590</updated>
-    </task>
-    <task id="LOCAL-00026" summary="per produccio">
-      <created>1669636708591</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1669636708591</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Mas paramatros registro">
-      <created>1669744836614</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1669744836614</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Id cambiados">
-      <created>1669749522079</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1669749522079</updated>
-    </task>
-    <task id="LOCAL-00029" summary="cambiando html">
-      <created>1669814105804</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1669814105804</updated>
-    </task>
-    <option name="localTasksCounter" value="30" />
-=======
       <changelist id="38da7590-069d-4974-9b8e-e64bc3c76305" name="Changes" comment="" />
       <created>1669813181300</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669813181300</updated>
     </task>
->>>>>>> origin/swagger
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -429,34 +140,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-<<<<<<< HEAD
-    <MESSAGE value="JugadorServiceTest acabado" />
-    <MESSAGE value="JugadorService acabado" />
-    <MESSAGE value="retocs de noms" />
-    <MESSAGE value="corregir maven" />
-    <MESSAGE value="corregir maven 2" />
-    <MESSAGE value="pom correcto" />
-    <MESSAGE value="search jugador hecho" />
-    <MESSAGE value="cambiar url" />
-    <MESSAGE value="cambiar index.html" />
-    <MESSAGE value="prova LogIn.html" />
-    <MESSAGE value="prova1 LogIn.html" />
-    <MESSAGE value="prova2 LogIn.html" />
-    <MESSAGE value="consulta Toni LogIn.html" />
-    <MESSAGE value="cambis LogIn.html" />
-    <MESSAGE value="classe LogIn" />
-    <MESSAGE value="logIn y registro OK" />
-    <MESSAGE value="preparat produccio" />
-    <MESSAGE value="preparat produccio1" />
-    <MESSAGE value="fent index.html" />
-    <MESSAGE value="register" />
-    <MESSAGE value="index fet" />
-    <MESSAGE value="per produccio" />
-    <MESSAGE value="Mas paramatros registro" />
-    <MESSAGE value="Id cambiados" />
-    <MESSAGE value="cambiando html" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambiando html" />
-=======
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
@@ -482,8 +165,12 @@
           <line>33</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/ObjectHelper.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
->>>>>>> origin/swagger
   </component>
 </project>

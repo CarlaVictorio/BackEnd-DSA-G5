@@ -22,7 +22,7 @@ public class FactorySession {
         Connection conn = null;
         try {
             conn =
-                    DriverManager.getConnection("jdbc:mysql://localhost/test?" +
+                    DriverManager.getConnection("jdbc:mysql://localhost/cookwithMe?" +
                             "user=minty&password=greatsqldb");
 
         } catch (SQLException ex) {

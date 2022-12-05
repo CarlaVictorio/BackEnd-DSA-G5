@@ -43,6 +43,15 @@ public class QueryHelper {
 
         return sb.toString();
     }
+    public static String createQuerySELECTbyTwoParameters(Class theClass, String byFirstParameter, String bySecondParameter) {
+
+        StringBuffer sb = new StringBuffer("SELECT * FROM ");
+        sb.append(theClass.getSimpleName());
+        sb.append(" WHERE " + byFirstParameter + " = ?");
+        sb.append(" AND " + bySecondParameter + " = ?");
+
+        return sb.toString();
+    }
 
 
 

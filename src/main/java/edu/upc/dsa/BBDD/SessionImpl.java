@@ -3,9 +3,8 @@ package edu.upc.dsa.BBDD;
 import edu.upc.dsa.util.ObjectHelper;
 import edu.upc.dsa.util.QueryHelper;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.lang.reflect.InvocationTargetException;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
 
@@ -21,6 +20,7 @@ public class SessionImpl implements Session {
 
         String insertQuery = QueryHelper.createQueryINSERT(entity);
 
+        System.out.println(insertQuery);
         PreparedStatement pstm = null;
 
         try {
@@ -36,14 +36,17 @@ public class SessionImpl implements Session {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
         }
 
     }
 
-    public void close() throws SQLException {
-        conn.close();
+    public void close()  {
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
     public Object get(Class theClass, int ID) {
@@ -68,5 +71,43 @@ public class SessionImpl implements Session {
 
     public List<Object> query(String query, Class theClass, HashMap params) {
         return null;
+    }
+    public Object getByTwoParameters(Class theClass, String byFirstParameter, Object byFirstParameterValue, String bySecondParameter, Object bySecondParameterValue) {
+
+        String selectQuery = QueryHelper.createQuerySELECTbyTwoParameters(theClass, byFirstParameter, bySecondParameter);
+
+
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        ResultSetMetaData rsmd = null;
+
+        try {
+            Object object = theClass.getDeclaredConstructor().newInstance();
+
+            pstm = conn.prepareStatement(selectQuery);
+
+            pstm.setObject(1, byFirstParameterValue);
+            pstm.setObject(2, bySecondParameterValue);
+            pstm.executeQuery();
+            rs = pstm.getResultSet();
+
+            if (rs.next()) {
+
+                rsmd = rs.getMetaData();
+                for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+                    String field = rsmd.getColumnName(i);
+                    ObjectHelper.setter(object, field, rs.getObject(i));
+                }
+                return object;
+
+            } else {
+                return null;
+            }
+
+        } catch (SQLException | NoSuchMethodException | IllegalAccessException | InstantiationException |
+                 InvocationTargetException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
