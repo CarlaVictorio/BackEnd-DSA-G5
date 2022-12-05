@@ -24,11 +24,12 @@ public class UtensilioManagerImpl implements UtensilioManager{
         return instance;
     }
 
+    /*
     @Override
     public List<Utensilio> getAllUtensilios() {
 
         return this.utensilios;
-    }
+    }*/
 
     @Override
     public Utensilio getUtensilio (String idUtensilio){

@@ -47,4 +47,22 @@ public class ObjectHelper {
 
         return value;
     }
+
+
+    public static String getId(Object entity) {
+
+        Class theClass = entity.getClass();
+
+        Field[] fields = theClass.getDeclaredFields();
+
+        String id = new String();
+
+        try {
+            id = String.valueOf(fields[0].getInt(entity));
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return id;
+    }
 }

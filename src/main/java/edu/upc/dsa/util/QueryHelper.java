@@ -44,6 +44,43 @@ public class QueryHelper {
         return sb.toString();
     }
 
+    public static String createQuerySELECTAll(Class theClass) {
+
+        StringBuffer sb = new StringBuffer("SELECT * FROM ");
+        sb.append(theClass.getSimpleName());
+
+        return sb.toString();
+    }
+
+    public static String createQueryUPDATE(Object entity) {
+
+        StringBuffer sb = new StringBuffer("UPDATE ");
+        sb.append(entity.getClass().getSimpleName()).append(" SET");
+
+        for (String field: ObjectHelper.getFields(entity)) {
+            sb.append(" " + field).append(" = ?,");
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.append(" WHERE ID = ?");
+
+        return sb.toString();
+    }
+
+
+    public static String createQueryUPDATEbyParameter(Object entity, String parameter) {
+
+        StringBuffer sb = new StringBuffer("UPDATE ");
+        sb.append(entity.getClass().getSimpleName()).append(" SET");
+
+        for (String field: ObjectHelper.getFields(entity)) {
+            sb.append(" " + field).append(" = ?,");
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.append(" WHERE " + parameter + " = ?");
+
+        return sb.toString();
+    }
+
 
 
 
