@@ -12,7 +12,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     protected List<Utensilio> utensilios;
     final static Logger logger = Logger.getLogger(UtensilioManagerImpl.class);
 
-    UtensilioManagerImpl(){
+    public UtensilioManagerImpl(){
         this.utensilios=new LinkedList<>();
     }
 

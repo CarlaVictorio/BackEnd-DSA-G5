@@ -11,7 +11,7 @@ public class RecetaManagerImpl implements RecetaManager{
     protected List<Receta> recetas;
     final static Logger logger = Logger.getLogger(RecetaManagerImpl.class);
 
-    RecetaManagerImpl(){
+    public RecetaManagerImpl(){
         this.recetas=new LinkedList<>();
     }
 

@@ -1,6 +1,7 @@
 package edu.upc.dsa;
 
 import edu.upc.dsa.DAO.IngredienteManager;
+import edu.upc.dsa.DAO.IngredienteManagerImpl;
 import edu.upc.dsa.DAO.JugadorManagerImpl;
 import edu.upc.dsa.models.Ingrediente;
 import org.junit.After;
@@ -16,7 +17,7 @@ public class IngredienteManagerTest {
 
     @Before
     public void setUp(){
-        im = (IngredienteManager) new JugadorManagerImpl();
+        im = (IngredienteManager) new IngredienteManagerImpl();
         im.addIngrediente("masa pizza",1, 0 );
         im.addIngrediente("mozarella", 1, 0);
         im.addIngrediente("jamon", 2, 0);

@@ -15,7 +15,7 @@ public class PartidasManagerImpl implements PartidasManager {
     protected List<Partida> partidasList;
 
     final static Logger logger = Logger.getLogger(PartidasManagerImpl.class);
-    PartidasManagerImpl() {
+    public PartidasManagerImpl() {
         this.partidasList = new LinkedList<>();
     }
     public static PartidasManager getInstance(){
