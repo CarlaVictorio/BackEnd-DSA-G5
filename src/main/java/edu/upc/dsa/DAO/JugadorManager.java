@@ -4,6 +4,7 @@ import edu.upc.dsa.models.Jugador;
 import edu.upc.dsa.models.LogIn;
 import edu.upc.dsa.models.Registro;
 
+import java.sql.SQLException;
 import java.util.List;
 
 

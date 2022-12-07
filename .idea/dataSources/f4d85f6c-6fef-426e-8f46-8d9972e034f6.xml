@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="dsa_g5_v1">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.45">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <ServerVersion>10.10.2</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="dsa_g5_v1"/>
+    <schema id="3" parent="1" name="information_schema"/>
+  </database-model>
+</dataSource>

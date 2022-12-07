@@ -10,9 +10,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+
+    function addCard(name, preu, nivell){
+        /*"
+           <div class="col-sm-4">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="ingredientes/"+name+".jng" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">'+name+'</h4>
+                        <p class="card-text">'+preu'+</p>
+                        <p class="card-text">'+nivell'+</p>
+                        <a href="#" class="btn btn-primary" id=name+"Id">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        "*/
+    }
+
+
     $(document).ready(function(){
-        int x = 0;
+        var x = 0;
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
+        var ingredientsArray = [{"name":"Tomate", "preu": "10", "nivell":"1"}, {"name":"Lechuga", "preu": "10", "nivell":"1"}]
+        $.each (ingredientsArray, function (index, status){
+            res= addCard(name, preu, nivell);
+        })
+        console.log(res);
+    });
+
+        /*
+
+
         $.get(url1, function (data, status) {
                 $.each (data, function(index, element){
                     if (x%3==0){
@@ -26,6 +54,7 @@
                    );
                 });
         });
+
         var url2 = "/dsaApp/utensilio/getAllUtensilios/";
         $.get(url2, function (data, status) {
                 $.each (data, function(index, element){
@@ -38,7 +67,9 @@
                    );
                 });
         });
+
     });
+*/
     </script>
 </head>
 <body>
@@ -52,15 +83,17 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
+                    <img class="card-img-top" src="ingredientes/Tomate.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
+                        <h4 class="card-title">Tomate</h4>
+                        <p class="card-text">10</p>
+                        <p class="card-text">1</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+        </div>
+            <!--div class="col-sm-4">
                 <div class="card" style="width:400px">
                     <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
                     <div class="card-body">
@@ -114,7 +147,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="container-fluid" id="containerUtensilios">
         <h1>Utensilios</h1>
@@ -181,7 +213,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div-->
     </div>
 </body>
 </html>

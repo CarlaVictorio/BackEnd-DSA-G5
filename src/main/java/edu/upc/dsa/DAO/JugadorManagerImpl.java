@@ -1,7 +1,10 @@
 package edu.upc.dsa.DAO;
 
+import edu.upc.dsa.BBDD.FactorySession;
+import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.Jugador;
 
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -38,7 +41,7 @@ public class JugadorManagerImpl implements JugadorManager{
         return null;
     }
 
-    JugadorManagerImpl(){this.jugadores=new LinkedList<>();}
+    public JugadorManagerImpl(){this.jugadores=new LinkedList<>();}
     @Override
     public List<Jugador> getAllJugadores() {
         return this.jugadores;
@@ -97,29 +100,52 @@ public class JugadorManagerImpl implements JugadorManager{
     }
 
     @Override
-    public Jugador logInJugador(LogIn logInParams) { //LOGIN
+    public Jugador logInJugador(LogIn logInParams)  { //LOGIN
         logger.info("logInJugador("+logInParams.getNombre()+", "+logInParams.getPassword()+")");
-        Jugador jugador = searchJugador(logInParams.getNombre(), logInParams.getPassword());
-        if (jugador != null){
-            logger.info(jugador+" rebut!");
-            return jugador;
-        }else{
+        Session session = null;
+        Jugador jugador = null;
+        try {
+            session = FactorySession.openSession();
+            jugador= (Jugador) session.getByTwoParameters(Jugador.class, logInParams.getNombre(), "nombreJugador", logInParams.getPassword(), "passwordJugador");
+            if (jugador!=null){
+                logger.info(jugador+" rebut!");
+                return jugador;
+            }
+        }
+        catch (Exception e) {
             logger.warn("not found "+jugador);
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+
+        return null;
+    }
+
+
+    @Override
+    public Jugador registroJugador(Registro registro)  {
+
+            Session session = null;
+            try {
+                session = FactorySession.openSession();
+                Jugador jugador= (Jugador) session.getByTwoParameters(Jugador.class, registro.getNombre(), "nombreJugador", registro.getPassword(), "passwordJugador");
+                if(jugador==null){
+                    Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais());
+                    logger.info("new Jugador " + jugador.getNombreJugador());
+                    session.save(jugadorAdd);
+                    logger.info("new Jugdor added");
+                    return jugadorAdd;
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+            finally {
+                session.close();
+            }
             return null;
         }
     }
 
-    @Override
-    public Jugador registroJugador(Registro registro) {
-        Jugador j = searchJugador(registro.getNombre(), registro.getPassword());
-        if (j==null){
-            Jugador jugador = new Jugador(registro.getNombre(), registro.getPassword(), registro.getEmail(), registro.getPais());
-            logger.info("new Jugador " + jugador.getNombreJugador());
-            this.jugadores.add(jugador);
-            logger.info("new Jugdor added");
-            return jugador;
-        } else {
-            return null;
-        }
-    }
-}

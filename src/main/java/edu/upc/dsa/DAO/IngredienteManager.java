@@ -8,7 +8,7 @@ import java.util.List;
 public interface IngredienteManager {
     public Ingrediente getIngrediente (String idIngrediente);
     public Ingrediente addIngrediente(String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente);
-    public List<Ingrediente> getAllIngredientes() throws SQLException;
+    public List<Ingrediente> getAllIngredientes();
     public void deleteIngrediente(String idIngrediente);
     public int getNivelDesbloqueoIngrediente(String idIngrediente);
     public double getPrecioIngrediente(String idIngrediente);
