@@ -14,7 +14,7 @@ public class ObjectHelperTest {
 
         Assert.assertEquals("Carme", ObjectHelper.getter(j, "nombreJugador"));
 
-        ObjectHelper.setter(j, "name", "XXXX");
+        ObjectHelper.setter(j, "nombreJugador", "XXXX");
 
         Assert.assertEquals("XXXX", j.getNombreJugador());
     }

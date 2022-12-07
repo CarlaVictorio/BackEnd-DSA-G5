@@ -31,8 +31,9 @@ public class IngredienteManagerImpl implements IngredienteManager {
         return ingredientes.size();
     }
 
+    /*
     @Override
-    public List<Ingrediente> getAllIngredientes() throws SQLException {
+    public List<Ingrediente> getAllIngredientes() {
     Session session = null;
     List<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
 
@@ -51,12 +52,12 @@ public class IngredienteManagerImpl implements IngredienteManager {
         return listaIngredientes;
 
     }
-    /*
+    */
     @Override
     public List<Ingrediente> getAllIngredientes() {
 
         return this.ingredientes;
-    }*/
+    }
 
 
 

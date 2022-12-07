@@ -12,6 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.sql.SQLException;
 import java.util.List;
 
 @Api(value = "/ingrediente", description = "Endpoint to Partida Service")
@@ -54,7 +55,8 @@ public class IngrdienteService {
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getAllIngredientes(){
-        List<Ingrediente> listIngredientes = this.im.getAllIngredientes();
+        List<Ingrediente> listIngredientes = null;
+        listIngredientes = this.im.getAllIngredientes();
         GenericEntity<List<Ingrediente>> entity = new GenericEntity<List<Ingrediente>>(listIngredientes) {};
         return Response.status(201).entity(entity).build()  ;
     }
