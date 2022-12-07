@@ -32,6 +32,11 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }*/
 
     @Override
+    public List<Utensilio> getAllUtensilios() {
+        return null;
+    }
+
+    @Override
     public Utensilio getUtensilio (String idUtensilio){
         logger.info("getUtensilio("+idUtensilio+")");
 
