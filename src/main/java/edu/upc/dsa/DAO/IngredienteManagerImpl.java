@@ -1,13 +1,18 @@
 package edu.upc.dsa.DAO;
 
+import edu.upc.dsa.BBDD.FactorySession;
+import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.Ingrediente;
 import org.apache.log4j.Logger;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class IngredienteManagerImpl implements IngredienteManager {
     private static IngredienteManager instance;
+
     protected List<Ingrediente> ingredientes;
     final static Logger logger = Logger.getLogger(IngredienteManagerImpl.class);
 
@@ -27,10 +32,33 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }
 
     @Override
+    public List<Ingrediente> getAllIngredientes() throws SQLException {
+    Session session = null;
+    List<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
+
+    try{
+        session = FactorySession.openSession();
+        listaIngredientes = (ArrayList<Ingrediente>) session.findAll(Ingrediente.class);
+    }
+    catch(Exception e){
+        e.printStackTrace();
+        listaIngredientes = null;
+    }
+
+    finally {
+        session.close();
+    }
+        return listaIngredientes;
+
+    }
+    /*
+    @Override
     public List<Ingrediente> getAllIngredientes() {
 
         return this.ingredientes;
-    }
+    }*/
+
+
 
     @Override
     public Ingrediente getIngrediente (String idIngrediente){
