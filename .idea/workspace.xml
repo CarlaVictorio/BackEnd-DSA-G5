@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/logIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="log in acabado">
+      <change afterPath="$PROJECT_DIR$/public/ingredientes/Lechuga.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ingredientes/Tomate.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/LogIn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logIn2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/logIn.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,17 +50,21 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2HXHP9FuNqE3WampQHYgAHnjH23" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-        &quot;keyToString&quot;: {
-        &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-        &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-        &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
-        }
-        }</component>
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -69,7 +73,19 @@
       <recent name="edu.upc.dsa.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.upc.dsa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.Main" />
       <module name="rest-example2" />
@@ -144,6 +160,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.JugadorManagerTest.testAddJugador" />
         <item itemvalue="JUnit.JugadorManagerTest.testPutJugador" />
@@ -363,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669814105804</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="log in acabado">
+      <created>1670239989912</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1670239989912</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -378,7 +402,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JugadorServiceTest acabado" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="JugadorService acabado" />
     <MESSAGE value="retocs de noms" />
     <MESSAGE value="corregir maven" />
@@ -403,6 +427,7 @@
     <MESSAGE value="Mas paramatros registro" />
     <MESSAGE value="Id cambiados" />
     <MESSAGE value="cambiando html" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambiando html" />
+    <MESSAGE value="log in acabado" />
+    <option name="LAST_COMMIT_MESSAGE" value="log in acabado" />
   </component>
 </project>
