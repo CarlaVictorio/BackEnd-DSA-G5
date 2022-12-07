@@ -20,7 +20,6 @@ public class SessionImpl implements Session {
 
         String insertQuery = QueryHelper.createQueryINSERT(entity);
 
-        System.out.println(insertQuery);
         PreparedStatement pstm = null;
 
         try {
