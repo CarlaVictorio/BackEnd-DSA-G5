@@ -1,5 +1,6 @@
 package edu.upc.dsa.util;
 
+import edu.upc.dsa.models.Ingrediente;
 import org.apache.log4j.Logger;
 
 public class QueryHelper {
@@ -53,10 +54,11 @@ public class QueryHelper {
         return sb.toString();
     }
 
-    public static String createQuerySELECTAll(Class theClass) {
+    public static String createQuerySELECTAll(Ingrediente ingrediente) {
 
-        StringBuffer sb = new StringBuffer("SELECT * FROM ");
-        sb.append(theClass.getSimpleName());
+        StringBuffer sb = new StringBuffer();
+        sb.append("SELECT * FROM ").append(ingrediente.getClass().getSimpleName());
+        sb.append(" WHERE 1 = ?");
 
         return sb.toString();
     }
