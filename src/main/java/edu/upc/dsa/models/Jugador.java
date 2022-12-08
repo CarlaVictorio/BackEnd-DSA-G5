@@ -8,16 +8,27 @@ public class Jugador {
     String emailJugador;
     String paisJugador;
 
+    double dinero;
+
     public Jugador() {
         this.idJugador = RandomUtils.getId();
     }
 
-    public Jugador (String nombre, String password, String email, String pais) {
+    public Jugador (String nombre, String password, String email, String pais, double dinero) {
         this();
         this.setNombreJugador(nombre);
         this.setPasswordJugador(password);
         this.setEmailJugador(email);
         this.setPaisJugador(pais);
+        this.setDinero(dinero);
+    }
+
+    public double getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(double dinero) {
+        this.dinero = dinero;
     }
 
     public String getEmailJugador() {

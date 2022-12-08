@@ -6,14 +6,25 @@ public class Registro {
     String email;
     String pais;
 
+    double dinero;
+
     public Registro() {}
 
-    public Registro(String name, String pass, String email, String pais)
+    public Registro(String name, String pass, String email, String pais, double dinero)
     {
         this.nombre = name;
         this.password = pass;
         this.email = email;
         this.pais = pais;
+        this.dinero = dinero;
+    }
+
+    public double getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(double dinero) {
+        this.dinero = dinero;
     }
 
     public String getNombre() {

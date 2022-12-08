@@ -25,9 +25,9 @@ public class JugadorService {
     public JugadorService(){
         this.jm = JugadorManagerImpl.getInstance();
         if(jm.size()==0){
-            jm.addJugador("Juan","1111", "juan@gmail.com", "España");
-            jm.addJugador("Victoria","2222", "victoria@gmail.com", "España");
-            jm.addJugador("Maria","3333", "maria@gmail.com", "Francia");
+            jm.addJugador("Juan","1111", "juan@gmail.com", "España", 100);
+            jm.addJugador("Victoria","2222", "victoria@gmail.com", "España",100);
+            jm.addJugador("Maria","3333", "maria@gmail.com", "Francia",100);
         }
     }
 

@@ -1,10 +1,12 @@
 package edu.upc.dsa.BBDD;
 
+import edu.upc.dsa.models.Ingrediente;
 import edu.upc.dsa.util.ObjectHelper;
 import edu.upc.dsa.util.QueryHelper;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -61,8 +63,27 @@ public class SessionImpl implements Session {
 
     }
 
-    public List<Object> findAll(Class theClass) {
-        return null;
+    public List<Ingrediente> findAll(Class ingrediente) {
+        String selectQuery = QueryHelper.createQuerySELECTAll(ingrediente);
+        PreparedStatement pstm = null;
+        List<Ingrediente> ListIngre = new ArrayList<Ingrediente>();
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            pstm.setObject(1, 1);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            while (rs.next()) {
+                Class theClass = ingrediente.getClass();
+                Ingrediente o = new Ingrediente();
+                for (int i=1;i<=rs.getMetaData().getColumnCount();i++)
+                    ObjectHelper.setter(o,rs.getMetaData().getColumnName(i),rs.getObject(i));
+                ListIngre.add(o);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return ListIngre;
     }
 
     public List<Object> findAll(Class theClass, HashMap params) {

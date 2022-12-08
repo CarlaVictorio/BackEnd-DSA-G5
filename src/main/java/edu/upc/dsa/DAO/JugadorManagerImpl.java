@@ -61,10 +61,10 @@ public class JugadorManagerImpl implements JugadorManager{
     }
 
     @Override
-    public Jugador addJugador(String nombre, String password, String email, String pais) {
+    public Jugador addJugador(String nombre, String password, String email, String pais, double dinero) {
         Jugador j = searchJugador(nombre, password);
         if (j==null){
-            Jugador jugador = new Jugador(nombre,password,email,pais);
+            Jugador jugador = new Jugador(nombre,password,email,pais, dinero);
             logger.info("new Jugador " + jugador.getNombreJugador());
             this.jugadores.add(jugador);
             logger.info("new Jugdor added");
@@ -132,7 +132,7 @@ public class JugadorManagerImpl implements JugadorManager{
                 session = FactorySession.openSession();
                 Jugador jugador= (Jugador) session.getByTwoParameters(Jugador.class, registro.getNombre(), "nombreJugador", registro.getPassword(), "passwordJugador");
                 if(jugador==null){
-                    Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais());
+                    Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais(), registro.getDinero());
                     logger.info("new Jugador " + jugador.getNombreJugador());
                     session.save(jugadorAdd);
                     logger.info("new Jugdor added");
