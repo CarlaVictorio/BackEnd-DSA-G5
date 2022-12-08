@@ -35,7 +35,7 @@ public class JugadorManagerTest {
         Assert.assertEquals("Maria", testJugadores.get(2).getNombreJugador());
         Assert.assertEquals("3333", testJugadores.get(2).getPasswordJugador());
     }
-    @Test
+    /*@Test
     public void testDeletedJugador(){
         List<Jugador> testJugadores = jm.getAllJugadores();
         Jugador testJugador = testJugadores.get(0);
@@ -55,5 +55,5 @@ public class JugadorManagerTest {
 
         Assert.assertEquals(jugador.getNombreJugador(), jm.getAllJugadores().get(1).getNombreJugador());
         Assert.assertEquals(jugador.getPasswordJugador(), jm.getAllJugadores().get(1).getPasswordJugador());
-    }
+    }*/
 }

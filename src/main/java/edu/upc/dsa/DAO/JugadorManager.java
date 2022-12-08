@@ -13,7 +13,7 @@ public interface JugadorManager {
     public Jugador getJugador (String id);
     public Jugador logInJugador (LogIn logInParams);
     public Jugador registroJugador (Registro registro);
-    public Jugador addJugador (String nombre, String contraseña, String email, String pais, double dinero);
+    public Jugador addJugador (String nombre, String contraseña, String email, String pais);
     public  void deleteJugador(String id);
     public Jugador putJugador(Jugador jugador);
     public int size();

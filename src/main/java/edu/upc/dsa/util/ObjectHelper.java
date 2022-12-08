@@ -11,17 +11,18 @@ public class ObjectHelper {
     public static String[] getFields(Object entity) {
 
         Class theClass = entity.getClass();
+        Method[] methods = theClass.getDeclaredMethods();
 
-        Field[] fields = theClass.getDeclaredFields();
+        //Field[] fields = theClass.getDeclaredFields();
 
         //theClass.getDeclaredMethod("getNombreJugador", null)
 
-        String[] sFields = new String[fields.length];
+        String[] sMethods = new String[methods.length];
         int i=0;
 
-        for (Field f: fields) sFields[i++]=f.getName();
+        for (Method m: methods) sMethods[i++]=m.getName().substring(3);
 
-        return sFields;
+        return sMethods;
 
     }
 

@@ -47,7 +47,7 @@ public class JugadorManagerImpl implements JugadorManager{
         return this.jugadores;
     }
 
-    @Override
+    /*@Override
     public Jugador getJugador(String id) {
         logger.info("getJugador("+id+")");
         for (Jugador j: this.jugadores){
@@ -58,7 +58,7 @@ public class JugadorManagerImpl implements JugadorManager{
         }
         logger.warn("not found "+id);
         return null;
-    }
+    }*/
 
     @Override
     public Jugador addJugador(String nombre, String password, String email, String pais, double dinero) {
@@ -74,7 +74,7 @@ public class JugadorManagerImpl implements JugadorManager{
         }
     }
 
-    @Override
+   /* @Override
     public void deleteJugador(String id) {
         Jugador j = this.getJugador(id);
         if (j==null){
@@ -97,7 +97,7 @@ public class JugadorManagerImpl implements JugadorManager{
             logger.warn("not found "+j);
         }
         return j;
-    }
+    }*/
 
     @Override
     public Jugador logInJugador(LogIn logInParams)  { //LOGIN
