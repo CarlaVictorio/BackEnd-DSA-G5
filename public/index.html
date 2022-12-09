@@ -11,9 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
-        let nombre = localStorage.getItem(Nombre, content)
-        if (nombre == null){
-            location.close();
+        if (typeof(Storage) == 'undefined') {
+            $(location).attr('href',logIn);
         }
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
         $.get(url1, function (data, status) {
