@@ -25,9 +25,9 @@ public class JugadorService {
     public JugadorService(){
         this.jm = JugadorManagerImpl.getInstance();
         if(jm.size()==0){
-            jm.addJugador("Juan","1111", "juan@gmail.com", "España");
-            jm.addJugador("Victoria","2222", "victoria@gmail.com", "España");
-            jm.addJugador("Maria","3333", "maria@gmail.com", "Francia");
+            jm.addJugador("Juan","1111", "juan@gmail.com", "España", 100);
+            jm.addJugador("Victoria","2222", "victoria@gmail.com", "España",100);
+            jm.addJugador("Maria","3333", "maria@gmail.com", "Francia",100);
         }
     }
 
@@ -47,7 +47,7 @@ public class JugadorService {
     }
 
 
-    @GET
+    /*@GET
     @ApiOperation(value = "get un Jugador", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
@@ -60,7 +60,7 @@ public class JugadorService {
         Jugador j = this.jm.getJugador(id);
         if (j == null) return Response.status(404).build();
         else  return Response.status(201).entity(j).build();
-    }
+    }*/
 
 
     @POST
@@ -84,7 +84,7 @@ public class JugadorService {
     }
 
 
-    @DELETE
+    /*@DELETE
     @ApiOperation(value = "delete Jugador", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
@@ -113,7 +113,7 @@ public class JugadorService {
         Jugador j = this.jm.putJugador(jugador);
         if (j == null) return Response.status(404).build();
         else return Response.status(201).build();
-    }
+    }*/
 
 
     @POST

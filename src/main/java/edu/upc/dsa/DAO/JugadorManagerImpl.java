@@ -47,7 +47,7 @@ public class JugadorManagerImpl implements JugadorManager{
         return this.jugadores;
     }
 
-    @Override
+    /*@Override
     public Jugador getJugador(String id) {
         logger.info("getJugador("+id+")");
         for (Jugador j: this.jugadores){
@@ -58,13 +58,13 @@ public class JugadorManagerImpl implements JugadorManager{
         }
         logger.warn("not found "+id);
         return null;
-    }
+    }*/
 
     @Override
-    public Jugador addJugador(String nombre, String password, String email, String pais) {
+    public Jugador addJugador(String nombre, String password, String email, String pais, double dinero) {
         Jugador j = searchJugador(nombre, password);
         if (j==null){
-            Jugador jugador = new Jugador(nombre,password,email,pais);
+            Jugador jugador = new Jugador(nombre,password,email,pais, dinero);
             logger.info("new Jugador " + jugador.getNombreJugador());
             this.jugadores.add(jugador);
             logger.info("new Jugdor added");
@@ -74,7 +74,7 @@ public class JugadorManagerImpl implements JugadorManager{
         }
     }
 
-    @Override
+   /* @Override
     public void deleteJugador(String id) {
         Jugador j = this.getJugador(id);
         if (j==null){
@@ -97,7 +97,7 @@ public class JugadorManagerImpl implements JugadorManager{
             logger.warn("not found "+j);
         }
         return j;
-    }
+    }*/
 
     @Override
     public Jugador logInJugador(LogIn logInParams)  { //LOGIN
@@ -132,7 +132,7 @@ public class JugadorManagerImpl implements JugadorManager{
                 session = FactorySession.openSession();
                 Jugador jugador= (Jugador) session.getByTwoParameters(Jugador.class, registro.getNombre(), "nombreJugador", registro.getPassword(), "passwordJugador");
                 if(jugador==null){
-                    Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais());
+                    Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais(), registro.getDinero());
                     logger.info("new Jugador " + jugador.getNombreJugador());
                     session.save(jugadorAdd);
                     logger.info("new Jugdor added");

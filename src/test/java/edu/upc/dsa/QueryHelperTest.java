@@ -11,8 +11,13 @@ public class QueryHelperTest {
 
     @Test
     public void testQueryINSERT() {
-        Assert.assertEquals("INSERT INTO Employee (ID, name, surname, salary) VALUES (?, ?, ?, ?)",
+        Assert.assertEquals("INSERT INTO Jugador (ID, idJugador, nombreJugador, passwordJugador, emailJugador, paisJugador) VALUES (?, ?, ?, ?, ?, ?)",
                 QueryHelper.createQueryINSERT(new Jugador("Juan", "lopez", "333333","4444")));
+    }
+    @Test
+    public void testCreateQuerySELECTbyTwoParameters(){
+        Assert.assertEquals("SELECT * FROM Jugador WHERE nombreJugador = ? AND passwordJugador = ?",
+                QueryHelper.createQuerySELECTbyTwoParameters(Jugador.class,"nombreJugador","passwordJugador"));
     }
 
 

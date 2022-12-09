@@ -3,6 +3,9 @@ package edu.upc.dsa.DAO;
 import edu.upc.dsa.BBDD.FactorySession;
 import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.Ingrediente;
+import edu.upc.dsa.models.IngredientesComprados;
+import edu.upc.dsa.models.Jugador;
+import io.swagger.models.auth.In;
 import org.apache.log4j.Logger;
 
 import java.sql.SQLException;
@@ -31,7 +34,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         return ingredientes.size();
     }
 
-    /*
+
     @Override
     public List<Ingrediente> getAllIngredientes() {
     Session session = null;
@@ -39,7 +42,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
     try{
         session = FactorySession.openSession();
-        listaIngredientes = (ArrayList<Ingrediente>) session.findAll(Ingrediente.class);
+        listaIngredientes = (ArrayList<Ingrediente>) session.findAll(new Ingrediente());
     }
     catch(Exception e){
         e.printStackTrace();
@@ -52,13 +55,14 @@ public class IngredienteManagerImpl implements IngredienteManager {
         return listaIngredientes;
 
     }
-    */
+
+    /*
     @Override
     public List<Ingrediente> getAllIngredientes() {
 
         return this.ingredientes;
     }
-
+*/
 
 
     @Override
@@ -106,7 +110,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
             return i.getNivelDesbloqueoIngrediente();
         }
     }
-
+/*
     @Override
     public double getPrecioIngrediente(String idIngrediente) {
         Ingrediente i = this.getIngrediente(idIngrediente);
@@ -117,7 +121,27 @@ public class IngredienteManagerImpl implements IngredienteManager {
         else{
             return i.getPrecioIngrediente();
         }
+    }*/
+
+    @Override
+    public double getPrecioIngrediente(String idIngrediente) {
+        Session session = null;
+        Ingrediente i = new Ingrediente();
+        try {
+            session = FactorySession.openSession();
+            i = (Ingrediente) session.getIngredienteId(i,idIngrediente);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+
+        return i.getPrecioIngrediente();
     }
+
+
     @Override
     public Ingrediente putIngrediente (Ingrediente ingrediente) {
         Ingrediente i = this.getIngrediente(ingrediente.getIdIngrediente());
@@ -133,5 +157,42 @@ public class IngredienteManagerImpl implements IngredienteManager {
         }
         return i;
     }
+
+
+
+
+
+
+
+    @Override
+    public int ComprarIngrediente (Jugador j, String idIngrediente ){
+
+        Session session = null;
+        int error =-1;
+        try {
+            double precioIngrediente = getPrecioIngrediente(idIngrediente);
+            double dinero=j.getDinero();//Buscamos el dinero que tiene el usuario
+            double dineroRestante = dinero-precioIngrediente;
+            if(dineroRestante>0) {
+                session = FactorySession.openSession();
+                Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
+                session.update(jug);
+                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getNombreJugador());
+                session.save(NuevoIngrediente);
+                error = 0;
+            }
+            else
+            {
+                error=-1;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return error;
+
+    }
+
 
 }

@@ -1,10 +1,12 @@
 package edu.upc.dsa.BBDD;
 
+import edu.upc.dsa.models.Ingrediente;
 import edu.upc.dsa.util.ObjectHelper;
 import edu.upc.dsa.util.QueryHelper;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,7 +22,6 @@ public class SessionImpl implements Session {
 
         String insertQuery = QueryHelper.createQueryINSERT(entity);
 
-        System.out.println(insertQuery);
         PreparedStatement pstm = null;
 
         try {
@@ -28,7 +29,7 @@ public class SessionImpl implements Session {
             pstm.setObject(1, 0);
             int i = 2;
 
-            for (String field: ObjectHelper.getFields(entity)) {
+            for (String field : ObjectHelper.getFields(entity)) {
                 pstm.setObject(i++, ObjectHelper.getter(entity, field));
             }
 
@@ -40,7 +41,7 @@ public class SessionImpl implements Session {
 
     }
 
-    public void close()  {
+    public void close() {
         try {
             conn.close();
         } catch (SQLException e) {
@@ -61,17 +62,59 @@ public class SessionImpl implements Session {
 
     }
 
-    public List<Object> findAll(Class theClass) {
-        return null;
+    public List<Ingrediente> findAll(Ingrediente ingrediente) {
+        String selectQuery = QueryHelper.createQuerySELECTAll(ingrediente);
+        PreparedStatement pstm = null;
+        List<Ingrediente> ListIngre = new ArrayList<Ingrediente>();
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            pstm.setObject(1, 1);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            while (rs.next()) {
+                Class clase = ingrediente.getClass();
+                Ingrediente o = new Ingrediente();
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++)
+                    ObjectHelper.setter(o, rs.getMetaData().getColumnName(i), rs.getObject(i));
+                ListIngre.add(o);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return ListIngre;
     }
 
-    public List<Object> findAll(Class theClass, HashMap params) {
-        return null;
+//    public List<Object> findAll(Class theClass, HashMap params) {
+//        return null;
+//    }
+
+
+    public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente) {
+        String selectQuery = QueryHelper.createQuerySELECT(in);
+        PreparedStatement pstm = null;
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            pstm.setObject(1, idIngrediente);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            if (rs.next()) {
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++)
+                    ObjectHelper.setter(in, rs.getMetaData().getColumnName(i), rs.getObject(i));
+            }
+            return in;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public List<Object> query(String query, Class theClass, HashMap params) {
         return null;
     }
+
+
     public Object getByTwoParameters(Class theClass, String byFirstParameter, Object byFirstParameterValue, String bySecondParameter, Object bySecondParameterValue) {
 
         String selectQuery = QueryHelper.createQuerySELECTbyTwoParameters(theClass, byFirstParameter, bySecondParameter);
