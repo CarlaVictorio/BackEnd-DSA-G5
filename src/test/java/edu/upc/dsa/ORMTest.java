@@ -10,7 +10,7 @@ public class ORMTest {
 
     @Test
     public void test() {
-        Jugador j = new Jugador("Carme", "11111", "2222", "333");
+        Jugador j = new Jugador("Carme", "11111", "2222", "333", 100);
         Session s = FactorySession.openSession();
         s.save(j);
     }

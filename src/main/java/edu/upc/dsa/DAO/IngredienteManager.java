@@ -14,7 +14,8 @@ public interface IngredienteManager {
     public int getNivelDesbloqueoIngrediente(String idIngrediente);
     public double getPrecioIngrediente(String idIngrediente);
     public Ingrediente putIngrediente (Ingrediente ingrediente);
-    public int ComprarIngrediente (Jugador j, String idIngrediente );
+    public int comprarIngrediente (Jugador j, String idIngrediente );
+
 
     public int size();
 }

@@ -10,7 +10,7 @@ public class ObjectHelperTest {
 
     @Test
     public void test(){
-        Jugador j = new Jugador("Carme", "11111", "22222", "3333");
+        Jugador j = new Jugador("Carme", "11111", "22222", "3333", 100);
 
         Assert.assertEquals("Carme", ObjectHelper.getter(j, "nombreJugador"));
 
