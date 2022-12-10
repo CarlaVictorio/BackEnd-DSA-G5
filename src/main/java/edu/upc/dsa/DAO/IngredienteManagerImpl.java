@@ -158,8 +158,11 @@ public class IngredienteManagerImpl implements IngredienteManager {
         return i;
     }
 
+
+
+
     @Override
-    public int ComprarIngrediente (Jugador j, String idIngrediente ){
+    public int comprarIngrediente(Jugador j, String idIngrediente ){
 
         Session session = null;
         int error =-1;

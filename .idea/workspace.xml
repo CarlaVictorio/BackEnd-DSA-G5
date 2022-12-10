@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambiando html tinda">
+    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/IngredientesComprados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,20 +54,18 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2HXHP9FuNqE3WampQHYgAHnjH23" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-        &quot;keyToString&quot;: {
-        &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-        &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-        &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
-        }
-        }</component>
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -154,7 +159,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambiando html tinda" />
+      <changelist id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="" />
       <created>1668424482734</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -363,14 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669814105804</updated>
     </task>
-    <task id="LOCAL-00030" summary="cambiando html tinda">
-      <created>1670583204462</created>
+    <task id="LOCAL-00030" summary="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador.">
+      <created>1670495531385</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1670583204462</updated>
+      <updated>1670495531385</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador...">
+      <created>1670525828201</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1670525828201</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -409,7 +421,22 @@
     <MESSAGE value="Mas paramatros registro" />
     <MESSAGE value="Id cambiados" />
     <MESSAGE value="cambiando html" />
-    <MESSAGE value="cambiando html tinda" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambiando html tinda" />
+    <MESSAGE value="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador..." />
+    <option name="LAST_COMMIT_MESSAGE" value="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador..." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
