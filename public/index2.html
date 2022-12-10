@@ -9,43 +9,63 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-image: url('fondo.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        h2{
+            background-color:rgb(236, 132, 27, 0.7);
+        }
+    </style>
     <script>
 
     function addCard(name, preu, nivell){
-        /*"
-           <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="ingredientes/"+name+".jng" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">'+name+'</h4>
-                        <p class="card-text">'+preu'+</p>
-                        <p class="card-text">'+nivell'+</p>
-                        <a href="#" class="btn btn-primary" id=name+"Id">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        "*/
+        var res ="<div class='col-sm-4'>\n"+
+                    "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
+                    "<img class='card-img-top' src='ingredientes/'"+name+".jng' alt='Card image' style='width:100%'>\n"+
+                    "<div class='card-body'>\n"+
+                        "<h4 class='card-title'>"+name+"</h4>\n"+
+                        "<p class='card-text'>"+preu+"</p>\n"+
+                        "<p class='card-text'>"+nivell+"</p>\n"+
+                        "<a href='#' class='btn btn-primary' id='nameId'>Comprar</a>\n"+
+                    "</div></div></div>";
+            return res;
     }
-
 
     $(document).ready(function(){
         var x = 0;
+        var contarFins3 = 0;
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
-        var ingredientsArray = [{"name":"Tomate", "preu": "10", "nivell":"1"}, {"name":"Lechuga", "preu": "10", "nivell":"1"}]
-        $.each (ingredientsArray, function (index, status){
-            res= addCard(name, preu, nivell);
-        })
-        console.log(res);
+        var res = "";
+        var ingredientsArray = [{"name":"Tomate", "preu": "10", "nivell":"1"}, {"name":"Lechuga", "preu": "10", "nivell":"1"}, {"name":"Tomate2", "preu": "10", "nivell":"1"}, {"name":"Lechuga2", "preu": "10", "nivell":"1"}]
+        ingredientsArray.forEach(function (ingredient) {
+            console.log(x);
+            if (x%3==0){
+                res = res + "<div class='row'>\n";
+            }
+            console.log("ingredient!!!!",ingredient);
+            res = res + addCard(ingredient.name, ingredient.preu, ingredient.nivell);
+            contarFins3 = contarFins3 + 1;
+            if (contarFins3 == 3){
+                res = res + "</div>";
+                contarFins3 = 0;
+            }
+            console.log("\n", res);
+            x=x+1;
+        } )
+        if (contarFins3 != 3){
+            res = res + "</div>";
+            console.log("\n", res);
+        }
+        $("#containerIngradientes").append(res);
     });
 
         /*
-
-
         $.get(url1, function (data, status) {
                 $.each (data, function(index, element){
-                    if (x%3==0){
-
-                    }
                    $("#ingredientesTabla tbody").append(
                         '<tr><td>' + element.nombreIngrediente+
                         '</td><td>' + JSON.stringify(element.nivelDesbloqueoIngrediente)+
@@ -73,16 +93,15 @@
     </script>
 </head>
 <body>
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center"style="background-color:rgb(236, 132, 27, 0.7)">
         <h1>Llista d'objectes</h1>
     </div>
 
-
     <div class="container-fluid" id="containerIngredientes">
-        <h1>Ingredientes</h1>
+        <h2>Ingredientes</h2>
         <div class="row">
             <div class="col-sm-4">
-                <div class="card" style="width:400px">
+                <div class="card" style="width:400px; background-color:rgb(236, 132, 27, 0.7)">
                     <img class="card-img-top" src="ingredientes/Tomate.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title">Tomate</h4>

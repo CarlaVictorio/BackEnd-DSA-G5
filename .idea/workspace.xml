@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="bbdd de funcio de ingredients get all ingredientes, funció de comprar ingrediente. i get all ingrediente.Solucionar problemes de jugador. He descarregat el mariadb">
+    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/IngredientesComprados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ORMTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ORMTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ObjectHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ObjectHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/QueryHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/QueryHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,14 +382,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670525828201</updated>
     </task>
-    <task id="LOCAL-00032" summary="bbdd de funcio de ingredients get all ingredientes, funció de comprar ingrediente. i get all ingrediente.Solucionar problemes de jugador. He descarregat el mariadb">
-      <created>1670536789917</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1670536789917</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -401,6 +397,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="JugadorService acabado" />
     <MESSAGE value="retocs de noms" />
     <MESSAGE value="corregir maven" />
     <MESSAGE value="corregir maven 2" />
@@ -425,8 +422,7 @@
     <MESSAGE value="Id cambiados" />
     <MESSAGE value="cambiando html" />
     <MESSAGE value="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador..." />
-    <MESSAGE value="bbdd de funcio de ingredients get all ingredientes, funció de comprar ingrediente. i get all ingrediente.Solucionar problemes de jugador. He descarregat el mariadb" />
-    <option name="LAST_COMMIT_MESSAGE" value="bbdd de funcio de ingredients get all ingredientes, funció de comprar ingrediente. i get all ingrediente.Solucionar problemes de jugador. He descarregat el mariadb" />
+    <option name="LAST_COMMIT_MESSAGE" value="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
