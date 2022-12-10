@@ -19,20 +19,21 @@
         h2{
             background-color:rgb(236, 132, 27, 0.7);
         }
+
     </style>
     <script>
 
     function addCard(name, preu, nivell){
         var res ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
-                    "<img class='card-img-top' src='ingredientes/'"+name+".jng' alt='Card image' style='width:100%'>\n"+
+                    "<img class='card-img-top' src='ingredientesUtensilios/"+name+".jpg' alt='Card image' style='width:100%'>\n"+
                     "<div class='card-body'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n"+
                         "<p class='card-text'>"+preu+"</p>\n"+
                         "<p class='card-text'>"+nivell+"</p>\n"+
                         "<a href='#' class='btn btn-primary' id='nameId'>Comprar</a>\n"+
                     "</div></div></div>";
-            return res;
+        return res;
     }
 
     $(document).ready(function(){
@@ -40,7 +41,7 @@
         var contarFins3 = 0;
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
         var res = "";
-        var ingredientsArray = [{"name":"Tomate", "preu": "10", "nivell":"1"}, {"name":"Lechuga", "preu": "10", "nivell":"1"}, {"name":"Tomate2", "preu": "10", "nivell":"1"}, {"name":"Lechuga2", "preu": "10", "nivell":"1"}]
+        var ingredientsArray = [{"name":"Tomate", "preu": "10", "nivell":"1"}, {"name":"Lechuga", "preu": "10", "nivell":"1"}, {"name":"Bacon", "preu": "10", "nivell":"1"}, {"name":"Hamburguesa", "preu": "10", "nivell":"1"}]
         ingredientsArray.forEach(function (ingredient) {
             console.log(x);
             if (x%3==0){
@@ -60,7 +61,32 @@
             res = res + "</div>";
             console.log("\n", res);
         }
-        $("#containerIngradientes").append(res);
+        $("#containerIngredientes").append(res);
+
+        var x = 0;
+        var contarFins3 = 0;
+        var res = "";
+        var utensiliosArray = [{"name":"Plancha", "preu": "10", "nivell":"1"}, {"name":"Horno", "preu": "10", "nivell":"1"}, {"name":"Plato", "preu": "10", "nivell":"1"}]
+        utensiliosArray.forEach(function (utensilio) {
+            console.log(x);
+            if (x%3==0){
+                res = res + "<div class='row'>\n";
+            }
+            console.log("utensilio!!!!",utensilio);
+            res = res + addCard(utensilio.name, utensilio.preu, utensilio.nivell);
+            contarFins3 = contarFins3 + 1;
+            if (contarFins3 == 3){
+                res = res + "</div>";
+                contarFins3 = 0;
+            }
+            console.log("\n", res);
+            x=x+1;
+        } )
+        if (contarFins3 != 3){
+            res = res + "</div>";
+            console.log("\n", res);
+        }
+        $("#containerUtensilios").append(res);
     });
 
         /*
@@ -99,140 +125,10 @@
 
     <div class="container-fluid" id="containerIngredientes">
         <h2>Ingredientes</h2>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width:400px; background-color:rgb(236, 132, 27, 0.7)">
-                    <img class="card-img-top" src="ingredientes/Tomate.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Tomate</h4>
-                        <p class="card-text">10</p>
-                        <p class="card-text">1</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <!--div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="container-fluid" id="containerUtensilios">
-        <h1>Utensilios</h1>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div-->
+        <h2>Utensilios</h2>
     </div>
 </body>
 </html>

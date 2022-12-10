@@ -11,9 +11,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
-        if (typeof(Storage) == 'undefined') {
-            $(location).attr('href',logIn);
+        var usuario = localStorage.getItem('Nombre');
+        console.log(usuario);
+        if (usuario == null) {
+              location.href = "/logIn.html"
         }
+        /*
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
         $.get(url1, function (data, status) {
                 $.each (data, function(index, element){
@@ -37,6 +40,7 @@
                    );
                 });
         });
+        */
     });
     </script>
 </head>
@@ -77,15 +81,6 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
-        <div class="card" style="width:400px">
-            <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
-    </div>
+
 </body>
 </html>
