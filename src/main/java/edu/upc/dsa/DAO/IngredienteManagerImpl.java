@@ -158,12 +158,6 @@ public class IngredienteManagerImpl implements IngredienteManager {
         return i;
     }
 
-
-
-
-
-
-
     @Override
     public int ComprarIngrediente (Jugador j, String idIngrediente ){
 
