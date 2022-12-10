@@ -160,6 +160,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
 
 
+
     @Override
     public int comprarIngrediente(Jugador j, String idIngrediente ){
 
