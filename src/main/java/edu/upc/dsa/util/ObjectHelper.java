@@ -4,6 +4,10 @@ package edu.upc.dsa.util;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import static edu.upc.dsa.util.QueryHelper.logger;
 
@@ -17,12 +21,16 @@ public class ObjectHelper {
 
         //theClass.getDeclaredMethod("getNombreJugador", null)
 
-        String[] sMethods = new String[methods.length];
+        //String[] sMethods = new String[methods.length-1];
+        List<String> sMethods=new ArrayList<>();
         int i=0;
 
-        for (Method m: methods) sMethods[i++]=m.getName().substring(3);
+        //for (Method m: methods) if(m.getName().substring(0, 3).equals("get")){sMethods[i++]=m.getName().substring(3);};
+        for (Method m: methods) if(m.getName().substring(0, 3).equals("get")){sMethods.add(m.getName().substring(3));};
 
-        return sMethods;
+        Collections.sort(sMethods);
+
+        return sMethods.toArray(new String[sMethods.size()]);
 
     }
 
