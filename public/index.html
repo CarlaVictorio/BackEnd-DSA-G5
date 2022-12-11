@@ -9,83 +9,121 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        if (typeof(Storage) == 'undefined') {
-            $(location).attr('href',logIn);
+    <style>
+        body {
+            background-image: url('fondo.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
         }
+        h2{
+            background-color:rgb(236, 132, 27, 0.7);
+        }
+
+    </style>
+    <script>
+
+    function addCardIngrediente(name, nivel, precio){
+        var res ="<div class='col-sm-4'>\n"+
+                    "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
+                    "<img class='card-img-top' src='ingredientesUtensilios/"+name+".jpg' alt='Card image' style='width:100%'>\n"+
+                    "<div class='card-body'>\n"+
+                        "<h4 class='card-title'>"+name+"</h4>\n"+
+                        "<p class='card-text'>Nivel de desbloqueo: "+nivel+"</p>\n"+
+                        "<p class='card-text'>Precio: "+precio+"</p>\n"+
+                        "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
+                    "</div></div></div>";
+        return res;
+    }
+    function addCardUtensilio(name, nivel1, nivel2, nivel3){
+        var res ="<div class='col-sm-4'>\n"+
+                    "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
+                    "<img class='card-img-top' src='ingredientesUtensilios/"+name+".jpg' alt='Card image' style='width:100%'>\n"+
+                    "<div class='card-body'>\n"+
+                        "<h4 class='card-title'>"+name+"</h4>\n"+
+                        "<p class='card-text'>Nivel 1: "+nivel1+"</p>\n"+
+                        "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
+                        "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n"+
+                        "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
+                    "</div></div></div>";
+        return res;
+    }
+
+    $(document).ready(function(){
+    /*
+        var usuario = localStorage.getItem('Nombre');
+        console.log(usuario);
+        if (usuario == null) {
+            location.href = "/logIn.html"
+        }
+        */
+        var x = 0;
+        var contarFins3 = 0;
+        var res = "";
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
         $.get(url1, function (data, status) {
-                $.each (data, function(index, element){
-                   $("#ingredientesTabla tbody").append(
-                        '<tr><td>' + element.nombreIngrediente+
-                        '</td><td>' + JSON.stringify(element.nivelDesbloqueoIngrediente)+
-                        '</td><td>' + JSON.stringify(element.precioIngrediente)+
-                        '</td></tr>'
-                   );
+                $.each (data, function(index, ingrediente){
+                   console.log(x);
+                    if (x%3==0){
+                        res = res + "<div class='row'>\n";
+                    }
+                    console.log("ingredient!!!!",ingredient);
+                    res = res + addCardIngrediante(ingrediente.nombreIngrediente, ingrediente.nivelDesbloqueoIngrediente, ingrediente.precioIngrediante);
+                    contarFins3 = contarFins3 + 1;
+                    if (contarFins3 == 3){
+                        res = res + "</div>";
+                        contarFins3 = 0;
+                    }
+                    console.log("\n", res);
+                    x=x+1;
                 });
+                if (contarFins3 != 3){
+                    res = res + "</div>";
+                }
+                console.log("\n", res);
+                $("#containerIngredientes").append(res);
         });
+
+        var x = 0;
+        var contarFins3 = 0;
+        var res = "";
         var url2 = "/dsaApp/utensilio/getAllUtensilios/";
         $.get(url2, function (data, status) {
-                $.each (data, function(index, element){
-                   $("#utensiliosTabla tbody").append(
-                        '<tr><td>' + element.nombreUtensilio+
-                        '</td><td>' + JSON.stringify(element.tiempoNivel1)+
-                        '</td><td>' + JSON.stringify(element.tiempoNivel2)+
-                        '</td><td>' + JSON.stringify(element.tiempoNivel3)+
-                        '</td></tr>'
-                   );
+                $.each (data, function(index, utensilio){
+                    console.log(x);
+                    if (x%3==0){
+                        res = res + "<div class='row'>\n";
+                    }
+                    console.log("utensilio!!!!",utensilio);
+                    res = res + addCardUtensilio(utensilio.nombreUtensilio, utensilio.tiempoNivel1, utensilio.tiempoNivel2, utensilio.tiempoNivel3);
+                    contarFins3 = contarFins3 + 1;
+                    if (contarFins3 == 3){
+                        res = res + "</div>";
+                        contarFins3 = 0;
+                    }
+                    console.log("\n", res);
+                    x=x+1;
                 });
+                if (contarFins3 != 3){
+                    res = res + "</div>";
+                }
+                console.log("\n", res);
+                $("#containerUtensilios").append(res);
         });
     });
     </script>
 </head>
 <body>
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center"style="background-color:rgb(236, 132, 27, 0.7)">
         <h1>Llista d'objectes</h1>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1>Ingredientes</h1>
-                <table class="table" id="ingredientesTabla">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Nivel de desbloqueo</th>
-                        <th>Precio</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-sm-6">
-                <h1>Utensilios</h1>
-                <table class="table" id="utensiliosTabla">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Tiempo nivel 1</th>
-                        <th>Tiempo nivel 2</th>
-                        <th>Tiempo nivel 3</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
+    <div class="container-fluid" id="containerIngredientes">
+        <h2>Ingredientes</h2>
     </div>
-    <div class="col-sm-4">
-        <div class="card" style="width:400px">
-            <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-            <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
-            </div>
-        </div>
+
+    <div class="container-fluid" id="containerUtensilios">
+        <h2>Utensilios</h2>
     </div>
 </body>
 </html>
