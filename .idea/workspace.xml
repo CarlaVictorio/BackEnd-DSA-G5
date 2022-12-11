@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="Test Object helper i ORM">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" afterDir="false" />
-    </list>
+    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="factory session" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -382,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670777713764</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="factory session">
+      <created>1670780847482</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1670780847482</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -397,7 +401,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="corregir maven" />
     <MESSAGE value="corregir maven 2" />
     <MESSAGE value="pom correcto" />
     <MESSAGE value="search jugador hecho" />
@@ -422,7 +425,8 @@
     <MESSAGE value="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador..." />
     <MESSAGE value="He arreclat la funcío de comprarIngrediente.." />
     <MESSAGE value="Test Object helper i ORM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Object helper i ORM" />
+    <MESSAGE value="factory session" />
+    <option name="LAST_COMMIT_MESSAGE" value="factory session" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
