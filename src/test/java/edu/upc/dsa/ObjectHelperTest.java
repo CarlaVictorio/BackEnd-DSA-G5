@@ -1,5 +1,6 @@
 package edu.upc.dsa;
 
+import edu.upc.dsa.models.Ingrediente;
 import edu.upc.dsa.models.Jugador;
 import edu.upc.dsa.util.ObjectHelper;
 import org.junit.Assert;
@@ -17,6 +18,17 @@ public class ObjectHelperTest {
         ObjectHelper.setter(j, "nombreJugador", "XXXX");
 
         Assert.assertEquals("XXXX", j.getNombreJugador());
+    }
+
+    @Test
+    public void test2(){
+        Ingrediente in = new Ingrediente("Bacon", 2, 10);
+
+        Assert.assertEquals("Bacon", ObjectHelper.getter(in, "nombreIngrediente"));
+
+        ObjectHelper.setter(in, "nombreIngrediente", "XXXX");
+
+        Assert.assertEquals("XXXX", in.getNombreIngrediente());
     }
 
 
