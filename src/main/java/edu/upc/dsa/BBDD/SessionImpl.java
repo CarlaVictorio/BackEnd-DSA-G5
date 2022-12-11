@@ -1,6 +1,7 @@
 package edu.upc.dsa.BBDD;
 
 import edu.upc.dsa.models.Ingrediente;
+import edu.upc.dsa.models.Utensilio;
 import edu.upc.dsa.util.ObjectHelper;
 import edu.upc.dsa.util.QueryHelper;
 
@@ -103,6 +104,26 @@ public class SessionImpl implements Session {
                     ObjectHelper.setter(in, rs.getMetaData().getColumnName(i), rs.getObject(i));
             }
             return in;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Utensilio getUtensilioId(Utensilio u, String idUtensilio) {
+        String selectQuery = QueryHelper.createQuerySELECT(u);
+        PreparedStatement pstm = null;
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            pstm.setObject(1, idUtensilio);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            if (rs.next()) {
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++)
+                    ObjectHelper.setter(u, rs.getMetaData().getColumnName(i), rs.getObject(i));
+            }
+            return u;
 
         } catch (SQLException e) {
             e.printStackTrace();

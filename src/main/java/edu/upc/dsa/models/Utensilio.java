@@ -8,16 +8,21 @@ public class Utensilio {
     int tiempoNivel1;
     int tiempoNivel2;
     int tiempoNivel3;
+
+    double precioUtensilio;
     public Utensilio() {
         this.idUtensilio = RandomUtils.getId();
     }
 
-    public Utensilio (String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
+
+
+    public Utensilio (String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3, double precioUtensilio) {
         this();
         this.setNombreUtensilio(nombreUtensilio);
         this.setTiempoNivel1(tiempoNivel1);
         this.setTiempoNivel2(tiempoNivel2);
         this.setTiempoNivel3(tiempoNivel3);
+        this.setPrecioUtensilio(precioUtensilio);
     }
 
     public String getIdUtensilio() {
@@ -58,5 +63,13 @@ public class Utensilio {
 
     public void setTiempoNivel3(int tiempoNivel3) {
         this.tiempoNivel3 = tiempoNivel3;
+    }
+
+    public double getPrecioUtensilio() {
+        return precioUtensilio;
+    }
+
+    public void setPrecioUtensilio(double precioUtensilio) {
+        this.precioUtensilio = precioUtensilio;
     }
 }

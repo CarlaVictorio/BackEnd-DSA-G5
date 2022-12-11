@@ -1,6 +1,8 @@
 package edu.upc.dsa.DAO;
 
-import edu.upc.dsa.models.Utensilio;
+import edu.upc.dsa.BBDD.FactorySession;
+import edu.upc.dsa.BBDD.Session;
+import edu.upc.dsa.models.*;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedList;
@@ -52,8 +54,8 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public Utensilio addUtensilio(String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3) {
-        Utensilio u = new Utensilio(nombreUtensilio,tiempoNivel1, tiempoNivel2, tiempoNivel3);
+    public Utensilio addUtensilio(String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3, double precioUtensilio) {
+        Utensilio u = new Utensilio(nombreUtensilio,tiempoNivel1, tiempoNivel2, tiempoNivel3, precioUtensilio);
         logger.info("new Utensilio " + u);
         this.utensilios.add(u);
         logger.info("Se ha añadido un Utensilio");
@@ -126,6 +128,54 @@ public class UtensilioManagerImpl implements UtensilioManager{
     @Override
     public int size() {
         return utensilios.size();
+    }
+
+    @Override
+    public double getPrecioUtensilio(String idUtensilio) {
+        Session session = null;
+        Utensilio u = new Utensilio();
+        try {
+            session = FactorySession.openSession();
+            u = (Utensilio) session.getUtensilioId(u,idUtensilio);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+
+        return u.getPrecioUtensilio();
+    }
+
+    @Override
+    public int comprarUtensilio(Jugador j, String idUtensilio, String nivelUtensilio){
+
+        Session session = null;
+        int error =-1;
+        try {
+            double precioUtensilio = getPrecioUtensilio(idUtensilio);
+            double dinero=j.getDinero();//Buscamos el dinero que tiene el usuario
+            double dineroRestante = dinero-precioUtensilio;
+            if(dineroRestante>0) {
+                session = FactorySession.openSession();
+                Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
+                session.update(jug);
+                UtensiliosComprados NuevoUtensilio = new UtensiliosComprados(idUtensilio, jug.getNombreJugador(), nivelUtensilio);
+                session.save(NuevoUtensilio);
+                error = 0;
+            }
+            else
+            {
+                error=-1;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return error;
+
     }
 
 

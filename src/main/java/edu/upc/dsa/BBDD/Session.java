@@ -1,6 +1,7 @@
 package edu.upc.dsa.BBDD;
 
 import edu.upc.dsa.models.Ingrediente;
+import edu.upc.dsa.models.Utensilio;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -12,6 +13,8 @@ public interface Session<E> {
     Object get(Class theClass, int ID);
     void update(Object object);
     public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente);
+
+    public Utensilio getUtensilioId(Utensilio u, String idUtensilio);
     void delete(Object object);
     List<Object> findAll(Ingrediente ingrediente);
 //    List<Object> findAll(Class theClass, HashMap params);
