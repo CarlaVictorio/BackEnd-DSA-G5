@@ -4,25 +4,237 @@
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
-      <Grants>dsa_g5_v1|schema||CAVI|localhost|ALTER|G
-dsa_g5_v1|schema||CAVI|localhost|ALTER ROUTINE|G
-dsa_g5_v1|schema||CAVI|localhost|CREATE|G
-dsa_g5_v1|schema||CAVI|localhost|CREATE ROUTINE|G
-dsa_g5_v1|schema||CAVI|localhost|CREATE TEMPORARY TABLES|G
-dsa_g5_v1|schema||CAVI|localhost|CREATE VIEW|G
-dsa_g5_v1|schema||CAVI|localhost|DELETE|G
-dsa_g5_v1|schema||CAVI|localhost|DELETE HISTORY|G
-dsa_g5_v1|schema||CAVI|localhost|DROP|G
-dsa_g5_v1|schema||CAVI|localhost|EVENT|G
-dsa_g5_v1|schema||CAVI|localhost|EXECUTE|G
-dsa_g5_v1|schema||CAVI|localhost|INDEX|G
-dsa_g5_v1|schema||CAVI|localhost|INSERT|G
-dsa_g5_v1|schema||CAVI|localhost|LOCK TABLES|G
-dsa_g5_v1|schema||CAVI|localhost|REFERENCES|G
-dsa_g5_v1|schema||CAVI|localhost|SELECT|G
-dsa_g5_v1|schema||CAVI|localhost|SHOW VIEW|G
-dsa_g5_v1|schema||CAVI|localhost|TRIGGER|G
-dsa_g5_v1|schema||CAVI|localhost|UPDATE|G</Grants>
+      <Grants>|root||CAVI||ALTER|G
+|root||root||ALTER|G
+|root||root|127.0.0.1|ALTER|G
+|root||root|::1|ALTER|G
+|root||root|desktop-mefajmh|ALTER|G
+|root||root|localhost|ALTER|G
+|root||CAVI||ALTER ROUTINE|G
+|root||root||ALTER ROUTINE|G
+|root||root|127.0.0.1|ALTER ROUTINE|G
+|root||root|::1|ALTER ROUTINE|G
+|root||root|desktop-mefajmh|ALTER ROUTINE|G
+|root||root|localhost|ALTER ROUTINE|G
+|root||CAVI||BINLOG ADMIN|G
+|root||root||BINLOG ADMIN|G
+|root||root|127.0.0.1|BINLOG ADMIN|G
+|root||root|::1|BINLOG ADMIN|G
+|root||root|desktop-mefajmh|BINLOG ADMIN|G
+|root||root|localhost|BINLOG ADMIN|G
+|root||root||BINLOG MONITOR|G
+|root||root|127.0.0.1|BINLOG MONITOR|G
+|root||root|::1|BINLOG MONITOR|G
+|root||root|desktop-mefajmh|BINLOG MONITOR|G
+|root||root|localhost|BINLOG MONITOR|G
+|root||CAVI||BINLOG REPLAY|G
+|root||root||BINLOG REPLAY|G
+|root||root|127.0.0.1|BINLOG REPLAY|G
+|root||root|::1|BINLOG REPLAY|G
+|root||root|desktop-mefajmh|BINLOG REPLAY|G
+|root||root|localhost|BINLOG REPLAY|G
+|root||CAVI||CONNECTION ADMIN|G
+|root||root||CONNECTION ADMIN|G
+|root||root|127.0.0.1|CONNECTION ADMIN|G
+|root||root|::1|CONNECTION ADMIN|G
+|root||root|desktop-mefajmh|CONNECTION ADMIN|G
+|root||root|localhost|CONNECTION ADMIN|G
+|root||CAVI||CREATE|G
+|root||root||CREATE|G
+|root||root|127.0.0.1|CREATE|G
+|root||root|::1|CREATE|G
+|root||root|desktop-mefajmh|CREATE|G
+|root||root|localhost|CREATE|G
+|root||CAVI||CREATE ROUTINE|G
+|root||root||CREATE ROUTINE|G
+|root||root|127.0.0.1|CREATE ROUTINE|G
+|root||root|::1|CREATE ROUTINE|G
+|root||root|desktop-mefajmh|CREATE ROUTINE|G
+|root||root|localhost|CREATE ROUTINE|G
+|root||CAVI||CREATE TABLESPACE|G
+|root||root||CREATE TABLESPACE|G
+|root||root|127.0.0.1|CREATE TABLESPACE|G
+|root||root|::1|CREATE TABLESPACE|G
+|root||root|desktop-mefajmh|CREATE TABLESPACE|G
+|root||root|localhost|CREATE TABLESPACE|G
+|root||CAVI||CREATE TEMPORARY TABLES|G
+|root||root||CREATE TEMPORARY TABLES|G
+|root||root|127.0.0.1|CREATE TEMPORARY TABLES|G
+|root||root|::1|CREATE TEMPORARY TABLES|G
+|root||root|desktop-mefajmh|CREATE TEMPORARY TABLES|G
+|root||root|localhost|CREATE TEMPORARY TABLES|G
+|root||CAVI||CREATE USER|G
+|root||root||CREATE USER|G
+|root||root|127.0.0.1|CREATE USER|G
+|root||root|::1|CREATE USER|G
+|root||root|desktop-mefajmh|CREATE USER|G
+|root||root|localhost|CREATE USER|G
+|root||CAVI||CREATE VIEW|G
+|root||root||CREATE VIEW|G
+|root||root|127.0.0.1|CREATE VIEW|G
+|root||root|::1|CREATE VIEW|G
+|root||root|desktop-mefajmh|CREATE VIEW|G
+|root||root|localhost|CREATE VIEW|G
+|root||CAVI||DELETE|G
+|root||root||DELETE|G
+|root||root|127.0.0.1|DELETE|G
+|root||root|::1|DELETE|G
+|root||root|desktop-mefajmh|DELETE|G
+|root||root|localhost|DELETE|G
+|root||root||DELETE HISTORY|G
+|root||root|127.0.0.1|DELETE HISTORY|G
+|root||root|::1|DELETE HISTORY|G
+|root||root|desktop-mefajmh|DELETE HISTORY|G
+|root||root|localhost|DELETE HISTORY|G
+|root||CAVI||DROP|G
+|root||root||DROP|G
+|root||root|127.0.0.1|DROP|G
+|root||root|::1|DROP|G
+|root||root|desktop-mefajmh|DROP|G
+|root||root|localhost|DROP|G
+|root||CAVI||EVENT|G
+|root||root||EVENT|G
+|root||root|127.0.0.1|EVENT|G
+|root||root|::1|EVENT|G
+|root||root|desktop-mefajmh|EVENT|G
+|root||root|localhost|EVENT|G
+|root||CAVI||EXECUTE|G
+|root||root||EXECUTE|G
+|root||root|127.0.0.1|EXECUTE|G
+|root||root|::1|EXECUTE|G
+|root||root|desktop-mefajmh|EXECUTE|G
+|root||root|localhost|EXECUTE|G
+|root||CAVI||FEDERATED ADMIN|G
+|root||root||FEDERATED ADMIN|G
+|root||root|127.0.0.1|FEDERATED ADMIN|G
+|root||root|::1|FEDERATED ADMIN|G
+|root||root|desktop-mefajmh|FEDERATED ADMIN|G
+|root||root|localhost|FEDERATED ADMIN|G
+|root||CAVI||FILE|G
+|root||root||FILE|G
+|root||root|127.0.0.1|FILE|G
+|root||root|::1|FILE|G
+|root||root|desktop-mefajmh|FILE|G
+|root||root|localhost|FILE|G
+|root||CAVI||INDEX|G
+|root||root||INDEX|G
+|root||root|127.0.0.1|INDEX|G
+|root||root|::1|INDEX|G
+|root||root|desktop-mefajmh|INDEX|G
+|root||root|localhost|INDEX|G
+|root||CAVI||INSERT|G
+|root||root||INSERT|G
+|root||root|127.0.0.1|INSERT|G
+|root||root|::1|INSERT|G
+|root||root|desktop-mefajmh|INSERT|G
+|root||root|localhost|INSERT|G
+|root||CAVI||LOCK TABLES|G
+|root||root||LOCK TABLES|G
+|root||root|127.0.0.1|LOCK TABLES|G
+|root||root|::1|LOCK TABLES|G
+|root||root|desktop-mefajmh|LOCK TABLES|G
+|root||root|localhost|LOCK TABLES|G
+|root||CAVI||PROCESS|G
+|root||root||PROCESS|G
+|root||root|127.0.0.1|PROCESS|G
+|root||root|::1|PROCESS|G
+|root||root|desktop-mefajmh|PROCESS|G
+|root||root|localhost|PROCESS|G
+|root||CAVI||READ_ONLY ADMIN|G
+|root||root||READ_ONLY ADMIN|G
+|root||root|127.0.0.1|READ_ONLY ADMIN|G
+|root||root|::1|READ_ONLY ADMIN|G
+|root||root|desktop-mefajmh|READ_ONLY ADMIN|G
+|root||root|localhost|READ_ONLY ADMIN|G
+|root||CAVI||REFERENCES|G
+|root||root||REFERENCES|G
+|root||root|127.0.0.1|REFERENCES|G
+|root||root|::1|REFERENCES|G
+|root||root|desktop-mefajmh|REFERENCES|G
+|root||root|localhost|REFERENCES|G
+|root||CAVI||RELOAD|G
+|root||root||RELOAD|G
+|root||root|127.0.0.1|RELOAD|G
+|root||root|::1|RELOAD|G
+|root||root|desktop-mefajmh|RELOAD|G
+|root||root|localhost|RELOAD|G
+|root||CAVI||REPLICATION MASTER ADMIN|G
+|root||root||REPLICATION MASTER ADMIN|G
+|root||root|127.0.0.1|REPLICATION MASTER ADMIN|G
+|root||root|::1|REPLICATION MASTER ADMIN|G
+|root||root|desktop-mefajmh|REPLICATION MASTER ADMIN|G
+|root||root|localhost|REPLICATION MASTER ADMIN|G
+|root||CAVI||REPLICATION SLAVE|G
+|root||root||REPLICATION SLAVE|G
+|root||root|127.0.0.1|REPLICATION SLAVE|G
+|root||root|::1|REPLICATION SLAVE|G
+|root||root|desktop-mefajmh|REPLICATION SLAVE|G
+|root||root|localhost|REPLICATION SLAVE|G
+|root||CAVI||REPLICATION SLAVE ADMIN|G
+|root||root||REPLICATION SLAVE ADMIN|G
+|root||root|127.0.0.1|REPLICATION SLAVE ADMIN|G
+|root||root|::1|REPLICATION SLAVE ADMIN|G
+|root||root|desktop-mefajmh|REPLICATION SLAVE ADMIN|G
+|root||root|localhost|REPLICATION SLAVE ADMIN|G
+|root||CAVI||SELECT|G
+|root||root||SELECT|G
+|root||root|127.0.0.1|SELECT|G
+|root||root|::1|SELECT|G
+|root||root|desktop-mefajmh|SELECT|G
+|root||root|localhost|SELECT|G
+|root||CAVI||SET USER|G
+|root||root||SET USER|G
+|root||root|127.0.0.1|SET USER|G
+|root||root|::1|SET USER|G
+|root||root|desktop-mefajmh|SET USER|G
+|root||root|localhost|SET USER|G
+|root||CAVI||SHOW DATABASES|G
+|root||root||SHOW DATABASES|G
+|root||root|127.0.0.1|SHOW DATABASES|G
+|root||root|::1|SHOW DATABASES|G
+|root||root|desktop-mefajmh|SHOW DATABASES|G
+|root||root|localhost|SHOW DATABASES|G
+|root||CAVI||SHOW VIEW|G
+|root||root||SHOW VIEW|G
+|root||root|127.0.0.1|SHOW VIEW|G
+|root||root|::1|SHOW VIEW|G
+|root||root|desktop-mefajmh|SHOW VIEW|G
+|root||root|localhost|SHOW VIEW|G
+|root||CAVI||SHUTDOWN|G
+|root||root||SHUTDOWN|G
+|root||root|127.0.0.1|SHUTDOWN|G
+|root||root|::1|SHUTDOWN|G
+|root||root|desktop-mefajmh|SHUTDOWN|G
+|root||root|localhost|SHUTDOWN|G
+|root||root||SLAVE MONITOR|G
+|root||root|127.0.0.1|SLAVE MONITOR|G
+|root||root|::1|SLAVE MONITOR|G
+|root||root|desktop-mefajmh|SLAVE MONITOR|G
+|root||root|localhost|SLAVE MONITOR|G
+|root||CAVI||SUPER|G
+|root||root||SUPER|G
+|root||root|127.0.0.1|SUPER|G
+|root||root|::1|SUPER|G
+|root||root|desktop-mefajmh|SUPER|G
+|root||root|localhost|SUPER|G
+|root||CAVI||TRIGGER|G
+|root||root||TRIGGER|G
+|root||root|127.0.0.1|TRIGGER|G
+|root||root|::1|TRIGGER|G
+|root||root|desktop-mefajmh|TRIGGER|G
+|root||root|localhost|TRIGGER|G
+|root||CAVI||UPDATE|G
+|root||root||UPDATE|G
+|root||root|127.0.0.1|UPDATE|G
+|root||root|::1|UPDATE|G
+|root||root|desktop-mefajmh|UPDATE|G
+|root||root|localhost|UPDATE|G
+|root||CAVI||grant option|G
+|root||root||grant option|G
+|root||root|127.0.0.1|grant option|G
+|root||root|::1|grant option|G
+|root||root|desktop-mefajmh|grant option|G
+|root||root|localhost|grant option|G</Grants>
       <ServerVersion>10.10.2</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
@@ -1215,36 +1427,104 @@ dsa_g5_v1|schema||CAVI|localhost|UPDATE|G</Grants>
     <collation id="507" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="508" parent="1" name="dsa_g5_v1">
+    <schema id="508" parent="1" name="bbdd juego">
       <Current>1</Current>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="509" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <user id="510" parent="1" name="CAVI">
+    <schema id="510" parent="1" name="mysql">
+      <CollationName>latin1_swedish_ci</CollationName>
+    </schema>
+    <schema id="511" parent="1" name="performance_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="512" parent="1" name="sys">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <user id="513" parent="1" name="CAVI"/>
+    <user id="514" parent="1" name="mariadb.sys">
       <Host>localhost</Host>
     </user>
-    <table id="511" parent="508" name="jugador">
+    <user id="515" parent="1" name="root"/>
+    <user id="516" parent="1" name="root">
+      <Host>127.0.0.1</Host>
+    </user>
+    <user id="517" parent="1" name="root">
+      <Host>::1</Host>
+    </user>
+    <user id="518" parent="1" name="root">
+      <Host>desktop-mefajmh</Host>
+    </user>
+    <user id="519" parent="1" name="root">
+      <Host>localhost</Host>
+    </user>
+    <table id="520" parent="508" name="ingredientes">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="512" parent="511" name="nombreJugador">
+    <table id="521" parent="508" name="jugador">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="522" parent="508" name="utensilios">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="523" parent="520" name="nombreIngrediente">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="513" parent="511" name="passwordJugador">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="524" parent="520" name="nivelDesbloqueoIngrediente">
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="514" parent="511" name="emailJugador">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="525" parent="520" name="precioIngrediente">
+      <DasType>decimal(10)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="515" parent="511" name="paisJugador">
+    <column id="526" parent="521" name="nombreJugador">
+      <DasType>varchar(250)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="527" parent="521" name="paswordJugador">
+      <DasType>varchar(250)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="528" parent="521" name="emailJugador">
+      <DasType>varchar(250)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="529" parent="521" name="paisJugador">
+      <DasType>varchar(250)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="530" parent="522" name="nombreUtensilio">
       <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="531" parent="522" name="tiempoNivel1">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="532" parent="522" name="tiempoNivel2">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="533" parent="522" name="tiempoNivel3">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
   </database-model>
