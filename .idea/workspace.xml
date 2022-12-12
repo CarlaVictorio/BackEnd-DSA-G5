@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="implementando compra">
+    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="factory session">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,33 +46,18 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2HXHP9FuNqE3WampQHYgAHnjH23" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/victoriaromangarrido/Desktop/Uni/2B-Q2/DSA/BackEnd-DSA-G5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "redshift"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -95,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ORMTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JugadorManagerTest.testAddJugador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rest-example2" />
       <extension name="coverage">
         <pattern>
@@ -104,29 +89,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.upc.dsa" />
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.ORMTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ORMTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rest-example2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.upc.dsa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.upc.dsa" />
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.ORMTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.JugadorManagerTest" />
+      <option name="METHOD_NAME" value="testAddJugador" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JugadorManagerTest.testDeletedJugador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rest-example2" />
       <extension name="coverage">
         <pattern>
@@ -135,13 +105,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.upc.dsa" />
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.QueryHelperTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.JugadorManagerTest" />
+      <option name="METHOD_NAME" value="testDeletedJugador" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryHelperTest.testQueryINSERT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JugadorManagerTest.testPutJugador" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rest-example2" />
       <extension name="coverage">
         <pattern>
@@ -150,8 +121,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.upc.dsa" />
-      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.QueryHelperTest" />
-      <option name="METHOD_NAME" value="testQueryINSERT" />
+      <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.JugadorManagerTest" />
+      <option name="METHOD_NAME" value="testPutJugador" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,27 +142,20 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ORMTest.test" />
-        <item itemvalue="JUnit.ORMTest" />
-        <item itemvalue="JUnit.QueryHelperTest.testQueryINSERT" />
-        <item itemvalue="JUnit.QueryHelperTest" />
+        <item itemvalue="JUnit.JugadorManagerTest.testAddJugador" />
+        <item itemvalue="JUnit.JugadorManagerTest.testPutJugador" />
+        <item itemvalue="JUnit.JugadorManagerTest.testDeletedJugador" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test" />
+      <changelist id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="" />
       <created>1668424482734</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668424482734</updated>
-      <workItem from="1670787412158" duration="4897000" />
-      <workItem from="1670792329791" duration="396000" />
-      <workItem from="1670792746020" duration="293000" />
-      <workItem from="1670793054044" duration="166000" />
-      <workItem from="1670795983084" duration="7917000" />
-      <workItem from="1670843918785" duration="891000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -396,18 +360,43 @@
       <option name="project" value="LOCAL" />
       <updated>1669814105804</updated>
     </task>
-    <task id="LOCAL-00030" summary="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test">
-      <created>1670440451492</created>
+    <task id="LOCAL-00030" summary="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador.">
+      <created>1670495531385</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1670440451492</updated>
+      <updated>1670495531385</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador...">
+      <created>1670525828201</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1670525828201</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Test Object helper i ORM">
+      <created>1670777713764</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1670777713764</updated>
+    </task>
+    <task id="LOCAL-00033" summary="factory session">
+      <created>1670780847482</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1670780847482</updated>
+    </task>
+    <task id="LOCAL-00034" summary="factory session">
+      <created>1670781754811</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1670781754811</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -421,9 +410,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JugadorService acabado" />
-    <MESSAGE value="retocs de noms" />
-    <MESSAGE value="corregir maven" />
     <MESSAGE value="corregir maven 2" />
     <MESSAGE value="pom correcto" />
     <MESSAGE value="search jugador hecho" />
@@ -445,23 +431,25 @@
     <MESSAGE value="Mas paramatros registro" />
     <MESSAGE value="Id cambiados" />
     <MESSAGE value="cambiando html" />
-    <MESSAGE value="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test" />
+    <MESSAGE value="bbdd de funcio de ingredients get all ingredientes, començament de la funció de comprar ingrediente. i he afegit el parametre de dinero a jugador i posantlo a les funcions de jugador..." />
+    <MESSAGE value="He arreclat la funcío de comprarIngrediente.." />
+    <MESSAGE value="Test Object helper i ORM" />
+    <MESSAGE value="factory session" />
+    <option name="LAST_COMMIT_MESSAGE" value="factory session" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngrdienteService.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="38" />
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
