@@ -133,13 +133,13 @@ public class JugadorManagerImpl implements JugadorManager{
                 Jugador jugador= (Jugador) session.getByTwoParameters(Jugador.class, registro.getNombre(), "nombreJugador", registro.getPassword(), "passwordJugador");
                 if(jugador==null){
                     Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais(), registro.getDinero());
-                    logger.info("new Jugador " + jugador.getNombreJugador());
+                    logger.info("new Jugador " + jugadorAdd.getNombreJugador());
                     session.save(jugadorAdd);
                     logger.info("new Jugdor added");
                     return jugadorAdd;
                 }
             }
-            catch (Exception e) {
+            catch (Throwable e) {
                 e.printStackTrace();
             }
             finally {

@@ -66,7 +66,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
 
     @Override
-    public Ingrediente getIngrediente (String idIngrediente){
+    public Ingrediente getIngrediente (int idIngrediente){
         logger.info("getIngrediente("+idIngrediente+")");
 
         for (Ingrediente i: this.ingredientes) {
@@ -90,7 +90,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }
 
     @Override
-    public void deleteIngrediente(String idIngrediente) {
+    public void deleteIngrediente(int idIngrediente) {
         Ingrediente i = this.getIngrediente(idIngrediente);
         if (i==null){
             logger.warn("not found "+i);
@@ -100,7 +100,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         this.ingredientes.remove(i);
     }
     @Override
-    public int getNivelDesbloqueoIngrediente(String idIngrediente) {
+    public int getNivelDesbloqueoIngrediente(int idIngrediente) {
         Ingrediente i = this.getIngrediente(idIngrediente);
         if (i==null) {
             logger.warn("not found "+i);

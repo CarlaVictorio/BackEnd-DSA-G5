@@ -67,8 +67,8 @@
                     if (x%3==0){
                         res = res + "<div class='row'>\n";
                     }
-                    console.log("ingredient!!!!",ingredient);
-                    res = res + addCardIngrediante(data.nombreIngrediente, data.nivelDesbloqueoIngrediente, data.precioIngrediante);
+                    console.log(data.nombreIngrediente, data.nivelDesbloqueoIngrediente, data.precioIngrediante);
+                    res = res + addCardIngrediente(data.nombreIngrediente, data.nivelDesbloqueoIngrediente, data.precioIngrediante);
                     contarFins3 = contarFins3 + 1;
                     if (contarFins3 == 3){
                         res = res + "</div>";

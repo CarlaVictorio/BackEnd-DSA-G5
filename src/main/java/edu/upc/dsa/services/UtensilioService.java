@@ -56,7 +56,7 @@ public class UtensilioService {
     @Path("/getUtensilio/{idUtensilio}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getUtensilio(@PathParam("idUtensilio") String id) {
+    public Response getUtensilio(@PathParam("idUtensilio") int id) {
         Utensilio u = this.um.getUtensilio(id);
         if (u == null) return Response.status(404).build();
         else  return Response.status(201).entity(u).build();
@@ -91,7 +91,7 @@ public class UtensilioService {
             @ApiResponse(code = 404, message = "Utensilio not found")
     })
     @Path("/deleteUtensilio/{idUtensilio}")
-    public Response deleteUtensilio(@PathParam("idUtensilio") String id) {
+    public Response deleteUtensilio(@PathParam("idUtensilio") int id) {
         Utensilio u = this.um.getUtensilio(id);
         if (u == null) return Response.status(404).build();
         else {

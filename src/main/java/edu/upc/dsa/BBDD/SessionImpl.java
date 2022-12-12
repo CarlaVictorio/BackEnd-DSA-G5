@@ -111,7 +111,7 @@ public class SessionImpl implements Session {
         }
     }
 
-    public Utensilio getUtensilioId(Utensilio u, String idUtensilio) {
+    public Utensilio getUtensilioId(Utensilio u, int idUtensilio) {
         String selectQuery = QueryHelper.createQuerySELECT(u);
         PreparedStatement pstm = null;
         try {

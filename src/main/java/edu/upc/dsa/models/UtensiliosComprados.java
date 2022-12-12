@@ -2,43 +2,42 @@ package edu.upc.dsa.models;
 
 public class UtensiliosComprados {
 
-    String idUtensilioComprado;
-    String jugadorName;
-
-    String nivelUtensilio;
+    int idUtensilio;
+    int idJugador;
+    int nivelUtensilio;
 
 
     public UtensiliosComprados(){}
 
 
 
-    public UtensiliosComprados(String idUtensilioComprado, String jugadorName, String nivelUtensilio){
-        this.idUtensilioComprado = idUtensilioComprado;
-        this.jugadorName = jugadorName;
+    public UtensiliosComprados(int idUtensilioComprado, int idJugador, int nivelUtensilio){
+        this.idUtensilio = idUtensilioComprado;
+        this.idJugador = idJugador;
         this.nivelUtensilio = nivelUtensilio;
     }
 
-    public String getJugadorName() {
-        return jugadorName;
+    public int getIdUtensilio() {
+        return idUtensilio;
     }
 
-    public void setJugadorName(String jugadorName) {
-        this.jugadorName = jugadorName;
+    public void setIdUtensilio(int idUtensilio) {
+        this.idUtensilio = idUtensilio;
     }
 
-    public String getIdUtensilioComprado() {
-        return idUtensilioComprado;
+    public int getIdJugador() {
+        return idJugador;
     }
 
-    public void setIdUtensilioComprado(String idUtensilioComprado) {
-        this.idUtensilioComprado = idUtensilioComprado;
+    public void setIdJugador(int idJugador) {
+        this.idJugador = idJugador;
     }
 
-    public String getNivelUtensilio() {
+    public int getNivelUtensilio() {
         return nivelUtensilio;
     }
 
-    public void setNivelUtensilio(String nivelUtensilio) {
+    public void setNivelUtensilio(int nivelUtensilio) {
         this.nivelUtensilio = nivelUtensilio;
     }
 }
