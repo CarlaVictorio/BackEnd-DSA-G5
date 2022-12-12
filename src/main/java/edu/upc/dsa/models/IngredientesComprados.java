@@ -4,7 +4,6 @@ public class IngredientesComprados {
     String idIngrediente;
     String idJugador;
 
-
     public IngredientesComprados(){}
 
     public IngredientesComprados(String idIngredienteComprado, String jugadorName){

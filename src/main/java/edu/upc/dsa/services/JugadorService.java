@@ -50,20 +50,20 @@ public class JugadorService {
     }
 
 
-    /*@GET
+    @GET
     @ApiOperation(value = "get un Jugador", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
             @ApiResponse(code = 404, message = "Jugador not found")
     })
-    @Path("/{idJugador}")
+    @Path("/{nombreJugador}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getJugador(@PathParam("idJugador") String id) {
-        Jugador j = this.jm.getJugador(id);
+    public Response getJugadorByNombre(@PathParam("nombreJugador") String nombre) {
+        Jugador j = this.jm.searchJugadorByName(nombre);
         if (j == null) return Response.status(404).build();
         else  return Response.status(201).entity(j).build();
-    }*/
+    }
 
 
     @POST

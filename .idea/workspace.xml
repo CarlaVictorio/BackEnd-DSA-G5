@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="workspace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/IngredientesComprados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/IngredientesComprados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +38,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
