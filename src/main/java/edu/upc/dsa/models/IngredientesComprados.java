@@ -1,30 +1,30 @@
 package edu.upc.dsa.models;
 
 public class IngredientesComprados {
-    String idIngrediente;
-    String idJugador;
+    int idIngrediente;
+    int idJugador;
 
 
     public IngredientesComprados(){}
 
-    public IngredientesComprados(String idIngredienteComprado, String jugadorName){
+    public IngredientesComprados(int idIngredienteComprado, int jugadorName){
         this.idIngrediente = idIngredienteComprado;
         this.idJugador = jugadorName;
     }
 
-    public String getIdIngredienteComprado() {
+    public int getIdIngredienteComprado() {
         return idIngrediente;
     }
 
-    public void setIdIngredienteComprado(String idIngredienteComprado) {
+    public void setIdIngredienteComprado(int idIngredienteComprado) {
         this.idIngrediente = idIngredienteComprado;
     }
 
-    public String getJugadorName() {
+    public int getJugadorName() {
         return idJugador;
     }
 
-    public void setJugadorName(String jugadorName) {
+    public void setJugadorName(int jugadorName) {
         this.idJugador = jugadorName;
     }
 }
