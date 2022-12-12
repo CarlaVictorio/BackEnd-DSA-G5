@@ -2,11 +2,11 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 public class Jugador {
+    int idJugador;
     String nombreJugador;
     String passwordJugador;
     String emailJugador;
     String paisJugador;
-
     double dinero;
 
     public Jugador() {
@@ -21,6 +21,13 @@ public class Jugador {
         this.setDinero(dinero);
     }
 
+    public int getIdJugador() {
+        return idJugador;
+    }
+
+    public void setIdJugador(int idJugador) {
+        this.idJugador = idJugador;
+    }
     public double getDinero() {
         return dinero;
     }
