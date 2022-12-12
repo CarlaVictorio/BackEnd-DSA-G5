@@ -23,11 +23,11 @@ public class UtensilioService {
     public UtensilioService(){
         this.um = UtensilioManagerImpl.getInstance();
         if(um.size()==0) {
-            um.addUtensilio("Plancha", 15, 10, 5);
-            um.addUtensilio("DispensadorCocacola", 15, 10, 5);
-            um.addUtensilio("Cafetera", 15, 10, 5);
-            um.addUtensilio("Dispensador", 15, 10, 5);
-            um.addUtensilio("Horno", 15, 10, 5);
+            um.addUtensilio("Plancha", 15, 10, 5, 15);
+            um.addUtensilio("DispensadorCocacola", 15, 10, 5, 15);
+            um.addUtensilio("Cafetera", 15, 10, 5, 15);
+            um.addUtensilio("Dispensador", 15, 10, 5, 15);
+            um.addUtensilio("Horno", 15, 10, 5, 15);
         }
     }
 
@@ -56,7 +56,7 @@ public class UtensilioService {
     @Path("/getUtensilio/{idUtensilio}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getUtensilio(@PathParam("idUtensilio") String id) {
+    public Response getUtensilio(@PathParam("idUtensilio") int id) {
         Utensilio u = this.um.getUtensilio(id);
         if (u == null) return Response.status(404).build();
         else  return Response.status(201).entity(u).build();
@@ -76,7 +76,7 @@ public class UtensilioService {
         if (utensilio.getNombreUtensilio()=="" || utensilio.getTiempoNivel1()==0|| utensilio.getTiempoNivel2()==0||utensilio.getTiempoNivel3()==0) {
             return Response.status(500).build();
         }
-        Utensilio u = this.um.addUtensilio(utensilio.getNombreUtensilio(),utensilio.getTiempoNivel1(),utensilio.getTiempoNivel2(),utensilio.getTiempoNivel3());
+        Utensilio u = this.um.addUtensilio(utensilio.getNombreUtensilio(),utensilio.getTiempoNivel1(),utensilio.getTiempoNivel2(),utensilio.getTiempoNivel3(), utensilio.getPrecioUtensilio());
         if (u!=null){
             return Response.status(201).build();
         }
@@ -91,7 +91,7 @@ public class UtensilioService {
             @ApiResponse(code = 404, message = "Utensilio not found")
     })
     @Path("/deleteUtensilio/{idUtensilio}")
-    public Response deleteUtensilio(@PathParam("idUtensilio") String id) {
+    public Response deleteUtensilio(@PathParam("idUtensilio") int id) {
         Utensilio u = this.um.getUtensilio(id);
         if (u == null) return Response.status(404).build();
         else {
