@@ -2,12 +2,12 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 public class Jugador {
-    int idJugador;
-    String nombreJugador;
-    String passwordJugador;
-    String emailJugador;
-    String paisJugador;
-    double dinero;
+    private int idJugador;
+    private String nombreJugador;
+    private String passwordJugador;
+    private String emailJugador;
+    private String paisJugador;
+    private double dinero;
 
     public Jugador() {
     }

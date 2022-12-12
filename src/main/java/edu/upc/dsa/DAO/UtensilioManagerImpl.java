@@ -178,5 +178,20 @@ public class UtensilioManagerImpl implements UtensilioManager{
 
     }
 
+    @Override
+    public UtensiliosComprados postUtensilioComprado(UtensiliosComprados uc, int idJugador, int idUtensilio) {
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.save(uc);
+            return uc;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 }

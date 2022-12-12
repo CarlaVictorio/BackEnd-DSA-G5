@@ -17,21 +17,21 @@ public class ObjectHelper {
         Class theClass = entity.getClass();
         Method[] methods = theClass.getDeclaredMethods();
 
-        //Field[] fields = theClass.getDeclaredFields();
+        Field[] fields = theClass.getDeclaredFields();
+        //Field[] fields = theClass.getFields();
 
         //theClass.getDeclaredMethod("getNombreJugador", null)
 
         //String[] sMethods = new String[methods.length-1];
-        List<String> sMethods=new ArrayList<>();
+        String[] sFields = new String[fields.length];
+
         int i=0;
 
         //for (Method m: methods) if(m.getName().substring(0, 3).equals("get")){sMethods[i++]=m.getName().substring(3);};
-        for (Method m: methods) if(m.getName().substring(0, 3).equals("get")){sMethods.add(m.getName().substring(3));};
-
-        Collections.sort(sMethods);
-
-        return sMethods.toArray(new String[sMethods.size()]);
-
+        for (Field f: fields) {
+            sFields[i++]= f.getName();
+        }
+        return sFields;
     }
 
 

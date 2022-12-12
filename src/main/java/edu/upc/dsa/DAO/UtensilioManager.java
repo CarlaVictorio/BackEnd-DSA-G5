@@ -1,7 +1,9 @@
 package edu.upc.dsa.DAO;
 
+import edu.upc.dsa.models.IngredientesComprados;
 import edu.upc.dsa.models.Jugador;
 import edu.upc.dsa.models.Utensilio;
+import edu.upc.dsa.models.UtensiliosComprados;
 
 import java.util.List;
 
@@ -18,6 +20,7 @@ public interface UtensilioManager {
 
     public double getPrecioUtensilio(int idUtensilio);
     public int comprarUtensilio(Jugador j, int idUtensilio, int nivelUtensilio );
+    public UtensiliosComprados postUtensilioComprado(UtensiliosComprados uc, int idJugador, int idUtensilio);
 
     public int size();
 }

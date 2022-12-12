@@ -18,20 +18,11 @@ public class QueryHelper {
         sb.append("(");
 
         Class theClass = entity.getClass();
-        Method[] methods = theClass.getDeclaredMethods();
-        //String[] sMethods = new String[methods.length/2];
-        List<String> sMethods=new ArrayList<>();
-        int i=0;
-        for (Method m: methods) if(m.getName().substring(0, 3).equals("get")){sMethods.add(m.getName().substring(3));};
-        Collections.sort(sMethods);
 
-        //String [] fields = ObjectHelper.getFields(entity);
+        String [] fields = ObjectHelper.getFields(entity);
 
-        //sb.append("ID");
-        /*for (String field: fields) {
-            sb.append(", ").append(field);
-        }*/
-        for(String s:sMethods){
+
+        for(String s:fields){
             sb.append(s).append(", ");
         }
         sb=sb.replace(sb.length()-2,sb.length(),"");
@@ -39,10 +30,7 @@ public class QueryHelper {
         //sb.append(") VALUES (?");
         sb.append(") VALUES (");
 
-        /*for (String field: fields) {
-            sb.append(", ?");
-        }*/
-        for (String s:sMethods) {
+        for (String s:fields) {
             sb.append("?, ");
         }
         sb=sb.replace(sb.length()-2,sb.length(),"");

@@ -2,7 +2,9 @@ package edu.upc.dsa.services;
 
 import edu.upc.dsa.DAO.UtensilioManager;
 import edu.upc.dsa.DAO.UtensilioManagerImpl;
+import edu.upc.dsa.models.IngredientesComprados;
 import edu.upc.dsa.models.Utensilio;
+import edu.upc.dsa.models.UtensiliosComprados;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -98,6 +100,26 @@ public class UtensilioService {
             this.um.deleteUtensilio(id);
             return Response.status(201).build();
         }
+    }
+
+    @POST
+    @ApiOperation(value = "añadir Utensilio Comprado BBDD", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Validation Error"),
+
+    })
+    @Path("/postUtensilioComprado")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postUtensilioComprado(UtensiliosComprados uc) {
+        if (uc.getIdUtensilio()==0 || uc.getIdJugador()==0 || uc.getNivelUtensilio()==0) {
+            return Response.status(500).build();
+        }
+        UtensiliosComprados UtCom=this.um.postUtensilioComprado(uc,uc.getIdJugador(),uc.getIdUtensilio());
+        if (UtCom!=null){
+            return Response.status(201).build();
+        }
+        return Response.status(500).build();
     }
 
 

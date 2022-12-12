@@ -12,7 +12,7 @@ public interface Session<E> {
     void close() ;
     Object get(Class theClass, int ID);
     void update(Object object);
-    public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente);
+    public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente);
 
     public Utensilio getUtensilioId(Utensilio u, int idUtensilio);
     void delete(Object object);
