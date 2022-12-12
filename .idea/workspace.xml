@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="html index cambiado 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -403,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670829031732</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="html index cambiado 2">
+      <created>1670829381531</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1670829381531</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +427,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="retocs de noms" />
     <MESSAGE value="corregir maven" />
     <MESSAGE value="corregir maven 2" />
     <MESSAGE value="pom correcto" />
@@ -446,6 +451,7 @@
     <MESSAGE value="cambiando html" />
     <MESSAGE value="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test" />
     <MESSAGE value="html index cambiado" />
-    <option name="LAST_COMMIT_MESSAGE" value="html index cambiado" />
+    <MESSAGE value="html index cambiado 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="html index cambiado 2" />
   </component>
 </project>
