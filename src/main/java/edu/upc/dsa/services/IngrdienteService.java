@@ -71,7 +71,7 @@ public class IngrdienteService {
     @Path("/getIngrediente/{idIngrediente}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getIngrediente(@PathParam("idIngrediente") String id) {
+    public Response getIngrediente(@PathParam("idIngrediente") int id) {
         Ingrediente i = this.im.getIngrediente(id);
         if (i == null) return Response.status(404).build();
         else  return Response.status(201).entity(i).build();
@@ -106,7 +106,7 @@ public class IngrdienteService {
             @ApiResponse(code = 404, message = "Ingrediente not found")
     })
     @Path("/deleteIngrediente/{idIngrediente}")
-    public Response deleteIngrediente(@PathParam("idIngrediente") String id) {
+    public Response deleteIngrediente(@PathParam("idIngrediente") int id) {
         Ingrediente i = this.im.getIngrediente(id);
         if (i == null) return Response.status(404).build();
         else {

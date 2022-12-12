@@ -61,14 +61,14 @@
         var contarFins3 = 0;
         var res = "";
         var url1 = "/dsaApp/ingrediente/getAllIngredientes";
-        $.get(url1, function (data, status) {
-                $.each (data, function(index, ingrediente){
+        $.get(url1, function (data, status){
+                $.each (data, function(index, data){
                    console.log(x);
                     if (x%3==0){
                         res = res + "<div class='row'>\n";
                     }
-                    console.log("ingredient!!!!",ingredient);
-                    res = res + addCardIngrediante(ingrediente.nombreIngrediente, ingrediente.nivelDesbloqueoIngrediente, ingrediente.precioIngrediante);
+                    console.log(data.nombreIngrediente, data.nivelDesbloqueoIngrediente, data.precioIngrediante);
+                    res = res + addCardIngrediente(data.nombreIngrediente, data.nivelDesbloqueoIngrediente, data.precioIngrediante);
                     contarFins3 = contarFins3 + 1;
                     if (contarFins3 == 3){
                         res = res + "</div>";
@@ -76,6 +76,11 @@
                     }
                     console.log("\n", res);
                     x=x+1;
+                    /*
+                    $('#'+data.nombreIngrediente).click(function() {
+
+                    }
+                    */
                 });
                 if (contarFins3 != 3){
                     res = res + "</div>";
@@ -89,13 +94,13 @@
         var res = "";
         var url2 = "/dsaApp/utensilio/getAllUtensilios/";
         $.get(url2, function (data, status) {
-                $.each (data, function(index, utensilio){
+                $.each (data, function(index, data){
                     console.log(x);
                     if (x%3==0){
                         res = res + "<div class='row'>\n";
                     }
                     console.log("utensilio!!!!",utensilio);
-                    res = res + addCardUtensilio(utensilio.nombreUtensilio, utensilio.tiempoNivel1, utensilio.tiempoNivel2, utensilio.tiempoNivel3);
+                    res = res + addCardUtensilio(data.nombreUtensilio, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3);
                     contarFins3 = contarFins3 + 1;
                     if (contarFins3 == 3){
                         res = res + "</div>";

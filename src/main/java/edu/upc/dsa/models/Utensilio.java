@@ -3,15 +3,13 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 public class Utensilio {
-    String idUtensilio;
+    int idUtensilio;
     String nombreUtensilio;
     int tiempoNivel1;
     int tiempoNivel2;
     int tiempoNivel3;
-
     double precioUtensilio;
     public Utensilio() {
-        this.idUtensilio = RandomUtils.getId();
     }
 
 
@@ -25,11 +23,11 @@ public class Utensilio {
         this.setPrecioUtensilio(precioUtensilio);
     }
 
-    public String getIdUtensilio() {
+    public int getIdUtensilio() {
         return idUtensilio;
     }
 
-    public void setIdUtensilio(String idUtensilio) {
+    public void setIdUtensilio(int idUtensilio) {
         this.idUtensilio = idUtensilio;
     }
 

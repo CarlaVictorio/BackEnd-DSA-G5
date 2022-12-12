@@ -39,7 +39,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public Utensilio getUtensilio (String idUtensilio){
+    public Utensilio getUtensilio (int idUtensilio){
         logger.info("getUtensilio("+idUtensilio+")");
 
         for (Utensilio u: this.utensilios) {
@@ -63,7 +63,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public void deleteUtensilio(String idUtensilio) {
+    public void deleteUtensilio(int idUtensilio) {
         Utensilio u = this.getUtensilio(idUtensilio);
         if (u==null){
             logger.warn("not found "+u);
@@ -74,7 +74,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public int getTiempoNivel1(String idUtensilio) {
+    public int getTiempoNivel1(int idUtensilio) {
         Utensilio u = this.getUtensilio(idUtensilio);
         if (u==null) {
             logger.warn("not found "+u);
@@ -86,7 +86,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public int getTiempoNivel2(String idUtensilio) {
+    public int getTiempoNivel2(int idUtensilio) {
         Utensilio u = this.getUtensilio(idUtensilio);
         if (u==null) {
             logger.warn("not found "+u);
@@ -98,7 +98,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public int getTiempoNivel3(String idUtensilio) {
+    public int getTiempoNivel3(int idUtensilio) {
         Utensilio u = this.getUtensilio(idUtensilio);
         if (u==null) {
             logger.warn("not found "+u);
@@ -131,7 +131,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public double getPrecioUtensilio(String idUtensilio) {
+    public double getPrecioUtensilio(int idUtensilio) {
         Session session = null;
         Utensilio u = new Utensilio();
         try {
@@ -149,7 +149,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public int comprarUtensilio(Jugador j, String idUtensilio, String nivelUtensilio){
+    public int comprarUtensilio(Jugador j, int idUtensilio, int nivelUtensilio){
 
         Session session = null;
         int error =-1;
@@ -161,7 +161,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
                 session = FactorySession.openSession();
                 Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
                 session.update(jug);
-                UtensiliosComprados NuevoUtensilio = new UtensiliosComprados(idUtensilio, jug.getNombreJugador(), nivelUtensilio);
+                UtensiliosComprados NuevoUtensilio = new UtensiliosComprados(idUtensilio, jug.getIdJugador(), nivelUtensilio);
                 session.save(NuevoUtensilio);
                 error = 0;
             }

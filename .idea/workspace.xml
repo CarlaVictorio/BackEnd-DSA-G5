@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="clase utensilios comprados y implementación del comprarUtensilios">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" afterDir="false" />
+    <list default="true" id="85963e63-4f8d-4119-8e8a-f4aab5de136f" name="Changes" comment="factory session">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,21 +50,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Ines/IdeaProjects/BackEnd-DSA-G5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -167,7 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668424482734</updated>
-      <workItem from="1670843873260" duration="798000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -407,18 +395,8 @@
       <option name="project" value="LOCAL" />
       <updated>1670781754811</updated>
     </task>
-    <task id="LOCAL-00035" summary="clase utensilios comprados y implementación del comprarUtensilios">
-      <created>1670785960334</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1670785960334</updated>
-    </task>
-    <option name="localTasksCounter" value="36" />
+    <option name="localTasksCounter" value="35" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -432,6 +410,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="corregir maven 2" />
     <MESSAGE value="pom correcto" />
     <MESSAGE value="search jugador hecho" />
     <MESSAGE value="cambiar url" />
@@ -456,15 +435,14 @@
     <MESSAGE value="He arreclat la funcío de comprarIngrediente.." />
     <MESSAGE value="Test Object helper i ORM" />
     <MESSAGE value="factory session" />
-    <MESSAGE value="clase utensilios comprados y implementación del comprarUtensilios" />
-    <option name="LAST_COMMIT_MESSAGE" value="clase utensilios comprados y implementación del comprarUtensilios" />
+    <option name="LAST_COMMIT_MESSAGE" value="factory session" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java</url>
-          <line>100</line>
+          <line>99</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

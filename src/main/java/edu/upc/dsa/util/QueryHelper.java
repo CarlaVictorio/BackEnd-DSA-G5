@@ -3,6 +3,11 @@ package edu.upc.dsa.util;
 import edu.upc.dsa.models.Ingrediente;
 import org.apache.log4j.Logger;
 
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class QueryHelper {
     final static Logger logger = Logger.getLogger(QueryHelper.class);
 
@@ -12,18 +17,35 @@ public class QueryHelper {
         sb.append(entity.getClass().getSimpleName()).append(" ");
         sb.append("(");
 
-        String [] fields = ObjectHelper.getFields(entity);
+        Class theClass = entity.getClass();
+        Method[] methods = theClass.getDeclaredMethods();
+        //String[] sMethods = new String[methods.length/2];
+        List<String> sMethods=new ArrayList<>();
+        int i=0;
+        for (Method m: methods) if(m.getName().substring(0, 3).equals("get")){sMethods.add(m.getName().substring(3));};
+        Collections.sort(sMethods);
 
-        sb.append("ID");
-        for (String field: fields) {
+        //String [] fields = ObjectHelper.getFields(entity);
+
+        //sb.append("ID");
+        /*for (String field: fields) {
             sb.append(", ").append(field);
+        }*/
+        for(String s:sMethods){
+            sb.append(s).append(", ");
         }
+        sb=sb.replace(sb.length()-2,sb.length(),"");
 
-        sb.append(") VALUES (?");
+        //sb.append(") VALUES (?");
+        sb.append(") VALUES (");
 
-        for (String field: fields) {
+        /*for (String field: fields) {
             sb.append(", ?");
+        }*/
+        for (String s:sMethods) {
+            sb.append("?, ");
         }
+        sb=sb.replace(sb.length()-2,sb.length(),"");
 
         sb.append(")");
 
@@ -58,7 +80,7 @@ public class QueryHelper {
 
         StringBuffer sb = new StringBuffer();
         sb.append("SELECT * FROM ").append(ingrediente.getClass().getSimpleName());
-        sb.append(" WHERE 1 = ?");
+        //sb.append(" WHERE 1 = ?");
 
         return sb.toString();
     }

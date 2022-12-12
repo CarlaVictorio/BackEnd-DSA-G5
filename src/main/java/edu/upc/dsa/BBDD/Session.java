@@ -14,7 +14,7 @@ public interface Session<E> {
     void update(Object object);
     public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente);
 
-    public Utensilio getUtensilioId(Utensilio u, String idUtensilio);
+    public Utensilio getUtensilioId(Utensilio u, int idUtensilio);
     void delete(Object object);
     List<Object> findAll(Ingrediente ingrediente);
 //    List<Object> findAll(Class theClass, HashMap params);

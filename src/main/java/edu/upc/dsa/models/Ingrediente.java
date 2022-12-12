@@ -2,12 +2,12 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 public class Ingrediente {
-    String idIngrediente;
+    int idIngrediente;
     String nombreIngrediente;
     int nivelDesbloqueoIngrediente;
     double precioIngrediente;
     public Ingrediente() {
-        this.idIngrediente = RandomUtils.getId();
+
     }
 
     public Ingrediente (String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
@@ -17,11 +17,11 @@ public class Ingrediente {
         this.setPrecioIngrediente(precioIngrediente);
     }
 
-    public String getIdIngrediente() {
+    public int getIdIngrediente() {
         return idIngrediente;
     }
 
-    public void setIdIngrediente(String idIngrediente) {
+    public void setIdIngrediente(int idIngrediente) {
         this.idIngrediente = idIngrediente;
     }
 

@@ -1,5 +1,6 @@
 package edu.upc.dsa.services;
 
+import edu.upc.dsa.DAO.IngredienteManagerImpl;
 import edu.upc.dsa.DAO.JugadorManager;
 import edu.upc.dsa.DAO.JugadorManagerImpl;
 import edu.upc.dsa.models.Jugador;
@@ -9,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.apache.log4j.Logger;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
@@ -21,6 +23,7 @@ import java.util.List;
 public class JugadorService {
 
     private JugadorManager jm; //Gestor
+    final static org.apache.log4j.Logger logger = Logger.getLogger(JugadorManagerImpl.class);
 
     public JugadorService(){
         this.jm = JugadorManagerImpl.getInstance();
@@ -126,6 +129,8 @@ public class JugadorService {
     @Path("/Login")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response Login(LogIn loginpar) {
+        logger.info("Web Login Usuario: "+loginpar.getNombre());
+        logger.info("Web Login Password: "+loginpar.getPassword());
         Jugador j = this.jm.logInJugador(loginpar);
         if (j==null) {
             return Response.status(404).build();

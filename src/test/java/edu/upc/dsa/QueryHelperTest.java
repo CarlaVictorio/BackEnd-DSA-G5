@@ -12,7 +12,7 @@ public class QueryHelperTest {
 
     @Test
     public void testQueryINSERT() {
-        Assert.assertEquals("INSERT INTO Jugador (ID, idJugador, nombreJugador, passwordJugador, emailJugador, paisJugador) VALUES (?, ?, ?, ?, ?, ?)",
+        Assert.assertEquals("INSERT INTO Jugador (Dinero, EmailJugador, NombreJugador, PaisJugador, PasswordJugador) VALUES (?, ?, ?, ?, ?)",
                 QueryHelper.createQueryINSERT(new Jugador("Juan", "lopez", "333333","4444", 100)));
     }
     @Test
@@ -23,7 +23,7 @@ public class QueryHelperTest {
 
     @Test
     public void testQuerySELECT() {
-        Assert.assertEquals("SELECT * FROM Ingredientes WHERE ID = ?",
+        Assert.assertEquals("SELECT * FROM Ingrediente WHERE ID = ?",
                 QueryHelper.createQuerySELECT(new Ingrediente("Lechuga", 1, 10)));
     }
 /*
