@@ -80,7 +80,7 @@ public class QueryHelper {
 
         StringBuffer sb = new StringBuffer();
         sb.append("SELECT * FROM ").append(ingrediente.getClass().getSimpleName());
-        sb.append(" WHERE 1 = ?");
+        //sb.append(" WHERE 1 = ?");
 
         return sb.toString();
     }

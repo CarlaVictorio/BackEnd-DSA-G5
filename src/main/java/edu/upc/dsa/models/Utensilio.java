@@ -8,7 +8,6 @@ public class Utensilio {
     int tiempoNivel1;
     int tiempoNivel2;
     int tiempoNivel3;
-
     double precioUtensilio;
     public Utensilio() {
         this.idUtensilio = RandomUtils.getId();

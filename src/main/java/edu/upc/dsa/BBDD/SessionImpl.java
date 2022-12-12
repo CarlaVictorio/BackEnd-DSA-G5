@@ -138,7 +138,7 @@ public class SessionImpl implements Session {
 
     public Object getByTwoParameters(Class theClass, String byFirstParameter, Object byFirstParameterValue, String bySecondParameter, Object bySecondParameterValue) {
 
-        String selectQuery = QueryHelper.createQuerySELECTbyTwoParameters(theClass, byFirstParameter, bySecondParameter);
+        String selectQuery = QueryHelper.createQuerySELECTbyTwoParameters(theClass, (String) byFirstParameterValue, (String) bySecondParameterValue);
 
 
         PreparedStatement pstm = null;
@@ -150,8 +150,8 @@ public class SessionImpl implements Session {
 
             pstm = conn.prepareStatement(selectQuery);
 
-            pstm.setObject(1, byFirstParameterValue);
-            pstm.setObject(2, bySecondParameterValue);
+            pstm.setObject(1, byFirstParameter);
+            pstm.setObject(2, bySecondParameter);
             pstm.executeQuery();
             rs = pstm.getResultSet();
 
