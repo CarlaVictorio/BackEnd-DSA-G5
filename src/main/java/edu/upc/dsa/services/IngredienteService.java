@@ -17,11 +17,11 @@ import java.util.List;
 
 @Api(value = "/ingrediente", description = "Endpoint to Partida Service")
 @Path("/ingrediente")
-public class IngrdienteService {
+public class IngredienteService {
 
     private IngredienteManager im; //Gestor
 
-    public IngrdienteService(){
+    public IngredienteService(){
         this.im = IngredienteManagerImpl.getInstance();
         if(im.size()==0) {
             im.addIngrediente("MasaPizza", 1, 0);
@@ -88,10 +88,10 @@ public class IngrdienteService {
     @Path("/postIngrediente")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postIngrediente(Ingrediente ingrediente) {
-        if (ingrediente.getNombreIngrediente()=="" || ingrediente.getNivelDesbloqueoIngrediente()==0) {
+        if (ingrediente.getNombre()=="" || ingrediente.getNivelDesbloqueo()==0) {
             return Response.status(500).build();
         }
-        Ingrediente i = this.im.addIngrediente(ingrediente.getNombreIngrediente(),ingrediente.getNivelDesbloqueoIngrediente(),ingrediente.getPrecioIngrediente());
+        Ingrediente i = this.im.addIngrediente(ingrediente.getNombre(),ingrediente.getNivelDesbloqueo(),ingrediente.getPrecio());
         if (i!=null){
             return Response.status(201).build();
         }

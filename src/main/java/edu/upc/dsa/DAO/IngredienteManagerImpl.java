@@ -70,7 +70,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         logger.info("getIngrediente("+idIngrediente+")");
 
         for (Ingrediente i: this.ingredientes) {
-            if (i.getIdIngrediente()==idIngrediente) {
+            if (i.getId()==idIngrediente) {
                 logger.info("getIngrediente("+idIngrediente+"): "+i);
 
                 return i;
@@ -107,7 +107,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
             return-1;
         }
         else{
-            return i.getNivelDesbloqueoIngrediente();
+            return i.getNivelDesbloqueo();
         }
     }
 /*
@@ -124,7 +124,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }*/
 
     @Override
-    public double getPrecioIngrediente(String idIngrediente) {
+    public double getPrecioIngrediente(int idIngrediente) {
         Session session = null;
         Ingrediente i = new Ingrediente();
         try {
@@ -138,19 +138,19 @@ public class IngredienteManagerImpl implements IngredienteManager {
             session.close();
         }
 
-        return i.getPrecioIngrediente();
+        return i.getPrecio();
     }
 
 
     @Override
     public Ingrediente putIngrediente (Ingrediente ingrediente) {
-        Ingrediente i = this.getIngrediente(ingrediente.getIdIngrediente());
+        Ingrediente i = this.getIngrediente(ingrediente.getId());
         if (i!=null){
             logger.info(i+" rebut!");
-            i.setNombreIngrediente(ingrediente.getNombreIngrediente());
-            i.setIdIngrediente(ingrediente.getIdIngrediente());
-            i.setNivelDesbloqueoIngrediente(ingrediente.getNivelDesbloqueoIngrediente());
-            i.setPrecioIngrediente(ingrediente.getPrecioIngrediente());
+            i.setNombre(ingrediente.getNombre());
+            i.setId(ingrediente.getId());
+            i.setNivelDesbloqueo(ingrediente.getNivelDesbloqueo());
+            i.setPrecio(ingrediente.getPrecio());
             logger.info(i+" update");
         } else {
             logger.warn("not found "+i);
@@ -162,7 +162,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
 
     @Override
-    public int comprarIngrediente(Jugador j, String idIngrediente ){
+    public int comprarIngrediente(Jugador j, int idIngrediente ){
 
         Session session = null;
         int error =-1;
@@ -174,7 +174,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
                 session = FactorySession.openSession();
                 Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
                 session.update(jug);
-                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getNombreJugador());
+                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getIdJugador());
                 session.save(NuevoIngrediente);
                 error = 0;
             }

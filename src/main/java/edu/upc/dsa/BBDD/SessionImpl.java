@@ -91,7 +91,7 @@ public class SessionImpl implements Session {
 //    }
 
 
-    public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente) {
+    public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente) {
         String selectQuery = QueryHelper.createQuerySELECT(in);
         PreparedStatement pstm = null;
         try {

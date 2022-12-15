@@ -12,9 +12,9 @@ public interface IngredienteManager {
     public List<Ingrediente> getAllIngredientes();
     public void deleteIngrediente(int idIngrediente);
     public int getNivelDesbloqueoIngrediente(int idIngrediente);
-    public double getPrecioIngrediente(String idIngrediente);
+    public double getPrecioIngrediente(int idIngrediente);
     public Ingrediente putIngrediente (Ingrediente ingrediente);
-    public int comprarIngrediente (Jugador j, String idIngrediente );
+    public int comprarIngrediente (Jugador j, int idIngrediente );
 
 
     public int size();
