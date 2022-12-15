@@ -27,12 +27,11 @@ public class SessionImpl implements Session {
 
         try {
             pstm = conn.prepareStatement(insertQuery);
+            pstm.setObject(1, 0);
+            int i = 2;
 
-            int i = 1;
-            Object value = null;
             for (String field : ObjectHelper.getFields(entity)) {
-                value = ObjectHelper.getter(entity, field);
-                pstm.setObject(i++, value);
+                pstm.setObject(i++, ObjectHelper.getter(entity, field));
             }
 
             pstm.executeQuery();
@@ -92,7 +91,7 @@ public class SessionImpl implements Session {
 //    }
 
 
-    public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente) {
+    public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente) {
         String selectQuery = QueryHelper.createQuerySELECT(in);
         PreparedStatement pstm = null;
         try {

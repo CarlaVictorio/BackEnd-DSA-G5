@@ -68,8 +68,15 @@ public class QueryHelper {
 
         StringBuffer sb = new StringBuffer();
         sb.append("SELECT * FROM ").append(ingrediente.getClass().getSimpleName());
-        //sb.append(" WHERE 1 = ?");
 
+        return sb.toString();
+    }
+
+    public static String createQuerySELECTAllByIDJugador(int idJugador, Class theClass1, Class theClass2) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("SELECT * FROM ").append(theClass1.getSimpleName());
+        sb.append(" WHERE id= (SELECT idIngrediente FROM ").append(theClass2.getSimpleName());
+        sb.append(" WHERE idJugador=").append(idJugador).append(")");
         return sb.toString();
     }
 

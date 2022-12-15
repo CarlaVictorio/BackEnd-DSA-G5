@@ -124,7 +124,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }*/
 
     @Override
-    public double getPrecioIngrediente(int idIngrediente) {
+    public double getPrecioIngrediente(String idIngrediente) {
         Session session = null;
         Ingrediente i = new Ingrediente();
         try {
@@ -162,7 +162,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
 
     @Override
-    public int comprarIngrediente(Jugador j, int idIngrediente ){
+    public int comprarIngrediente(Jugador j, String idIngrediente ){
 
         Session session = null;
         int error =-1;
@@ -174,7 +174,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
                 session = FactorySession.openSession();
                 Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
                 session.update(jug);
-                IngredientesComprados NuevoIngrediente = new IngredientesComprados(jug.getIdJugador(), idIngrediente);
+                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getNombreJugador());
                 session.save(NuevoIngrediente);
                 error = 0;
             }
@@ -189,21 +189,6 @@ public class IngredienteManagerImpl implements IngredienteManager {
         }
         return error;
 
-    }
-
-    @Override
-    public IngredientesComprados postIngredienteComprado(IngredientesComprados ic,int idJugador, int idIngrediente) {
-        Session session = null;
-        try {
-                session = FactorySession.openSession();
-                session.save(ic);
-            return ic;
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return null;
     }
 
 
