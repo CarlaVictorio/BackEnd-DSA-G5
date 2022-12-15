@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>LogIn</title>
+    <title>Cook with me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -19,7 +19,11 @@
         h2{
             background-color:rgb(236, 132, 27, 0.7);
         }
+        p{
+            font-size:20px;
+            color: black;
 
+        }
     </style>
     <script>
 
@@ -61,10 +65,10 @@
         var res = "";
         var idJugador = "";
         var idIngrediente = "";
-
         var url = "/dsaApp/Jugador/getJugadorByNombre/"+jugador;
         $.get(url, function (data, status){
-            var idJugador = data.idJugador;
+            idJugador = data.idJugador;
+            console.log(idJugador);
         });
 
         var url = "/dsaApp/ingrediente/getAllIngredientes";
@@ -85,10 +89,8 @@
                     x=x+1;
 
                     $('#'+data.nombreIngrediente).click(function() {
-                        var url = "/dsaApp/ingrediente/getIngredienteByNombre/"+data.nombreIngrediente;
-                        $.get(url, function (data, status){
-                            var idIngrediente = data.idIngrediente;
-                        });
+                        idIngrediente = data.idIngrediente;
+                        alert(idIngrediente);
                         /*
                         var dataBody=
                         {
@@ -103,7 +105,7 @@
                             contentType: 'application/json; charset=utf-8'
                         })
                             .done(function(data, status){
-                                var index = "index.html";
+                                var index = "tienda.html";
                                 localStorage.setItem('Nombre',$("#userLogIn").val())
                                 $(location).attr('href',index);
                             })
@@ -147,20 +149,43 @@
                 console.log("\n", res);
                 $("#containerUtensilios").append(res);
         });
+        $('#home').click(function() {
+            location.href = "/home.html"
+        });
+        $('#miPerfil').click(function() {
+            location.href = "/miPerfil.html"
+        });
     });
     </script>
 </head>
 <body>
-    <div class="jumbotron text-center"style="background-color:rgb(236, 132, 27, 0.7)">
-        <h1>Llista d'objectes</h1>
+    <div class="text-center mb-4"style="background-color:rgb(236, 132, 27, 0.7)">
+        <img class="mb-4" src="logo.png" alt="" width="165">
     </div>
-
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="home">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#" id="tienda">Tienda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"id="miPerfil">Mi perfil</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <p> </p>
+    </div>
     <div class="container-fluid" id="containerIngredientes">
         <h2>Ingredientes</h2>
     </div>
-
     <div class="container-fluid" id="containerUtensilios">
         <h2>Utensilios</h2>
     </div>
+
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2022 Grup 5 DSA</p>
 </body>
 </html>
