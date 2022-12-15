@@ -84,10 +84,11 @@ public class QueryHelper {
         return sb.toString();
     }
 
-    public static String createQuerySELECTAllByID(Ingrediente ingrediente) {
+    public static String createQuerySELECTAllByIDJugador(int idJugador, Class theClass1, Class theClass2) {
         StringBuffer sb = new StringBuffer();
-        sb.append("SELECT * FROM ").append(ingrediente.getClass().get());
-        sb.append(" WHERE nickNameBuyer = ?");
+        sb.append("SELECT * FROM ").append(theClass1.getSimpleName());
+        sb.append(" WHERE id= (SELECT idIngrediente FROM ").append(theClass2.getSimpleName());
+        sb.append(" WHERE idJugador=").append(idJugador).append(")");
         return sb.toString();
     }
 

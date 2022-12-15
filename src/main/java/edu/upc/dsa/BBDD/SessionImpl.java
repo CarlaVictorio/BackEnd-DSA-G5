@@ -1,6 +1,7 @@
 package edu.upc.dsa.BBDD;
 
 import edu.upc.dsa.models.Ingrediente;
+import edu.upc.dsa.models.IngredientesComprados;
 import edu.upc.dsa.models.Utensilio;
 import edu.upc.dsa.util.ObjectHelper;
 import edu.upc.dsa.util.QueryHelper;
@@ -88,19 +89,19 @@ public class SessionImpl implements Session {
     }
 
     @Override
-    public List<Object> findAllByID(Ingrediente ingrediente, int idJugador) {
-        String selectQuery = QueryHelper.createQuerySELECTAllByID(ingrediente);
+    public List<Object> findAllByID(Class theClass1, Class theClass2, int idJugador) {
+        String selectQuery = QueryHelper.createQuerySELECTAllByIDJugador(idJugador, theClass1, theClass2);
         PreparedStatement pstm = null;
         List<Object> ListObject = new ArrayList<Object>();
         try {
             pstm = conn.prepareStatement(selectQuery);
-            pstm.setObject(1, userName);
+            //pstm.setObject(1, idJugador);
             pstm.executeQuery();
             ResultSet rs = pstm.getResultSet();
             while (rs.next()) {
                 //Class theClass = Class.forName("edu.upc.eetac.dsa.model.BuyedObject");
-                Class theClass = theObject.getClass();
-                Object object = theClass.newInstance();
+                Class oneClass = theClass1.getClass();
+                Object object = theClass1.newInstance();
                 //BuyedObject object =  new BuyedObject();// parche pq si entra algo que no es object mal !!
                 for (int i=1;i<=rs.getMetaData().getColumnCount();i++)
                     ObjectHelper.setter(object,rs.getMetaData().getColumnName(i),rs.getObject(i));
@@ -121,7 +122,7 @@ public class SessionImpl implements Session {
 
 
     @Override
-    public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente) {
+    public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente) {
         String selectQuery = QueryHelper.createQuerySELECT(in);
         PreparedStatement pstm = null;
         try {

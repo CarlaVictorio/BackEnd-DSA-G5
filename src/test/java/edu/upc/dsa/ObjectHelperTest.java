@@ -28,7 +28,7 @@ public class ObjectHelperTest {
 
         ObjectHelper.setter(in, "nombreIngrediente", "XXXX");
 
-        Assert.assertEquals("XXXX", in.getNombreIngrediente());
+        Assert.assertEquals("XXXX", in.getNombre());
     }
 
 

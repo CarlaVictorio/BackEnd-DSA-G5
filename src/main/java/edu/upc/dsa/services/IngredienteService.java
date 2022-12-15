@@ -88,10 +88,10 @@ public class IngredienteService {
     @Path("/postIngrediente")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postIngrediente(Ingrediente ingrediente) {
-        if (ingrediente.getNombreIngrediente()=="" || ingrediente.getNivelDesbloqueoIngrediente()==0) {
+        if (ingrediente.getNombre()=="" || ingrediente.getNivelDesbloqueo()==0) {
             return Response.status(500).build();
         }
-        Ingrediente i = this.im.addIngrediente(ingrediente.getNombreIngrediente(),ingrediente.getNivelDesbloqueoIngrediente(),ingrediente.getPrecioIngrediente());
+        Ingrediente i = this.im.addIngrediente(ingrediente.getNombre(),ingrediente.getNivelDesbloqueo(),ingrediente.getPrecio());
         if (i!=null){
             return Response.status(201).build();
         }
@@ -139,15 +139,15 @@ public class IngredienteService {
 
     })
 
-    @Path("/getLista/{jugador}")
+    @Path("/getLista/{idJugador}")
     @Produces(MediaType.APPLICATION_JSON)// nos devuelve JSON con forma BuyedObject in a List
-    public Response listaIngredientesComprados(@PathParam("jugador") int idJugador) {
+    public Response listaIngredientesComprados(@PathParam("idJugador") int idJugador) {
         try {
-            List<Ingrediente> ingredientesCompradosPorJugador = this.im.get(userName);
-            if (objectsBuyedByUser == null) {
+            List<Ingrediente> ingredientesCompradosPorJugador = this.im.listaIngredientesComprados(idJugador);
+            if (ingredientesCompradosPorJugador== null) {
                 return Response.status(401).build();
             }
-            GenericEntity<List<Objects>> entity = new GenericEntity<List<Objects>>(objectsBuyedByUser) {
+            GenericEntity<List<Ingrediente>> entity = new GenericEntity<List<Ingrediente>>(ingredientesCompradosPorJugador) {
             };
             return Response.status(200).entity(entity).build();
         } catch (Exception e) {
