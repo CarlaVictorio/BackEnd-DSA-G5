@@ -90,6 +90,37 @@ public class SessionImpl implements Session {
 //        return null;
 //    }
 
+    @Override
+    public List<Object> findAllByID(Class theClass1, Class theClass2, int idJugador) {
+        String selectQuery = QueryHelper.createQuerySELECTAllByIDJugador(idJugador, theClass1, theClass2);
+        PreparedStatement pstm = null;
+        List<Object> ListObject = new ArrayList<Object>();
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            //pstm.setObject(1, idJugador);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            while (rs.next()) {
+                //Class theClass = Class.forName("edu.upc.eetac.dsa.model.BuyedObject");
+                Class oneClass = theClass1.getClass();
+                Object object = theClass1.newInstance();
+                //BuyedObject object =  new BuyedObject();// parche pq si entra algo que no es object mal !!
+                for (int i=1;i<=rs.getMetaData().getColumnCount();i++)
+                    ObjectHelper.setter(object,rs.getMetaData().getColumnName(i),rs.getObject(i));
+                ListObject.add(object);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        return ListObject;
+    }
+
+
 
     public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente) {
         String selectQuery = QueryHelper.createQuerySELECT(in);

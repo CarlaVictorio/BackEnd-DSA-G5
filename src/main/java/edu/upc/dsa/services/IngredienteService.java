@@ -115,6 +115,26 @@ public class IngredienteService {
         }
     }
 
+    @POST
+    @ApiOperation(value = "añadir Ingrediente Comprado BBDD", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Validation Error"),
+
+    })
+    @Path("/postIngredienteComprado")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postUtensilioComprado(IngredientesComprados ic) {
+        if (ic.getIdIngrediente()==0 || ic.getIdJugador()==0) {
+            return Response.status(500).build();
+        }
+        IngredientesComprados UtCom=this.im.postIngredienteComprado(ic,ic.getIdJugador(),ic.getIdIngrediente());
+        if (UtCom!=null){
+            return Response.status(201).build();
+        }
+        return Response.status(500).build();
+    }
+
 
     @PUT
     @ApiOperation(value = "update Ingrediente", notes = "hola")

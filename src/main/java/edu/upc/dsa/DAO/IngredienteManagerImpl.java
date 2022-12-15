@@ -5,6 +5,7 @@ import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.Ingrediente;
 import edu.upc.dsa.models.IngredientesComprados;
 import edu.upc.dsa.models.Jugador;
+import edu.upc.dsa.models.UtensiliosComprados;
 import io.swagger.models.auth.In;
 import org.apache.log4j.Logger;
 
@@ -189,6 +190,21 @@ public class IngredienteManagerImpl implements IngredienteManager {
         }
         return error;
 
+    }
+
+    @Override
+    public IngredientesComprados postIngredienteComprado(IngredientesComprados ic, int idJugador, int idIngrediente) {
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.save(ic);
+            return ic;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
