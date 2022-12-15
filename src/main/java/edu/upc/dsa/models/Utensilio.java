@@ -7,6 +7,10 @@ public class Utensilio {
     int tiempoNivel2;
     int tiempoNivel3;
     double precio;
+    String urlImagen;
+
+
+
     public Utensilio() {
     }
 
@@ -21,6 +25,13 @@ public class Utensilio {
         this.setPrecio(precio);
     }
 
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
     public int getId() {
         return id;
     }
