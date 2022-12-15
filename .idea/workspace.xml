@@ -4,43 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="post UtensiliosComprados y IngredientesComprados">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/SessionImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/MapaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/MapaManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/MapaManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/MapaManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/PartidasManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/RecetaManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Mapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Receta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Receta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Utensilio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/Utensilio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/UtensiliosComprados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/UtensiliosComprados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/MapaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/PartidasService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/PartidasService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/RecetaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/RecetaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/JugadorManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/JugadorManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/MapaManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/MapaManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ObjectHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ObjectHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/PartidasManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/PartidasManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/RecetaManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/RecetaManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/UtensilioManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/UtensilioManagerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +178,7 @@
       <workItem from="1670792746020" duration="293000" />
       <workItem from="1670793054044" duration="166000" />
       <workItem from="1670795983084" duration="7917000" />
-      <workItem from="1671114906044" duration="12796000" />
+      <workItem from="1671114906044" duration="13569000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -447,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671109731850</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP">
+      <created>1671137827961</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1671137827961</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="corregir maven" />
     <MESSAGE value="corregir maven 2" />
     <MESSAGE value="pom correcto" />
     <MESSAGE value="search jugador hecho" />
@@ -490,7 +460,8 @@
     <MESSAGE value="Cambiado:&#10;fields --&gt; methods&#10;ObjectHelper --&gt; hecho getter y setter, comprobado con test" />
     <MESSAGE value="Funciona index.html" />
     <MESSAGE value="post UtensiliosComprados y IngredientesComprados" />
-    <option name="LAST_COMMIT_MESSAGE" value="post UtensiliosComprados y IngredientesComprados" />
+    <MESSAGE value="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
+    <option name="LAST_COMMIT_MESSAGE" value="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
