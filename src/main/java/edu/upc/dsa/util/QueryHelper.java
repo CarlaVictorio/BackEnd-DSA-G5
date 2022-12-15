@@ -64,10 +64,10 @@ public class QueryHelper {
         return sb.toString();
     }
 
-    public static String createQuerySELECTAll(Ingrediente ingrediente) {
+    public static String createQuerySELECTAll(Object theClass) {
 
         StringBuffer sb = new StringBuffer();
-        sb.append("SELECT * FROM ").append(ingrediente.getClass().getSimpleName());
+        sb.append("SELECT * FROM ").append(theClass.getClass().getSimpleName());
 
         return sb.toString();
     }
@@ -75,38 +75,19 @@ public class QueryHelper {
     public static String createQuerySELECTAllByIDJugador(int idJugador, Class theClass1, Class theClass2) {
         StringBuffer sb = new StringBuffer();
         sb.append("SELECT * FROM ").append(theClass1.getSimpleName());
-        sb.append(" WHERE id= (SELECT idIngrediente FROM ").append(theClass2.getSimpleName());
+        sb.append(" WHERE id= ANY (SELECT id").append(theClass1.getSimpleName()).append(" FROM ").append(theClass2.getSimpleName());
         sb.append(" WHERE idJugador=").append(idJugador).append(")");
         return sb.toString();
     }
 
     public static String createQueryUPDATE(Object entity) {
 
-        StringBuffer sb = new StringBuffer("UPDATE ");
-        sb.append(entity.getClass().getSimpleName()).append(" SET");
-
-        for (String field: ObjectHelper.getFields(entity)) {
-            sb.append(" " + field).append(" = ?,");
-        }
-        sb.deleteCharAt(sb.length() - 1);
-        sb.append(" WHERE ID = ?");
-
-        return sb.toString();
+        return null;
     }
 
 
     public static String createQueryUPDATEbyParameter(Object entity, String parameter) {
-
-        StringBuffer sb = new StringBuffer("UPDATE ");
-        sb.append(entity.getClass().getSimpleName()).append(" SET");
-
-        for (String field: ObjectHelper.getFields(entity)) {
-            sb.append(" " + field).append(" = ?,");
-        }
-        sb.deleteCharAt(sb.length() - 1);
-        sb.append(" WHERE " + parameter + " = ?");
-
-        return sb.toString();
+return null;
     }
 
 

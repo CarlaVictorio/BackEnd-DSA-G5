@@ -17,7 +17,7 @@ public interface Session<E> {
     public Utensilio getUtensilioId(Utensilio u, int idUtensilio);
     public List<Object> findAllByID(Class theClass1, Class theClass2, int idJugador);
     void delete(Object object);
-    List<Object> findAll(Ingrediente ingrediente);
+    List<Object> findAll(Object theClass);
 //    List<Object> findAll(Class theClass, HashMap params);
     List<Object> query(String query, Class theClass, HashMap params);
     public Object getByTwoParameters(Class theClass, String byFirstParameter, Object byFirstParameterValue, String bySecondParameter, Object bySecondParameterValue);

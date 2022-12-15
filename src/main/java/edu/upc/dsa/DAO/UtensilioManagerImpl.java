@@ -5,6 +5,7 @@ import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.*;
 import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,22 @@ public class UtensilioManagerImpl implements UtensilioManager{
 
     @Override
     public List<Utensilio> getAllUtensilios() {
-        return null;
+            Session session = null;
+            List<Utensilio> listaUtensilio = new ArrayList<Utensilio>();
+
+            try{
+                session = FactorySession.openSession();
+                listaUtensilio = (ArrayList<Utensilio>) session.findAll(new Utensilio());
+            }
+            catch(Exception e){
+                e.printStackTrace();
+                listaUtensilio = null;
+            }
+
+            finally {
+                session.close();
+            }
+            return listaUtensilio;
     }
 
     @Override
@@ -43,7 +59,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
         logger.info("getUtensilio("+idUtensilio+")");
 
         for (Utensilio u: this.utensilios) {
-            if (Objects.equals(u.getIdUtensilio(), idUtensilio)) {
+            if (Objects.equals(u.getId(), idUtensilio)) {
                 logger.info("getUtensilio("+idUtensilio+"): "+u);
 
                 return u;
@@ -110,11 +126,11 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
     @Override
     public Utensilio putUtensilio (Utensilio utensilio) {
-        Utensilio u = this.getUtensilio(utensilio.getIdUtensilio());
+        Utensilio u = this.getUtensilio(utensilio.getId());
         if (u!=null){
             logger.info(u+" rebut!");
-            u.setNombreUtensilio(utensilio.getNombreUtensilio());
-            u.setIdUtensilio(utensilio.getIdUtensilio());
+            u.setNombre(utensilio.getNombre());
+            u.setId(utensilio.getId());
             u.setTiempoNivel1(utensilio.getTiempoNivel1());
             u.setTiempoNivel2(utensilio.getTiempoNivel2());
             u.setTiempoNivel3(utensilio.getTiempoNivel3());
@@ -128,6 +144,24 @@ public class UtensilioManagerImpl implements UtensilioManager{
     @Override
     public int size() {
         return utensilios.size();
+    }
+
+    @Override
+    public List<Utensilio> listaUtensiliosComprados(int idJugador) {
+        Session session = null;
+        List<Utensilio> listaUtensilios = new ArrayList<Utensilio>();
+        try {
+            session = FactorySession.openSession();
+            listaUtensilios=session.findAllByID(Utensilio.class,UtensiliosComprados.class,idJugador);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            listaUtensilios = null;
+        } finally {
+            session.close();
+            return listaUtensilios;
+        }
     }
 
     @Override
@@ -145,7 +179,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
             session.close();
         }
 
-        return u.getPrecioUtensilio();
+        return u.getPrecio();
     }
 
     @Override
@@ -159,9 +193,9 @@ public class UtensilioManagerImpl implements UtensilioManager{
             double dineroRestante = dinero-precioUtensilio;
             if(dineroRestante>0) {
                 session = FactorySession.openSession();
-                Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
+                Jugador jug = new Jugador (j.getNombre(), j.getPassword(),j.getEmail(),j.getPais(),dineroRestante);
                 session.update(jug);
-                UtensiliosComprados NuevoUtensilio = new UtensiliosComprados(idUtensilio, jug.getIdJugador(), nivelUtensilio);
+                UtensiliosComprados NuevoUtensilio = new UtensiliosComprados(idUtensilio, jug.getId(), nivelUtensilio);
                 session.save(NuevoUtensilio);
                 error = 0;
             }

@@ -23,4 +23,7 @@ public interface UtensilioManager {
     public UtensiliosComprados postUtensilioComprado(UtensiliosComprados uc, int idJugador, int idUtensilio);
 
     public int size();
+
+
+    List<Utensilio> listaUtensiliosComprados(int idJugador);
 }

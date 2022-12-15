@@ -5,11 +5,8 @@ import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.Ingrediente;
 import edu.upc.dsa.models.IngredientesComprados;
 import edu.upc.dsa.models.Jugador;
-import edu.upc.dsa.models.UtensiliosComprados;
-import io.swagger.models.auth.In;
 import org.apache.log4j.Logger;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -173,9 +170,9 @@ public class IngredienteManagerImpl implements IngredienteManager {
             double dineroRestante = dinero-precioIngrediente;
             if(dineroRestante>0) {
                 session = FactorySession.openSession();
-                Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
+                Jugador jug = new Jugador (j.getNombre(), j.getPassword(),j.getEmail(),j.getPais(),dineroRestante);
                 session.update(jug);
-                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getIdJugador());
+                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getId());
                 session.save(NuevoIngrediente);
                 error = 0;
             }
@@ -205,6 +202,24 @@ public class IngredienteManagerImpl implements IngredienteManager {
             e.printStackTrace();
         }
         return null;
+    }
+    @Override
+    public List<Ingrediente> listaIngredientesComprados(int idJugador)  {
+
+        Session session = null;
+        List<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
+        try {
+            session = FactorySession.openSession();
+            listaIngredientes=session.findAllByID(Ingrediente.class,IngredientesComprados.class,idJugador);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            listaIngredientes = null;
+        } finally {
+            session.close();
+            return listaIngredientes;
+        }
     }
 
 

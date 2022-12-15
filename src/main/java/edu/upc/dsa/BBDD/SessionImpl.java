@@ -27,8 +27,8 @@ public class SessionImpl implements Session {
 
         try {
             pstm = conn.prepareStatement(insertQuery);
-            pstm.setObject(1, 0);
-            int i = 2;
+            //pstm.setObject(1, 0);
+            int i = 1;
 
             for (String field : ObjectHelper.getFields(entity)) {
                 pstm.setObject(i++, ObjectHelper.getter(entity, field));
@@ -63,27 +63,31 @@ public class SessionImpl implements Session {
 
     }
 
-    public List<Ingrediente> findAll(Ingrediente ingrediente) {
-        String selectQuery = QueryHelper.createQuerySELECTAll(ingrediente);
+    public List<Object> findAll(Object theClass) {
+        String selectQuery = QueryHelper.createQuerySELECTAll(theClass);
         PreparedStatement pstm = null;
-        List<Ingrediente> ListIngre = new ArrayList<Ingrediente>();
+        List<Object> ListObject = new ArrayList<Object>();
         try {
             pstm = conn.prepareStatement(selectQuery);
             pstm.setObject(1, 1);
             pstm.executeQuery();
             ResultSet rs = pstm.getResultSet();
             while (rs.next()) {
-                Class clase = ingrediente.getClass();
-                Ingrediente o = new Ingrediente();
+                Class clase = theClass.getClass();
+                Object o = clase.newInstance();
                 for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++)
                     ObjectHelper.setter(o, rs.getMetaData().getColumnName(i), rs.getObject(i));
-                ListIngre.add(o);
+                ListObject.add(o);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
         }
-        return ListIngre;
+        return ListObject;
     }
 
 //    public List<Object> findAll(Class theClass, HashMap params) {
@@ -97,25 +101,23 @@ public class SessionImpl implements Session {
         List<Object> ListObject = new ArrayList<Object>();
         try {
             pstm = conn.prepareStatement(selectQuery);
-            //pstm.setObject(1, idJugador);
+            pstm.setObject(1, 1);
             pstm.executeQuery();
             ResultSet rs = pstm.getResultSet();
             while (rs.next()) {
-                //Class theClass = Class.forName("edu.upc.eetac.dsa.model.BuyedObject");
-                Class oneClass = theClass1.getClass();
-                Object object = theClass1.newInstance();
-                //BuyedObject object =  new BuyedObject();// parche pq si entra algo que no es object mal !!
-                for (int i=1;i<=rs.getMetaData().getColumnCount();i++)
-                    ObjectHelper.setter(object,rs.getMetaData().getColumnName(i),rs.getObject(i));
-                ListObject.add(object);
+                Class clase = theClass1;
+                Object o = clase.newInstance();
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++)
+                    ObjectHelper.setter(o, rs.getMetaData().getColumnName(i), rs.getObject(i));
+                ListObject.add(o);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
         } catch (InstantiationException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
         }
         return ListObject;
     }

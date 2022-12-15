@@ -17,6 +17,7 @@ public interface IngredienteManager {
     public Ingrediente putIngrediente (Ingrediente ingrediente);
     public int comprarIngrediente (Jugador j, int idIngrediente );
     public IngredientesComprados postIngredienteComprado(IngredientesComprados ic, int idJugador, int idIngrediente);
+    public List<Ingrediente> listaIngredientesComprados(int idJugador);
 
 
     public int size();

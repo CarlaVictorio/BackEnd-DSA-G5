@@ -4,43 +4,45 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 public class Mapa {
-    String idMapa;
-    String nombreMapa;
-    int numNivelesMapa;
+    int id;
+    String nombre;
+    int numNiveles;
 
-    public Mapa() {
-        this.idMapa = RandomUtils.getId();
+    public Mapa (){};
+
+    public Mapa(int id, String nombre, int numNiveles) {
+        this.id = id;
+        this.nombre = nombre;
+        this.numNiveles = numNiveles;
     }
 
-    public Mapa (String nombre, int numNiveles) {
-        this();
-        this.setNombre(nombre);
-        this.setNombre(nombre);
-        this.setNumNiveles(numNiveles);
-    }
-    
+    public Mapa(String nombreMapa, int numNivelesMapa) {
+        this.nombre = nombreMapa;
+        this.numNiveles = numNivelesMapa;
 
-    public String getId() {
-        return idMapa;
     }
 
-    public void setId(String id) {
-        this.idMapa = id;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
-        return nombreMapa;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombreMapa = nombre;
+        this.nombre = nombre;
     }
 
     public int getNumNiveles() {
-        return numNivelesMapa;
+        return numNiveles;
     }
 
     public void setNumNiveles(int numNiveles) {
-        this.numNivelesMapa = numNiveles;
+        this.numNiveles = numNiveles;
     }
 }

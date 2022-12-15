@@ -57,7 +57,7 @@ public class RecetaService {
     @Path("/getReceta/{idReceta}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getReceta(@PathParam("idReceta") String id) {
+    public Response getReceta(@PathParam("idReceta") int id) {
         Receta r = this.rm.getReceta(id);
         if (r == null) return Response.status(404).build();
         else  return Response.status(201).entity(r).build();
@@ -74,10 +74,10 @@ public class RecetaService {
     @Path("/postReceta")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postReceta(Receta receta) {
-        if (receta.getNombreReceta()=="" || receta.getNumPaso()==0) {
+        if (receta.getNombre()=="" || receta.getNumPaso()==0) {
             return Response.status(500).build();
         }
-        Receta r = this.rm.addReceta(receta.getNombreReceta(),receta.getNumPaso(),receta.getPremioDinero(),receta.getPremioPuntos());
+        Receta r = this.rm.addReceta(receta.getNombre(),receta.getNumPaso(),receta.getPremioDinero(),receta.getPremioPuntos());
         if (r!=null){
             return Response.status(201).build();
         }
@@ -92,7 +92,7 @@ public class RecetaService {
             @ApiResponse(code = 404, message = "Receta not found")
     })
     @Path("/deleteReceta/{idReceta}")
-    public Response deleteReceta(@PathParam("idReceta") String id) {
+    public Response deleteReceta(@PathParam("idReceta") int id) {
         Receta r = this.rm.getReceta(id);
         if (r == null) return Response.status(404).build();
         else {
