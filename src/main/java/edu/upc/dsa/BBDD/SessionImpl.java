@@ -63,6 +63,7 @@ public class SessionImpl implements Session {
 
     }
 
+    @Override
     public List<Ingrediente> findAll(Ingrediente ingrediente) {
         String selectQuery = QueryHelper.createQuerySELECTAll(ingrediente);
         PreparedStatement pstm = null;
@@ -86,11 +87,40 @@ public class SessionImpl implements Session {
         return ListIngre;
     }
 
-//    public List<Object> findAll(Class theClass, HashMap params) {
-//        return null;
-//    }
+    @Override
+    public List<Object> findAllByID(Ingrediente ingrediente, int idJugador) {
+        String selectQuery = QueryHelper.createQuerySELECTAllByID(ingrediente);
+        PreparedStatement pstm = null;
+        List<Object> ListObject = new ArrayList<Object>();
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            pstm.setObject(1, userName);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            while (rs.next()) {
+                //Class theClass = Class.forName("edu.upc.eetac.dsa.model.BuyedObject");
+                Class theClass = theObject.getClass();
+                Object object = theClass.newInstance();
+                //BuyedObject object =  new BuyedObject();// parche pq si entra algo que no es object mal !!
+                for (int i=1;i<=rs.getMetaData().getColumnCount();i++)
+                    ObjectHelper.setter(object,rs.getMetaData().getColumnName(i),rs.getObject(i));
+                ListObject.add(object);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        return ListObject;
+    }
 
 
+
+
+    @Override
     public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente) {
         String selectQuery = QueryHelper.createQuerySELECT(in);
         PreparedStatement pstm = null;
@@ -111,6 +141,7 @@ public class SessionImpl implements Session {
         }
     }
 
+    @Override
     public Utensilio getUtensilioId(Utensilio u, int idUtensilio) {
         String selectQuery = QueryHelper.createQuerySELECT(u);
         PreparedStatement pstm = null;
@@ -136,6 +167,7 @@ public class SessionImpl implements Session {
     }
 
 
+    @Override
     public Object getByTwoParameters(Class theClass, String byFirstParameter, Object byFirstParameterValue, String bySecondParameter, Object bySecondParameterValue) {
 
         String selectQuery = QueryHelper.createQuerySELECTbyTwoParameters(theClass, (String) byFirstParameterValue, (String) bySecondParameterValue);

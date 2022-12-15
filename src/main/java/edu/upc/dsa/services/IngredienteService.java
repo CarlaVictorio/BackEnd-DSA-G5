@@ -12,16 +12,15 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.sql.SQLException;
 import java.util.List;
 
 @Api(value = "/ingrediente", description = "Endpoint to Partida Service")
 @Path("/ingrediente")
-public class IngrdienteService {
+public class IngredienteService {
 
     private IngredienteManager im; //Gestor
 
-    public IngrdienteService(){
+    public IngredienteService(){
         this.im = IngredienteManagerImpl.getInstance();
         if(im.size()==0) {
             im.addIngrediente("MasaPizza", 1, 0);
@@ -44,6 +43,7 @@ public class IngrdienteService {
             im.addIngrediente("PanFrankfurt", 3, 1);
         }
     }
+
 
 
     @GET
@@ -129,5 +129,38 @@ public class IngrdienteService {
         if (i == null) return Response.status(404).build();
         else return Response.status(201).build();
     }
+
+
+    @GET
+    @ApiOperation(value = "Lista Ingredientes de un Jugador", notes = "lista con los ingredientes que tiene un jugador")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response = Ingrediente.class),
+            @ApiResponse(code = 404, message = "Ingrediente not found")
+
+    })
+
+    @Path("/getLista/{jugador}")
+    @Produces(MediaType.APPLICATION_JSON)// nos devuelve JSON con forma BuyedObject in a List
+    public Response listaIngredientesComprados(@PathParam("jugador") int idJugador) {
+        try {
+            List<Ingrediente> ingredientesCompradosPorJugador = this.im.get(userName);
+            if (objectsBuyedByUser == null) {
+                return Response.status(401).build();
+            }
+            GenericEntity<List<Objects>> entity = new GenericEntity<List<Objects>>(objectsBuyedByUser) {
+            };
+            return Response.status(200).entity(entity).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Response.status(503).build();
+        }
+
+    }
+
+
+
+
+
+
 }
 

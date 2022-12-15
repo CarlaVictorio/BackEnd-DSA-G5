@@ -80,8 +80,14 @@ public class QueryHelper {
 
         StringBuffer sb = new StringBuffer();
         sb.append("SELECT * FROM ").append(ingrediente.getClass().getSimpleName());
-        //sb.append(" WHERE 1 = ?");
 
+        return sb.toString();
+    }
+
+    public static String createQuerySELECTAllByID(Ingrediente ingrediente) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("SELECT * FROM ").append(ingrediente.getClass().get());
+        sb.append(" WHERE nickNameBuyer = ?");
         return sb.toString();
     }
 

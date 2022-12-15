@@ -204,5 +204,31 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
     }
 
+    public List<Ingrediente> listaIngredientesComprados(int idJugador) throws SQLException {
+
+        Session session = null;
+        List<Ingrediente> listaIngredientes = new ArrayList<Ingrediente>();
+        try {
+            session = FactorySession.openSession();
+            List<IngredientesComprados> listaComprados = session.findAllByName(new IngredientesComprados(), idJugador);
+
+            for (IngredientesComprados ingredienteComprado : listaComprados)
+            {
+                Ingrediente nuevoIngrediente = new Ingrediente();
+                int idIn = ingredienteComprado.getIdIngredienteComprado();
+                nuevoIngrediente = (Ingrediente) session.getIngredienteId(nuevoIngrediente, idIn);
+                listaIngredientes.add(nuevoIngrediente);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            listaIngredientes = null;
+        } finally {
+            session.close();
+            return listaIngredientes;
+        }
+    }
+
 
 }
