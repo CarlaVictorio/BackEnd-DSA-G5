@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambio ip FactorySession" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +178,7 @@
       <workItem from="1670792746020" duration="293000" />
       <workItem from="1670793054044" duration="166000" />
       <workItem from="1670795983084" duration="7917000" />
-      <workItem from="1671114906044" duration="13569000" />
+      <workItem from="1671114906044" duration="14015000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -418,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671137827961</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="cambio ip FactorySession">
+      <created>1671138805723</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1671138805723</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="corregir maven 2" />
     <MESSAGE value="pom correcto" />
     <MESSAGE value="search jugador hecho" />
     <MESSAGE value="cambiar url" />
@@ -461,7 +467,8 @@
     <MESSAGE value="Funciona index.html" />
     <MESSAGE value="post UtensiliosComprados y IngredientesComprados" />
     <MESSAGE value="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
-    <option name="LAST_COMMIT_MESSAGE" value="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
+    <MESSAGE value="cambio ip FactorySession" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambio ip FactorySession" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

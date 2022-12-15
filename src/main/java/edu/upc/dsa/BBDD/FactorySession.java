@@ -22,8 +22,8 @@ public class FactorySession {
         Connection conn = null;
         try {
             conn =
-                    //DriverManager.getConnection("jdbc:mariadb://192.168.11.89:3306/bbdd juego?serverTimezone=UTC","CAVI","1234");
-                    DriverManager.getConnection("jdbc:mariadb://localhost:3306/bbdd_juego","CAVI","1234");
+                    DriverManager.getConnection("jdbc:mariadb://localhost:3306/bbdd_juego?serverTimezone=UTC","CAVI","1234");
+                    //DriverManager.getConnection("jdbc:mariadb://localhost:3306/bbdd_juego","CAVI","1234");
                     //DriverManager.getConnection("jdbc:mariadb://localhost:3306/dsa_g5_v1","CAVI","1234");
 
 
