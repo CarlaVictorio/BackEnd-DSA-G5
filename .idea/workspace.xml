@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="haciendo boton comprado">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="comprado activado / no activado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/tienda.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tienda.html" afterDir="false" />
     </list>
@@ -194,7 +194,8 @@
       <workItem from="1671190132296" duration="2225000" />
       <workItem from="1671468554284" duration="2956000" />
       <workItem from="1671472446268" duration="240000" />
-      <workItem from="1671473110525" duration="4165000" />
+      <workItem from="1671473110525" duration="5018000" />
+      <workItem from="1671485753053" duration="1032000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -497,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671472670637</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="comprado activado / no activado">
+      <created>1671479058399</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1671479058399</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cambiar index.html" />
     <MESSAGE value="prova LogIn.html" />
     <MESSAGE value="prova1 LogIn.html" />
     <MESSAGE value="prova2 LogIn.html" />
@@ -540,7 +547,8 @@
     <MESSAGE value="cambio ip FactorySession&#10;url imagenes creadas en modelos y bbdd" />
     <MESSAGE value="Url cambiados" />
     <MESSAGE value="haciendo boton comprado" />
-    <option name="LAST_COMMIT_MESSAGE" value="haciendo boton comprado" />
+    <MESSAGE value="comprado activado / no activado" />
+    <option name="LAST_COMMIT_MESSAGE" value="comprado activado / no activado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

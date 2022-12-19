@@ -35,9 +35,9 @@
                         "<p class='card-text'>Nivel de desbloqueo: "+nivel+"</p>\n"+
                         "<p class='card-text'>Precio: "+precio+"</p>\n";
         if (comprado == false){
-            contenidorI = contenidorI + "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n";
+            contenidorI = contenidorI + "<button href='#' class='btn btn-primary' id='"+name+"'>Comprar</button>\n";
         } else {
-            contenidorI = contenidorI + "<a href='#' class='btn btn-secondary' >Comprado</a>\n";
+            contenidorI = contenidorI + "<button href='#' class='btn btn-secondary' >Comprado</button>\n";
         }
         contenidorI = contenidorI + "</div></div></div>";
         return contenidorI;
@@ -53,9 +53,9 @@
                         "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n"+
                         "<p class='card-text'>Precio: "+precio+"</p>\n";
         if (comprado == false){
-            contenidorU = contenidorU + "<a href='#' class='btn btn-primary' id='"+name+"'>Mejorar</a>\n";
+            contenidorU = contenidorU + "<button href='#' class='btn btn-primary' id='"+name+"'>Mejorar</button>\n";
         } else {
-            contenidorU = contenidorU + "<a href='#' class='btn btn-secondary' >Mejorado</a>\n";
+            contenidorU = contenidorU + "<button href='#' class='btn btn-secondary' >Mejorado</button>\n";
         }
         contenidorU = contenidorU + "</div></div></div>";
         return contenidorU;
@@ -103,9 +103,10 @@
                     }
                     xI=xI+1;
 
-                    $('#'+data.nombreIngrediente).click(function() {
-                        idIngrediente = data.idIngrediente;
-                        alert(idIngrediente);
+                    var idBoton = "#"+data.nombre;
+                    $(idBoton).click(function() {
+                        idIngrediente = data.id;
+                        console.log(data.nombre);
                     });
                 });
                 $("#containerIngredientes").append(contenidorI);
@@ -118,7 +119,6 @@
             listaUtensiliosComprados = data;
             lengthUtensilios = listaUtensiliosComprados.length;
         });
-        console.log(listaUtensiliosComprados);
 
         var xU = 0;
         var contarFins3U = 0;
@@ -132,15 +132,11 @@
                     var a = 0;
                     var comprado = false;
 
-                    console.log(listaUtensiliosComprados);
-
                     listaUtensiliosComprados.forEach(function (utensilio){
                         if(utensilio.nombre == data.nombre) {
-                            console.log(utensilio.nombre);
                             comprado = true;
                         }
                     });
-                    console.log(comprado);
                     contenidorU = contenidorU + addCardUtensilio(comprado, data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
                     contarFins3U = contarFins3U + 1;
                     if (contarFins3U == 3){
