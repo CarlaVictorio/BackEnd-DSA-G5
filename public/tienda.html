@@ -22,7 +22,6 @@
         p{
             font-size:20px;
             color: black;
-
         }
     </style>
     <script>
@@ -38,12 +37,12 @@
         if (comprado == false){
             contenidorI = contenidorI + "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n";
         } else {
-            contenidorI = contenidorI + "<a href='#' class='btn btn-secondary' >Comprar</a>\n";
+            contenidorI = contenidorI + "<a href='#' class='btn btn-secondary' >Comprado</a>\n";
         }
-            contenidorI = contenidorI + "</div></div></div>";
+        contenidorI = contenidorI + "</div></div></div>";
         return contenidorI;
     }
-    function addCardUtensilio(name, nivel1, nivel2, nivel3, precio, imagen){
+    function addCardUtensilio(comprado, name, nivel1, nivel2, nivel3, precio, imagen){
         var contenidorU ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
                     "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
@@ -52,34 +51,30 @@
                         "<p class='card-text'>Nivel 1: "+nivel1+"</p>\n"+
                         "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
                         "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n"+
-                        "<p class='card-text'>Precio: "+precio+"</p>\n"+
-                        "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
-                    "</div></div></div>";
+                        "<p class='card-text'>Precio: "+precio+"</p>\n";
+        if (comprado == false){
+            contenidorU = contenidorU + "<a href='#' class='btn btn-primary' id='"+name+"'>Mejorar</a>\n";
+        } else {
+            contenidorU = contenidorU + "<a href='#' class='btn btn-secondary' >Mejorado</a>\n";
+        }
+        contenidorU = contenidorU + "</div></div></div>";
         return contenidorU;
     }
 
     $(document).ready(function(){
 
         var jugador = localStorage.getItem('Nombre');
-        console.log(jugador);
         if (jugador == null) {
             location.href = "/logIn.html"
         }
 
-        var listaIngrediantesComprados = "";
+        var listaIngredientesComprados = "";
+        var lengthIngredientes = null;
         var url = "dsaApp/ingrediente/getLista/2";
         $.get(url, function (data) {
-            var listaIngrediantesComprados = data;
-            var lenght = listaIngrediantesComprados.length;
-            console.log("1-------");
-            console.log(listaIngrediantesComprados);
-            console.log(listaIngrediantesComprados.length);
-            console.log("--------");
+            listaIngredientesComprados = data;
+            lengthIngredientes = listaIngredientesComprados.length;
         });
-        console.log("2-------");
-        console.log(listaIngrediantesComprados);
-        console.log(length);
-        console.log("--------");
 
         var xI = 0;
         var contarFins3I = 0;
@@ -94,18 +89,12 @@
                     }
                     var a = 0;
                     var comprado = false;
-                    console.log("a", a);
-                    if (a<length){
-                        foreach (listaIngredientesComprados, function (data1){
-                            if(data1.nombre == data.nombre){
-                                console.log(ingredienteComprado);
-                                comprado = true;
-                            }
-                            a=a+1;
-                        });
-                    }
-                    console.log(data.nombre);
-                    console.log(comprado);
+
+                    listaIngredientesComprados.forEach(function (ingrediente){
+                        if(ingrediente.nombre == data.nombre) {
+                            comprado = true;
+                        }
+                    });
                     contenidorI = contenidorI + addCardIngrediente(comprado, data.nombre, data.nivelDesbloqueo, data.precio, data.urlImagen);
                     contarFins3I = contarFins3I + 1;
                     if (contarFins3I == 3){
@@ -122,6 +111,15 @@
                 $("#containerIngredientes").append(contenidorI);
         });
 
+        var listaUtensiliosComprados = "";
+        var lengthUtensilios = null;
+        var url = "dsaApp/utensilio/getLista/2";
+        $.get(url, function (data) {
+            listaUtensiliosComprados = data;
+            lengthUtensilios = listaUtensiliosComprados.length;
+        });
+        console.log(listaUtensiliosComprados);
+
         var xU = 0;
         var contarFins3U = 0;
         var contenidorU = "";
@@ -131,7 +129,19 @@
                     if (xU%3==0){
                         contenidorU = contenidorU + "<div class='row'>\n";
                     }
-                    contenidorU = contenidorU + addCardUtensilio(data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
+                    var a = 0;
+                    var comprado = false;
+
+                    console.log(listaUtensiliosComprados);
+
+                    listaUtensiliosComprados.forEach(function (utensilio){
+                        if(utensilio.nombre == data.nombre) {
+                            console.log(utensilio.nombre);
+                            comprado = true;
+                        }
+                    });
+                    console.log(comprado);
+                    contenidorU = contenidorU + addCardUtensilio(comprado, data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
                     contarFins3U = contarFins3U + 1;
                     if (contarFins3U == 3){
                         contenidorU = contenidorU + "</div>";
@@ -168,16 +178,18 @@
         </ul>
     </nav>
     <div>
-        <p> </p>
+        <h6> </h6>
     </div>
     <div class="container-fluid" id="containerIngredientes">
         <h2>Ingredientes</h2>
     </div>
+    <div>
+        <h6> </h6>
+    </div>
+
     <div class="container-fluid" id="containerUtensilios">
         <h2>Utensilios</h2>
     </div>
-
-
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2022 Grup 5 DSA</p>
 </body>
 </html>
