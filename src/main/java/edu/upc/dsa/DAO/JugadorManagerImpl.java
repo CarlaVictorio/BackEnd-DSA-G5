@@ -46,6 +46,19 @@ public class JugadorManagerImpl implements JugadorManager{
         return this.jugadores;
     }
 
+    @Override
+    public Jugador searchJugadorByName(String nombre) {
+        logger.info("getJugador("+nombre+")");
+        for (Jugador j: this.jugadores){
+            if (j.getNombre().equals(nombre)){
+                logger.info("getJugador("+nombre+": "+j);
+                return j;
+            }
+        }
+        logger.warn("not found "+nombre);
+        return null;
+    }
+
     /*@Override
     public Jugador getJugador(String id) {
         logger.info("getJugador("+id+")");
