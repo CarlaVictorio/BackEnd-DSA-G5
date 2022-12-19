@@ -7,10 +7,6 @@
     <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambio ip FactorySession&#10;url imagenes creadas en modelos y bbdd">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BBDD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BBDD.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ORMTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ORMTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +186,7 @@
       <workItem from="1671114906044" duration="16364000" />
       <workItem from="1671142084034" duration="3419000" />
       <workItem from="1671190132296" duration="2225000" />
+      <workItem from="1671450039878" duration="1441000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
