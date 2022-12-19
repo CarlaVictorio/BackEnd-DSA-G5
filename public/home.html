@@ -36,6 +36,12 @@
     </style>
     <script>
     $(document).ready(function(){
+        var jugador = localStorage.getItem('Nombre');
+        console.log(jugador);
+        if (jugador == null) {
+            location.href = "/logIn.html"
+        }
+
         $('#tienda').click(function() {
             location.href = "/tienda.html"
         });

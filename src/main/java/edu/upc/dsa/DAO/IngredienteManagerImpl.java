@@ -83,7 +83,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         logger.info("getIngrediente("+nombre+")");
 
         for (Ingrediente i: this.ingredientes) {
-            if (i.getNombreIngrediente()==nombre) {
+            if (i.getNombre()==nombre) {
                 logger.info("getIngrediente("+nombre+"): "+i);
                 return i;
             }

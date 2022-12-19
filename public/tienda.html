@@ -27,127 +27,92 @@
     </style>
     <script>
 
-    function addCardIngrediente(name, nivel, precio){
-        var res ="<div class='col-sm-4'>\n"+
+    function addCardIngrediente(name, nivel, precio, imagen){
+        var contenidorI ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
-                    "<img class='card-img-top' src='ingredientesUtensilios/"+name+".jpg' alt='Card image' style='width:100%'>\n"+
+                    "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
                     "<div class='card-body'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n"+
                         "<p class='card-text'>Nivel de desbloqueo: "+nivel+"</p>\n"+
                         "<p class='card-text'>Precio: "+precio+"</p>\n"+
                         "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
                     "</div></div></div>";
-        return res;
+        return contenidorI;
     }
-    function addCardUtensilio(name, nivel1, nivel2, nivel3){
-        var res ="<div class='col-sm-4'>\n"+
+    function addCardUtensilio(name, nivel1, nivel2, nivel3, precio, imagen){
+        var contenidorU ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
-                    "<img class='card-img-top' src='ingredientesUtensilios/"+name+".jpg' alt='Card image' style='width:100%'>\n"+
+                    "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
                     "<div class='card-body'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n"+
                         "<p class='card-text'>Nivel 1: "+nivel1+"</p>\n"+
                         "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
                         "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n"+
+                        "<p class='card-text'>Precio: "+precio+"</p>\n"+
                         "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
                     "</div></div></div>";
-        return res;
+        return contenidorU;
     }
 
     $(document).ready(function(){
 
         var jugador = localStorage.getItem('Nombre');
         console.log(jugador);
-        if (usuario == null) {
+        if (jugador == null) {
             location.href = "/logIn.html"
         }
-        var x = 0;
-        var contarFins3 = 0;
-        var res = "";
-        var idJugador = "";
+
+        var xI = 0;
+        var contarFins3I = 0;
+        var contenidorI = "";
         var idIngrediente = "";
-        var url = "/dsaApp/Jugador/getJugadorByNombre/"+jugador;
-        $.get(url, function (data, status){
-            idJugador = data.idJugador;
-            console.log(idJugador);
-        });
 
         var url = "/dsaApp/ingrediente/getAllIngredientes";
-        $.get(url, function (data, status){
+        $.get(url, function (data){
                 $.each (data, function(index, data){
-                   console.log(x);
-                    if (x%3==0){
-                        res = res + "<div class='row'>\n";
+                   console.log(xI);
+                    if (xI%3==0){
+                        contenidorI = contenidorI + "<div class='row'>\n";
                     }
-                    console.log(data.nombreIngrediente, data.nivelDesbloqueoIngrediente, data.precioIngrediente);
-                    res = res + addCardIngrediente(data.nombreIngrediente, data.nivelDesbloqueoIngrediente, data.precioIngrediente);
-                    contarFins3 = contarFins3 + 1;
-                    if (contarFins3 == 3){
-                        res = res + "</div>";
-                        contarFins3 = 0;
+                    console.log(data.nombre, data.nivelDesbloqueo, data.precio);
+                    contenidorI = contenidorI + addCardIngrediente(data.nombre, data.nivelDesbloqueo, data.precio, data.urlImagen);
+                    contarFins3I = contarFins3I + 1;
+                    if (contarFins3I == 3){
+                        contenidorI = contenidorI + "</div>";
+                        contarFins3I = 0;
                     }
-                    console.log("\n", res);
-                    x=x+1;
+                    console.log("\n", contenidorI);
+                    xI=xI+1;
 
                     $('#'+data.nombreIngrediente).click(function() {
                         idIngrediente = data.idIngrediente;
                         alert(idIngrediente);
-                        /*
-                        var dataBody=
-                        {
-                            idIngrediente: idIngrediente,
-                            idJugador: idJugador,
-                        }
-                        var URL = "/dsaApp/ingrediente/Login";
-                        $.post(
-                        {
-                            url: URL,
-                            data: JSON.stringify(dataBody),
-                            contentType: 'application/json; charset=utf-8'
-                        })
-                            .done(function(data, status){
-                                var index = "tienda.html";
-                                localStorage.setItem('Nombre',$("#userLogIn").val())
-                                $(location).attr('href',index);
-                            })
-                            .fail(function(xhr, err){
-                                alert("Usuario o contraseña incorrectos");
-                                location.reload();
-                            })
-                          */
                     });
                 });
-                if (contarFins3 != 3){
-                    res = res + "</div>";
-                }
-                console.log("\n", res);
-                $("#containerIngredientes").append(res);
+                $("#containerIngredientes").append(contenidorI);
         });
 
-        var x = 0;
-        var contarFins3 = 0;
-        var res = "";
+        var xU = 0;
+        var contarFins3U = 0;
+        var contenidorU = "";
         var url = "/dsaApp/utensilio/getAllUtensilios/";
-        $.get(url, function (data, status) {
+        $.get(url, function (data) {
                 $.each (data, function(index, data){
-                    console.log(x);
-                    if (x%3==0){
-                        res = res + "<div class='row'>\n";
+                    console.log(xU);
+                    if (xU%3==0){
+                        contenidorU = contenidorU + "<div class='row'>\n";
                     }
-                    console.log("utensilio!!!!",utensilio);
-                    res = res + addCardUtensilio(data.nombreUtensilio, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3);
-                    contarFins3 = contarFins3 + 1;
-                    if (contarFins3 == 3){
-                        res = res + "</div>";
-                        contarFins3 = 0;
+                    console.log(data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio);
+                    contenidorU = contenidorU + addCardUtensilio(data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
+                    contarFins3U = contarFins3U + 1;
+                    if (contarFins3U == 3){
+                        contenidorU = contenidorU + "</div>";
+                        contarFins3U = 0;
                     }
-                    console.log("\n", res);
-                    x=x+1;
+                    console.log("\n", contenidorU);
+                    xU=xU+1;
                 });
-                if (contarFins3 != 3){
-                    res = res + "</div>";
-                }
-                console.log("\n", res);
-                $("#containerUtensilios").append(res);
+                $("#containerUtensilios").append(contenidorU);
         });
         $('#home').click(function() {
             location.href = "/home.html"

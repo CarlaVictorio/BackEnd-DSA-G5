@@ -50,7 +50,7 @@ public class JugadorManagerImpl implements JugadorManager{
     public Jugador searchJugadorByName(String nombre) {
         logger.info("getJugador("+nombre+")");
         for (Jugador j: this.jugadores){
-            if (j.getNombreJugador().equals(nombre)){
+            if (j.getNombre().equals(nombre)){
                 logger.info("getJugador("+nombre+": "+j);
                 return j;
             }
