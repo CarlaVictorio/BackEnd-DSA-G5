@@ -9,10 +9,10 @@ public interface PartidasManager {
     //public List<Partida> getAllPartidasJugador(int idJugador);
     //public List<Partida> getAllPartidasMapa(int idMapa);
     public List<Partida> getAllPartidas();
-    public Partida getPartida(String idPartida);
+    public Partida getPartida(int idPartida);
     public Partida addPartida(Partida p);
-    public Partida addPartida (int nivelActual, int puntos, String idMapa, String idJugador);
-    public void deletePartida(String idPartida);
+    public Partida addPartida (int nivelActual, int puntos, int idMapa, int idJugador);
+    public void deletePartida(int idPartida);
     public Partida updatePartida(Partida p);
     public int size();
 

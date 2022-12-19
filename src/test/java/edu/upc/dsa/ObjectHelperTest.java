@@ -13,11 +13,11 @@ public class ObjectHelperTest {
     public void test(){
         Jugador j = new Jugador("Carme", "11111", "22222", "3333", 100);
 
-        Assert.assertEquals("Carme", ObjectHelper.getter(j, "nombreJugador"));
+        Assert.assertEquals("Carme", ObjectHelper.getter(j, "nombre"));
 
-        ObjectHelper.setter(j, "nombreJugador", "XXXX");
+        ObjectHelper.setter(j, "nombre", "XXXX");
 
-        Assert.assertEquals("XXXX", j.getNombreJugador());
+        Assert.assertEquals("XXXX", j.getNombre());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class ObjectHelperTest {
 
         ObjectHelper.setter(in, "nombreIngrediente", "XXXX");
 
-        Assert.assertEquals("XXXX", in.getNombreIngrediente());
+        Assert.assertEquals("XXXX", in.getNombre());
     }
 
 

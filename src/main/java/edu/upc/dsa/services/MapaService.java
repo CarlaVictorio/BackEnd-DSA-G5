@@ -40,7 +40,7 @@ public class MapaService {
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getAllMapas(){
-        HashMap<String,Mapa> listMapas = this.mm.getAllMapas();
+        HashMap<Integer,Mapa> listMapas = this.mm.getAllMapas();
 
         // Getting Collection of values from HashMap
         Collection<Mapa> values = listMapas.values();
@@ -62,7 +62,7 @@ public class MapaService {
     @Path("/getMapa/{idMapa}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getMapa(@PathParam("idMapa") String id) {
+    public Response getMapa(@PathParam("idMapa") int id) {
         Mapa m = this.mm.getMapa(id);
         if (m == null) return Response.status(404).build();
         else  return Response.status(201).entity(m).build();
@@ -97,7 +97,7 @@ public class MapaService {
             @ApiResponse(code = 404, message = "Mapa not found")
     })
     @Path("/deleteMapa/{idMapa}")
-    public Response deleteMapa(@PathParam("idMapa") String id) {
+    public Response deleteMapa(@PathParam("idMapa") int id) {
         Mapa m = this.mm.getMapa(id);
         if (m == null) return Response.status(404).build();
         else {

@@ -17,11 +17,11 @@ import java.util.List;
 
 @Api(value = "/ingrediente", description = "Endpoint to Partida Service")
 @Path("/ingrediente")
-public class IngrdienteService {
+public class IngredienteService {
 
     private IngredienteManager im; //Gestor
 
-    public IngrdienteService(){
+    public IngredienteService(){
         this.im = IngredienteManagerImpl.getInstance();
         if(im.size()==0) {
             im.addIngrediente("MasaPizza", 1, 0);
@@ -88,10 +88,10 @@ public class IngrdienteService {
     @Path("/postIngrediente")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postIngrediente(Ingrediente ingrediente) {
-        if (ingrediente.getNombreIngrediente()=="" || ingrediente.getNivelDesbloqueoIngrediente()==0) {
+        if (ingrediente.getNombre()=="" || ingrediente.getNivelDesbloqueo()==0) {
             return Response.status(500).build();
         }
-        Ingrediente i = this.im.addIngrediente(ingrediente.getNombreIngrediente(),ingrediente.getNivelDesbloqueoIngrediente(),ingrediente.getPrecioIngrediente());
+        Ingrediente i = this.im.addIngrediente(ingrediente.getNombre(),ingrediente.getNivelDesbloqueo(),ingrediente.getPrecio());
         if (i!=null){
             return Response.status(201).build();
         }
@@ -115,6 +115,26 @@ public class IngrdienteService {
         }
     }
 
+    @POST
+    @ApiOperation(value = "añadir Ingrediente Comprado BBDD", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Validation Error"),
+
+    })
+    @Path("/postIngredienteComprado")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postIngredienteComprado(IngredientesComprados ic) {
+        if (ic.getIdIngrediente()==0 || ic.getIdJugador()==0) {
+            return Response.status(500).build();
+        }
+        IngredientesComprados UtCom=this.im.postIngredienteComprado(ic,ic.getIdJugador(),ic.getIdIngrediente());
+        if (UtCom!=null){
+            return Response.status(201).build();
+        }
+        return Response.status(500).build();
+    }
+
 
     @PUT
     @ApiOperation(value = "update Ingrediente", notes = "hola")
@@ -128,6 +148,32 @@ public class IngrdienteService {
         Ingrediente i = this.im.putIngrediente(ingrediente);
         if (i == null) return Response.status(404).build();
         else return Response.status(201).build();
+    }
+
+    @GET
+    @ApiOperation(value = "Lista Ingredientes de un Jugador", notes = "lista con los ingredientes que tiene un jugador")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response = Ingrediente.class),
+            @ApiResponse(code = 404, message = "Ingrediente not found")
+
+    })
+
+    @Path("/getLista/{idJugador}")
+    @Produces(MediaType.APPLICATION_JSON)// nos devuelve JSON con forma BuyedObject in a List
+    public Response listaIngredientesComprados(@PathParam("idJugador") int idJugador) {
+        try {
+            List<Ingrediente> ingredientesCompradosPorJugador = this.im.listaIngredientesComprados(idJugador);
+            if (ingredientesCompradosPorJugador== null) {
+                return Response.status(401).build();
+            }
+            GenericEntity<List<Ingrediente>> entity = new GenericEntity<List<Ingrediente>>(ingredientesCompradosPorJugador) {
+            };
+            return Response.status(200).entity(entity).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Response.status(503).build();
+        }
+
     }
 }
 

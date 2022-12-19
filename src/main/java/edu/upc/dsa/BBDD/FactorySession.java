@@ -22,9 +22,9 @@ public class FactorySession {
         Connection conn = null;
         try {
             conn =
-                    //DriverManager.getConnection("jdbc:mariadb://192.168.11.89:3306/bbdd juego?serverTimezone=UTC","CAVI","1234");
-                    //DriverManager.getConnection("jdbc:mariadb://147.83.7.207:3306/test?"+"user=root&password=Mazinger72");
-                    DriverManager.getConnection("jdbc:mariadb://localhost:3306/dsa_g5_v1","CAVI","1234");
+                    //DriverManager.getConnection("jdbc:mariadb://localhost:3306/bbdd_juego?serverTimezone=UTC","CAVI","1234");
+                    DriverManager.getConnection("jdbc:mariadb://147.83.7.207:3306/bbdd_juego?user=CAVI&password=1234");
+                    //DriverManager.getConnection("jdbc:mariadb://localhost:3306/dsa_g5_v1","CAVI","1234");
 
 
         } catch (SQLException ex) {

@@ -4,37 +4,44 @@ import edu.upc.dsa.util.RandomUtils;
 
 public class Receta {
 
-    String idReceta;
-    String nombreReceta;
+    int id;
+    String nombre;
     int numPaso;
     double premioDinero;
     int premioPuntos;
     public Receta() {
-        this.idReceta = RandomUtils.getId();
+
     }
 
-    public Receta (String nombreReceta, int numPaso, double premioDinero, int premioPuntos) {
-        this();
-        this.setNombreReceta(nombreReceta);
-        this.setNumPaso(numPaso);
-        this.setPremioDinero(premioDinero);
-        this.setPremioPuntos(premioPuntos);
+    public Receta(int id, String nombre, int numPaso, double premioDinero, int premioPuntos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.numPaso = numPaso;
+        this.premioDinero = premioDinero;
+        this.premioPuntos = premioPuntos;
     }
 
-    public String getIdReceta() {
-        return idReceta;
+    public Receta(String nombre, int numPaso, double premioDinero, int premioPuntos) {
+        this.nombre = nombre;
+        this.numPaso = numPaso;
+        this.premioDinero = premioDinero;
+        this.premioPuntos = premioPuntos;
     }
 
-    public void setIdReceta(String idReceta) {
-        this.idReceta = idReceta;
+    public int getId() {
+        return id;
     }
 
-    public String getNombreReceta() {
-        return nombreReceta;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setNombreReceta(String nombreReceta) {
-        this.nombreReceta = nombreReceta;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getNumPaso() {

@@ -1,32 +1,31 @@
 package edu.upc.dsa.models;
-import edu.upc.dsa.util.RandomUtils;
 
 public class Jugador {
-    int idJugador;
-    String nombreJugador;
-    String passwordJugador;
-    String emailJugador;
-    String paisJugador;
-    double dinero;
+    private int id;
+    private String nombre;
+    private String password;
+    private String email;
+    private String pais;
+    private double dinero;
 
     public Jugador() {
     }
 
     public Jugador (String nombre, String password, String email, String pais, double dinero) {
         this();
-        this.setNombreJugador(nombre);
-        this.setPasswordJugador(password);
-        this.setEmailJugador(email);
-        this.setPaisJugador(pais);
+        this.setNombre(nombre);
+        this.setPassword(password);
+        this.setEmail(email);
+        this.setPais(pais);
         this.setDinero(dinero);
     }
 
-    public int getIdJugador() {
-        return idJugador;
+    public int getId() {
+        return id;
     }
 
-    public void setIdJugador(int idJugador) {
-        this.idJugador = idJugador;
+    public void setId(int id) {
+        this.id = id;
     }
     public double getDinero() {
         return dinero;
@@ -36,36 +35,36 @@ public class Jugador {
         this.dinero = dinero;
     }
 
-    public String getEmailJugador() {
-        return emailJugador;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailJugador(String email) {
-        this.emailJugador = email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPaisJugador() {
-        return paisJugador;
+    public String getPais() {
+        return pais;
     }
 
-    public void setPaisJugador(String pais) {
-        this.paisJugador = pais;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
 
-    public String getNombreJugador() {
-        return nombreJugador;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreJugador(String nombre) {
-        this.nombreJugador = nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getPasswordJugador() {
-        return passwordJugador;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordJugador(String password){
-        this.passwordJugador = password;
+    public void setPassword(String password){
+        this.password = password;
     }
 }

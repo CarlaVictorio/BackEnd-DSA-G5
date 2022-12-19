@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface RecetaManager {
     public List<Receta> getAllRecetas();
-    public Receta getReceta (String idReceta);
+    public Receta getReceta (int idReceta);
     public Receta addReceta(String nombre, int numPaso, double premioDinero, int premioPuntos);
-    public void deleteReceta(String idReceta);
-    public int getNumPaso(String idReceta);
-    public double getPremioDinero(String idReceta);
-    public int getPremioPuntos(String idReceta);
+    public void deleteReceta(int idReceta);
+    public int getNumPaso(int idReceta);
+    public double getPremioDinero(int idReceta);
+    public int getPremioPuntos(int idReceta);
 
     public Receta putReceta (Receta receta);
 

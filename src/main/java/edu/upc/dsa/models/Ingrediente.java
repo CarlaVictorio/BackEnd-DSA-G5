@@ -1,52 +1,62 @@
 package edu.upc.dsa.models;
-import edu.upc.dsa.util.RandomUtils;
 
 public class Ingrediente {
-    int idIngrediente;
-    String nombreIngrediente;
-    int nivelDesbloqueoIngrediente;
-    double precioIngrediente;
+    int id;
+    String nombre;
+    int nivelDesbloqueo;
+    double precio;
+    String urlImagen;
+
+
+
     public Ingrediente() {
 
     }
 
     public Ingrediente (String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
         this();
-        this.setNombreIngrediente(nombreIngrediente);
-        this.setNivelDesbloqueoIngrediente(nivelDesbloqueoIngrediente);
-        this.setPrecioIngrediente(precioIngrediente);
+        this.setNombre(nombreIngrediente);
+        this.setNivelDesbloqueo(nivelDesbloqueoIngrediente);
+        this.setPrecio(precioIngrediente);
     }
 
-    public int getIdIngrediente() {
-        return idIngrediente;
+    public String getUrlImagen() {
+        return urlImagen;
     }
 
-    public void setIdIngrediente(int idIngrediente) {
-        this.idIngrediente = idIngrediente;
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+    public int getId() {
+        return id;
     }
 
-    public String getNombreIngrediente() {
-        return nombreIngrediente;
+    public void setId(int idIngrediente) {
+        this.id = idIngrediente;
     }
 
-    public void setNombreIngrediente(String nombreIngrediente) {
-        this.nombreIngrediente = nombreIngrediente;
+    public String getNombre() {
+        return nombre;
     }
 
-    public int getNivelDesbloqueoIngrediente() {
-        return nivelDesbloqueoIngrediente;
+    public void setNombre(String nombreIngrediente) {
+        this.nombre = nombreIngrediente;
     }
 
-    public void setNivelDesbloqueoIngrediente(int nivelDesbloqueoIngrediente) {
-        this.nivelDesbloqueoIngrediente = nivelDesbloqueoIngrediente;
+    public int getNivelDesbloqueo() {
+        return nivelDesbloqueo;
     }
 
-    public double getPrecioIngrediente() {
-        return precioIngrediente;
+    public void setNivelDesbloqueo(int nivelDesbloqueoIngrediente) {
+        this.nivelDesbloqueo = nivelDesbloqueoIngrediente;
     }
 
-    public void setPrecioIngrediente(double precioIngrediente) {
-        this.precioIngrediente = precioIngrediente;
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precioIngrediente) {
+        this.precio = precioIngrediente;
     }
 
 

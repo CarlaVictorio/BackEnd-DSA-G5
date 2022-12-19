@@ -12,11 +12,12 @@ public interface Session<E> {
     void close() ;
     Object get(Class theClass, int ID);
     void update(Object object);
-    public Ingrediente getIngredienteId(Ingrediente in, String idIngrediente);
+    public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente);
 
     public Utensilio getUtensilioId(Utensilio u, int idUtensilio);
+    public List<Object> findAllByID(Class theClass1, Class theClass2, int idJugador);
     void delete(Object object);
-    List<Object> findAll(Ingrediente ingrediente);
+    List<Object> findAll(Object theClass);
 //    List<Object> findAll(Class theClass, HashMap params);
     List<Object> query(String query, Class theClass, HashMap params);
     public Object getByTwoParameters(Class theClass, String byFirstParameter, Object byFirstParameterValue, String bySecondParameter, Object bySecondParameterValue);
