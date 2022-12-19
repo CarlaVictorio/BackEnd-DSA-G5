@@ -1641,7 +1641,7 @@ dsa_g5_v1|schema||CAVI|localhost|UPDATE|G</Grants>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <column id="595" parent="511" name="id">
-      <AutoIncrement>9</AutoIncrement>
+      <AutoIncrement>5</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1684,7 +1684,7 @@ dsa_g5_v1|schema||CAVI|localhost|UPDATE|G</Grants>
       <Position>2</Position>
     </column>
     <column id="604" parent="513" name="id">
-      <AutoIncrement>14</AutoIncrement>
+      <AutoIncrement>4</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1722,7 +1722,7 @@ dsa_g5_v1|schema||CAVI|localhost|UPDATE|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="612" parent="514" name="id">
-      <AutoIncrement>7</AutoIncrement>
+      <AutoIncrement>4</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
