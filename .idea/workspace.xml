@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambio ip FactorySession">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambio ip FactorySession&#10;url imagenes creadas en modelos y bbdd">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BBDD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BBDD.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ORMTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/upc/dsa/ORMTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +51,6 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2HXHP9FuNqE3WampQHYgAHnjH23" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -89,7 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ORMTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ORMTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rest-example2" />
       <extension name="coverage">
         <pattern>
@@ -99,7 +101,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.upc.dsa" />
       <option name="MAIN_CLASS_NAME" value="edu.upc.dsa.ORMTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,10 +167,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ORMTest.test" />
         <item itemvalue="JUnit.ObjectHelperTest.test" />
         <item itemvalue="JUnit.ObjectHelperTest" />
         <item itemvalue="JUnit.QueryHelperTest" />
-        <item itemvalue="JUnit.ORMTest" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +188,8 @@
       <workItem from="1670793054044" duration="166000" />
       <workItem from="1670795983084" duration="7917000" />
       <workItem from="1671114906044" duration="16364000" />
-      <workItem from="1671142084034" duration="1464000" />
+      <workItem from="1671142084034" duration="3419000" />
+      <workItem from="1671190132296" duration="2225000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -453,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671140548087</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="cambio ip FactorySession&#10;url imagenes creadas en modelos y bbdd">
+      <created>1671143972162</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1671143972162</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +482,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pom correcto" />
     <MESSAGE value="search jugador hecho" />
     <MESSAGE value="cambiar url" />
     <MESSAGE value="cambiar index.html" />
@@ -496,7 +506,8 @@
     <MESSAGE value="post UtensiliosComprados y IngredientesComprados" />
     <MESSAGE value="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
     <MESSAGE value="cambio ip FactorySession" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio ip FactorySession" />
+    <MESSAGE value="cambio ip FactorySession&#10;url imagenes creadas en modelos y bbdd" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambio ip FactorySession&#10;url imagenes creadas en modelos y bbdd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -505,11 +516,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngrdienteService.java</url>
           <line>60</line>
           <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/JugadorManagerImpl.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/edu/upc/dsa/JugadorManagerTest.java</url>
@@ -524,14 +530,9 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java</url>
           <line>133</line>
-          <option name="timeStamp" value="71" />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BackEnd_DSA_G5$Main.ic" NAME="Main Coverage Results" MODIFIED="1671104804472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.upc.dsa.*</FILTER>
-    </SUITE>
   </component>
 </project>
