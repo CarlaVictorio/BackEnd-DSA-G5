@@ -27,16 +27,20 @@
     </style>
     <script>
 
-    function addCardIngrediente(name, nivel, precio, imagen){
+    function addCardIngrediente(comprado ,name, nivel, precio, imagen){
         var contenidorI ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
                     "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
                     "<div class='card-body'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n"+
                         "<p class='card-text'>Nivel de desbloqueo: "+nivel+"</p>\n"+
-                        "<p class='card-text'>Precio: "+precio+"</p>\n"+
-                        "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
-                    "</div></div></div>";
+                        "<p class='card-text'>Precio: "+precio+"</p>\n";
+        if (comprado == false){
+            contenidorI = contenidorI + "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n";
+        } else {
+            contenidorI = contenidorI + "<a href='#' class='btn btn-secondary' >Comprar</a>\n";
+        }
+            contenidorI = contenidorI + "</div></div></div>";
         return contenidorI;
     }
     function addCardUtensilio(name, nivel1, nivel2, nivel3, precio, imagen){
@@ -62,11 +66,16 @@
             location.href = "/logIn.html"
         }
 
+        var listaIngrediantesComprados = "";
         var url = "dsaApp/ingrediente/getLista/2";
         $.get(url, function (data) {
             var listaIngrediantesComprados = data;
             var lenght = listaIngrediantesComprados.length;
         });
+        console.log("--------");
+        console.log(listaIngrediantesComprados);
+        console.log(length);
+        console.log("--------");
 
         var xI = 0;
         var contarFins3I = 0;
@@ -80,16 +89,20 @@
                         contenidorI = contenidorI + "<div class='row'>\n";
                     }
                     var a = 0;
+                    var comprado = false;
+                    console.log("a", a);
                     if (a<length){
-                        foreach (listaIngredientesComprados, function (ingredienteComprado){
-                            if(listaIngredientesComprados[a].nombre == data.nombre){
-
+                        foreach (listaIngredientesComprados, function (data1){
+                            if(data1.nombre == data.nombre){
+                                console.log(ingredienteComprado);
+                                comprado = true;
                             }
                             a=a+1;
                         });
                     }
-
-                    contenidorI = contenidorI + addCardIngrediente(data.nombre, data.nivelDesbloqueo, data.precio, data.urlImagen);
+                    console.log(data.nombre);
+                    console.log(comprado);
+                    contenidorI = contenidorI + addCardIngrediente(comprado, data.nombre, data.nivelDesbloqueo, data.precio, data.urlImagen);
                     contarFins3I = contarFins3I + 1;
                     if (contarFins3I == 3){
                         contenidorI = contenidorI + "</div>";
