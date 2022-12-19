@@ -10,7 +10,8 @@ CREATE TABLE if not exists Ingrediente(
                             id int auto_increment primary key,
                             nombre varchar(250) not null,
                             nivelDesbloqueo int,
-                            precio double
+                            precio double,
+                            urlImagen varchar(250)
 
 );
 CREATE TABLE if not exists Utensilio(
@@ -19,7 +20,8 @@ CREATE TABLE if not exists Utensilio(
                         tiempoNivel1 int not null,
                         tiempoNivel2 int not null,
                         tiempoNivel3 int not null,
-                        precio double not null
+                        precio double not null,
+                        urlImagen varchar(250)
 );
 
 CREATE TABLE if not exists IngredientesComprados(
