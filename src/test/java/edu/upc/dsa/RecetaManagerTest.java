@@ -27,20 +27,20 @@ public class RecetaManagerTest {
     @Test
     public void testAddReceta(){
         List<Receta> testRecetas = rm.getAllRecetas();
-        Assert.assertEquals("hamburguesa", testRecetas.get(0).getNombreReceta());
-        Assert.assertEquals("0", testRecetas.get(0).getIdReceta());
+        Assert.assertEquals("hamburguesa", testRecetas.get(0).getNombre());
+        Assert.assertEquals("0", testRecetas.get(0).getId());
         Assert.assertEquals(1, testRecetas.get(0).getNumPaso());
         Assert.assertEquals(2, testRecetas.get(0).getPremioDinero());
         Assert.assertEquals(2, testRecetas.get(0).getPremioPuntos());
 
-        Assert.assertEquals("hamburguesa_lechuga", testRecetas.get(1).getNombreReceta());
-        Assert.assertEquals("1", testRecetas.get(1).getIdReceta());
+        Assert.assertEquals("hamburguesa_lechuga", testRecetas.get(1).getNombre());
+        Assert.assertEquals("1", testRecetas.get(1).getId());
         Assert.assertEquals(1, testRecetas.get(1).getNumPaso());
         Assert.assertEquals(2, testRecetas.get(1).getPremioDinero());
         Assert.assertEquals(2, testRecetas.get(1).getPremioPuntos());
 
-        Assert.assertEquals("hamburguesa_lechuga_tomate", testRecetas.get(2).getNombreReceta());
-        Assert.assertEquals("2", testRecetas.get(2).getIdReceta());
+        Assert.assertEquals("hamburguesa_lechuga_tomate", testRecetas.get(2).getNombre());
+        Assert.assertEquals("2", testRecetas.get(2).getId());
         Assert.assertEquals(2, testRecetas.get(2).getNumPaso());
         Assert.assertEquals(2, testRecetas.get(2).getPremioDinero());
         Assert.assertEquals(2, testRecetas.get(2).getPremioPuntos());
@@ -49,15 +49,15 @@ public class RecetaManagerTest {
     public void testDeleteReceta(){
         List<Receta> testRecetas = rm.getAllRecetas();
         Receta testReceta = testRecetas.get(0);
-        rm.deleteReceta(testReceta.getIdReceta());
-        Assert.assertEquals("hamburguesa", testRecetas.get(0).getNombreReceta());
-        Assert.assertEquals("0", testRecetas.get(0).getIdReceta());
+        rm.deleteReceta(testReceta.getId());
+        Assert.assertEquals("hamburguesa", testRecetas.get(0).getNombre());
+        Assert.assertEquals("0", testRecetas.get(0).getId());
         Assert.assertEquals(1, testRecetas.get(0).getNumPaso());
         Assert.assertEquals(2, testRecetas.get(0).getPremioDinero());
         Assert.assertEquals(2, testRecetas.get(0).getPremioPuntos());
 
-        Assert.assertEquals("hamburguesa_lechuga", testRecetas.get(1).getNombreReceta());
-        Assert.assertEquals("1", testRecetas.get(1).getIdReceta());
+        Assert.assertEquals("hamburguesa_lechuga", testRecetas.get(1).getNombre());
+        Assert.assertEquals("1", testRecetas.get(1).getId());
         Assert.assertEquals(1, testRecetas.get(1).getNumPaso());
         Assert.assertEquals(2, testRecetas.get(1).getPremioDinero());
         Assert.assertEquals(2, testRecetas.get(1).getPremioPuntos());
@@ -69,8 +69,8 @@ public class RecetaManagerTest {
         testReceta.setPremioDinero(4);
         Receta receta = rm.putReceta(testReceta);
 
-        Assert.assertEquals(receta.getNombreReceta(), rm.getAllRecetas().get(1).getNombreReceta());
-        Assert.assertEquals(receta.getIdReceta(), rm.getAllRecetas().get(1).getIdReceta());
+        Assert.assertEquals(receta.getNombre(), rm.getAllRecetas().get(1).getNombre());
+        Assert.assertEquals(receta.getId(), rm.getAllRecetas().get(1).getId());
         Assert.assertEquals(receta.getNumPaso(), rm.getAllRecetas().get(1).getNumPaso());
         Assert.assertEquals(receta.getPremioDinero(), rm.getAllRecetas().get(1).getPremioDinero());
         Assert.assertEquals(receta.getPremioPuntos(), rm.getAllRecetas().get(1).getPremioPuntos());

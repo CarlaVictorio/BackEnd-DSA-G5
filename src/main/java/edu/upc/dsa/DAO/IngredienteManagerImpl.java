@@ -183,9 +183,9 @@ public class IngredienteManagerImpl implements IngredienteManager {
             double dineroRestante = dinero-precioIngrediente;
             if(dineroRestante>0) {
                 session = FactorySession.openSession();
-                Jugador jug = new Jugador (j.getNombreJugador(), j.getPasswordJugador(),j.getEmailJugador(),j.getPaisJugador(),dineroRestante);
+                Jugador jug = new Jugador (j.getNombre(), j.getPassword(),j.getEmail(),j.getPais(),dineroRestante);
                 session.update(jug);
-                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getIdJugador());
+                IngredientesComprados NuevoIngrediente = new IngredientesComprados(idIngrediente, jug.getId());
                 session.save(NuevoIngrediente);
                 error = 0;
             }
@@ -203,6 +203,20 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }
 
     @Override
+    public IngredientesComprados postIngredienteComprado(IngredientesComprados ic, int idJugador, int idIngrediente) {
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.save(ic);
+            return ic;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    @Override
     public List<Ingrediente> listaIngredientesComprados(int idJugador)  {
 
         Session session = null;
@@ -210,16 +224,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         try {
             session = FactorySession.openSession();
             listaIngredientes=session.findAllByID(Ingrediente.class,IngredientesComprados.class,idJugador);
-            /*List<IngredientesComprados> listaComprados = session.findAllByID(new Ingrediente(), idJugador);
 
-            for (IngredientesComprados ingredienteComprado : listaComprados)
-            {
-                Ingrediente nuevoIngrediente = new Ingrediente();
-                int idIn = ingredienteComprado.getIdIngredienteComprado();
-                nuevoIngrediente = (Ingrediente) session.getIngredienteId(nuevoIngrediente, idIn);
-                listaIngredientes.add(nuevoIngrediente);
-
-            }*/
 
         } catch (Exception e) {
             e.printStackTrace();

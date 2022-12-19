@@ -4,17 +4,17 @@ public class UtensiliosComprados {
 
     int idUtensilio;
     int idJugador;
-    int nivelUtensilio;
+    int nivel;
 
 
     public UtensiliosComprados(){}
 
 
 
-    public UtensiliosComprados(int idUtensilioComprado, int idJugador, int nivelUtensilio){
+    public UtensiliosComprados(int idUtensilioComprado, int idJugador, int nivel){
         this.idUtensilio = idUtensilioComprado;
         this.idJugador = idJugador;
-        this.nivelUtensilio = nivelUtensilio;
+        this.nivel = nivel;
     }
 
     public int getIdUtensilio() {
@@ -33,11 +33,11 @@ public class UtensiliosComprados {
         this.idJugador = idJugador;
     }
 
-    public int getNivelUtensilio() {
-        return nivelUtensilio;
+    public int getNivel() {
+        return nivel;
     }
 
-    public void setNivelUtensilio(int nivelUtensilio) {
-        this.nivelUtensilio = nivelUtensilio;
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
     }
 }

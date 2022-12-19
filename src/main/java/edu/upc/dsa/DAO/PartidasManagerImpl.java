@@ -40,11 +40,11 @@ public class PartidasManagerImpl implements PartidasManager {
     }
     */
 
-    public Partida getPartida(String idPartida){
+    public Partida getPartida(int idPartida){
         logger.info("getPartida("+idPartida+")");
 
         for (Partida p: this.partidasList) {
-            if (Objects.equals(p.getIdPartida(), idPartida)) {
+            if (Objects.equals(p.getId(), idPartida)) {
                 logger.info("getPartida("+idPartida+"): "+p);
 
                 return p;
@@ -59,11 +59,11 @@ public class PartidasManagerImpl implements PartidasManager {
         logger.info("new Partida added");
         return p;
     }
-    public Partida addPartida (int nivelActual, int puntos, String idMapa, String idJugador){
+    public Partida addPartida (int nivelActual, int puntos, int idMapa, int idJugador){
        return this.addPartida(new Partida(nivelActual, puntos,idMapa,idJugador));
    }
     @Override
-    public void deletePartida(String idPartida){
+    public void deletePartida(int idPartida){
         Partida p = this.getPartida(idPartida);
         if (p==null){
             logger.warn("not found " + p);
@@ -73,10 +73,10 @@ public class PartidasManagerImpl implements PartidasManager {
     }
     @Override
     public Partida updatePartida(Partida t){
-        Partida p = this.getPartida(t.getIdPartida());
+        Partida p = this.getPartida(t.getId());
         if(p!=null){
             logger.info(t+" received");
-            p.setIdPartida(t.getIdPartida());
+            p.setId(t.getId());
             p.setIdMapa(t.getIdMapa());
             p.setPuntos(t.getPuntos());
             p.setNivelActual(t.getNivelActual());

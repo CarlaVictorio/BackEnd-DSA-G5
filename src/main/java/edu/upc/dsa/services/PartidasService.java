@@ -22,9 +22,9 @@ public class PartidasService {
     public PartidasService(){
         this.pm = PartidasManagerImpl.getInstance();
         if(pm.size()==0){
-            this.pm.addPartida(1,5,"0","0");
-            this.pm.addPartida(1,50,"1","1");
-            this.pm.addPartida(2,100,"2","2");
+            this.pm.addPartida(1,5,0,0);
+            this.pm.addPartida(1,50,1,1);
+            this.pm.addPartida(2,100,2,2);
         }
     }
 
@@ -33,7 +33,7 @@ public class PartidasService {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Partida.class, responseContainer="List"),
     })
-    @Path("/")
+    @Path("/getAllPartidas")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getAllPartidas(){
@@ -50,7 +50,7 @@ public class PartidasService {
     })
     @Path("/{idPartida}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPartida(@PathParam("idPartida") String id) {
+    public Response getPartida(@PathParam("idPartida") int id) {
         Partida t = this.pm.getPartida(id); //PM es un gestor, està a la capa Integration
         if (t == null) return Response.status(404).build(); //si no hi ha track
         else  return Response.status(201).entity(t).build(); // si hi ha track, empaqueto i envio amb un 201
@@ -63,7 +63,7 @@ public class PartidasService {
             @ApiResponse(code = 404, message = "Partida not found")
     })
     @Path("/{idPartida}")
-    public Response deletePartida(@PathParam("idPartida") String id) {
+    public Response deletePartida(@PathParam("idPartida") int id) {
         Partida t = this.pm.getPartida(id);
         if (t == null) return Response.status(404).build();
         else this.pm.deletePartida(id);
@@ -76,7 +76,7 @@ public class PartidasService {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "Partida not found")
     })
-    @Path("/")
+    @Path("/putPartida")
     public Response putPartida(Partida partida) {
 
         Partida t = this.pm.updatePartida(partida);
@@ -92,7 +92,7 @@ public class PartidasService {
 
     })
 
-    @Path("/")  //arriba una instancia/objecte buit, es crea automàticamente, no arriba un JSON
+    @Path("/postPartida")  //arriba una instancia/objecte buit, es crea automàticamente, no arriba un JSON
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postPartida(Partida partida) {
 

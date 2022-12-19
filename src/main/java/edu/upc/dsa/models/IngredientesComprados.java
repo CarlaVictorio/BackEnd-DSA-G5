@@ -6,24 +6,24 @@ public class IngredientesComprados {
 
     public IngredientesComprados(){}
 
-    public IngredientesComprados(int idIngredienteComprado, int jugadorName){
-        this.idIngrediente = idIngredienteComprado;
-        this.idJugador = jugadorName;
+    public IngredientesComprados(int idIngrediente, int idJugador){
+        this.idIngrediente = idIngrediente;
+        this.idJugador = idJugador;
     }
 
-    public int getIdIngredienteComprado() {
+    public int getIdIngrediente() {
         return idIngrediente;
     }
 
-    public void setIdIngredienteComprado(int idIngredienteComprado) {
-        this.idIngrediente = idIngredienteComprado;
+    public void setIdIngrediente(int idIngrediente) {
+        this.idIngrediente = idIngrediente;
     }
 
-    public int getJugadorName() {
+    public int getIdJugador() {
         return idJugador;
     }
 
-    public void setJugadorName(int jugadorName) {
-        this.idJugador = jugadorName;
+    public void setIdJugador(int idJugador) {
+        this.idJugador = idJugador;
     }
 }

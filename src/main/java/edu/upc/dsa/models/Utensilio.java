@@ -1,42 +1,51 @@
 package edu.upc.dsa.models;
 
-import edu.upc.dsa.util.RandomUtils;
-
 public class Utensilio {
-    int idUtensilio;
-    String nombreUtensilio;
+    int id;
+    String nombre;
     int tiempoNivel1;
     int tiempoNivel2;
     int tiempoNivel3;
-    double precioUtensilio;
+    double precio;
+    String urlImagen;
+
+
+
     public Utensilio() {
     }
 
 
 
-    public Utensilio (String nombreUtensilio, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3, double precioUtensilio) {
+    public Utensilio (String nombre, int tiempoNivel1, int tiempoNivel2, int tiempoNivel3, double precio) {
         this();
-        this.setNombreUtensilio(nombreUtensilio);
+        this.setNombre(nombre);
         this.setTiempoNivel1(tiempoNivel1);
         this.setTiempoNivel2(tiempoNivel2);
         this.setTiempoNivel3(tiempoNivel3);
-        this.setPrecioUtensilio(precioUtensilio);
+        this.setPrecio(precio);
     }
 
-    public int getIdUtensilio() {
-        return idUtensilio;
+    public String getUrlImagen() {
+        return urlImagen;
     }
 
-    public void setIdUtensilio(int idUtensilio) {
-        this.idUtensilio = idUtensilio;
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+    public int getId() {
+        return id;
     }
 
-    public String getNombreUtensilio() {
-        return nombreUtensilio;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setNombreUtensilio(String nombreUtensilio) {
-        this.nombreUtensilio = nombreUtensilio;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getTiempoNivel1() {
@@ -63,11 +72,11 @@ public class Utensilio {
         this.tiempoNivel3 = tiempoNivel3;
     }
 
-    public double getPrecioUtensilio() {
-        return precioUtensilio;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setPrecioUtensilio(double precioUtensilio) {
-        this.precioUtensilio = precioUtensilio;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 }

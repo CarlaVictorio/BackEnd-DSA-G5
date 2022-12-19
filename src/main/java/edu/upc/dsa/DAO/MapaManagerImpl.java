@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.apache.log4j.Logger;
 
 public class MapaManagerImpl implements MapaManager{
-    HashMap<String,Mapa> listMapas=new HashMap<>();
+    HashMap<Integer,Mapa> listMapas=new HashMap<>();
     private static MapaManager instance;
     final static Logger logger= Logger.getLogger(MapaManagerImpl.class);
 
@@ -18,22 +18,22 @@ public class MapaManagerImpl implements MapaManager{
         return instance;
     }
 
-    public HashMap<String, Mapa> getListMapas() {
+    public HashMap<Integer, Mapa> getListMapas() {
         return listMapas;
     }
 
-    public void setListMapas(HashMap<String, Mapa> listMapas) {
+    public void setListMapas(HashMap<Integer, Mapa> listMapas) {
         this.listMapas = listMapas;
     }
 
     @Override
-    public HashMap<String, Mapa> getAllMapas() {
+    public HashMap<Integer, Mapa> getAllMapas() {
         logger.info("Lista Mapas: "+listMapas);
         return listMapas;
     }
 
     @Override
-    public Mapa getMapa(String idMapa) {
+    public Mapa getMapa(int idMapa) {
         boolean exist=listMapas.containsKey(idMapa);
         if(exist){
             logger.info("Mapa dado: "+listMapas.get(idMapa));
@@ -55,7 +55,7 @@ public class MapaManagerImpl implements MapaManager{
     }
 
     @Override
-    public void deleteMapa(String idMapa) {
+    public void deleteMapa(int idMapa) {
         Mapa mapa= listMapas.remove(idMapa);
         if(mapa!=null){
             logger.info("Mapa eliminado: "+mapa);
@@ -66,7 +66,7 @@ public class MapaManagerImpl implements MapaManager{
     }
 
     @Override
-    public Mapa putMapa(String idMapa, String nombreMapa, int numNivelesMapa) {
+    public Mapa putMapa(int idMapa, String nombreMapa, int numNivelesMapa) {
         Mapa mapa=listMapas.get(idMapa);
         mapa.setNombre(nombreMapa);
         mapa.setNumNiveles(numNivelesMapa);

@@ -3,6 +3,7 @@ package edu.upc.dsa.services;
 import edu.upc.dsa.DAO.UtensilioManager;
 import edu.upc.dsa.DAO.UtensilioManagerImpl;
 import edu.upc.dsa.models.Utensilio;
+import edu.upc.dsa.models.UtensiliosComprados;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -41,9 +42,15 @@ public class UtensilioService {
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getAllUtensilios(){
-        List<Utensilio> listUtensilios = this.um.getAllUtensilios();
-        GenericEntity<List<Utensilio>> entity = new GenericEntity<List<Utensilio>>(listUtensilios) {};
-        return Response.status(201).entity(entity).build()  ;
+        try {
+            List<Utensilio> listUtensilios = this.um.getAllUtensilios();
+            GenericEntity<List<Utensilio>> entity = new GenericEntity<List<Utensilio>>(listUtensilios) {};
+            return Response.status(200).entity(entity).build();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return Response.status(401).build();
+        }
     }
 
 
@@ -73,10 +80,10 @@ public class UtensilioService {
     @Path("/postUtensilio")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postUtensilio(Utensilio utensilio) {
-        if (utensilio.getNombreUtensilio()=="" || utensilio.getTiempoNivel1()==0|| utensilio.getTiempoNivel2()==0||utensilio.getTiempoNivel3()==0) {
+        if (utensilio.getNombre()=="" || utensilio.getTiempoNivel1()==0|| utensilio.getTiempoNivel2()==0||utensilio.getTiempoNivel3()==0) {
             return Response.status(500).build();
         }
-        Utensilio u = this.um.addUtensilio(utensilio.getNombreUtensilio(),utensilio.getTiempoNivel1(),utensilio.getTiempoNivel2(),utensilio.getTiempoNivel3(), utensilio.getPrecioUtensilio());
+        Utensilio u = this.um.addUtensilio(utensilio.getNombre(),utensilio.getTiempoNivel1(),utensilio.getTiempoNivel2(),utensilio.getTiempoNivel3(), utensilio.getPrecio());
         if (u!=null){
             return Response.status(201).build();
         }
@@ -100,6 +107,26 @@ public class UtensilioService {
         }
     }
 
+    @POST
+    @ApiOperation(value = "añadir Utensilio Comprado BBDD", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Validation Error"),
+
+    })
+    @Path("/postUtensilioComprado")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postUtensilioComprado(UtensiliosComprados uc) {
+        if (uc.getIdUtensilio()==0 || uc.getIdJugador()==0 || uc.getNivel()==0) {
+            return Response.status(500).build();
+        }
+        UtensiliosComprados UtCom=this.um.postUtensilioComprado(uc,uc.getIdJugador(),uc.getIdUtensilio());
+        if (UtCom!=null){
+            return Response.status(201).build();
+        }
+        return Response.status(500).build();
+    }
+
 
     @PUT
     @ApiOperation(value = "update Utensilio", notes = "hola")
@@ -113,6 +140,31 @@ public class UtensilioService {
         Utensilio u = this.um.putUtensilio(utensilio);
         if (u == null) return Response.status(404).build();
         else return Response.status(201).build();
+    }
+
+    @GET
+    @ApiOperation(value = "Lista Utensilios de un Jugador", notes = "lista con los Utensilios que tiene un jugador")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 404, message = "utensilio not found")
+
+    })
+
+    @Path("/getLista/{idJugador}")
+    @Produces(MediaType.APPLICATION_JSON)// nos devuelve JSON con forma BuyedObject in a List
+    public Response listaUtensioliosComprados(@PathParam("idJugador") int idJugador) {
+        try {
+            List<Utensilio> UtensiliosCompradosPorJugador = this.um.listaUtensiliosComprados(idJugador);
+            if (UtensiliosCompradosPorJugador== null) {
+                return Response.status(401).build();
+            }
+            GenericEntity<List<Utensilio>> entity = new GenericEntity<List<Utensilio>>(UtensiliosCompradosPorJugador) {};
+            return Response.status(200).entity(entity).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Response.status(503).build();
+        }
+
     }
 }
 

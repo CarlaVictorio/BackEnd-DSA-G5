@@ -33,11 +33,11 @@ public class RecetaManagerImpl implements RecetaManager{
     }
 
     @Override
-    public Receta getReceta (String idReceta){
+    public Receta getReceta (int idReceta){
         logger.info("getReceta("+idReceta+")");
 
         for (Receta r: this.recetas) {
-            if (r.getIdReceta()==idReceta) {
+            if (r.getId()==idReceta) {
                 logger.info("getReceta("+idReceta+"): "+r);
 
                 return r;
@@ -57,7 +57,7 @@ public class RecetaManagerImpl implements RecetaManager{
     }
 
     @Override
-    public void deleteReceta(String idReceta) {
+    public void deleteReceta(int idReceta) {
         Receta r = this.getReceta(idReceta);
         if (r==null){
             logger.warn("not found "+r);
@@ -68,7 +68,7 @@ public class RecetaManagerImpl implements RecetaManager{
     }
 
     @Override
-    public int getNumPaso(String idReceta) {
+    public int getNumPaso(int idReceta) {
         Receta r = this.getReceta(idReceta);
         if (r==null) {
             logger.warn("not found "+r);
@@ -80,7 +80,7 @@ public class RecetaManagerImpl implements RecetaManager{
     }
 
     @Override
-    public double getPremioDinero(String idReceta) {
+    public double getPremioDinero(int idReceta) {
         Receta r = this.getReceta(idReceta);
         if (r==null) {
             logger.warn("not found "+r);
@@ -92,7 +92,7 @@ public class RecetaManagerImpl implements RecetaManager{
     }
 
     @Override
-    public int getPremioPuntos(String idReceta) {
+    public int getPremioPuntos(int idReceta) {
         Receta r = this.getReceta(idReceta);
         if (r==null) {
             logger.warn("not found "+r);
@@ -105,11 +105,11 @@ public class RecetaManagerImpl implements RecetaManager{
 
     @Override
     public Receta putReceta (Receta receta) {
-        Receta r = this.getReceta(receta.getIdReceta());
+        Receta r = this.getReceta(receta.getId());
         if (r!=null){
             logger.info(r+" rebut!");
-            r.setNombreReceta(receta.getNombreReceta());
-            r.setIdReceta(receta.getIdReceta());
+            r.setNombre(receta.getNombre());
+            r.setId(receta.getId());
             r.setNumPaso(receta.getNumPaso());
             r.setPremioDinero(receta.getPremioDinero());
             r.setPremioPuntos(receta.getPremioPuntos());

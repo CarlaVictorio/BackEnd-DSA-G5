@@ -26,14 +26,14 @@ public class JugadorManagerTest {
     @Test
     public void testAddJugador(){
         List<Jugador> testJugadores = jm.getAllJugadores();
-        Assert.assertEquals("Juan", testJugadores.get(0).getNombreJugador());
-        Assert.assertEquals("1111", testJugadores.get(0).getPasswordJugador());
+        Assert.assertEquals("Juan", testJugadores.get(0).getNombre());
+        Assert.assertEquals("1111", testJugadores.get(0).getPassword());
 
-        Assert.assertEquals("Victoria", testJugadores.get(1).getNombreJugador());
-        Assert.assertEquals("2222", testJugadores.get(1).getPasswordJugador());
+        Assert.assertEquals("Victoria", testJugadores.get(1).getNombre());
+        Assert.assertEquals("2222", testJugadores.get(1).getPassword());
 
-        Assert.assertEquals("Maria", testJugadores.get(2).getNombreJugador());
-        Assert.assertEquals("3333", testJugadores.get(2).getPasswordJugador());
+        Assert.assertEquals("Maria", testJugadores.get(2).getNombre());
+        Assert.assertEquals("3333", testJugadores.get(2).getPassword());
     }
     /*@Test
     public void testDeletedJugador(){

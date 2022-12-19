@@ -5,6 +5,10 @@ public class Ingrediente {
     String nombre;
     int nivelDesbloqueo;
     double precio;
+    String urlImagen;
+
+
+
     public Ingrediente() {
 
     }
@@ -16,6 +20,13 @@ public class Ingrediente {
         this.setPrecio(precioIngrediente);
     }
 
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
     public int getId() {
         return id;
     }

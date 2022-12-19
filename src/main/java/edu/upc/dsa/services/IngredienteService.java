@@ -12,6 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.sql.SQLException;
 import java.util.List;
 
 @Api(value = "/ingrediente", description = "Endpoint to Partida Service")
@@ -43,7 +44,6 @@ public class IngredienteService {
             im.addIngrediente("PanFrankfurt", 3, 1);
         }
     }
-
 
 
     @GET
@@ -115,6 +115,26 @@ public class IngredienteService {
         }
     }
 
+    @POST
+    @ApiOperation(value = "añadir Ingrediente Comprado BBDD", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Validation Error"),
+
+    })
+    @Path("/postIngredienteComprado")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postIngredienteComprado(IngredientesComprados ic) {
+        if (ic.getIdIngrediente()==0 || ic.getIdJugador()==0) {
+            return Response.status(500).build();
+        }
+        IngredientesComprados UtCom=this.im.postIngredienteComprado(ic,ic.getIdJugador(),ic.getIdIngrediente());
+        if (UtCom!=null){
+            return Response.status(201).build();
+        }
+        return Response.status(500).build();
+    }
+
 
     @PUT
     @ApiOperation(value = "update Ingrediente", notes = "hola")
@@ -129,7 +149,6 @@ public class IngredienteService {
         if (i == null) return Response.status(404).build();
         else return Response.status(201).build();
     }
-
 
     @GET
     @ApiOperation(value = "Lista Ingredientes de un Jugador", notes = "lista con los ingredientes que tiene un jugador")
@@ -156,11 +175,5 @@ public class IngredienteService {
         }
 
     }
-
-
-
-
-
-
 }
 

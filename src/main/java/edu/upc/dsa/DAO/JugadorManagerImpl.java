@@ -4,7 +4,6 @@ import edu.upc.dsa.BBDD.FactorySession;
 import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.Jugador;
 
-import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class JugadorManagerImpl implements JugadorManager{
     public Jugador searchJugador(String nombre, String password) {
         logger.info("getJugador("+nombre+", "+password+")");
         for (Jugador j: this.jugadores){
-            if (j.getNombreJugador().equals(nombre) && j.getPasswordJugador().equals(password)){
+            if (j.getNombre().equals(nombre) && j.getPassword().equals(password)){
                 logger.info("getJugador("+nombre+", "+password+"): "+j);
                 return j;
             }
@@ -78,7 +77,7 @@ public class JugadorManagerImpl implements JugadorManager{
         Jugador j = searchJugador(nombre, password);
         if (j==null){
             Jugador jugador = new Jugador(nombre,password,email,pais, dinero);
-            logger.info("new Jugador " + jugador.getNombreJugador());
+            logger.info("new Jugador " + jugador.getNombre());
             this.jugadores.add(jugador);
             logger.info("new Jugdor added");
             return jugador;
@@ -119,7 +118,7 @@ public class JugadorManagerImpl implements JugadorManager{
         Jugador jugador = null;
         try {
             session = FactorySession.openSession();
-            jugador= (Jugador) session.getByTwoParameters(Jugador.class, logInParams.getNombre(), "nombreJugador", logInParams.getPassword(), "passwordJugador");
+            jugador= (Jugador) session.getByTwoParameters(Jugador.class, logInParams.getNombre(), "nombre", logInParams.getPassword(), "password");
             if (jugador!=null){
                 logger.info(jugador+" rebut!");
                 return jugador;
@@ -146,7 +145,7 @@ public class JugadorManagerImpl implements JugadorManager{
                 Jugador jugador= (Jugador) session.getByTwoParameters(Jugador.class, registro.getNombre(), "nombreJugador", registro.getPassword(), "passwordJugador");
                 if(jugador==null){
                     Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais(), registro.getDinero());
-                    logger.info("new Jugador " + jugadorAdd.getNombreJugador());
+                    logger.info("new Jugador " + jugadorAdd.getNombre());
                     session.save(jugadorAdd);
                     logger.info("new Jugdor added");
                     return jugadorAdd;

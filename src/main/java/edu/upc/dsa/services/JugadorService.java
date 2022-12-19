@@ -40,7 +40,7 @@ public class JugadorService {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Jugador.class, responseContainer="List"),
     })
-    @Path("/")
+    @Path("/getAllJugadores")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getAllJugadores(){

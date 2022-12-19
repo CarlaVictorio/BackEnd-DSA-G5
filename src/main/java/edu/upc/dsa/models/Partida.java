@@ -1,31 +1,35 @@
 package edu.upc.dsa.models;
 
-import edu.upc.dsa.util.RandomUtils;
-
 public class Partida {
 
-    String idPartida;
+    int id;
     int nivelActual;
     int puntos;
-    String idMapa;
-    String idJugador;
-    public Partida() {
-        this.idPartida = RandomUtils.getId();
+    int idMapa;
+    int idJugador;
+    public Partida(){    }
+
+    public Partida(int id, int nivelActual, int puntos, int idMapa, int idJugador) {
+        this.id = id;
+        this.nivelActual = nivelActual;
+        this.puntos = puntos;
+        this.idMapa = idMapa;
+        this.idJugador = idJugador;
     }
 
-    public Partida (int nivelActual, int puntos, String idMapa, String idJugador) {
-        this();
-        this.setNivelActual(nivelActual);
-        this.setPuntos(puntos);
-        this.setIdMapa(idMapa);
-        this.setIdJugador(idJugador);
-    }
-    public String getIdPartida() {
-        return idPartida;
+    public Partida(int nivelActual, int puntos, int idMapa, int idJugador) {
+        this.nivelActual = nivelActual;
+        this.puntos = puntos;
+        this.idMapa = idMapa;
+        this.idJugador = idJugador;
     }
 
-    public void setIdPartida(String idPartida) {
-        this.idPartida = idPartida;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getNivelActual() {
@@ -44,19 +48,19 @@ public class Partida {
         this.puntos = puntos;
     }
 
-    public String getIdMapa() {
+    public int getIdMapa() {
         return idMapa;
     }
 
-    public void setIdMapa(String idMapa) {
+    public void setIdMapa(int idMapa) {
         this.idMapa = idMapa;
     }
 
-    public String getIdJugador() {
+    public int getIdJugador() {
         return idJugador;
     }
 
-    public void setIdJugador(String idJugador) {
+    public void setIdJugador(int idJugador) {
         this.idJugador = idJugador;
     }
 }
