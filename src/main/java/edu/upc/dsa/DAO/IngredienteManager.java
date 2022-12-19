@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface IngredienteManager {
     public Ingrediente getIngrediente (int idIngrediente);
+    public Ingrediente getIngredienteByNombre (String nombre);
     public Ingrediente addIngrediente(String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente);
     public List<Ingrediente> getAllIngredientes();
     public void deleteIngrediente(int idIngrediente);

@@ -4,7 +4,6 @@ public class IngredientesComprados {
     int idIngrediente;
     int idJugador;
 
-
     public IngredientesComprados(){}
 
     public IngredientesComprados(int idIngrediente, int idJugador){
