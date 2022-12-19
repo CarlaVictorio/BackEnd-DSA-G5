@@ -62,6 +62,12 @@
             location.href = "/logIn.html"
         }
 
+        var url = "dsaApp/ingrediente/getLista/2";
+        $.get(url, function (data) {
+            var listaIngrediantesComprados = data;
+            var lenght = listaIngrediantesComprados.length;
+        });
+
         var xI = 0;
         var contarFins3I = 0;
         var contenidorI = "";
@@ -70,18 +76,25 @@
         var url = "/dsaApp/ingrediente/getAllIngredientes";
         $.get(url, function (data){
                 $.each (data, function(index, data){
-                   console.log(xI);
                     if (xI%3==0){
                         contenidorI = contenidorI + "<div class='row'>\n";
                     }
-                    console.log(data.nombre, data.nivelDesbloqueo, data.precio);
+                    var a = 0;
+                    if (a<length){
+                        foreach (listaIngredientesComprados, function (ingredienteComprado){
+                            if(listaIngredientesComprados[a].nombre == data.nombre){
+
+                            }
+                            a=a+1;
+                        });
+                    }
+
                     contenidorI = contenidorI + addCardIngrediente(data.nombre, data.nivelDesbloqueo, data.precio, data.urlImagen);
                     contarFins3I = contarFins3I + 1;
                     if (contarFins3I == 3){
                         contenidorI = contenidorI + "</div>";
                         contarFins3I = 0;
                     }
-                    console.log("\n", contenidorI);
                     xI=xI+1;
 
                     $('#'+data.nombreIngrediente).click(function() {
@@ -98,18 +111,15 @@
         var url = "/dsaApp/utensilio/getAllUtensilios/";
         $.get(url, function (data) {
                 $.each (data, function(index, data){
-                    console.log(xU);
                     if (xU%3==0){
                         contenidorU = contenidorU + "<div class='row'>\n";
                     }
-                    console.log(data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio);
                     contenidorU = contenidorU + addCardUtensilio(data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
                     contarFins3U = contarFins3U + 1;
                     if (contarFins3U == 3){
                         contenidorU = contenidorU + "</div>";
                         contarFins3U = 0;
                     }
-                    console.log("\n", contenidorU);
                     xU=xU+1;
                 });
                 $("#containerUtensilios").append(contenidorU);
