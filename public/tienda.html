@@ -22,24 +22,27 @@
         p{
             font-size:20px;
             color: black;
-
         }
     </style>
     <script>
 
-    function addCardIngrediente(name, nivel, precio, imagen){
+    function addCardIngrediente(comprado ,name, nivel, precio, imagen){
         var contenidorI ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
                     "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
                     "<div class='card-body'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n"+
                         "<p class='card-text'>Nivel de desbloqueo: "+nivel+"</p>\n"+
-                        "<p class='card-text'>Precio: "+precio+"</p>\n"+
-                        "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
-                    "</div></div></div>";
+                        "<p class='card-text'>Precio: "+precio+"</p>\n";
+        if (comprado == false){
+            contenidorI = contenidorI + "<button href='#' class='btn btn-primary' id='"+name+"'>Comprar</button>\n";
+        } else {
+            contenidorI = contenidorI + "<button href='#' class='btn btn-secondary' >Comprado</button>\n";
+        }
+        contenidorI = contenidorI + "</div></div></div>";
         return contenidorI;
     }
-    function addCardUtensilio(name, nivel1, nivel2, nivel3, precio, imagen){
+    function addCardUtensilio(comprado, name, nivel1, nivel2, nivel3, precio, imagen){
         var contenidorU ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
                     "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
@@ -48,19 +51,30 @@
                         "<p class='card-text'>Nivel 1: "+nivel1+"</p>\n"+
                         "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
                         "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n"+
-                        "<p class='card-text'>Precio: "+precio+"</p>\n"+
-                        "<a href='#' class='btn btn-primary' id='"+name+"'>Comprar</a>\n"+
-                    "</div></div></div>";
+                        "<p class='card-text'>Precio: "+precio+"</p>\n";
+        if (comprado == false){
+            contenidorU = contenidorU + "<button href='#' class='btn btn-primary' id='"+name+"'>Mejorar</button>\n";
+        } else {
+            contenidorU = contenidorU + "<button href='#' class='btn btn-secondary' >Mejorado</button>\n";
+        }
+        contenidorU = contenidorU + "</div></div></div>";
         return contenidorU;
     }
 
     $(document).ready(function(){
 
         var jugador = localStorage.getItem('Nombre');
-        console.log(jugador);
         if (jugador == null) {
             location.href = "/logIn.html"
         }
+
+        var listaIngredientesComprados = "";
+        var lengthIngredientes = null;
+        var url = "dsaApp/ingrediente/getLista/2";
+        $.get(url, function (data) {
+            listaIngredientesComprados = data;
+            lengthIngredientes = listaIngredientesComprados.length;
+        });
 
         var xI = 0;
         var contarFins3I = 0;
@@ -70,26 +84,40 @@
         var url = "/dsaApp/ingrediente/getAllIngredientes";
         $.get(url, function (data){
                 $.each (data, function(index, data){
-                   console.log(xI);
                     if (xI%3==0){
                         contenidorI = contenidorI + "<div class='row'>\n";
                     }
-                    console.log(data.nombre, data.nivelDesbloqueo, data.precio);
-                    contenidorI = contenidorI + addCardIngrediente(data.nombre, data.nivelDesbloqueo, data.precio, data.urlImagen);
+                    var a = 0;
+                    var comprado = false;
+
+                    listaIngredientesComprados.forEach(function (ingrediente){
+                        if(ingrediente.nombre == data.nombre) {
+                            comprado = true;
+                        }
+                    });
+                    contenidorI = contenidorI + addCardIngrediente(comprado, data.nombre, data.nivelDesbloqueo, data.precio, data.urlImagen);
                     contarFins3I = contarFins3I + 1;
                     if (contarFins3I == 3){
                         contenidorI = contenidorI + "</div>";
                         contarFins3I = 0;
                     }
-                    console.log("\n", contenidorI);
                     xI=xI+1;
 
-                    $('#'+data.nombreIngrediente).click(function() {
-                        idIngrediente = data.idIngrediente;
-                        alert(idIngrediente);
+                    var idBoton = "#"+data.nombre;
+                    $(idBoton).click(function() {
+                        idIngrediente = data.id;
+                        console.log(data.nombre);
                     });
                 });
                 $("#containerIngredientes").append(contenidorI);
+        });
+
+        var listaUtensiliosComprados = "";
+        var lengthUtensilios = null;
+        var url = "dsaApp/utensilio/getLista/2";
+        $.get(url, function (data) {
+            listaUtensiliosComprados = data;
+            lengthUtensilios = listaUtensiliosComprados.length;
         });
 
         var xU = 0;
@@ -98,18 +126,23 @@
         var url = "/dsaApp/utensilio/getAllUtensilios/";
         $.get(url, function (data) {
                 $.each (data, function(index, data){
-                    console.log(xU);
                     if (xU%3==0){
                         contenidorU = contenidorU + "<div class='row'>\n";
                     }
-                    console.log(data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio);
-                    contenidorU = contenidorU + addCardUtensilio(data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
+                    var a = 0;
+                    var comprado = false;
+
+                    listaUtensiliosComprados.forEach(function (utensilio){
+                        if(utensilio.nombre == data.nombre) {
+                            comprado = true;
+                        }
+                    });
+                    contenidorU = contenidorU + addCardUtensilio(comprado, data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
                     contarFins3U = contarFins3U + 1;
                     if (contarFins3U == 3){
                         contenidorU = contenidorU + "</div>";
                         contarFins3U = 0;
                     }
-                    console.log("\n", contenidorU);
                     xU=xU+1;
                 });
                 $("#containerUtensilios").append(contenidorU);
@@ -141,16 +174,18 @@
         </ul>
     </nav>
     <div>
-        <p> </p>
+        <h6> </h6>
     </div>
     <div class="container-fluid" id="containerIngredientes">
         <h2>Ingredientes</h2>
     </div>
+    <div>
+        <h6> </h6>
+    </div>
+
     <div class="container-fluid" id="containerUtensilios">
         <h2>Utensilios</h2>
     </div>
-
-
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2022 Grup 5 DSA</p>
 </body>
 </html>
