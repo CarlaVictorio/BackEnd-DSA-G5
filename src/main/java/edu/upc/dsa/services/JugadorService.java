@@ -56,7 +56,7 @@ public class JugadorService {
             @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
             @ApiResponse(code = 404, message = "Jugador not found")
     })
-    @Path("/{nombreJugador}")
+    @Path("/getJugadorByNombre/{nombreJugador}")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getJugadorByNombre(@PathParam("nombreJugador") String nombre) {
