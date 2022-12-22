@@ -97,7 +97,7 @@ return null;
         sb.append(key).append("='").append(table.get(key)).append("'");
         while (e.hasMoreElements()) {
             key = e.nextElement();
-            sb.append("AND").append(key).append("=").append(table.get(key));
+            sb.append("AND").append(key).append("='").append(table.get(key)).append("'");
         }
 
         return sb.toString();
