@@ -4,9 +4,7 @@ import edu.upc.dsa.models.Ingrediente;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class QueryHelper {
     final static Logger logger = Logger.getLogger(QueryHelper.class);
@@ -88,6 +86,21 @@ public class QueryHelper {
 
     public static String createQueryUPDATEbyParameter(Object entity, String parameter) {
 return null;
+    }
+    public static String createQuerySELECT(Object entity, Hashtable table){
+        StringBuffer sb = new StringBuffer();
+        sb.append("SELECT * FROM ").append(entity.getClass().getSimpleName());
+        sb.append(" WHERE ");
+        Enumeration<String > e = table.keys();
+
+        String  key = e.nextElement();
+        sb.append(key).append("='").append(table.get(key)).append("'");
+        while (e.hasMoreElements()) {
+            key = e.nextElement();
+            sb.append("AND").append(key).append("=").append(table.get(key));
+        }
+
+        return sb.toString();
     }
 
 

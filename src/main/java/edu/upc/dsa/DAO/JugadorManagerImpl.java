@@ -4,6 +4,8 @@ import edu.upc.dsa.BBDD.FactorySession;
 import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.Jugador;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -46,7 +48,7 @@ public class JugadorManagerImpl implements JugadorManager{
         return this.jugadores;
     }
 
-    @Override
+   /* @Override
     public Jugador searchJugadorByName(String nombre) {
         logger.info("getJugador("+nombre+")");
         for (Jugador j: this.jugadores){
@@ -57,7 +59,34 @@ public class JugadorManagerImpl implements JugadorManager{
         }
         logger.warn("not found "+nombre);
         return null;
-    }
+    }*/
+   @Override
+   public Jugador searchJugadorByName(String nombre) {
+       logger.info("getJugador("+nombre+")");
+       Session session = null;
+       Jugador jugador = null;
+       List<Jugador>  listJugador=new ArrayList<>();
+       try {
+           Hashtable<String,String> table=new Hashtable<>();
+           table.put("nombre",nombre);
+           session = FactorySession.openSession();
+           listJugador = (List<Jugador>) session.get(new Jugador(),table);
+           jugador=listJugador.get(0);
+           if (jugador!=null){
+               logger.info(jugador+" rebut!");
+               return jugador;
+           }
+       }
+       catch (Exception e) {
+           logger.warn("not found "+nombre);
+           e.printStackTrace();
+       }
+       finally {
+           session.close();
+       }
+
+       return null;
+   }
 
     /*@Override
     public Jugador getJugador(String id) {

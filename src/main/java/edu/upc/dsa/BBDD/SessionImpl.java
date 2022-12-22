@@ -9,6 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 
 
@@ -51,8 +52,32 @@ public class SessionImpl implements Session {
         }
     }
 
-    public Object get(Class theClass, int ID) {
-        return null;
+    public Object get(Object entity, Hashtable table) {
+        String selectQuery = QueryHelper.createQuerySELECT(entity,table);
+        PreparedStatement pstm = null;
+        List<Object> ListObject = new ArrayList<Object>();
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            pstm.setObject(1, 1);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            while (rs.next()) {
+                Class clase = entity.getClass();
+                Object o = clase.newInstance();
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++)
+                    ObjectHelper.setter(o, rs.getMetaData().getColumnName(i), rs.getObject(i));
+                ListObject.add(o);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+        return ListObject;
+
     }
 
     public void update(Object object) {
