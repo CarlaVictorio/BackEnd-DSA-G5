@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-223.7571.182">
-    <data-source name="@localhost" uuid="f4d85f6c-6fef-426e-8f46-8d9972e034f6">
+    <data-source name="dsa_g5_v1" uuid="f4d85f6c-6fef-426e-8f46-8d9972e034f6">
       <database-info product="MariaDB" version="10.10.2-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.10.2" exact-driver-version="3.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>CAVI</user-name>
       <schema-mapping>
@@ -16,18 +16,8 @@
       </schema-mapping>
     </data-source>
     <data-source name="dsa_g5_v1" uuid="cbb6e8c2-3c17-4e8c-8bbc-f3d2171dc631">
-      <database-info product="MariaDB" version="10.10.2-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.10.2" exact-driver-version="3.0">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>CAVI</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="schema" qname="@" />
-        </introspection-scope>
-      </schema-mapping>
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" exact-version="0" />
+      <schema-mapping />
     </data-source>
   </component>
 </project>

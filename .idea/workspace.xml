@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="haciendo el click comprado">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="bbdd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/logIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tienda.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tienda.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,8 +195,9 @@
       <workItem from="1671468554284" duration="2956000" />
       <workItem from="1671472446268" duration="240000" />
       <workItem from="1671473110525" duration="5018000" />
-      <workItem from="1671485753053" duration="1286000" />
-      <workItem from="1671704568222" duration="4927000" />
+      <workItem from="1671485753053" duration="1032000" />
+      <workItem from="1671638130284" duration="654000" />
+      <workItem from="1671704562280" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -508,14 +507,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671479058399</updated>
     </task>
-    <task id="LOCAL-00045" summary="haciendo el click comprado">
-      <created>1671487026021</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1671487026021</updated>
-    </task>
-    <option name="localTasksCounter" value="46" />
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,6 +525,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="prova LogIn.html" />
     <MESSAGE value="prova1 LogIn.html" />
     <MESSAGE value="prova2 LogIn.html" />
     <MESSAGE value="consulta Toni LogIn.html" />
@@ -557,8 +550,7 @@
     <MESSAGE value="Url cambiados" />
     <MESSAGE value="haciendo boton comprado" />
     <MESSAGE value="comprado activado / no activado" />
-    <MESSAGE value="haciendo el click comprado" />
-    <option name="LAST_COMMIT_MESSAGE" value="haciendo el click comprado" />
+    <option name="LAST_COMMIT_MESSAGE" value="comprado activado / no activado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,6 +569,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UtensilioService.java</url>
           <line>156</line>
           <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
