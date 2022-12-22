@@ -56,10 +56,10 @@ public class JugadorService {
             @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
             @ApiResponse(code = 404, message = "Jugador not found")
     })
-    @Path("/{nombre}")
+    @Path("/{nombreJugador}")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response getJugadorByNombre(@PathParam("nombre") String nombre) {
+    public Response getJugadorByNombre(@PathParam("nombreJugador") String nombre) {
         Jugador j = this.jm.searchJugadorByName(nombre);
         if (j == null) return Response.status(404).build();
         else  return Response.status(201).entity(j).build();

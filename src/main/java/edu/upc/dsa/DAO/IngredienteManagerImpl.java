@@ -79,19 +79,6 @@ public class IngredienteManagerImpl implements IngredienteManager {
     }
 
     @Override
-    public Ingrediente getIngredienteByNombre(String nombre) {
-        logger.info("getIngrediente("+nombre+")");
-
-        for (Ingrediente i: this.ingredientes) {
-            if (i.getNombre()==nombre) {
-                logger.info("getIngrediente("+nombre+"): "+i);
-                return i;
-            }
-        }
-        logger.warn("not found " + nombre);
-        return null;    }
-
-    @Override
     public Ingrediente addIngrediente(String nombreIngrediente, int nivelDesbloqueoIngrediente, double precioIngrediente) {
         Ingrediente i = new Ingrediente(nombreIngrediente,nivelDesbloqueoIngrediente, precioIngrediente);
         logger.info("new Ingrediente " + i);
