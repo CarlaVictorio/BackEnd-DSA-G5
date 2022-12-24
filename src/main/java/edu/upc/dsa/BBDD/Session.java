@@ -5,12 +5,13 @@ import edu.upc.dsa.models.Utensilio;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 
 public interface Session<E> {
     void save(Object entity);
     void close() ;
-    Object get(Class theClass, int ID);
+    Object get(Object entity, Hashtable table);
     void update(Object object);
     public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente);
 
