@@ -26,13 +26,35 @@
         }
     </style>
     <script>
-
+        function infoPersonal(id, name, email, pais, dinero){
+            var contenidor =
+                "<h4>Nombre: "+name+"</h4>\n"+
+                "<h4>Id: "+id+"</h4>\n"+
+                "<h4>Email: "+email+"</h4>\n"+
+                "<h4>País: "+pais+"</h4>\n"+
+                "<h4>Dinero: "+dinero+"</h4>\n";
+            console.log(contenidor);
+            return contenidor;
+        }
     $(document).ready(function(){
         var jugador = localStorage.getItem('Nombre');
-        console.log(jugador);
+        var idJugador = localStorage.getItem('Id');
+
         if (jugador == null) {
             location.href = "/logIn.html"
         }
+
+        var url = "dsaApp/jugador/"+jugador;
+        $.get(url, function (data) {
+            var contenidor = infoPersonal(data.id, data.nombre, data.email, data.pais, data.dinero);
+            console.log(contenidor);
+            $("#presentacion").append(contenidor);
+        });
+
+        $('#cerrarSesion').click(function() {
+            localStorage.clear();
+            location.href = "/logIn.html"
+        });
 
         $('#home').click(function() {
             location.href = "/home.html"
@@ -40,6 +62,7 @@
         $('#tienda').click(function() {
             location.href = "/tienda.html"
         });
+
     });
     </script>
 </head>
@@ -61,8 +84,22 @@
         </ul>
     </nav>
     <div>
-        <p> </p>
+        <h6> </h6>
     </div>
+    <div>
+        <h2>Mi perfil</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-lg btn-block" style="background-color:rgb(255, 144, 71);" id="cerrarSesion">
+                <p><b>Cerrar sesión</b></p>
+            </button>
+        </div>
+        <div class="col-sm-6" id ="presentacion" style="background-color:rgb(236, 132, 27, 0.7)">
+        </div>
+    </div>
+
 
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2022 Grup 5 DSA</p>
 </body>

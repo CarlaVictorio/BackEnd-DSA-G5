@@ -30,12 +30,12 @@
         var contenidorI ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
                     "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
-                    "<div class='card-body'>\n"+
+                    "<div class='card-body'id='i"+id+"'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n"+
                         "<p class='card-text'>Nivel de desbloqueo: "+nivel+"</p>\n"+
                         "<p class='card-text'>Precio: "+precio+"</p>\n";
         if (comprado == false){
-            contenidorI = contenidorI + "<button href='#' class='btn btn-primary' onclick='compraIngrediente("+id+")'>Comprar</button>\n";
+            contenidorI = contenidorI + "<button href='#' class='btn btn-primary' id='btn"+id+"' onclick='compraIngrediente("+id+")'>Comprar</button>\n";
         } else {
             contenidorI = contenidorI + "<button href='#' class='btn btn-secondary' >Comprado</button>\n";
         }
@@ -46,14 +46,14 @@
         var contenidorU ="<div class='col-sm-4'>\n"+
                     "<div class='card' style='width:400px; background-color:rgb(236, 132, 27, 0.7)'>\n"+
                     "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
-                    "<div class='card-body'>\n"+
+                    "<div class='card-body' id='u"+id+"'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n"+
                         "<p class='card-text'>Nivel 1: "+nivel1+"</p>\n"+
                         "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
                         "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n"+
                         "<p class='card-text'>Precio: "+precio+"</p>\n";
         if (comprado == false){
-            contenidorU = contenidorU + "<button href='#' class='btn btn-primary' onclick='compra("+id+")'>Mejorar</button>\n";
+            contenidorU = contenidorU + "<button href='#' class='btn btn-primary' id='btn"+id+"' onclick='compraUtensilio("+id+")'>Mejorar</button>\n";
         } else {
             contenidorU = contenidorU + "<button href='#' class='btn btn-secondary' >Mejorado</button>\n";
         }
@@ -82,8 +82,40 @@
             .fail(function(xhr, err){
                 alert("No tienes suficiente dinero");
             })
-
          */
+        var btn = "#btn"+idIngrediente;
+        $(btn).remove();
+        var container = "#i"+idIngrediente;
+        $(container).append("<button href='#' class='btn btn-secondary' >Comprado</button>\n");
+
+    }
+    function compraUtensilio (idUtensilio){
+        var idJugador = localStorage.getItem('Id');
+        var dataBody=
+            {
+                idUtensilio: idUtensilio,
+                idJugador: idJugador
+            }
+        var URL = "/dsaApp/utensilio/postUtensilioComprado";
+        /*
+        $.post(
+            {
+                url: URL,
+                data: JSON.stringify(dataBody),
+                contentType: 'application/json; charset=utf-8'
+            })
+            .done(function(data, status){
+                alert(idIngrediente+" comprado");
+
+            })
+            .fail(function(xhr, err){
+                alert("No tienes suficiente dinero");
+            })
+         */
+        var btn = "#btn"+idUtensilio;
+        $(btn).remove();
+        var container = "#u"+idUtensilio;
+        $(container).append("<button href='#' class='btn btn-secondary' >Mejorado</button>\n");
     }
 
     $(document).ready(function(){
@@ -151,6 +183,8 @@
                     }
                     var a = 0;
                     var comprado = false;
+                    var nivel = 0;
+                    console.log(listaUtensiliosComprados);
 
                     listaUtensiliosComprados.forEach(function (utensilio){
                         if(utensilio.nombre == data.nombre) {
