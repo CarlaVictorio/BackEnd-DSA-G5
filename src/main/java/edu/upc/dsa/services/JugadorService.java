@@ -56,7 +56,7 @@ public class JugadorService {
             @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
             @ApiResponse(code = 404, message = "Jugador not found")
     })
-    @Path("/getJugadorByNombre/{nombreJugador}")
+    @Path("/{nombreJugador}")
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response getJugadorByNombre(@PathParam("nombreJugador") String nombre) {
@@ -122,7 +122,7 @@ public class JugadorService {
     @POST
     @ApiOperation(value = "logIn Jugador", notes = "hola")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 201, message = "Successful", response = Jugador.class),
             @ApiResponse(code = 404, message = "Jugador not found")
 
     })
@@ -135,7 +135,7 @@ public class JugadorService {
         if (j==null) {
             return Response.status(404).build();
         } else {
-            return Response.status(201).build();
+            return Response.status(201).entity(j).build();
         }
     }
 }

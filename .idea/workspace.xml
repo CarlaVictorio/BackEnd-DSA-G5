@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="....">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" afterDir="false" />
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="bbdd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +192,12 @@
       <workItem from="1671114906044" duration="16364000" />
       <workItem from="1671142084034" duration="3419000" />
       <workItem from="1671190132296" duration="2225000" />
-      <workItem from="1671708987695" duration="3079000" />
+      <workItem from="1671468554284" duration="2956000" />
+      <workItem from="1671472446268" duration="240000" />
+      <workItem from="1671473110525" duration="5018000" />
+      <workItem from="1671485753053" duration="1032000" />
+      <workItem from="1671638130284" duration="654000" />
+      <workItem from="1671704562280" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -467,14 +472,42 @@
       <option name="project" value="LOCAL" />
       <updated>1671143972162</updated>
     </task>
-    <task id="LOCAL-00040" summary="....">
-      <created>1671709018121</created>
+    <task id="LOCAL-00040" summary="Url cambiados">
+      <created>1671451768533</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1671709018121</updated>
+      <updated>1671451768533</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="haciendo boton comprado">
+      <created>1671454343263</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1671454343263</updated>
+    </task>
+    <task id="LOCAL-00042" summary="haciendo boton comprado">
+      <created>1671472008545</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1671472008545</updated>
+    </task>
+    <task id="LOCAL-00043" summary="haciendo boton comprado">
+      <created>1671472670637</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1671472670637</updated>
+    </task>
+    <task id="LOCAL-00044" summary="comprado activado / no activado">
+      <created>1671479058399</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1671479058399</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,8 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cambiar url" />
-    <MESSAGE value="cambiar index.html" />
     <MESSAGE value="prova LogIn.html" />
     <MESSAGE value="prova1 LogIn.html" />
     <MESSAGE value="prova2 LogIn.html" />
@@ -516,8 +547,10 @@
     <MESSAGE value="post y lista de UtensiliosComprados y IngredientesComprados&#10;Register solucionado&#10;URI con IP" />
     <MESSAGE value="cambio ip FactorySession" />
     <MESSAGE value="cambio ip FactorySession&#10;url imagenes creadas en modelos y bbdd" />
-    <MESSAGE value="...." />
-    <option name="LAST_COMMIT_MESSAGE" value="...." />
+    <MESSAGE value="Url cambiados" />
+    <MESSAGE value="haciendo boton comprado" />
+    <MESSAGE value="comprado activado / no activado" />
+    <option name="LAST_COMMIT_MESSAGE" value="comprado activado / no activado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -539,7 +572,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java</url>
-          <line>133</line>
+          <line>132</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>

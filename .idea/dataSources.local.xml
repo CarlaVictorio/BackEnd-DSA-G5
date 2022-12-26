@@ -15,9 +15,5 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="dsa_g5_v1" uuid="cbb6e8c2-3c17-4e8c-8bbc-f3d2171dc631">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" exact-version="0" />
-      <schema-mapping />
-    </data-source>
   </component>
 </project>

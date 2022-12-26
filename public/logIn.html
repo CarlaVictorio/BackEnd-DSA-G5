@@ -45,7 +45,8 @@
             })
                 .done(function(data, status){
                     var index = "index.html";
-                    localStorage.setItem('Nombre',$("#userLogIn").val())
+                    localStorage.setItem('Nombre',data.nombre);
+                    localStorage.setItem('Id', data.id);
                     location.href = "/home.html"
                 })
                 .fail(function(xhr, err){

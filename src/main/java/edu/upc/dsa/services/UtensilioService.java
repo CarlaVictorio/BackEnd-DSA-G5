@@ -152,7 +152,7 @@ public class UtensilioService {
 
     @Path("/getLista/{idJugador}")
     @Produces(MediaType.APPLICATION_JSON)// nos devuelve JSON con forma BuyedObject in a List
-    public Response listaUtensioliosComprados(@PathParam("idJugador") int idJugador) {
+    public Response listaUtensiliosComprados(@PathParam("idJugador") int idJugador) {
         try {
             List<Utensilio> UtensiliosCompradosPorJugador = this.um.listaUtensiliosComprados(idJugador);
             if (UtensiliosCompradosPorJugador== null) {

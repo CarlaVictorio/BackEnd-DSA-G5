@@ -1,6 +1,6 @@
 CREATE TABLE if not exists Jugador(
     id int auto_increment primary key,
-    nombre varchar(250) not null,
+    nombre varchar(250) not null UNIQUE,
     password varchar(250) not null,
     email varchar(250),
     pais varchar(250),
@@ -31,7 +31,8 @@ CREATE TABLE if not exists IngredientesComprados(
 CREATE TABLE if not exists UtensiliosComprados(
                                     idUtensilio int not null,
                                     idJugador int not null,
-                                    nivel int
+                                    nivel int,
+                                    check ( nivel<4 )
 );
 
 
