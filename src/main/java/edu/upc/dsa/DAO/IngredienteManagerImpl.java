@@ -8,6 +8,7 @@ import edu.upc.dsa.models.Jugador;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -189,19 +190,85 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
     }
 
+
     @Override
     public IngredientesComprados postIngredienteComprado(IngredientesComprados ic, int idJugador, int idIngrediente) {
+
+        logger.info("getJugador("+idJugador+")");
+        Session session = null;
+        Jugador jugador = null;
+        Ingrediente ingrediente = null;
+        List<Jugador>  listJugador=new ArrayList<>();
+        try {
+            Hashtable<String,String> table=new Hashtable<>();
+            table.put("nombre","jugador");
+            session = FactorySession.openSession();
+            Jugador jugadorSeleccionado = new Jugador();
+            jugadorSeleccionado.setId(idJugador);
+            jugador = ((List<Jugador>) session.get(jugadorSeleccionado,table)).get(0);
+            Ingrediente ingredienteSeleccionado = new Ingrediente();
+            ingredienteSeleccionado.setId(idIngrediente);
+            ingrediente = ((List<Ingrediente>) session.get(ingredienteSeleccionado,table)).get(0);
+            if (jugador!=null && ingrediente != null){
+                logger.info(jugador+" rebut!");
+
+
+                if(jugador.getDinero() > ingrediente.getPrecio()){
+                    session = FactorySession.openSession();
+                    session.save(ic);
+                    return ic;
+                }
+                else {
+                    logger.error("El jugador no tiene suficiente dinero para comprar el ingrediente");
+                }
+
+
+            } else {
+                logger.error("El jugador o el ingrediente no existe");
+            }
+        }
+        catch (Exception e) {
+            logger.warn("not found ");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+
+        return null;
+
+
+
+
+/*
+
         Session session = null;
         try {
-            session = FactorySession.openSession();
-            session.save(ic);
-            return ic;
+            double precioIngrediente = getPrecioIngrediente(idIngrediente);
+            //Jugador jug = session.getObjectByID(Jugador,idJugador);
+            //Jugador jug = new Jugador();
+            //Jugador jug = session.getObjectByID(Jugador,idJugador);
+            double dinero=jug.getDinero();//Buscamos el dinero que tiene el usuario
+            double dineroRestante = dinero-precioIngrediente;
+            if(dineroRestante>0) {
+                session = FactorySession.openSession();
+                session.save(ic);
+                return ic;
+            }
+            else
+            {
+                error=220;
+            }
+
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
         return null;
+
+
+ */
     }
     @Override
     public List<Ingrediente> listaIngredientesComprados(int idJugador)  {
