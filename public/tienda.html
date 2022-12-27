@@ -68,7 +68,8 @@
                 idJugador: idJugador
             }
         var URL = "/dsaApp/ingrediente/postIngredienteComprado";
-        /*
+        console.log(dataBody);
+
         $.post(
             {
                 url: URL,
@@ -76,19 +77,20 @@
                 contentType: 'application/json; charset=utf-8'
             })
             .done(function(data, status){
-                alert(idIngrediente+" comprado");
+                console.log(data);
+                console.log(status);
+                var btn = "#btn"+idIngrediente;
+                $(btn).remove();
+                var container = "#i"+idIngrediente;
+                $(container).append("<button href='#' class='btn btn-secondary' >Comprado</button>\n");
 
             })
             .fail(function(xhr, err){
-                alert("No tienes suficiente dinero");
+                console.log(xhr);
+                console.log(err);
             })
-         */
-        var btn = "#btn"+idIngrediente;
-        $(btn).remove();
-        var container = "#i"+idIngrediente;
-        $(container).append("<button href='#' class='btn btn-secondary' >Comprado</button>\n");
-
     }
+
     function compraUtensilio (idUtensilio){
         var idJugador = localStorage.getItem('Id');
         var dataBody=
@@ -184,7 +186,6 @@
                     var a = 0;
                     var comprado = false;
                     var nivel = 0;
-                    console.log(listaUtensiliosComprados);
 
                     listaUtensiliosComprados.forEach(function (utensilio){
                         if(utensilio.nombre == data.nombre) {
