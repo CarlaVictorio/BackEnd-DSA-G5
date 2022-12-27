@@ -188,5 +188,23 @@ public class JugadorManagerImpl implements JugadorManager{
             }
             return null;
         }
+
+    @Override
+    public Jugador getJugadorById( int idJ) {
+        Session session = null;
+        Jugador j = new Jugador();
+        try {
+            session = FactorySession.openSession();
+            j = (Jugador) session.getObjectByID(j, idJ);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+
+        return j;
+    }
     }
 

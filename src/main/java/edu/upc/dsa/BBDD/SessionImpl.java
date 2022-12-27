@@ -189,6 +189,26 @@ public class SessionImpl implements Session {
         }
     }
 
+    public Object getObjectByID(Object theObject, int id) {
+        String selectQuery = QueryHelper.createQuerySELECT(theObject);
+        PreparedStatement pstm = null;
+        try {
+            pstm = conn.prepareStatement(selectQuery);
+            pstm.setObject(1, id);
+            pstm.executeQuery();
+            ResultSet rs = pstm.getResultSet();
+            if (rs.next()){
+                for (int i=1;i<=rs.getMetaData().getColumnCount();i++)
+                    ObjectHelper.setter(theObject,rs.getMetaData().getColumnName(i),rs.getObject(i));
+            }
+            return theObject;
+
+        }  catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public List<Object> query(String query, Class theClass, HashMap params) {
         return null;
     }
@@ -232,4 +252,6 @@ public class SessionImpl implements Session {
             return null;
         }
     }
+
+
 }

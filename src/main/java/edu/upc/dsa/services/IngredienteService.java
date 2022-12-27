@@ -119,7 +119,7 @@ public class IngredienteService {
     @ApiOperation(value = "añadir Ingrediente Comprado BBDD", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
-            @ApiResponse(code = 500, message = "Validation Error"),
+            @ApiResponse(code = 500, message = "Internal error"),
 
     })
     @Path("/postIngredienteComprado")

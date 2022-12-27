@@ -15,6 +15,8 @@ public interface Session<E> {
     void update(Object object);
     public Ingrediente getIngredienteId(Ingrediente in, int idIngrediente);
 
+    public Object getObjectByID(Object theObject, int id);
+
     public Utensilio getUtensilioId(Utensilio u, int idUtensilio);
     public List<Object> findAllByID(Class theClass1, Class theClass2, int idJugador);
     void delete(Object object);
