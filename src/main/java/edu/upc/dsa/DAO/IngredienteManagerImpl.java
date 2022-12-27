@@ -199,16 +199,19 @@ public class IngredienteManagerImpl implements IngredienteManager {
         Jugador jugador = null;
         Ingrediente ingrediente = null;
         List<Jugador>  listJugador=new ArrayList<>();
+        List<Ingrediente>  listIngrediente=new ArrayList<>();
         try {
             Hashtable<String,String> table=new Hashtable<>();
             table.put("nombre","jugador");
             session = FactorySession.openSession();
             Jugador jugadorSeleccionado = new Jugador();
             jugadorSeleccionado.setId(idJugador);
-            jugador = ((List<Jugador>) session.get(jugadorSeleccionado,table)).get(0);
+            listJugador = (List<Jugador>) session.get(jugadorSeleccionado,table);
+            jugador = listJugador.get(0);
             Ingrediente ingredienteSeleccionado = new Ingrediente();
             ingredienteSeleccionado.setId(idIngrediente);
-            ingrediente = ((List<Ingrediente>) session.get(ingredienteSeleccionado,table)).get(0);
+            listIngrediente = (List<Ingrediente>) session.get(ingredienteSeleccionado,table);
+            ingrediente = listIngrediente.get(0);
             if (jugador!=null && ingrediente != null){
                 logger.info(jugador+" rebut!");
 
