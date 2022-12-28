@@ -201,23 +201,26 @@ public class IngredienteManagerImpl implements IngredienteManager {
         List<Jugador>  listJugador=new ArrayList<>();
         List<Ingrediente>  listIngrediente=new ArrayList<>();
         try {
-            Hashtable<String,String> table=new Hashtable<>();
-            table.put("nombre","jugador");
+
             session = FactorySession.openSession();
-            Jugador jugadorSeleccionado = new Jugador();
-            jugadorSeleccionado.setId(idJugador);
-            listJugador = (List<Jugador>) session.get(jugadorSeleccionado,table);
+            /*Jugador jugadorSeleccionado = new Jugador();
+            jugadorSeleccionado.setId(idJugador);*/
+            Hashtable<String,String> jugadorTable=new Hashtable<>();
+            jugadorTable.put("id", String.valueOf(idJugador));
+            listJugador = (List<Jugador>) session.get(new Jugador(),jugadorTable);
             jugador = listJugador.get(0);
-            Ingrediente ingredienteSeleccionado = new Ingrediente();
-            ingredienteSeleccionado.setId(idIngrediente);
-            listIngrediente = (List<Ingrediente>) session.get(ingredienteSeleccionado,table);
+            /*Ingrediente ingredienteSeleccionado = new Ingrediente();
+            ingredienteSeleccionado.setId(idIngrediente);*/
+            Hashtable<String,String> ingredienteTable=new Hashtable<>();
+            ingredienteTable.put("id", String.valueOf(idIngrediente));
+            listIngrediente = (List<Ingrediente>) session.get(new Ingrediente(),ingredienteTable);
             ingrediente = listIngrediente.get(0);
             if (jugador!=null && ingrediente != null){
                 logger.info(jugador+" rebut!");
 
 
                 if(jugador.getDinero() > ingrediente.getPrecio()){
-                    session = FactorySession.openSession();
+                   // session = FactorySession.openSession();
                     session.save(ic);
                     return ic;
                 }
