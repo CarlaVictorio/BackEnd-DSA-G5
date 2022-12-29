@@ -221,6 +221,10 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
                 if(jugador.getDinero() > ingrediente.getPrecio()){
                    // session = FactorySession.openSession();
+                    double dineroJugador = jugador.getDinero();
+                    double precioIngrediente = ingrediente.getPrecio();
+                    double dineroRestante = dineroJugador - precioIngrediente;
+                    jugador.setDinero(dineroRestante);
                     session.save(ic);
                     return ic;
                 }
