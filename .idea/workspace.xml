@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambiar factory la base de dades">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tienda.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tienda.html" afterDir="false" />
-    </list>
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="comprado web funcionando" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +195,7 @@
       <workItem from="1671485753053" duration="1032000" />
       <workItem from="1671638130284" duration="654000" />
       <workItem from="1671704562280" duration="668000" />
-      <workItem from="1672310721622" duration="3113000" />
+      <workItem from="1672310721622" duration="3531000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -515,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672313537732</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="comprado web funcionando">
+      <created>1672315564421</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1672315564421</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="prova2 LogIn.html" />
     <MESSAGE value="consulta Toni LogIn.html" />
     <MESSAGE value="cambis LogIn.html" />
     <MESSAGE value="classe LogIn" />
@@ -558,7 +561,8 @@
     <MESSAGE value="comprado activado / no activado" />
     <MESSAGE value="...." />
     <MESSAGE value="cambiar factory la base de dades" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambiar factory la base de dades" />
+    <MESSAGE value="comprado web funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="comprado web funcionando" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
