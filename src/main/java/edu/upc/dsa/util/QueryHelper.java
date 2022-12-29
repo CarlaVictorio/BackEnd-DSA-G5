@@ -80,7 +80,24 @@ public class QueryHelper {
 
     public static String createQueryUPDATE(Object entity) {
 
-        return null;
+        String [] fields = ObjectHelper.getFields(entity);
+        StringBuffer sb = new StringBuffer("UPDATE ");
+        sb.append(entity.getClass().getSimpleName()).append(" ");
+        sb.append("SET ");
+        String field;
+        int i =1;
+        while (i<fields.length){
+            field = fields[i];
+
+            if (i>1)
+                sb.append(" = ?, ");
+            sb.append(field);
+            i++;
+        }
+        sb.append(" = ?");
+        sb.append(" WHERE ID = ?");
+
+        return sb.toString();
     }
 
 

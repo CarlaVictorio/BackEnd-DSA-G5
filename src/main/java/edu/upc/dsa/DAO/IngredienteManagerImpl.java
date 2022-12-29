@@ -224,8 +224,11 @@ public class IngredienteManagerImpl implements IngredienteManager {
                     double dineroJugador = jugador.getDinero();
                     double precioIngrediente = ingrediente.getPrecio();
                     double dineroRestante = dineroJugador - precioIngrediente;
+
                     jugador.setDinero(dineroRestante);
-                    session.save(ic);
+                    session.update(jugador);
+                    //session.save(ic);
+
                     return ic;
                 }
                 else {
