@@ -99,7 +99,7 @@ return null;
             key = e.nextElement();
             sb.append("AND").append(key).append("='").append(table.get(key)).append("'");
         }
-
+logger.info(sb.toString());
         return sb.toString();
     }
 
