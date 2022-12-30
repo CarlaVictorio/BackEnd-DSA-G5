@@ -119,7 +119,9 @@ public class IngredienteService {
     @ApiOperation(value = "añadir Ingrediente Comprado BBDD", notes = "hola")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
-            @ApiResponse(code = 500, message = "Internal error"),
+            @ApiResponse(code = 404, message = "No se encuentra coincidencias en la BBDD"),
+            @ApiResponse(code = 501, message = "Dinero insuficiente"),
+            @ApiResponse(code = 500, message = "Validation Error")
 
     })
     @Path("/postIngredienteComprado")
@@ -128,11 +130,8 @@ public class IngredienteService {
         if (ic.getIdIngrediente()==0 || ic.getIdJugador()==0) {
             return Response.status(500).build();
         }
-        IngredientesComprados UtCom=this.im.postIngredienteComprado(ic,ic.getIdJugador(),ic.getIdIngrediente());
-        if (UtCom!=null){
-            return Response.status(201).build();
-        }
-        return Response.status(500).build();
+        int code=this.im.postIngredienteComprado(ic,ic.getIdJugador(),ic.getIdIngrediente());
+        return Response.status(code).build();
     }
 
 

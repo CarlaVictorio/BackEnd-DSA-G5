@@ -193,7 +193,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
 
     @Override
-    public IngredientesComprados postIngredienteComprado(IngredientesComprados ic, int idJugador, int idIngrediente) {
+    public int postIngredienteComprado(IngredientesComprados ic, int idJugador, int idIngrediente) {
 
         logger.info("getJugador("+idJugador+")");
         Session session = null;
@@ -230,15 +230,17 @@ public class IngredienteManagerImpl implements IngredienteManager {
                     session.update(jugador);
                     session.save(ic);
 
-                    return ic;
+                    return 201;
                 }
                 else {
                     logger.error("El jugador no tiene suficiente dinero para comprar el ingrediente");
+                    return 501;
                 }
 
 
             } else {
                 logger.error("El jugador o el ingrediente no existe");
+                return 404;
             }
         }
         catch (Exception e) {
@@ -249,7 +251,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
             session.close();
         }
 
-        return null;
+        return 404;
 
 
 
