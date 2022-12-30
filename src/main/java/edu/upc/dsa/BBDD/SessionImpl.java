@@ -82,6 +82,25 @@ public class SessionImpl implements Session {
 
     public void update(Object object) {
 
+        String updateQuery = QueryHelper.createQueryUPDATE(object);
+
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conn.prepareStatement(updateQuery);
+            String field;
+            int i =1;
+            while (i<ObjectHelper.getFields(object).length){
+                field = ObjectHelper.getFields(object)[i];
+                pstm.setObject(i++, ObjectHelper.getter(object, field));
+            }
+            pstm.setObject(i++, ObjectHelper.getter(object, ObjectHelper.getFields(object)[0]));
+            pstm.executeQuery();
+
+        }  catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void delete(Object object) {
@@ -251,6 +270,22 @@ public class SessionImpl implements Session {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public void updateMoreParametros(Object entity, Hashtable tableSet,Hashtable tableWhere) {
+
+        String updateQuery = QueryHelper.createQueryUPDATEmoreParametros(entity,tableSet,tableWhere);
+
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conn.prepareStatement(updateQuery);
+            pstm.executeQuery();
+
+        }  catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

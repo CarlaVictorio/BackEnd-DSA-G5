@@ -24,4 +24,5 @@ public interface Session<E> {
 //    List<Object> findAll(Class theClass, HashMap params);
     List<Object> query(String query, Class theClass, HashMap params);
     public Object getByTwoParameters(Class theClass, String byFirstParameter, Object byFirstParameterValue, String bySecondParameter, Object bySecondParameterValue);
+    public void updateMoreParametros(Object entity, Hashtable tableSet,Hashtable tableWhere);
 }

@@ -160,6 +160,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
 
 
+   /*
     @Override
     public int comprarIngrediente(Jugador j, int idIngrediente ){
 
@@ -169,7 +170,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
             double precioIngrediente = getPrecioIngrediente(idIngrediente);
             double dinero=j.getDinero();//Buscamos el dinero que tiene el usuario
             double dineroRestante = dinero-precioIngrediente;
-            if(dineroRestante>0) {
+            if(dineroRestante>=0) {
                 session = FactorySession.openSession();
                 Jugador jug = new Jugador (j.getNombre(), j.getPassword(),j.getEmail(),j.getPais(),dineroRestante);
                 session.update(jug);
@@ -188,7 +189,7 @@ public class IngredienteManagerImpl implements IngredienteManager {
         }
         return error;
 
-    }
+    }*/
 
 
     @Override
@@ -224,8 +225,11 @@ public class IngredienteManagerImpl implements IngredienteManager {
                     double dineroJugador = jugador.getDinero();
                     double precioIngrediente = ingrediente.getPrecio();
                     double dineroRestante = dineroJugador - precioIngrediente;
+
                     jugador.setDinero(dineroRestante);
+                    session.update(jugador);
                     session.save(ic);
+
                     return ic;
                 }
                 else {

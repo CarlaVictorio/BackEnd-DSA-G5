@@ -80,7 +80,51 @@ public class QueryHelper {
 
     public static String createQueryUPDATE(Object entity) {
 
-        return null;
+        String [] fields = ObjectHelper.getFields(entity);
+        StringBuffer sb = new StringBuffer("UPDATE ");
+        sb.append(entity.getClass().getSimpleName()).append(" ");
+        sb.append("SET ");
+        String field;
+        int i =1;
+        while (i<fields.length){
+            field = fields[i];
+
+            if (i>1)
+                sb.append(" = ?, ");
+            sb.append(field);
+            i++;
+        }
+        sb.append(" = ?");
+        sb.append(" WHERE ID = ?");
+
+        return sb.toString();
+    }
+
+    public static String createQueryUPDATEmoreParametros(Object entity, Hashtable tableSet,Hashtable tableWhere) {
+
+        StringBuffer sb = new StringBuffer("UPDATE ");
+        sb.append(entity.getClass().getSimpleName()).append(" ");
+        sb.append("SET ");
+
+        Enumeration<String > e = tableSet.keys();
+        String  key = e.nextElement();
+        sb.append(key).append("=").append(tableSet.get(key));
+        while (e.hasMoreElements()) {
+            key = e.nextElement();
+            sb.append(" AND ").append(key).append("=").append(tableSet.get(key));
+        }
+
+        sb.append(" WHERE ");
+        e = tableWhere.keys();
+
+        key = e.nextElement();
+        sb.append(key).append("=").append(tableWhere.get(key));
+        while (e.hasMoreElements()) {
+            key = e.nextElement();
+            sb.append(" AND ").append(key).append(" = ").append(tableWhere.get(key));
+        }
+        logger.info(sb.toString());
+        return sb.toString();
     }
 
 
@@ -94,10 +138,10 @@ return null;
         Enumeration<String > e = table.keys();
 
         String  key = e.nextElement();
-        sb.append(key).append("='").append(table.get(key)).append("'");
+        sb.append(key).append(" = ").append(table.get(key));
         while (e.hasMoreElements()) {
             key = e.nextElement();
-            sb.append("AND").append(key).append("='").append(table.get(key)).append("'");
+            sb.append(" AND ").append(key).append(" = ").append(table.get(key));
         }
 logger.info(sb.toString());
         return sb.toString();
