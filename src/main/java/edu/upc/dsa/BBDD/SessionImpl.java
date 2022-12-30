@@ -272,5 +272,21 @@ public class SessionImpl implements Session {
         }
     }
 
+    public void updateMoreParametros(Object entity, Hashtable tableSet,Hashtable tableWhere) {
+
+        String updateQuery = QueryHelper.createQueryUPDATEmoreParametros(entity,tableSet,tableWhere);
+
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conn.prepareStatement(updateQuery);
+            pstm.executeQuery();
+
+        }  catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 }

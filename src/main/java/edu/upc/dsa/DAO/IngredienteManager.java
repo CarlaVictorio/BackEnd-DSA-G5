@@ -15,7 +15,7 @@ public interface IngredienteManager {
     public int getNivelDesbloqueoIngrediente(int idIngrediente);
     public double getPrecioIngrediente(int idIngrediente);
     public Ingrediente putIngrediente (Ingrediente ingrediente);
-    public int comprarIngrediente (Jugador j, int idIngrediente );
+    //public int comprarIngrediente (Jugador j, int idIngrediente );
     public IngredientesComprados postIngredienteComprado(IngredientesComprados ic, int idJugador, int idIngrediente);
     public List<Ingrediente> listaIngredientesComprados(int idJugador);
 

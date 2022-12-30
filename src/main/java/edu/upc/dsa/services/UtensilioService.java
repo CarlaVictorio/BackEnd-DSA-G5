@@ -107,6 +107,7 @@ public class UtensilioService {
         }
     }
 
+    /*
     @POST
     @ApiOperation(value = "añadir Utensilio Comprado BBDD", notes = "hola")
     @ApiResponses(value = {
@@ -125,6 +126,26 @@ public class UtensilioService {
             return Response.status(201).build();
         }
         return Response.status(500).build();
+    }*/
+
+    @PUT
+    @ApiOperation(value = "Actualizar Utensilio Mejorado a BBDD", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 404, message = "No se encuentra coincidencias en la BBDD"),
+            @ApiResponse(code = 501, message = "Dinero insuficiente"),
+            @ApiResponse(code = 502, message = "Nivel Maximo conseguido"),
+            @ApiResponse(code = 500, message = "Validation Error")
+
+    })
+    @Path("/postUtensilioComprado/{idJugador}{idUtensilio}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postUtensilioComprado(@PathParam("idJugador") int idJugador,@PathParam("idUtensilio") int idUtensilio) {
+        if (idJugador==0 || idUtensilio==0 ) {
+            return Response.status(500).build();
+        }
+        int code=this.um.postUtensilioComprado(idJugador,idUtensilio);
+        return Response.status(code).build();
     }
 
 
@@ -154,11 +175,11 @@ public class UtensilioService {
     @Produces(MediaType.APPLICATION_JSON)// nos devuelve JSON con forma BuyedObject in a List
     public Response listaUtensiliosComprados(@PathParam("idJugador") int idJugador) {
         try {
-            List<Utensilio> UtensiliosCompradosPorJugador = this.um.listaUtensiliosComprados(idJugador);
+            List<UtensiliosComprados> UtensiliosCompradosPorJugador = this.um.listaUtensiliosComprados(idJugador);
             if (UtensiliosCompradosPorJugador== null) {
                 return Response.status(401).build();
             }
-            GenericEntity<List<Utensilio>> entity = new GenericEntity<List<Utensilio>>(UtensiliosCompradosPorJugador) {};
+            GenericEntity<List<UtensiliosComprados>> entity = new GenericEntity<List<UtensiliosComprados>>(UtensiliosCompradosPorJugador) {};
             return Response.status(200).entity(entity).build();
         } catch (Exception e) {
             e.printStackTrace();

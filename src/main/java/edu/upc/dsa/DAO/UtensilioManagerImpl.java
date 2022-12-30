@@ -5,10 +5,7 @@ import edu.upc.dsa.BBDD.Session;
 import edu.upc.dsa.models.*;
 import org.apache.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class UtensilioManagerImpl implements UtensilioManager{
     private static UtensilioManager instance;
@@ -146,13 +143,34 @@ public class UtensilioManagerImpl implements UtensilioManager{
         return utensilios.size();
     }
 
+    /*
     @Override
     public List<Utensilio> listaUtensiliosComprados(int idJugador) {
         Session session = null;
         List<Utensilio> listaUtensilios = new ArrayList<Utensilio>();
         try {
             session = FactorySession.openSession();
-            listaUtensilios=session.findAllByID(Utensilio.class,UtensiliosComprados.class,idJugador);
+            listaUtensilios=session.findAllByID(Utensilio.class, UtensiliosMejorados.class,idJugador);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            listaUtensilios = null;
+        } finally {
+            session.close();
+            return listaUtensilios;
+        }
+    }*/
+
+    @Override
+    public List<UtensiliosComprados> listaUtensiliosComprados(int idJugador) {
+        Session session = null;
+        List<UtensiliosComprados> listaUtensilios = new ArrayList<UtensiliosComprados>();
+        try {
+            session = FactorySession.openSession();
+            Hashtable<String,String> table=new Hashtable<>();
+            table.put("idJugador",Integer.toString(idJugador));
+            listaUtensilios= (List<UtensiliosComprados>) session.get(new UtensiliosComprados(), table);
 
 
         } catch (Exception e) {
@@ -163,6 +181,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
             return listaUtensilios;
         }
     }
+
 
     @Override
     public double getPrecioUtensilio(int idUtensilio) {
@@ -191,7 +210,7 @@ public class UtensilioManagerImpl implements UtensilioManager{
             double precioUtensilio = getPrecioUtensilio(idUtensilio);
             double dinero=j.getDinero();//Buscamos el dinero que tiene el usuario
             double dineroRestante = dinero-precioUtensilio;
-            if(dineroRestante>0) {
+            if(dineroRestante>=0) {
                 session = FactorySession.openSession();
                 Jugador jug = new Jugador (j.getNombre(), j.getPassword(),j.getEmail(),j.getPais(),dineroRestante);
                 session.update(jug);
@@ -213,18 +232,100 @@ public class UtensilioManagerImpl implements UtensilioManager{
     }
 
     @Override
-    public UtensiliosComprados postUtensilioComprado(UtensiliosComprados uc, int idJugador, int idUtensilio) {
+    public int postUtensilioComprado(int idJugador, int idUtensilio) {
+            logger.info("getJugador("+idJugador+")");
+            Session session = null;
+            Jugador jugador = null;
+            Utensilio utensilio = null;
+            List<Jugador>  listJugador=new ArrayList<>();
+            List<Utensilio>  listUtensilio=new ArrayList<>();
+            Hashtable<String,String> tableSet=new Hashtable<>();
+            Hashtable<String,String> tableWhere=new Hashtable<>();
+            try {
+
+                session = FactorySession.openSession();
+
+                tableSet.put("nivel","nivel+1");
+                tableWhere.put("idJugador",Integer.toString(idJugador));
+                tableWhere.put("idUtensilio",Integer.toString(idUtensilio));
+
+                Hashtable<String,String> jugadorTable=new Hashtable<>();
+                jugadorTable.put("id", String.valueOf(idJugador));
+                listJugador = (List<Jugador>) session.get(new Jugador(),jugadorTable);
+
+            /*Ingrediente ingredienteSeleccionado = new Ingrediente();
+            ingredienteSeleccionado.setId(idIngrediente);*/
+                Hashtable<String,String> utensilioTable=new Hashtable<>();
+                utensilioTable.put("id", String.valueOf(idUtensilio));
+                listUtensilio = (List<Utensilio>) session.get(new Utensilio(),utensilioTable);
+
+                if (listJugador.get(0)!=null && listUtensilio.get(0) != null){
+                    utensilio = listUtensilio.get(0);
+                    jugador = listJugador.get(0);
+                    logger.info(jugador+" rebut!");
+                    int nivel=getNivelUtensilio(idJugador,idUtensilio);
+
+                    if(nivel<3 && nivel!=0){
+                        if(jugador.getDinero() >= utensilio.getPrecio()){
+                            // session = FactorySession.openSession();
+                            double dineroJugador = jugador.getDinero();
+                            double precioUtensilio = utensilio.getPrecio();
+                            double dineroRestante = dineroJugador - precioUtensilio;
+
+                            jugador.setDinero(dineroRestante);
+                            session.update(jugador);
+                            session.updateMoreParametros(new UtensiliosComprados(),tableSet,tableWhere);
+                            //session.save(ic);
+
+                            return 201;
+                        }
+                        else {
+                            logger.error("El jugador no tiene suficiente dinero para comprar el utensilio");
+                            return 501;
+                        }
+
+                    } else{
+                        logger.error("El Utensilio ya esta en el nivel maximo");
+                        return 502;
+                    }
+
+
+                } else {
+                    logger.error("El jugador o el utensilio no existe");
+                    return 404;
+                }
+            }
+            catch (Exception e) {
+                logger.warn("not found ");
+                e.printStackTrace();
+            }
+            finally {
+                session.close();
+            }
+
+            return 404;
+    }
+
+    public int getNivelUtensilio(int idJugador,int idUtensilio){
         Session session = null;
+        UtensiliosComprados uc = new UtensiliosComprados();
         try {
             session = FactorySession.openSession();
-            session.save(uc);
-            return uc;
+            Hashtable <String,String> table=new Hashtable<>();
+            table.put("idJugador",Integer.toString(idJugador));
+            table.put("idUtensilio",Integer.toString(idUtensilio));
+            List<Object> list= (List<Object>) session.get(new UtensiliosComprados(),table);
+            uc = (UtensiliosComprados) list.get(0);
+            return uc.getNivel();
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        finally {
+            session.close();
+        }
+
+        return 0;
     }
 
 

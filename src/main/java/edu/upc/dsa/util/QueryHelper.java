@@ -100,6 +100,33 @@ public class QueryHelper {
         return sb.toString();
     }
 
+    public static String createQueryUPDATEmoreParametros(Object entity, Hashtable tableSet,Hashtable tableWhere) {
+
+        StringBuffer sb = new StringBuffer("UPDATE ");
+        sb.append(entity.getClass().getSimpleName()).append(" ");
+        sb.append("SET ");
+
+        Enumeration<String > e = tableSet.keys();
+        String  key = e.nextElement();
+        sb.append(key).append("=").append(tableSet.get(key));
+        while (e.hasMoreElements()) {
+            key = e.nextElement();
+            sb.append(" AND ").append(key).append("=").append(tableSet.get(key));
+        }
+
+        sb.append(" WHERE ");
+        e = tableWhere.keys();
+
+        key = e.nextElement();
+        sb.append(key).append("=").append(tableWhere.get(key));
+        while (e.hasMoreElements()) {
+            key = e.nextElement();
+            sb.append(" AND ").append(key).append(" = ").append(tableWhere.get(key));
+        }
+        logger.info(sb.toString());
+        return sb.toString();
+    }
+
 
     public static String createQueryUPDATEbyParameter(Object entity, String parameter) {
 return null;
@@ -111,10 +138,10 @@ return null;
         Enumeration<String > e = table.keys();
 
         String  key = e.nextElement();
-        sb.append(key).append("='").append(table.get(key)).append("'");
+        sb.append(key).append(" = ").append(table.get(key));
         while (e.hasMoreElements()) {
             key = e.nextElement();
-            sb.append("AND").append(key).append("='").append(table.get(key)).append("'");
+            sb.append(" AND ").append(key).append(" = ").append(table.get(key));
         }
 logger.info(sb.toString());
         return sb.toString();
