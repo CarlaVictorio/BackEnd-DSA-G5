@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tienda.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tienda.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +32,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

@@ -79,14 +79,24 @@
             .done(function(data, status){
                 console.log(data);
                 console.log(status);
+                location.reload();
+                /*
                 var btn = "#btn"+idIngrediente;
                 $(btn).remove();
                 var container = "#i"+idIngrediente;
                 $(container).append("<button href='#' class='btn btn-secondary' >Comprado</button>\n");
 
+                 */
+
             })
-            .fail(function(xhr, err){
-                alert("No tienes suficiente dinero");
+            .fail(function(data, status){
+                console.log(data);
+                console.log(status);
+                if (status == 501){
+                    alert("No tienes suficiente dinero");
+                } else {
+                    alert("Error del servidor");
+                }
             })
     }
 
