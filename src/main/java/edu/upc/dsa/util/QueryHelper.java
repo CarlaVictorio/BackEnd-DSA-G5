@@ -138,10 +138,20 @@ return null;
         Enumeration<String > e = table.keys();
 
         String  key = e.nextElement();
-        sb.append(key).append(" = ").append(table.get(key));
+        if(table.get(key).getClass().equals(String.class)){
+            sb.append(key).append(" = '").append(table.get(key)).append("'");
+        }
+        else {
+            sb.append(key).append(" = ").append(table.get(key));
+        }
         while (e.hasMoreElements()) {
             key = e.nextElement();
-            sb.append(" AND ").append(key).append(" = ").append(table.get(key));
+            if(table.get(key).getClass().equals(String.class)){
+                sb.append(" AND ").append(key).append(" = '").append(table.get(key)).append("'");
+            }
+            else {
+                sb.append(" AND ").append(key).append(" = ").append(table.get(key));
+            }
         }
 logger.info(sb.toString());
         return sb.toString();
