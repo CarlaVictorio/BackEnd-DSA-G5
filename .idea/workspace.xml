@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="postIngredienteComprado pide idJugador y idIngrediente. &#10;Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UtensilioManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +34,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -517,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672403152698</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="postIngredienteComprado pide idJugador y idIngrediente. &#10;Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente">
+      <created>1672405045448</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1672405045448</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="prova1 LogIn.html" />
     <MESSAGE value="prova2 LogIn.html" />
     <MESSAGE value="consulta Toni LogIn.html" />
     <MESSAGE value="cambis LogIn.html" />
@@ -560,7 +565,8 @@
     <MESSAGE value="haciendo boton comprado" />
     <MESSAGE value="comprado activado / no activado" />
     <MESSAGE value="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido" />
-    <option name="LAST_COMMIT_MESSAGE" value="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido" />
+    <MESSAGE value="postIngredienteComprado pide idJugador y idIngrediente. &#10;Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente" />
+    <option name="LAST_COMMIT_MESSAGE" value="postIngredienteComprado pide idJugador y idIngrediente. &#10;Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,8 +583,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="72" />
+          <line>62</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

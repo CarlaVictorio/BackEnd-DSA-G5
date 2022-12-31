@@ -168,8 +168,8 @@ public class UtensilioManagerImpl implements UtensilioManager{
         List<UtensiliosComprados> listaUtensilios = new ArrayList<UtensiliosComprados>();
         try {
             session = FactorySession.openSession();
-            Hashtable<String,String> table=new Hashtable<>();
-            table.put("idJugador",Integer.toString(idJugador));
+            Hashtable<String,Integer> table=new Hashtable<>();
+            table.put("idJugador",idJugador);
             listaUtensilios= (List<UtensiliosComprados>) session.get(new UtensiliosComprados(), table);
 
 
@@ -240,23 +240,23 @@ public class UtensilioManagerImpl implements UtensilioManager{
             List<Jugador>  listJugador=new ArrayList<>();
             List<Utensilio>  listUtensilio=new ArrayList<>();
             Hashtable<String,String> tableSet=new Hashtable<>();
-            Hashtable<String,String> tableWhere=new Hashtable<>();
+            Hashtable<String,Integer> tableWhere=new Hashtable<>();
             try {
 
                 session = FactorySession.openSession();
 
                 tableSet.put("nivel","nivel+1");
-                tableWhere.put("idJugador",Integer.toString(idJugador));
-                tableWhere.put("idUtensilio",Integer.toString(idUtensilio));
+                tableWhere.put("idJugador",idJugador);
+                tableWhere.put("idUtensilio",idUtensilio);
 
-                Hashtable<String,String> jugadorTable=new Hashtable<>();
-                jugadorTable.put("id", String.valueOf(idJugador));
+                Hashtable<String,Integer> jugadorTable=new Hashtable<>();
+                jugadorTable.put("id", idJugador);
                 listJugador = (List<Jugador>) session.get(new Jugador(),jugadorTable);
 
             /*Ingrediente ingredienteSeleccionado = new Ingrediente();
             ingredienteSeleccionado.setId(idIngrediente);*/
-                Hashtable<String,String> utensilioTable=new Hashtable<>();
-                utensilioTable.put("id", String.valueOf(idUtensilio));
+                Hashtable<String,Integer> utensilioTable=new Hashtable<>();
+                utensilioTable.put("id", idUtensilio);
                 listUtensilio = (List<Utensilio>) session.get(new Utensilio(),utensilioTable);
 
                 if (listJugador.get(0)!=null && listUtensilio.get(0) != null){
@@ -311,9 +311,9 @@ public class UtensilioManagerImpl implements UtensilioManager{
         UtensiliosComprados uc = new UtensiliosComprados();
         try {
             session = FactorySession.openSession();
-            Hashtable <String,String> table=new Hashtable<>();
-            table.put("idJugador",Integer.toString(idJugador));
-            table.put("idUtensilio",Integer.toString(idUtensilio));
+            Hashtable <String,Integer> table=new Hashtable<>();
+            table.put("idJugador",idJugador);
+            table.put("idUtensilio",idUtensilio);
             List<Object> list= (List<Object>) session.get(new UtensiliosComprados(),table);
             uc = (UtensiliosComprados) list.get(0);
             return uc.getNivel();
