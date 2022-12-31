@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="workspace">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,8 +201,6 @@
       <workItem from="1671485753053" duration="1032000" />
       <workItem from="1671638130284" duration="654000" />
       <workItem from="1671704562280" duration="668000" />
-      <workItem from="1672403752651" duration="567000" />
-      <workItem from="1672412522741" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -509,12 +510,12 @@
       <option name="project" value="LOCAL" />
       <updated>1671479058399</updated>
     </task>
-    <task id="LOCAL-00045" summary="workspace">
-      <created>1672403760712</created>
+    <task id="LOCAL-00045" summary="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido">
+      <created>1672403152698</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1672403760712</updated>
+      <updated>1672403152698</updated>
     </task>
     <option name="localTasksCounter" value="46" />
     <servers />
@@ -534,7 +535,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="prova LogIn.html" />
     <MESSAGE value="prova1 LogIn.html" />
     <MESSAGE value="prova2 LogIn.html" />
     <MESSAGE value="consulta Toni LogIn.html" />
@@ -559,7 +559,8 @@
     <MESSAGE value="Url cambiados" />
     <MESSAGE value="haciendo boton comprado" />
     <MESSAGE value="comprado activado / no activado" />
-    <option name="LAST_COMMIT_MESSAGE" value="comprado activado / no activado" />
+    <MESSAGE value="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido" />
+    <option name="LAST_COMMIT_MESSAGE" value="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
