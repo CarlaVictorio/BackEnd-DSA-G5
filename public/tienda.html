@@ -48,18 +48,19 @@
                     "<img class='card-img-top' src='"+imagen+"' alt='Card image' style='width:100%'>\n"+
                     "<div class='card-body' id='u"+id+"'>\n"+
                         "<h4 class='card-title'>"+name+"</h4>\n";
-        if (nivel == 1){
-            contenidorU =contenidorU + "<p <b>class='card-text'>Nivel 1: "+nivel1+"</b> </p>\n"+
-                          "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
-                          "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n";
-        } else if (nivel == 2){
+        if (nivel == 2){
             contenidorU = contenidorU + "<p class='card-text'>Nivel 1: "+nivel1+"</p>\n"+
-                "<p<b> class='card-text'>Nivel 2: "+nivel2+"</b></p>\n"+
+                "<p class='card-text' style='background-color: white' >Nivel 2:"+nivel2+"</p>\n"+
                 "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n";
-        } else {
+
+        } else if (nivel == 3){
             contenidorU = contenidorU + "<p class='card-text'>Nivel 1: "+nivel1+"</p>\n"+
                 "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
-                "<p<b> class='card-text'>Nivel 3: "+nivel3+"</b></p>\n";
+                "<p class='card-text' style='background-color: white'>Nivel 3: "+nivel3+"</p>\n";
+        } else {
+            contenidorU =contenidorU + "<p class='card-text' style='background-color: white'>Nivel 1: "+nivel1+"</p>\n"+
+                "<p class='card-text'>Nivel 2: "+nivel2+"</p>\n"+
+                "<p class='card-text'>Nivel 3: "+nivel3+"</p>\n";
         }
         contenidorU = contenidorU + "<p class='card-text'>Precio: "+precio+"</p>\n";
 
@@ -113,24 +114,15 @@
                 idUtensilio: idUtensilio,
                 idJugador: idJugador
             }
-        var URL = "/dsaApp/utensilio/postUtensilioComprado";
+        var url = "/dsaApp/utensilio/postUtensilioComprado/"+idJugador+idUtensilio;
 
-        $.post(
-            {
-                url: URL,
-                data: JSON.stringify(dataBody),
-                contentType: 'application/json; charset=utf-8'
-            })
-            .done(function(data, status){
+        $.ajax({
+            url: url,
+            type: 'PUT',
+            success: function (result) {
                 location.reload();
-                /*
-                var btn = "#btn"+idUtensilio;
-                $(btn).remove();
-                var container = "#u"+idUtensilio;
-                $(container).append("<button href='#' class='btn btn-secondary' >Mejorado</button>\n");
-                 */
-            })
-            .fail(function(data, status){
+            },
+            error: function (data){
                 if (data.status == 501){
                     alert("No tienes suficiente dinero");
                 } else if (data.status == 502) {
@@ -138,7 +130,20 @@
                 } else {
                     alert("Error del servidor");
                 }
-            })
+            }
+        });
+
+        $.put(URL,function (data) {
+            if (data.status == 501){
+                location.reload();
+            } else if (data.status == 501) {
+                alert("No tienes suficiente dinero");
+            } else if (data.status == 502) {
+                alert("Nivel maximo conseguido");
+            } else {
+                alert("Error del servidor");
+            }
+        });
     }
 
     $(document).ready(function(){
@@ -195,7 +200,6 @@
             lengthUtensilios = listaUtensiliosComprados.length;
         });
 
-
         var xU = 0;
         var contarFins3U = 0;
         var contenidorU = "";
@@ -209,12 +213,10 @@
                     var nivel = 0;
 
                     listaUtensiliosComprados.forEach(function (utensilio){
-                        if(utensilio.nombre == data.nombre) {
+                        if(utensilio.idUtensilio == data.id) {
                             nivel = utensilio.nivel;
                         }
                     });
-                    console.log(nivel);
-                    console.log("------");
                     contenidorU = contenidorU + addCardUtensilio(nivel, data.id, data.nombre, data.tiempoNivel1, data.tiempoNivel2, data.tiempoNivel3, data.precio, data.urlImagen);
                     contarFins3U = contarFins3U + 1;
                     if (contarFins3U == 3){
@@ -225,9 +227,6 @@
                 });
                 $("#containerUtensilios").append(contenidorU);
 
-
-
-                console.log(listaUtensiliosComprados);
         });
         $('#home').click(function() {
             location.href = "/home.html"
