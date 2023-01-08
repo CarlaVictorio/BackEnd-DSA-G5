@@ -5,7 +5,7 @@ CREATE TABLE if not exists Jugador(
     email varchar(250),
     pais varchar(250),
     dinero double,
-    nivel integer
+    nivel int
 );
 CREATE TABLE if not exists Ingrediente(
                             id int auto_increment primary key,
@@ -44,7 +44,7 @@ CREATE TABLE if not exists Recetas(
 );
 
 
-INSERT INTO Jugador(nombre, password, email, pais,dinero,nivel ) VALUE ('Juan','1111', 'juan@gmail.com', 'España', 100,1);
+INSERT INTO Jugador(nombre, password, email, pais,dinero,nivel) VALUE ('Juan','1111', 'juan@gmail.com', 'España', 100,1);
 INSERT INTO Jugador(nombre, password, email, pais,dinero,nivel) VALUE ('Victoria','2222', 'victoria@gmail.com', 'España', 100,1);
 INSERT INTO Jugador(nombre, password, email, pais,dinero,nivel) VALUE ('Maria','3333', 'maria@gmail.com', 'Francia', 100,1);
 
