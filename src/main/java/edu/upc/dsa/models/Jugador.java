@@ -7,6 +7,9 @@ public class Jugador {
     private String email;
     private String pais;
     private double dinero;
+    private int nivel;
+
+
 
     public Jugador() {
     }
@@ -67,6 +70,8 @@ public class Jugador {
     public void setPassword(String password){
         this.password = password;
     }
+    public int getNivel() {return nivel;}
+    public void setNivel(int nivel) {this.nivel = nivel;}
 
 
 }

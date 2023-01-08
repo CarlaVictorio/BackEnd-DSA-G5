@@ -121,6 +121,7 @@ public class IngredienteService {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "No se encuentra coincidencias en la BBDD"),
             @ApiResponse(code = 501, message = "Dinero insuficiente"),
+            @ApiResponse(code = 502, message = "Nivel insuficiente"),
             @ApiResponse(code = 500, message = "Validation Error")
 
     })

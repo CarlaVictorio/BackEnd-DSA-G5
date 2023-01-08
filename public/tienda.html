@@ -99,8 +99,10 @@
 
             })
             .fail(function(data, status){
-                if (data.status == 501){
+                if (data.status == 501) {
                     alert("No tienes suficiente dinero");
+                } else if (data.status == 502){
+                    alert("Nivel insuficiente");
                 } else {
                     alert("Error del servidor");
                 }

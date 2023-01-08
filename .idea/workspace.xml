@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="utensilios compra funciona">
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="BBDD actualizada con tabla recetas&#10;Cuando se registra un usuario se actualiza la tabla utensilios/ingredientesComprados &#10;Fotos ingredientes/utensilios cambiadas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/IngredienteManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/IngredienteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,19 +33,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="7bc8b349-176f-4fc3-ba51-0a57c174802a" />
-        <option name="url" value="https://github.com/CarlaVictorio/BackEnd-DSA-G5.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -210,11 +199,6 @@
       <workItem from="1671485753053" duration="1032000" />
       <workItem from="1671638130284" duration="654000" />
       <workItem from="1671704562280" duration="668000" />
-      <workItem from="1672648855615" duration="4239000" />
-      <workItem from="1672850318600" duration="23000" />
-      <workItem from="1672911962433" duration="24000" />
-      <workItem from="1672913154521" duration="101000" />
-      <workItem from="1673119272672" duration="494000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -538,28 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672405045448</updated>
     </task>
-    <task id="LOCAL-00047" summary="tienda utensilios en proceso">
-      <created>1672508010345</created>
+    <task id="LOCAL-00047" summary="BBDD actualizada con tabla recetas&#10;Cuando se registra un usuario se actualiza la tabla utensilios/ingredientesComprados &#10;Fotos ingredientes/utensilios cambiadas">
+      <created>1673136920907</created>
       <option name="number" value="00047" />
       <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1672508010345</updated>
+      <updated>1673136920907</updated>
     </task>
-    <task id="LOCAL-00048" summary="workspace.xml">
-      <created>1672649061331</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1672649061331</updated>
-    </task>
-    <task id="LOCAL-00049" summary="utensilios compra funciona">
-      <created>1672652503483</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1672652503483</updated>
-    </task>
-    <option name="localTasksCounter" value="50" />
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,6 +547,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="consulta Toni LogIn.html" />
+    <MESSAGE value="cambis LogIn.html" />
     <MESSAGE value="classe LogIn" />
     <MESSAGE value="logIn y registro OK" />
     <MESSAGE value="preparat produccio" />
@@ -599,10 +571,8 @@
     <MESSAGE value="comprado activado / no activado" />
     <MESSAGE value="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido" />
     <MESSAGE value="postIngredienteComprado pide idJugador y idIngrediente. &#10;Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente" />
-    <MESSAGE value="tienda utensilios en proceso" />
-    <MESSAGE value="workspace.xml" />
-    <MESSAGE value="utensilios compra funciona" />
-    <option name="LAST_COMMIT_MESSAGE" value="utensilios compra funciona" />
+    <MESSAGE value="BBDD actualizada con tabla recetas&#10;Cuando se registra un usuario se actualiza la tabla utensilios/ingredientesComprados &#10;Fotos ingredientes/utensilios cambiadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="BBDD actualizada con tabla recetas&#10;Cuando se registra un usuario se actualiza la tabla utensilios/ingredientesComprados &#10;Fotos ingredientes/utensilios cambiadas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -616,16 +586,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/edu/upc/dsa/JugadorManagerTest.java</url>
           <line>27</line>
           <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/JugadorService.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/QueryHelper.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

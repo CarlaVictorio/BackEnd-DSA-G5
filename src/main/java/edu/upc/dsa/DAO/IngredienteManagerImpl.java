@@ -221,16 +221,22 @@ public class IngredienteManagerImpl implements IngredienteManager {
 
 
                 if(jugador.getDinero() > ingrediente.getPrecio()){
-                   // session = FactorySession.openSession();
-                    double dineroJugador = jugador.getDinero();
-                    double precioIngrediente = ingrediente.getPrecio();
-                    double dineroRestante = dineroJugador - precioIngrediente;
+                    if(jugador.getNivel()>=ingrediente.getNivelDesbloqueo()) {
+                        // session = FactorySession.openSession();
+                        double dineroJugador = jugador.getDinero();
+                        double precioIngrediente = ingrediente.getPrecio();
+                        double dineroRestante = dineroJugador - precioIngrediente;
 
-                    jugador.setDinero(dineroRestante);
-                    session.update(jugador);
-                    session.save(ic);
+                        jugador.setDinero(dineroRestante);
+                        session.update(jugador);
+                        session.save(ic);
 
-                    return 201;
+                        return 201;
+                    }
+                    else{
+                        logger.error("El jugador no tiene suficiente nivel");
+                        return 502;
+                    }
                 }
                 else {
                     logger.error("El jugador no tiene suficiente dinero para comprar el ingrediente");
