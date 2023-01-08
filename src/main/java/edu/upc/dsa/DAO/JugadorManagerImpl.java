@@ -2,15 +2,13 @@ package edu.upc.dsa.DAO;
 
 import edu.upc.dsa.BBDD.FactorySession;
 import edu.upc.dsa.BBDD.Session;
-import edu.upc.dsa.models.Jugador;
+import edu.upc.dsa.models.*;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.upc.dsa.models.LogIn;
-import edu.upc.dsa.models.Registro;
 import org.apache.log4j.Logger;
 
 public class JugadorManagerImpl implements JugadorManager{
@@ -176,6 +174,26 @@ public class JugadorManagerImpl implements JugadorManager{
                     Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais(), registro.getDinero());
                     logger.info("new Jugador " + jugadorAdd.getNombre());
                     session.save(jugadorAdd);
+
+                    //Para saber cual es la id que se le asigna al nuevo jugador
+                    Jugador j=searchJugadorByName(registro.getNombre());
+
+                    List<Ingrediente> LI=new ArrayList<>();
+                    Hashtable<String,Integer> HTing=new Hashtable<>();
+                    HTing.put("nivelDesbloqueo",1);
+                    LI= (List<Ingrediente>) session.get(new Ingrediente(),HTing);
+                    for(Ingrediente i:LI){
+                        IngredientesComprados ic=new IngredientesComprados(i.getId(),j.getId());
+                        session.save(ic);
+                    }
+
+                    List<Utensilio> LU=new ArrayList<>();
+                    LU= (List<Utensilio>) session.findAll(new Utensilio());
+                    for(Utensilio u:LU){
+                        UtensiliosComprados iu=new UtensiliosComprados(u.getId(),j.getId(),1);
+                        session.save(iu);
+                    }
+
                     logger.info("new Jugdor added");
                     return jugadorAdd;
                 }
