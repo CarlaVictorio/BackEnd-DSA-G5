@@ -171,7 +171,9 @@ public class JugadorManagerImpl implements JugadorManager{
                 session = FactorySession.openSession();
                 Jugador jugador= (Jugador) session.getByTwoParameters(Jugador.class, registro.getNombre(), "nombreJugador", registro.getPassword(), "passwordJugador");
                 if(jugador==null){
-                    Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais(), registro.getDinero());
+                    //Jugador jugadorAdd = new Jugador(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais(), registro.getDinero());
+                    Jugador jugadorAdd = new Jugador();
+                    jugadorAdd.jugadorRegister(registro.getNombre(),registro.getPassword(),registro.getEmail(),registro.getPais());
                     logger.info("new Jugador " + jugadorAdd.getNombre());
                     session.save(jugadorAdd);
 

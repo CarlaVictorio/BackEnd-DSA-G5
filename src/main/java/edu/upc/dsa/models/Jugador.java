@@ -14,6 +14,9 @@ public class Jugador {
     public Jugador() {
     }
 
+
+
+
     public Jugador (String nombre, String password, String email, String pais, double dinero) {
         this();
         this.setNombre(nombre);
@@ -21,6 +24,16 @@ public class Jugador {
         this.setEmail(email);
         this.setPais(pais);
         this.setDinero(dinero);
+    }
+
+    //He hecho este nuevo constructor para poder poner nivel 1 en el register
+    public void jugadorRegister (String nombre, String password, String email, String pais) {
+        this.setNombre(nombre);
+        this.setPassword(password);
+        this.setEmail(email);
+        this.setPais(pais);
+        this.setDinero(0);
+        this.nivel=1;
     }
 
     public int getId() {
