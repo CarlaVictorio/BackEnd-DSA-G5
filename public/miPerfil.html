@@ -26,10 +26,11 @@
         }
     </style>
     <script>
-        function infoPersonal(id, name, email, pais, dinero){
+        function infoPersonal(id, name, nivel, email, pais, dinero){
             var contenidor =
                 "<h4>Nombre: "+name+"</h4>\n"+
                 "<h4>Id: "+id+"</h4>\n"+
+                "<h4>Nivel: "+nivel+"</h4>\n"+
                 "<h4>Email: "+email+"</h4>\n"+
                 "<h4>País: "+pais+"</h4>\n"+
                 "<h4>Dinero: "+dinero+"</h4>\n";
@@ -46,7 +47,7 @@
 
         var url = "dsaApp/jugador/"+jugador;
         $.get(url, function (data) {
-            var contenidor = infoPersonal(data.id, data.nombre, data.email, data.pais, data.dinero);
+            var contenidor = infoPersonal(data.id, data.nombre, data.nivel, data.email, data.pais, data.dinero);
             console.log(contenidor);
             $("#presentacion").append(contenidor);
         });
