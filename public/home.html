@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         body {
-            background-image: url('fondo.png');
+            background-image: url('fotos/fondo.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
@@ -41,7 +41,6 @@
         if (jugador == null) {
             location.href = "/logIn.html"
         }
-
         $('#tienda').click(function() {
             location.href = "/tienda.html"
         });
@@ -53,7 +52,7 @@
 </head>
 <body>
     <div class="text-center mb-4"style="background-color:rgb(236, 132, 27, 0.7)">
-        <img class="mb-4" src="logo.png" alt="" width="165">
+        <img class="mb-4" src="fotos/logo.png" alt="" width="165">
     </div>
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <ul class="navbar-nav">
@@ -119,76 +118,51 @@
         <p> </p>
     </div>
     <div class="container text-center">
-        <h1>Restaurantes</h1>
+        <h1>Juego</h1>
     </div>
     <div class="row">
-        <div class="col-sm-4">
-            <div class="card" style="width:400px; background-color:rgb(236, 132, 27, 0.7)">
-                <div class="card-body">
-                    <h4 class="card-title">Pizzeria</h4>
-                    <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+        <div id="demo1" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                <li data-target="#demo1" data-slide-to="1"></li>
+                <li data-target="#demo1" data-slide-to="2"></li>
+                <li data-target="#demo1" data-slide-to="3"></li>
+                <li data-target="#demo1" data-slide-to="4"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="fotos/Unity1.png" width="1100" height="500">
                 </div>
-                <img class="card-img-bottom" src="img_avatar6.png" alt="Card image" style="width:100%">
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width:400px; background-color:rgb(236, 132, 27, 0.7)">
-                <div class="card-body">
-                    <h4 class="card-title">Hamburgueseria</h4>
-                    <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <div class="carousel-item">
+                    <img src="fotos/Unity2.png" width="1100" height="500">
                 </div>
-                <img class="card-img-bottom" src="img_avatar6.png" alt="Card image" style="width:100%">
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width:400px; background-color:rgb(236, 132, 27, 0.7)">
-                <div class="card-body">
-                    <h4 class="card-title">Pasteleria</h4>
-                    <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <div class="carousel-item">
+                    <img src="fotos/Unity3.png" width="1100" height="500">
                 </div>
-                <img class="card-img-bottom" src="img_avatar6.png" alt="Card image" style="width:100%">
+                <div class="carousel-item">
+                    <img src="fotos/Unity4.png" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="fotos/Unity5.png" width="1100" height="500">
+                </div>
             </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo1" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo1" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
     </div>
     <div>
         <p> </p>
     </div>
-    <div class="row">
-        <div class="col-sm-4">
-            <div id="demo1" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#demo1" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo1" data-slide-to="1"></li>
-                    <li data-target="#demo1" data-slide-to="2"></li>
-                </ul>
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="grupo1.png" alt="Grupo" width="1100" height="500">
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="grupo1.png" alt="Grupo" width="1100" height="500">
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="grupo1.png" alt="Grupo" width="1100" height="500">
-                    </div>
-                </div>
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#demo1" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo1" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-8" style="background-color:rgb(236, 132, 27, 0.7)">
-            <h1 class="text-center">¿Quien somos?</h1>
-            <h6>Somos un grupo de alumnos de la UPC </h6>
-        </div>
-    </div>
-
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2023 Grup 5 DSA</p>
 </body>
 </html>
