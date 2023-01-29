@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="cambio de año">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f4d85f6c-6fef-426e-8f46-8d9972e034f6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fondo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/fotos/fondo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/grupo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/fotos/grupo1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/logIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/fotos/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/miPerfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/miPerfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/swagger/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/swagger/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tienda.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tienda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/BBDD/FactorySession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="0c706fa0-6c77-48ce-986c-a53cbb5f563f" name="Changes" comment="png" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +29,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -227,7 +213,7 @@
       <workItem from="1674638634463" duration="1507000" />
       <workItem from="1674662332946" duration="2984000" />
       <workItem from="1675001188736" duration="791000" />
-      <workItem from="1675016650710" duration="1126000" />
+      <workItem from="1675016650710" duration="2246000" />
     </task>
     <task id="LOCAL-00001" summary="Log in iniciado">
       <created>1668882036826</created>
@@ -558,7 +544,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673136920907</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="web arreglada">
+      <created>1675017884446</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1675017884446</updated>
+    </task>
+    <task id="LOCAL-00049" summary="png">
+      <created>1675020164220</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1675020164220</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,8 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="consulta Toni LogIn.html" />
-    <MESSAGE value="cambis LogIn.html" />
     <MESSAGE value="classe LogIn" />
     <MESSAGE value="logIn y registro OK" />
     <MESSAGE value="preparat produccio" />
@@ -601,7 +599,9 @@
     <MESSAGE value="listaUtensiliosComprados devuelve List&lt;UtensiliosComprados&gt;, necesitamos devolver el nivel del utensilio&#10;postIngredienteComprado añade el ingrediente comprado a la tabla ingredientesComprados&#10;postUtensilioComprado pide idJugador y idUtensilio. Vamos a la tabla utensiliosComprados y subimos +1 el nivel                                               Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente&#10;502 --&gt; nivel máximo conseguido" />
     <MESSAGE value="postIngredienteComprado pide idJugador y idIngrediente. &#10;Retorno:&#10;201 --&gt; nivel subido con éxito&#10;404 --&gt; no encuentro coincidencias en la tabla&#10;501 --&gt; dinero insuficiente" />
     <MESSAGE value="BBDD actualizada con tabla recetas&#10;Cuando se registra un usuario se actualiza la tabla utensilios/ingredientesComprados &#10;Fotos ingredientes/utensilios cambiadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="BBDD actualizada con tabla recetas&#10;Cuando se registra un usuario se actualiza la tabla utensilios/ingredientesComprados &#10;Fotos ingredientes/utensilios cambiadas" />
+    <MESSAGE value="web arreglada" />
+    <MESSAGE value="png" />
+    <option name="LAST_COMMIT_MESSAGE" value="png" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
